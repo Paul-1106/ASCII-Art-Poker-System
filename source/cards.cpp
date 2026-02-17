@@ -86,4 +86,124 @@ void Poker::cards() {
                          "*      o  *\n"
                          "*  ooooo  *\n"
                          "***********\n";
+
+    std::string fourH = "***********\n" 
+                        "*  o   o H*\n"
+                        "*  o   o  *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*      o  *\n"
+                        "***********\n";
+    
+    std::string fourD = "***********\n" 
+                        "*  o   o D*\n"
+                        "*  o   o  *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*      o  *\n"
+                        "***********\n";
+
+    std::string fourC = "***********\n"
+                        "*  o   o C*\n"
+                        "*  o   o  *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*      o  *\n"
+                        "***********\n";
+
+    std::string fourS = "***********\n" 
+                        "*  o   o S*\n"
+                        "*  o   o  *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*      o  *\n"
+                        "***********\n";
+
+    std::string fourQ = "***********\n" 
+                        "*  o   o Q*\n"
+                        "*  o   o  *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*      o  *\n"
+                        "***********\n";
+
+    std::string fiveH = "***********\n" 
+                        "*  ooooo H*\n"
+                        "*  o      *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*  ooooo  *\n"
+                        "***********\n";
+    
+    std::string fiveD = "***********\n" 
+                        "*  ooooo D*\n"
+                        "*  o      *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*  ooooo  *\n"
+                        "***********\n";
+
+    std::string fiveC = "***********\n"
+                        "*  ooooo C*\n"
+                        "*  o      *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*  ooooo  *\n"
+                        "***********\n";
+
+    std::string fiveS = "***********\n" 
+                        "*  ooooo S*\n"
+                        "*  o      *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*  ooooo  *\n"
+                        "***********\n";
+
+    std::string fiveQ = "***********\n" 
+                        "*  ooooo Q*\n"
+                        "*  o      *\n"
+                        "*  ooooo  *\n"
+                        "*      o  *\n"
+                        "*  ooooo  *\n"
+                        "***********\n";
+
+    std::string sixH = "***********\n"
+                       "*  ooooo H*\n"
+                       "*  o      *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "***********\n";
+    
+    std::string sixD = "***********\n" 
+                       "*  ooooo D*\n"
+                       "*  o      *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "***********\n";
+
+    std::string sixC = "***********\n" 
+                       "*  ooooo C*\n"
+                       "*  o      *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "***********\n";
+
+    std::string sixS = "***********\n" 
+                       "*  ooooo S*\n"
+                       "*  o      *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "***********\n";
+
+    std::string sixQ = "***********\n" 
+                       "*  ooooo Q*\n"
+                       "*  o      *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "***********\n";
 }
