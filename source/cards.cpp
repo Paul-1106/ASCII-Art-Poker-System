@@ -371,7 +371,7 @@ void Poker::cards() {
                         "*  ooooo H*\n"
                         "*    o    *\n"
                         "*    o    *\n"
-                        "*    o    *\n"
+                        "*  o o    *\n"
                         "*  ooo    *\n"
                         "***********\n";
     
@@ -446,4 +446,84 @@ void Poker::cards() {
                          "*  o      *\n"
                          "*  ooo    *\n"
                          "***********\n";
+
+    std::string kingH = "***********\n" 
+                        "*  o  oo H*\n"
+                        "*  o o    *\n"
+                        "*  oo     *\n"
+                        "*  o o    *\n"
+                        "*  o  oo  *\n"
+                        "***********\n";
+    
+    std::string kingD = "***********\n" 
+                        "*  o  oo D*\n"
+                        "*  o o    *\n"
+                        "*  oo     *\n"
+                        "*  o o    *\n"
+                        "*  o  oo  *\n"
+                        "***********\n";
+
+    std::string kingC = "***********\n"
+                        "*  o  oo C*\n"
+                        "*  o o    *\n"
+                        "*  oo     *\n"
+                        "*  o o    *\n"
+                        "*  o  oo  *\n"
+                        "***********\n";
+
+    std::string kingS = "***********\n" 
+                        "*  o  oo S*\n"
+                        "*  o o    *\n"
+                        "*  oo     *\n"
+                        "*  o o    *\n"
+                        "*  o  oo  *\n"
+                        "***********\n";
+
+    std::string kingQ = "***********\n" 
+                        "*  o  oo  Q*\n"
+                        "*  o o    *\n"
+                        "*  oo     *\n"
+                        "*  o o    *\n"
+                        "*  o  oo  *\n"
+                        "***********\n";
+
+    std::string aceH = "***********\n"
+                       "*  ooooo H*\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  o   o  *\n"
+                       "***********\n";
+    
+    std::string aceD = "***********\n" 
+                       "*  ooooo D*\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  o   o  *\n"
+                       "***********\n";
+
+    std::string aceC = "***********\n" 
+                       "*  ooooo C*\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  o   o  *\n"
+                       "***********\n";
+
+    std::string aceS = "***********\n" 
+                       "*  ooooo S*\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  o   o  *\n"
+                       "***********\n";
+
+    std::string aceQ = "***********\n" 
+                       "*  ooooo Q*\n"
+                       "*  o   o  *\n"
+                       "*  ooooo  *\n"
+                       "*  o   o  *\n"
+                       "*  o   o  *\n"
+                       "***********\n";
 }

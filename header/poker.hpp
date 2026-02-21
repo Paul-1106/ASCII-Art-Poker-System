@@ -6,12 +6,15 @@
 
 struct Poker {
 
-    void onePlayer();
+    void onePlayer(int credit);
     void twoPlayers();
     void credits();
     void instructions();
     void information();
     void freeCredits();
     void cards();
-    int credit = 500;
+
+private:
+
+    int credit;
 };

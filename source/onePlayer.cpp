@@ -5,7 +5,15 @@
 
 #include "header/poker.hpp"
 
-void Poker::onePlayer() {
+void Poker::onePlayer(int credit) {
 
-    std::string twoH;
+    char quit = 'q';
+
+    if (credit >= 500) {
+        
+    }
+    else {
+
+        std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
+    }
 }
