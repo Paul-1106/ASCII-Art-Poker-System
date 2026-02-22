@@ -1,3 +1,6 @@
+#ifndef POKER_HPP
+#define POKER_HPP
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,7 +9,7 @@
 
 struct Poker {
 
-    void onePlayer(int credit);
+    void onePlayer(int creditRequirement);
     void twoPlayers();
     void credits();
     void instructions();
@@ -17,4 +20,7 @@ struct Poker {
 private:
 
     int credit;
+    int creditRequirement;
 };
+
+#endif POKER_HPP
