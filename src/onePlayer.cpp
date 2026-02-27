@@ -10,7 +10,7 @@ void Poker::onePlayer(int creditRequirement) {
     char quit = 'q';
     int turn = 0;
 
-    if (creditRequirement >= 500) {
+    if (creditRequirement >= 100) {
         
 
     }

@@ -1,2 +1,0 @@
-/home/paul-1106/Desktop/Deluxe Poker System/build-dir/CMakeFiles/edit_cache.dir
-/home/paul-1106/Desktop/Deluxe Poker System/build-dir/CMakeFiles/rebuild_cache.dir
