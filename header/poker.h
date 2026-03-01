@@ -1,5 +1,5 @@
-#ifndef POKER_HPP
-#define POKER_HPP
+#ifndef POKER_H
+#define POKER_H
 
 #include <iostream>
 #include <string>
@@ -23,4 +23,4 @@ private:
     int creditRequirement;
 };
 
-#endif POKER_HPP
+#endif // POKER_H
