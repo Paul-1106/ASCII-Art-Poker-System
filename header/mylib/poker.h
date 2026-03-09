@@ -7,20 +7,21 @@
 #include <cmath>
 
 
-struct Poker {
+class Poker {
+
+public:
 
     void onePlayer(int creditRequirement);
     void twoPlayers();
     void credits();
     void instructions();
-    void information();
     void freeCredits();
     void cards();
 
 private:
 
-    int credit;
-    int creditRequirement;
+    // int credit;
+    // int creditRequirement;
 };
 
 #endif // POKER_H

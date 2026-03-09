@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#include "poker.h"
+#include <mylib/poker.h>
 
 int main() {
 

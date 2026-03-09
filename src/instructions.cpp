@@ -3,7 +3,7 @@
 #include <vector>
 #include <cmath>
 
-#include "poker.h"
+#include <mylib/poker.h>
 
 void Poker::instructions() {
 

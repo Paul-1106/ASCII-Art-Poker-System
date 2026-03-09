@@ -5,6 +5,6 @@
 
 #include <mylib/poker.h>
 
-void Poker::twoPlayers() {
+void Poker::credits() {
     
 }
