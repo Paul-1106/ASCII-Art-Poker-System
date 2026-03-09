@@ -1,3 +1,8 @@
-/home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles/myLibrary.dir
 /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles/edit_cache.dir
 /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles/rebuild_cache.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/src/CMakeFiles/mylib.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/src/CMakeFiles/edit_cache.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/src/CMakeFiles/rebuild_cache.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/app/CMakeFiles/myApp.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/app/CMakeFiles/edit_cache.dir
+/home/paul-1106/Desktop/Deluxe-Poker-System/build/app/CMakeFiles/rebuild_cache.dir

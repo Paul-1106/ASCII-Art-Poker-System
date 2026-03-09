@@ -87,21 +87,21 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles /home/paul-1106/Desktop/Deluxe-Poker-System/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles /home/paul-1106/Desktop/Deluxe-Poker-System/build/app//CMakeFiles/progress.marks
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles /home/paul-1106/Desktop/Deluxe-Poker-System/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles /home/paul-1106/Desktop/Deluxe-Poker-System/build/app//CMakeFiles/progress.marks
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/codegen
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/paul-1106/Desktop/Deluxe-Poker-System/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/clean
 .PHONY : clean
 
 # The main clean target
@@ -110,44 +110,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named mylib
+# Convenience name for target.
+app/CMakeFiles/myApp.dir/rule:
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/myApp.dir/rule
+.PHONY : app/CMakeFiles/myApp.dir/rule
 
-# Build rule for target.
-mylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib
-.PHONY : mylib
-
-# fast build rule for target.
-mylib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/build
-.PHONY : mylib/fast
-
-#=============================================================================
-# Target rules for targets named myApp
-
-# Build rule for target.
-myApp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myApp
+# Convenience name for target.
+myApp: app/CMakeFiles/myApp.dir/rule
 .PHONY : myApp
 
 # fast build rule for target.
 myApp/fast:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/myApp.dir/build.make app/CMakeFiles/myApp.dir/build
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/myApp.dir/build.make app/CMakeFiles/myApp.dir/build
 .PHONY : myApp/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/myApp.dir/build.make app/CMakeFiles/myApp.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/myApp.dir/build.make app/CMakeFiles/myApp.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/myApp.dir/build.make app/CMakeFiles/myApp.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -159,7 +171,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... myApp"
-	@echo "... mylib"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -171,6 +185,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/paul-1106/Desktop/Deluxe-Poker-System/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
