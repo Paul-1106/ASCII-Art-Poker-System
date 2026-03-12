@@ -11,16 +11,23 @@ Menu code snippet example:<br>
 
 <h3>Poker Hand Ranks:</h3>
 Here are all types of poker hands from best to worst: <br><br>
-1. 5 of a Kind<br>
+1. Five of a Kind<br>
 2. Royal Flush<br>
 3. Straight Flush<br>
-4. 4 of a Kind<br>
+4. Four of a Kind<br>
 5. Full House<br>
 6. Flush<br>
 7. Straight<br>
-8. 3 of a Kind<br>
+8. Three of a Kind<br>
 9. Double Pairs<br>
 10. Pair<br>
 11. High Card<br><br>
 
 There are a total of 65 deck of cards. Numbers (from Ace to 10), Face (Jack, Queen, and then King), then 5 suits (Heart, Diamond, Club, Spade, and Quatrefoil).<br><br>
+
+<h3>Five of a Kind: </h3><p>This poker hand is exclusively available for this project instead of Royal Flush hand being the best poker hand. Here is an example of a poker hand of five of a kind: </p><br>
+(5/Heart, 5/Diamond, 5/Club, 5/Spade, 5/Quatrefoil)<br>
+(K/Heart, K/Diamond, K/Club, K/Spade, K/Quatrefoil)<br><br>
+
+<h2>Installing CMake</h2><img alt="Static Badge" src="https://img.shields.io/badge/CMake-v3.31-red?logo=CMake">
+
