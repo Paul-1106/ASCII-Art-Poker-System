@@ -3,7 +3,7 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B_Programming-blue"> <img alt="Static Badge" src="https://img.shields.io/badge/Development-Backend-%23F5D627"> <img alt="Static Badge" src="https://img.shields.io/badge/plugins-CMake-red?logo=cmake">
 <br><br>
 
-<h2>Details and Instructions:</h2>
+<h2>📜 Details and Instructions:</h2>
 For this project, I am currently working on a C++ project called Deluxe-Poker-System(Poker game). When running this project, it will display the menu bar and it will print each number of inputs from the list. All four inputs from the list are single player mode, two player mode, instructions, free credits, and display credits.<br><br>
 
 Menu code snippet example:<br>
@@ -11,9 +11,9 @@ Menu code snippet example:<br>
 
 <h3>Poker Hand Ranks:</h3>
 Here are all types of poker hands from best to worst: <br><br>
-1. Five of a Kind<br>
-2. Royal Flush<br>
-3. Straight Flush<br>
+🥇 Five of a Kind<br>
+🥈 Royal Flush<br>
+🥉 Straight Flush<br>
 4. Four of a Kind<br>
 5. Full House<br>
 6. Flush<br>
@@ -29,5 +29,19 @@ There are a total of 65 deck of cards. Numbers (from Ace to 10), Face (Jack, Que
 (5/Heart, 5/Diamond, 5/Club, 5/Spade, 5/Quatrefoil)<br>
 (K/Heart, K/Diamond, K/Club, K/Spade, K/Quatrefoil)<br><br>
 
-<h2>Installing CMake</h2><img alt="Static Badge" src="https://img.shields.io/badge/CMake-v3.31-red?logo=CMake">
+<h2>CMake Details</h2><img alt="Static Badge" src="https://img.shields.io/badge/CMake-v3.31-red?logo=CMake">
 
+One of the tools that I have been using to work on my project is called CMake and it is an open-source meta-build system that can allow to connect or merge all C++ and header files. Like on Windows OS, Microsoft Visual Studio is perfect for users that are creating C++ projects, but for Linux, CMake is highly recommended so that it can build C/C++ projects.<br><br>
+
+<h4>Here are some examples of implementing CMake to build each files for this project:</h4>
+Deluxe-Poker-System/CMakeLists.txt file (top level)<br>
+
+```
+cmake_minimum_required(VERSION 3.31)
+project(Deluxe-Poker-System)
+set(CMAKE-CXX-STANDARD 20)
+```
+<br>
+Line 39: The current version of CMake that will build this project<br>
+Line 40: The title of the project<br>
+Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ features)<br>
