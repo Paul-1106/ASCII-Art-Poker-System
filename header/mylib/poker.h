@@ -20,7 +20,7 @@ public:
 
 private:
 
-    // int credit;
+    int credit;
     // int creditRequirement;
 };
 

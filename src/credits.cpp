@@ -7,4 +7,5 @@
 
 void Poker::credits() {
     
+    std::cout << "Your credit balance: " << credit << "\n";
 }
