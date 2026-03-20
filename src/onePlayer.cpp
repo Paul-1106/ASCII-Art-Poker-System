@@ -5,7 +5,7 @@
 
 #include <mylib/poker.h>
 
-void Poker::onePlayer(int creditRequirement) {
+void Poker::onePlayer(size_t creditRequirement) {
 
     char quit = 'q';
     int turn = 0;

@@ -7,4 +7,5 @@
 
 void Poker::freeCredits() {
     
+    size_t addCredit = 0;
 }

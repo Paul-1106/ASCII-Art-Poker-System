@@ -11,9 +11,9 @@ class Poker {
 
 public:
 
-    void onePlayer(int creditRequirement);
+    void onePlayer(size_t creditRequirement);
     void twoPlayers();
-    void credits();
+    void credits(size_t credit);
     void instructions();
     void freeCredits();
     void cards();
@@ -21,7 +21,8 @@ public:
 private:
 
     int credit = 100;
-    // int creditRequirement;
+    int creditRequirement = 100;
+    int points = 0;
 };
 
 #endif // POKER_H
