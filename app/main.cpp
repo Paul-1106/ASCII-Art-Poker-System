@@ -35,7 +35,7 @@ int main() {
                 obj.twoPlayers();
                 break;
             case 3:
-                obj.credits();
+                obj.credits(credit);
                 break;
             case 4:
                 obj.instructions();

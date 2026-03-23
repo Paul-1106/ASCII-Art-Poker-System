@@ -190,5 +190,24 @@ src/CMakeFiles/mylib.dir/freeCredits.cpp.o: \
  /usr/include/c++/14/tr1/modified_bessel_func.tcc \
  /usr/include/c++/14/tr1/poly_hermite.tcc \
  /usr/include/c++/14/tr1/poly_laguerre.tcc \
- /usr/include/c++/14/tr1/riemann_zeta.tcc \
- /home/paul-1106/Desktop/Deluxe-Poker-System/src/../header/mylib/poker.h
+ /usr/include/c++/14/tr1/riemann_zeta.tcc /usr/include/c++/14/random \
+ /usr/include/c++/14/cstdint \
+ /usr/lib/gcc/x86_64-linux-gnu/14/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/include/c++/14/bits/random.h \
+ /usr/include/c++/14/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/opt_random.h \
+ /usr/include/c++/14/bits/random.tcc /usr/include/c++/14/numeric \
+ /usr/include/c++/14/bits/stl_numeric.h \
+ /usr/include/c++/14/pstl/glue_numeric_defs.h \
+ /usr/include/c++/14/pstl/execution_defs.h \
+ /home/paul-1106/Desktop/Deluxe-Poker-System/src/../header/mylib/poker.h \
+ /usr/include/c++/14/algorithm /usr/include/c++/14/bits/stl_algo.h \
+ /usr/include/c++/14/bits/algorithmfwd.h \
+ /usr/include/c++/14/bits/stl_heap.h \
+ /usr/include/c++/14/bits/stl_tempbuf.h \
+ /usr/include/c++/14/bits/ranges_algo.h \
+ /usr/include/c++/14/bits/ranges_algobase.h \
+ /usr/include/c++/14/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14/iterator /usr/include/c++/14/bits/stream_iterator.h
