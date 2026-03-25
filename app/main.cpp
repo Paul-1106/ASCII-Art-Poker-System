@@ -7,7 +7,7 @@
 int main() {
 
     int option;
-    int credit;
+    size_t credit = 100;
     Poker obj;
 
     std::cout << "**************************\n";
@@ -18,6 +18,7 @@ int main() {
     std::cout << "* 3. Your Credit Balance *\n";
     std::cout << "* 4. Instruction         *\n";
     std::cout << "* 5. Free Credits        *\n";
+    std::cout << "* 6. Menu Page           *\n";
     std::cout << "* 9. Exit                *\n";
     std::cout << "**************************\n\n";
     std::cout << "Input an option to start...\n";
@@ -42,6 +43,8 @@ int main() {
                 break;
             case 5:
                 obj.freeCredits();
+                break;
+            case 6:
                 break;
             case 9:
                 std::cout << "[EXIT] Thanks for playing!\n";

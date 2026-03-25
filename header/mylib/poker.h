@@ -22,7 +22,7 @@ public:
 
 private:
 
-    int credit = 100;
+    size_t credit = 100;
     int creditRequirement = 100;
     int points = 0;
 };
