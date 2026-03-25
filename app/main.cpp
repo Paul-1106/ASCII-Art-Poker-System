@@ -42,9 +42,21 @@ int main() {
                 obj.instructions();
                 break;
             case 5:
-                obj.freeCredits();
+                obj.freeCredits(credit);
                 break;
             case 6:
+                std::cout << "**************************\n";
+                std::cout << "*         MENU           *\n";
+                std::cout << "**************************\n";
+                std::cout << "* 1. One Player ($100+)  *\n";
+                std::cout << "* 2. Two Players         *\n";
+                std::cout << "* 3. Your Credit Balance *\n";
+                std::cout << "* 4. Instruction         *\n";
+                std::cout << "* 5. Free Credits        *\n";
+                std::cout << "* 6. Menu Page           *\n";
+                std::cout << "* 9. Exit                *\n";
+                std::cout << "**************************\n\n";
+                std::cout << "Input an option to start...\n";
                 break;
             case 9:
                 std::cout << "[EXIT] Thanks for playing!\n";

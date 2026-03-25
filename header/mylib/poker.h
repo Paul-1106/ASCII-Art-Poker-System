@@ -15,14 +15,14 @@ public:
 
     void onePlayer(size_t creditRequirement);
     void twoPlayers();
-    void credits(size_t credit);
+    void credits(size_t& credit);
     void instructions();
-    void freeCredits();
+    void freeCredits(size_t& credit);
     void cards();
+    size_t credit;
 
 private:
 
-    size_t credit = 100;
     int creditRequirement = 100;
     int points = 0;
 };

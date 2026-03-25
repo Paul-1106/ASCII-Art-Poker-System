@@ -6,10 +6,10 @@
 
 #include <mylib/poker.h>
 
-void Poker::freeCredits() {
+void Poker::freeCredits(size_t& credit) {
     
     size_t addCredit = 0;
-    std::vector<size_t> randomNumber = {5, 10, 20, 30, 40, 50, 100};
+    std::vector<size_t> randomNumber = {5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 20, 20, 20, 20, 50, 50, 100};
     size_t randomNumberOut = 0;
 
     std::random_device rd;
@@ -20,8 +20,8 @@ void Poker::freeCredits() {
     size_t random_index = distr(mEngine);
     size_t random_element = randomNumber[random_index];
 
+    std::cout << "You have recieved " << random_element << " credits for free!\n";
     credit += random_element;
-
-    std::cout << "You have recieved " << random_element << "credits for free!\n";
-
+    
+    std::cout << "Your total balance: " << credit << " credits\n";
 }
