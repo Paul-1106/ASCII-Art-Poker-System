@@ -13,7 +13,7 @@ class Poker {
 
 public:
 
-    void onePlayer(size_t creditRequirement);
+    void onePlayer(size_t& credit, size_t creditRequirement);
     void twoPlayers();
     void credits(size_t& credit);
     void instructions();

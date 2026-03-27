@@ -9,7 +9,7 @@
 void Poker::freeCredits(size_t& credit) {
     
     size_t addCredit = 0;
-    std::vector<size_t> randomNumber = {5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 20, 20, 20, 20, 50, 50, 100};
+    std::vector<size_t> randomNumber = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 20, 20, 100};
     size_t randomNumberOut = 0;
 
     std::random_device rd;
