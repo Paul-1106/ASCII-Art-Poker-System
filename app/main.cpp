@@ -8,8 +8,10 @@ int main() {
 
     int option;
     size_t credit = 100;
+    size_t creditRequirement;
     Poker obj;
 
+    //
     std::cout << "**************************\n";
     std::cout << "*         MENU           *\n";
     std::cout << "**************************\n";
@@ -30,7 +32,7 @@ int main() {
         switch (option) {
 
             case 1:
-                obj.onePlayer(credit);
+                obj.onePlayer(credit, creditRequirement);
                 break;
             case 2:
                 obj.twoPlayers();
@@ -45,6 +47,7 @@ int main() {
                 obj.freeCredits(credit);
                 break;
             case 6:
+                // Display the entire menu page again
                 std::cout << "**************************\n";
                 std::cout << "*         MENU           *\n";
                 std::cout << "**************************\n";
