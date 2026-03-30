@@ -11,7 +11,7 @@ int main() {
     size_t creditRequirement;
     Poker obj;
 
-    //
+    // Display the menu when running the project
     std::cout << "**************************\n";
     std::cout << "*         MENU           *\n";
     std::cout << "**************************\n";
@@ -61,10 +61,10 @@ int main() {
                 std::cout << "**************************\n\n";
                 std::cout << "Input an option to start...\n";
                 break;
-            case 9:
+            case 9: // EXIT the terminal
                 std::cout << "[EXIT] Thanks for playing!\n";
                 break;
-            default:
+            default: // If case number is not listed
                 std::cout << "[ERROR] Incorrect output\n";
                 break;
         }
