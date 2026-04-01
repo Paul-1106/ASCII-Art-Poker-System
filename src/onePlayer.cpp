@@ -30,7 +30,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                 credit -= creditBet;
 
                 // [CONTINUE...]
-                
+                // std::cout << twoH << "\n";
             }
             // If user input less than 100 credits
             else {

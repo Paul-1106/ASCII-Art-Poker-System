@@ -7,7 +7,7 @@
 
 void Poker::cards() {
 
-    std::string twoH = "***********\n" // Suit: Heart
+    const std::string& twoH = "***********\n" // Suit: Heart
                        "*  ooooo H*\n"
                        "*      o  *\n"
                        "*  ooooo  *\n"
