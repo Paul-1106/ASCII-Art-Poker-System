@@ -25,6 +25,7 @@ private:
 
     int creditRequirement = 100;
     int points = 0;
+    const std::string& twoH, twoD;
 };
 
 #endif // POKER_H
