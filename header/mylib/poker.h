@@ -7,6 +7,7 @@
 #include <cmath>
 #include <algorithm>
 #include <iterator>
+#include <random>
 
 
 class Poker {
@@ -25,7 +26,14 @@ private:
 
     int creditRequirement = 100;
     int points = 0;
-    const std::string& twoH, twoD;
+    const std::string& twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH, fiveD, fiveC, fiveS, 
+    fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC, nineS, nineQ, 
+    tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ, aceH, aceD, 
+    aceC, aceS, aceQ;
+    const std::vector<std::string>& cardDeck = {twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH,
+    fiveD, fiveC, fiveS, fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC,
+    nineS, nineQ, tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ,
+    aceH, aceD, aceC, aceS, aceQ};
 };
 
 #endif // POKER_H

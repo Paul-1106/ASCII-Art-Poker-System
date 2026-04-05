@@ -12,6 +12,8 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     size_t creditBet;
     size_t creditReward;
     size_t points = 0;
+    std::string card1, card2, card3, card4, card5;
+    std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     
     
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
@@ -26,11 +28,25 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
 
-                std::cout << "You have beted " << creditBet << "credits\n\n";
+                std::cout << "You have beted " << creditBet << " credits\n\n";
                 credit -= creditBet;
 
-                // [CONTINUE...]
-                std::cout << twoH << "\n";
+                for (size_t i{0}; i < pokerHand.size(); ++i) {
+
+                    std::random_device random;
+                    std::mt19937 mEngine(random());
+
+                    std::uniform_int_distribution<std::size_t> dist(0, pokerHand.size() - 1);
+
+                    // CONTINUE
+                    card1;
+                    card2;
+                    card3;
+                    card4;
+                    card5;
+
+                    std::cout << pokerHand[i] << pokerHand[i] << pokerHand[i] << pokerHand[i] << pokerHand[i] << "\n";
+                }
             }
             // If user input less than 100 credits
             else {
