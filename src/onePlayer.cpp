@@ -14,6 +14,10 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     size_t points = 0;
     std::string card1, card2, card3, card4, card5;
     std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
+    // const std::vector<std::string>& cardDeck = {twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH,
+    // fiveD, fiveC, fiveS, fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC,
+    // nineS, nineQ, tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ,
+    // aceH, aceD, aceC, aceS, aceQ};
     
     
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
@@ -24,6 +28,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
             // Your credit will automatically deduct when betting the amount of credits on poker
             std::cout << "Enter your bet: \n";
             std::cin >> creditBet;
+            std::cout << twoH << "\n";
 
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
@@ -38,6 +43,8 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
 
                     std::uniform_int_distribution<std::size_t> dist(0, pokerHand.size() - 1);
 
+                    std::string randomCard = pokerHand[dist(mEngine)];
+
                     // CONTINUE
                     card1;
                     card2;
@@ -45,7 +52,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                     card4;
                     card5;
 
-                    std::cout << pokerHand[i] << pokerHand[i] << pokerHand[i] << pokerHand[i] << pokerHand[i] << "\n";
+                    std::cout << randomCard << randomCard << randomCard << randomCard << randomCard << "\n";
                 }
             }
             // If user input less than 100 credits
