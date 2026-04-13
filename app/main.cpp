@@ -8,7 +8,7 @@ int main() {
 
     int option;
     size_t credit = 100;
-    size_t creditRequirement;
+    size_t creditRequirement = 100;
     Poker obj;
 
     // Display the menu when running the project
@@ -31,23 +31,22 @@ int main() {
 
         switch (option) {
 
-            case 1:
+            case 1: // One Player mode
                 obj.onePlayer(credit, creditRequirement);
                 break;
-            case 2:
+            case 2: // Two Player mode
                 obj.twoPlayers();
                 break;
-            case 3:
+            case 3: // Display Credit Balance
                 obj.credits(credit);
                 break;
-            case 4:
+            case 4: // Project Instructions
                 obj.instructions();
                 break;
-            case 5:
+            case 5: // Free credits from 5 to 100
                 obj.freeCredits(credit);
                 break;
-            case 6:
-                // Display the entire menu page again
+            case 6: // Display the entire menu page again
                 std::cout << "**************************\n";
                 std::cout << "*         MENU           *\n";
                 std::cout << "**************************\n";

@@ -14,6 +14,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     size_t points = 0;
     std::string card1, card2, card3, card4, card5;
     std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
+    char swap = ' ';
     // const std::vector<std::string>& cardDeck = {twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH,
     // fiveD, fiveC, fiveS, fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC,
     // nineS, nineQ, tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ,
@@ -23,7 +24,8 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
     while (credit >= creditRequirement) {
 
-        if (credit >= creditRequirement) {
+        // 'turn' variable will add up by 1 when user decides to swap some cards, else the variable will add up by 2
+        if (credit >= creditRequirement && turn < 2) {
             
             // Your credit will automatically deduct when betting the amount of credits on poker
             std::cout << "Enter your bet: \n";
@@ -52,7 +54,20 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                     card4;
                     card5;
 
-                    std::cout << randomCard << randomCard << randomCard << randomCard << randomCard << "\n";
+                    std::cout << randomCard << randomCard << randomCard << randomCard << randomCard << "\n\n";
+                    std::cout << "Swap cards or pass? (s = Swap | p = Pass)\n";
+                    std::cin >> swap;
+
+                    if (swap == 's') {
+
+                    }
+                    else if (swap == 'p') {
+
+                    }
+                    else {
+                        std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
+                        std::cin >> swap;
+                    }
                 }
             }
             // If user input less than 100 credits
@@ -65,6 +80,8 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
             std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
         }
     }
+    std::cout << "You have recieved " << creditReward << "\n";
+    std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
 
 
 }

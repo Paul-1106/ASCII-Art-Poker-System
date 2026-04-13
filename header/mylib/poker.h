@@ -12,18 +12,16 @@
 
 class Poker {
 public:
-
     void onePlayer(size_t& credit, size_t creditRequirement);
     void twoPlayers();
     void credits(size_t& credit);
     void instructions();
     void freeCredits(size_t& credit);
     void cards();
-    size_t credit;
-
+    
 private:
-
-    int creditRequirement = 100;
+    size_t credit;
+    size_t creditRequirement;
     int points = 0;
     const std::string twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH, fiveD, fiveC, fiveS, 
     fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC, nineS, nineQ, 
