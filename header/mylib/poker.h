@@ -12,7 +12,7 @@
 
 class Poker {
 public:
-    void onePlayer(size_t& credit, size_t creditRequirement);
+    void onePlayer(size_t& credit, size_t creditRequirement, const std::string& twoH);
     void twoPlayers();
     void credits(size_t& credit);
     void instructions();

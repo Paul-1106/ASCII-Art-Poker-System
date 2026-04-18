@@ -5,7 +5,7 @@
 
 #include <mylib/poker.h>
 
-void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
+void Poker::onePlayer(size_t& credit, size_t creditRequirement, const std::string& twoH) {
 
     char quit = 'q';
     int turn = 0;
@@ -49,7 +49,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
 
                     // CONTINUE
 
-                    std::cout << twoH << randomCard << randomCard << randomCard << randomCard << "\n\n";
+                    std::cout << twoD << "\n\n";
                     turn += 1;
                     std::cout << "Swap cards or pass? (s = Swap | p = Pass)\n";
                     std::cin >> swap;

@@ -10,6 +10,7 @@ int main() {
     size_t credit = 100;
     size_t creditRequirement = 100;
     Poker obj;
+    const std::string& twoH = "";
 
     // Display the menu when running the project
     std::cout << "**************************\n";
@@ -32,7 +33,7 @@ int main() {
         switch (option) {
 
             case 1: // One Player mode
-                obj.onePlayer(credit, creditRequirement);
+                obj.onePlayer(credit, creditRequirement, twoH);
                 break;
             case 2: // Two Player mode
                 obj.twoPlayers();
