@@ -33,7 +33,7 @@ int main() {
         switch (option) {
 
             case 1: // One Player mode
-                obj.onePlayer(credit, creditRequirement, twoH);
+                obj.onePlayer(credit, creditRequirement);
                 break;
             case 2: // Two Player mode
                 obj.twoPlayers();

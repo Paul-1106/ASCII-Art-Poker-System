@@ -5,7 +5,7 @@
 
 #include <mylib/poker.h>
 
-void Poker::onePlayer(size_t& credit, size_t creditRequirement, const std::string& twoH) {
+void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
 
     char quit = 'q';
     int turn = 0;
@@ -15,10 +15,10 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement, const std::strin
     std::string card1, card2, card3, card4, card5;
     std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
-    const std::vector<std::string>& cardDeck = {twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH,
-    fiveD, fiveC, fiveS, fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC,
-    nineS, nineQ, tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ,
-    aceH, aceD, aceC, aceS, aceQ};
+    // const std::vector<std::string> cardDeck = {twoH, twoD, twoC, twoS, twoQ, threeH, threeD, threeC, threeS, threeQ, fourH, fourD, fourC, fourS, fourQ, fiveH,
+    // fiveD, fiveC, fiveS, fiveQ, sixH, sixD, sixC, sixS, sixQ, sevenH, sevenD, sevenC, sevenS, sevenQ, eightH, eightD, eightC, eightS, eightQ, nineH, nineD, nineC,
+    // nineS, nineQ, tenH, tenD, tenC, tenS, tenQ, jackH, jackD, jackC, jackS, jackQ, queenH, queenD, queenC, queenS, queenQ, kingH, kingD, kingC, kingS, kingQ,
+    // aceH, aceD, aceC, aceS, aceQ};
     
     
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
@@ -30,7 +30,6 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement, const std::strin
             // Your credit will automatically deduct when betting the amount of credits on poker
             std::cout << "Enter your bet: \n";
             std::cin >> creditBet;
-            std::cout << twoH << "\n";
 
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
@@ -49,7 +48,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement, const std::strin
 
                     // CONTINUE
 
-                    std::cout << twoD << "\n\n";
+                    // std::cout << twoH << "\n\n";
                     turn += 1;
                     std::cout << "Swap cards or pass? (s = Swap | p = Pass)\n";
                     std::cin >> swap;
