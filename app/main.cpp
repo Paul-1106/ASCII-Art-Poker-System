@@ -10,7 +10,6 @@ int main() {
     size_t credit = 100;
     size_t creditRequirement = 100;
     Poker obj;
-    const std::string& twoH = "";
 
     // Display the menu when running the project
     std::cout << "**************************\n";
