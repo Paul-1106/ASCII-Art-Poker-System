@@ -16,6 +16,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
 
+    // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
                 fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
                 sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
@@ -24,6 +25,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                 queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
                 aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil = " ";
 
+    // To access the variables from string variables above in order
     cards(twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
                 fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
                 sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
@@ -32,6 +34,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                 queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
                 aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil);
 
+    // A random selector will pick an element from a 'pokerHand' vector
     std::vector<std::string> pokerCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade,
             threeQuatrefoil, fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
             sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
@@ -56,16 +59,17 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                 std::cout << "You have beted " << creditBet << " credits\n\n";
                 credit -= creditBet;
 
-                for (size_t i{0}; i < pokerHand.size(); ++i) {
+                for (size_t i{0}; i < pokerCards.size(); ++i) {
 
+                    // Random card selector (1/5)
                     std::random_device random;
                     std::mt19937 mEngine(random());
+                    std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+                    std::string randomCard = pokerCards[dist(mEngine)];
 
-                    std::uniform_int_distribution<std::size_t> dist(0, pokerHand.size() - 1);
+                    //Random card selector (2/5)
 
-                    std::string randomCard = pokerHand[dist(mEngine)];
-
-                    std::cout << twoHeart << "\n\n";
+                    std::cout << randomCard << randomCard << randomCard << randomCard << randomCard << "\n\n";
                     turn += 1;
                     std::cout << "Swap cards or pass? (s = Swap | p = Pass)\n";
                     std::cin >> swap;
