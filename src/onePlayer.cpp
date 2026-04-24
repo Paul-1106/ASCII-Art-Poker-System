@@ -68,8 +68,30 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                     std::string randomCard = pokerCards[dist(mEngine)];
 
                     //Random card selector (2/5)
+                    std::random_device random2;
+                    std::mt19937 mEngine2(random2());
+                    std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+                    std::string randomCard2 = pokerCards[dist2(mEngine2)];
 
-                    std::cout << randomCard << randomCard << randomCard << randomCard << randomCard << "\n\n";
+                    //Random card selector (3/5)
+                    std::random_device random3;
+                    std::mt19937 mEngine3(random3());
+                    std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+                    std::string randomCard3 = pokerCards[dist3(mEngine3)];
+
+                    //Random card selector (4/5)
+                    std::random_device random4;
+                    std::mt19937 mEngine4(random4());
+                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+                    std::string randomCard4 = pokerCards[dist4(mEngine4)];
+
+                    // Random card selector (5/5)
+                    std::random_device random5;
+                    std::mt19937 mEngine5(random5());
+                    std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+                    std::string randomCard5 = pokerCards[dist5(mEngine5)];
+
+                    std::cout << randomCard << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n\n";
                     turn += 1;
                     std::cout << "Swap cards or pass? (s = Swap | p = Pass)\n";
                     std::cin >> swap;
