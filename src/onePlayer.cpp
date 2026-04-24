@@ -13,6 +13,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
     size_t creditReward;
     size_t points = 0;
     std::string card1, card2, card3, card4, card5;
+    char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
     std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
 
@@ -98,9 +99,14 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
 
                     if (swap == 's') {
 
-                        std::cout << "Select cards you want to replace.\n";
-                        //std::cin 
+                        std::cout << "example: (card1, card2, card3, card4, card5)\n";
+                        std::cout << "Change 'card1'? (y/n)\n";
+                        std::cin >> cardChange1; 
                         turn += 1;
+
+                        if (cardChange1 == 'y') {
+                            
+                        }
                     }
                     else if (swap == 'p') {
 
