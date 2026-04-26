@@ -8,5 +8,5 @@
 void Poker::credits(size_t& credit) {
     
     // Display your credit balance when inputting '3'
-    std::cout << "Your credit balance: " << credit << "\n";
+    std::cout << "Your credit balance: $" << credit << "\n";
 }
