@@ -44,6 +44,19 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
             queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
+    // Comparing each hand deck to points
+    std::pair<std::string, double> highCard = {"High Card", 0.0};
+    std::pair<std::string, double> pairCard = {"Pair", 1.0};
+    std::pair<std::string, double> twoPairCard = {"Two Pair", 1.5};
+    std::pair<std::string, double> threeKindCard = {"Three of a Kind", 2.0};
+    std::pair<std::string, double> straightCard = {"Straight", 2.5};
+    std::pair<std::string, double> flushCard = {"Flush", 3.5};
+    std::pair<std::string, double> fullHouseCard = {"Full House", 4.0};
+    std::pair<std::string, double> fourKindCard = {"Four of a Kind", 8.0};
+    std::pair<std::string, double> straightFlushCard = {"Straight Flush", 12.5};
+    std::pair<std::string, double> royalFlushCard = {"Royal Flush", 20.0};
+    std::pair<std::string, double> fiveKindCard = {"Five of a Kind", 40.0}; 
+
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
     while (credit >= creditRequirement && turn < 2) {
 
@@ -97,7 +110,7 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
 
                 if (swap == 's') {
 
-                    std::cout << "example: (card1, card2, card3, card4, card5)\n";
+                    std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
                     std::cout << "Change 'card1'? (y/n)\n";
                     std::cin >> cardChange1; 
                     turn += 1;
@@ -108,80 +121,72 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
                         std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
                         std::string randomCard = pokerCards[dist(mEngine)];
                     }
-                    else if (cardChange1 == 'n') {
-                        continue; // FIXING
-                    }
-                    else {
+                    else if (cardChange1 != 'n' && cardChange1 != 'y') {
                         std::cout << "Not a valid option! (y/n)\n";
                         std::cin >> cardChange1;
                     }
-
-                    std::cout << "Change 'card2'? (y/n)\n";
-                    std::cin >> cardChange2;
-
-                    if (cardChange2 == 'y') {
-                        std::random_device random2;
-                        std::mt19937 mEngine2(random2());
-                        std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-                        std::string randomCard2 = pokerCards[dist2(mEngine2)];
-                    }
-                    else if (cardChange2 == 'n') {
-                        continue; // FIXING
-                    }
                     else {
-                        std::cout << "Not a valid option! (y/n)\n";
+                        std::cout << "Change 'card2'? (y/n)\n";
                         std::cin >> cardChange2;
-                    }
 
-                    std::cout << "Change 'card3'? (y/n)\n";
-                    std::cin >> cardChange3;
+                        if (cardChange2 == 'y') {
+                            std::random_device random2;
+                            std::mt19937 mEngine2(random2());
+                            std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+                            std::string randomCard2 = pokerCards[dist2(mEngine2)];
+                        }
+                        else if (cardChange2 != 'n' && cardChange2 != 'y') {
+                            std::cout << "Not a valid option! (y/n)\n";
+                            std::cin >> cardChange2;
+                        }
+                        else {
+                            std::cout << "Change 'card3'? (y/n)\n";
+                            std::cin >> cardChange3;
 
-                    if (cardChange3 == 'y') {
-                        std::random_device random3;
-                        std::mt19937 mEngine3(random3());
-                        std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-                        std::string randomCard3 = pokerCards[dist3(mEngine3)];
-                    }
-                    else if (cardChange3 == 'n') {
-                        continue; // FIXING
-                    }
-                    else {
-                        std::cout << "Not a valid option! (y/n)\n";
-                        std::cin >> cardChange3;
-                    }
+                            if (cardChange3 == 'y') {
+                                std::random_device random3;
+                                std::mt19937 mEngine3(random3());
+                                std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+                                std::string randomCard3 = pokerCards[dist3(mEngine3)];
+                            }
+                            else if (cardChange3 != 'n' && cardChange3 != 'y') {
+                                std::cout << "Not a valid option! (y/n)\n";
+                                std::cin >> cardChange3;
+                            }
+                            else {
+                                std::cout << "Change 'card4'? (y/n)\n";
+                                std::cin >> cardChange4;
 
-                    std::cout << "Change 'card4'? (y/n)\n";
-                    std::cin >> cardChange4;
+                                if (cardChange4 == 'y') {
+                                    std::random_device random4;
+                                    std::mt19937 mEngine4(random4());
+                                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+                                    std::string randomCard4 = pokerCards[dist4(mEngine4)];                            
+                                }
+                                else if (cardChange4 != 'n' && cardChange4 != 'y') {
+                                    std::cout << "Not a valid option! (y/n)\n";
+                                    std::cin >> cardChange4;
+                                }
+                                else {
+                                    std::cout << "Change 'card5'? (y/n)\n";
+                                    std::cin >> cardChange5;
 
-                    if (cardChange4 == 'y') {
-                        std::random_device random4;
-                        std::mt19937 mEngine4(random4());
-                        std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-                        std::string randomCard4 = pokerCards[dist4(mEngine4)];                            
-                    }
-                    else if (cardChange4 == 'n') {
-                        continue; // FIXING
-                    }
-                    else {
-                        std::cout << "Not a valid option! (y/n)\n";
-                        std::cin >> cardChange4;
-                    }
-
-                    std::cout << "Change 'card5'? (y/n)\n";
-                    std::cin >> cardChange5;
-
-                    if (cardChange5 == 'y') {
-                        std::random_device random5;
-                        std::mt19937 mEngine5(random5());
-                        std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-                        std::string randomCard5 = pokerCards[dist5(mEngine5)];
-                    }
-                    else if (cardChange5 == 'n') {
-                        continue; // FIXING
-                    }
-                    else {
-                        std::cout << "Not a valid option! (y/n)\n";
-                        std::cin >> cardChange5;
+                                    if (cardChange5 == 'y') {
+                                        std::random_device random5;
+                                        std::mt19937 mEngine5(random5());
+                                        std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+                                        std::string randomCard5 = pokerCards[dist5(mEngine5)];
+                                    }
+                                    else if (cardChange5 != 'n' && cardChange5 != 'y') {
+                                        std::cout << "Not a valid option! (y/n)\n";
+                                        std::cin >> cardChange5;
+                                    }
+                                    else {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
 
                 }
