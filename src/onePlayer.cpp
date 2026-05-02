@@ -210,6 +210,13 @@ void Poker::onePlayer(size_t& credit, size_t creditRequirement) {
             std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
         }
     }
+
+    auto h2 = std::find(pokerCards.begin(), pokerCards.end(), twoHeart);
+
+    if (h2 != pokerCards.end()) {
+
+    }
+
     std::cout << "You have recieved $" << creditReward << "\n";
     std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
 

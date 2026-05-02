@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmylib.a CMakeFiles/mylib.dir/cards.cpp.o CMakeFiles/mylib.dir/instructions.cpp.o CMakeFiles/mylib.dir/onePlayer.cpp.o CMakeFiles/mylib.dir/twoPlayers.cpp.o CMakeFiles/mylib.dir/freeCredits.cpp.o CMakeFiles/mylib.dir/credits.cpp.o
-/usr/bin/ranlib libmylib.a
