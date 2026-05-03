@@ -6,7 +6,7 @@
 
 #include <mylib/poker.h>
 
-void Poker::freeCredits(size_t& credit) {
+void Poker::freeCredits(double& credit) {
     
     // vector that a random selector value will select one of the elements
     std::vector<size_t> randomNumber = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 20, 20, 100};

@@ -5,7 +5,7 @@
 
 #include <mylib/poker.h>
 
-void Poker::credits(size_t& credit) {
+void Poker::credits(double& credit) {
     
     // Display your credit balance when inputting '3'
     std::cout << "Your credit balance: $" << credit << "\n";

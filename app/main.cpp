@@ -7,7 +7,7 @@
 int main() {
 
     int option;
-    size_t credit = 100;
+    double credit = 100.0;
     size_t creditRequirement = 100;
     Poker obj;
 
