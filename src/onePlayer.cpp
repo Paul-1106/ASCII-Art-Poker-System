@@ -44,6 +44,73 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
+    // Poker card code if card code is in user's poker hand
+    auto h2 = std::find(pokerCards.begin(), pokerCards.end(), twoHeart);
+    auto d2 = std::find(pokerCards.begin(), pokerCards.end(), twoDiamond);
+    auto c2 = std::find(pokerCards.begin(), pokerCards.end(), twoClub);
+    auto s2 = std::find(pokerCards.begin(), pokerCards.end(), twoSpade);
+    auto q2 = std::find(pokerCards.begin(), pokerCards.end(), twoQuatrefoil);
+    auto h3 = std::find(pokerCards.begin(), pokerCards.end(), threeHeart);
+    auto d3 = std::find(pokerCards.begin(), pokerCards.end(), threeDiamond);
+    auto c3 = std::find(pokerCards.begin(), pokerCards.end(), threeClub);
+    auto s3 = std::find(pokerCards.begin(), pokerCards.end(), threeSpade);
+    auto q3 = std::find(pokerCards.begin(), pokerCards.end(), threeQuatrefoil);
+    auto h4 = std::find(pokerCards.begin(), pokerCards.end(), fourHeart);
+    auto d4 = std::find(pokerCards.begin(), pokerCards.end(), fourDiamond);
+    auto c4 = std::find(pokerCards.begin(), pokerCards.end(), fourClub);
+    auto s4 = std::find(pokerCards.begin(), pokerCards.end(), fourSpade);
+    auto q4 = std::find(pokerCards.begin(), pokerCards.end(), fourQuatrefoil);
+    auto h5 = std::find(pokerCards.begin(), pokerCards.end(), fiveHeart);
+    auto d5 = std::find(pokerCards.begin(), pokerCards.end(), fiveDiamond);
+    auto c5 = std::find(pokerCards.begin(), pokerCards.end(), fiveClub);
+    auto s5 = std::find(pokerCards.begin(), pokerCards.end(), fiveSpade);
+    auto q5 = std::find(pokerCards.begin(), pokerCards.end(), fiveQuatrefoil);
+    auto h6 = std::find(pokerCards.begin(), pokerCards.end(), sixHeart);
+    auto d6 = std::find(pokerCards.begin(), pokerCards.end(), sixDiamond);
+    auto c6 = std::find(pokerCards.begin(), pokerCards.end(), sixClub);
+    auto s6 = std::find(pokerCards.begin(), pokerCards.end(), sixSpade);
+    auto q6 = std::find(pokerCards.begin(), pokerCards.end(), sixQuatrefoil);
+    auto h7 = std::find(pokerCards.begin(), pokerCards.end(), sevenHeart);
+    auto d7 = std::find(pokerCards.begin(), pokerCards.end(), sevenDiamond);
+    auto c7 = std::find(pokerCards.begin(), pokerCards.end(), sevenClub);
+    auto s7 = std::find(pokerCards.begin(), pokerCards.end(), sevenSpade);
+    auto q7 = std::find(pokerCards.begin(), pokerCards.end(), sevenQuatrefoil);
+    auto h8 = std::find(pokerCards.begin(), pokerCards.end(), eightHeart);
+    auto d8 = std::find(pokerCards.begin(), pokerCards.end(), eightDiamond);
+    auto c8 = std::find(pokerCards.begin(), pokerCards.end(), eightClub);
+    auto s8 = std::find(pokerCards.begin(), pokerCards.end(), eightSpade);
+    auto q8 = std::find(pokerCards.begin(), pokerCards.end(), eightQuatrefoil);
+    auto h9 = std::find(pokerCards.begin(), pokerCards.end(), nineHeart);
+    auto d9 = std::find(pokerCards.begin(), pokerCards.end(), nineDiamond);
+    auto c9 = std::find(pokerCards.begin(), pokerCards.end(), nineClub);
+    auto s9 = std::find(pokerCards.begin(), pokerCards.end(), nineSpade);
+    auto q9 = std::find(pokerCards.begin(), pokerCards.end(), nineQuatrefoil);
+    auto h10 = std::find(pokerCards.begin(), pokerCards.end(), tenHeart);
+    auto d10 = std::find(pokerCards.begin(), pokerCards.end(), tenDiamond);
+    auto c10 = std::find(pokerCards.begin(), pokerCards.end(), tenClub);
+    auto s10 = std::find(pokerCards.begin(), pokerCards.end(), tenSpade);
+    auto q10 = std::find(pokerCards.begin(), pokerCards.end(), tenQuatrefoil);
+    auto hJack = std::find(pokerCards.begin(), pokerCards.end(), jackHeart);
+    auto dJack = std::find(pokerCards.begin(), pokerCards.end(), jackDiamond);
+    auto cJack = std::find(pokerCards.begin(), pokerCards.end(), jackClub);
+    auto sJack = std::find(pokerCards.begin(), pokerCards.end(), jackSpade);
+    auto qJack = std::find(pokerCards.begin(), pokerCards.end(), jackQuatrefoil);
+    auto hQueen = std::find(pokerCards.begin(), pokerCards.end(), queenHeart);
+    auto dQueen = std::find(pokerCards.begin(), pokerCards.end(), queenDiamond);
+    auto cQueen = std::find(pokerCards.begin(), pokerCards.end(), queenClub);
+    auto sQueen = std::find(pokerCards.begin(), pokerCards.end(), queenSpade);
+    auto qQueen = std::find(pokerCards.begin(), pokerCards.end(), queenQuatrefoil);
+    auto hKing = std::find(pokerCards.begin(), pokerCards.end(), kingHeart);
+    auto dKing = std::find(pokerCards.begin(), pokerCards.end(), kingDiamond);
+    auto cKing = std::find(pokerCards.begin(), pokerCards.end(), kingClub);
+    auto sKing = std::find(pokerCards.begin(), pokerCards.end(), kingSpade);
+    auto qKing = std::find(pokerCards.begin(), pokerCards.end(), kingQuatrefoil);
+    auto hAce = std::find(pokerCards.begin(), pokerCards.end(), aceHeart);
+    auto dAce = std::find(pokerCards.begin(), pokerCards.end(), aceDiamond);
+    auto cAce = std::find(pokerCards.begin(), pokerCards.end(), aceClub);
+    auto sAce = std::find(pokerCards.begin(), pokerCards.end(), aceSpade);
+    auto qAce = std::find(pokerCards.begin(), pokerCards.end(), aceQuatrefoil);
+
     // Comparing each hand deck to points
     std::pair<std::string, double> highCard = {"High Card", 0.0};
     std::pair<std::string, double> pairCard = {"Pair", 1.0};
@@ -210,74 +277,6 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
         }
     }
-
-
-    // Poker card code if card code is in user's poker hand
-    auto h2 = std::find(pokerCards.begin(), pokerCards.end(), twoHeart);
-    auto d2 = std::find(pokerCards.begin(), pokerCards.end(), twoDiamond);
-    auto c2 = std::find(pokerCards.begin(), pokerCards.end(), twoClub);
-    auto s2 = std::find(pokerCards.begin(), pokerCards.end(), twoSpade);
-    auto q2 = std::find(pokerCards.begin(), pokerCards.end(), twoQuatrefoil);
-    auto h3 = std::find(pokerCards.begin(), pokerCards.end(), threeHeart);
-    auto d3 = std::find(pokerCards.begin(), pokerCards.end(), threeDiamond);
-    auto c3 = std::find(pokerCards.begin(), pokerCards.end(), threeClub);
-    auto s3 = std::find(pokerCards.begin(), pokerCards.end(), threeSpade);
-    auto q3 = std::find(pokerCards.begin(), pokerCards.end(), threeQuatrefoil);
-    auto h4 = std::find(pokerCards.begin(), pokerCards.end(), fourHeart);
-    auto d4 = std::find(pokerCards.begin(), pokerCards.end(), fourDiamond);
-    auto c4 = std::find(pokerCards.begin(), pokerCards.end(), fourClub);
-    auto s4 = std::find(pokerCards.begin(), pokerCards.end(), fourSpade);
-    auto q4 = std::find(pokerCards.begin(), pokerCards.end(), fourQuatrefoil);
-    auto h5 = std::find(pokerCards.begin(), pokerCards.end(), fiveHeart);
-    auto d5 = std::find(pokerCards.begin(), pokerCards.end(), fiveDiamond);
-    auto c5 = std::find(pokerCards.begin(), pokerCards.end(), fiveClub);
-    auto s5 = std::find(pokerCards.begin(), pokerCards.end(), fiveSpade);
-    auto q5 = std::find(pokerCards.begin(), pokerCards.end(), fiveQuatrefoil);
-    auto h6 = std::find(pokerCards.begin(), pokerCards.end(), sixHeart);
-    auto d6 = std::find(pokerCards.begin(), pokerCards.end(), sixDiamond);
-    auto c6 = std::find(pokerCards.begin(), pokerCards.end(), sixClub);
-    auto s6 = std::find(pokerCards.begin(), pokerCards.end(), sixSpade);
-    auto q6 = std::find(pokerCards.begin(), pokerCards.end(), sixQuatrefoil);
-    auto h7 = std::find(pokerCards.begin(), pokerCards.end(), sevenHeart);
-    auto d7 = std::find(pokerCards.begin(), pokerCards.end(), sevenDiamond);
-    auto c7 = std::find(pokerCards.begin(), pokerCards.end(), sevenClub);
-    auto s7 = std::find(pokerCards.begin(), pokerCards.end(), sevenSpade);
-    auto q7 = std::find(pokerCards.begin(), pokerCards.end(), sevenQuatrefoil);
-    auto h8 = std::find(pokerCards.begin(), pokerCards.end(), eightHeart);
-    auto d8 = std::find(pokerCards.begin(), pokerCards.end(), eightDiamond);
-    auto c8 = std::find(pokerCards.begin(), pokerCards.end(), eightClub);
-    auto s8 = std::find(pokerCards.begin(), pokerCards.end(), eightSpade);
-    auto q8 = std::find(pokerCards.begin(), pokerCards.end(), eightQuatrefoil);
-    auto h9 = std::find(pokerCards.begin(), pokerCards.end(), nineHeart);
-    auto d9 = std::find(pokerCards.begin(), pokerCards.end(), nineDiamond);
-    auto c9 = std::find(pokerCards.begin(), pokerCards.end(), nineClub);
-    auto s9 = std::find(pokerCards.begin(), pokerCards.end(), nineSpade);
-    auto q9 = std::find(pokerCards.begin(), pokerCards.end(), nineQuatrefoil);
-    auto h10 = std::find(pokerCards.begin(), pokerCards.end(), tenHeart);
-    auto d10 = std::find(pokerCards.begin(), pokerCards.end(), tenDiamond);
-    auto c10 = std::find(pokerCards.begin(), pokerCards.end(), tenClub);
-    auto s10 = std::find(pokerCards.begin(), pokerCards.end(), tenSpade);
-    auto q10 = std::find(pokerCards.begin(), pokerCards.end(), tenQuatrefoil);
-    auto hJack = std::find(pokerCards.begin(), pokerCards.end(), jackHeart);
-    auto dJack = std::find(pokerCards.begin(), pokerCards.end(), jackDiamond);
-    auto cJack = std::find(pokerCards.begin(), pokerCards.end(), jackClub);
-    auto sJack = std::find(pokerCards.begin(), pokerCards.end(), jackSpade);
-    auto qJack = std::find(pokerCards.begin(), pokerCards.end(), jackQuatrefoil);
-    auto hQueen = std::find(pokerCards.begin(), pokerCards.end(), queenHeart);
-    auto dQueen = std::find(pokerCards.begin(), pokerCards.end(), queenDiamond);
-    auto cQueen = std::find(pokerCards.begin(), pokerCards.end(), queenClub);
-    auto sQueen = std::find(pokerCards.begin(), pokerCards.end(), queenSpade);
-    auto qQueen = std::find(pokerCards.begin(), pokerCards.end(), queenQuatrefoil);
-    auto hKing = std::find(pokerCards.begin(), pokerCards.end(), kingHeart);
-    auto dKing = std::find(pokerCards.begin(), pokerCards.end(), kingDiamond);
-    auto cKing = std::find(pokerCards.begin(), pokerCards.end(), kingClub);
-    auto sKing = std::find(pokerCards.begin(), pokerCards.end(), kingSpade);
-    auto qKing = std::find(pokerCards.begin(), pokerCards.end(), kingQuatrefoil);
-    auto hAce = std::find(pokerCards.begin(), pokerCards.end(), aceHeart);
-    auto dAce = std::find(pokerCards.begin(), pokerCards.end(), aceDiamond);
-    auto cAce = std::find(pokerCards.begin(), pokerCards.end(), aceClub);
-    auto sAce = std::find(pokerCards.begin(), pokerCards.end(), aceSpade);
-    auto qAce = std::find(pokerCards.begin(), pokerCards.end(), aceQuatrefoil);
 
     // Determine a poker hand rank based on user's cards
     if (h2 != pokerCards.end() && d2 != pokerCards.end() && c2 != pokerCards.end() && s2 != pokerCards.end() && q2 != pokerCards.end()) {
