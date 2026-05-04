@@ -12,9 +12,9 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     double creditBet;
     double creditReward;
     size_t points = 0;
-    std::string card1, card2, card3, card4, card5;
+    std::string randomCard, randomCard2, randomCard3, randomCard4, randomCard5;
     char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
-    std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
+    // std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
 
     // Adding elements to have access from the 'cards.cpp' file
@@ -278,8 +278,11 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         }
     }
 
+    // All updated poker cards will be in the 'handDeck' container
+    std::vector<std::string> handDeck = {randomCard, randomCard2, randomCard3, randomCard4, randomCard5};
+
     // Determine a poker hand rank based on user's cards
-    if (h2 != pokerCards.end() && d2 != pokerCards.end() && c2 != pokerCards.end() && s2 != pokerCards.end() && q2 != pokerCards.end()) {
+    if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end() && q2 != handDeck.end()) {
 
         std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
         
@@ -287,7 +290,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward; // Total amount of rewards will add to the user's balance
     }
-    else if (h10 != pokerCards.end() && hJack != pokerCards.end() && hQueen != pokerCards.end() && hKing != pokerCards.end() && hAce != pokerCards.end()) {
+    else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
 
         std::cout << royalFlushCard.first << "\n";
 
@@ -295,7 +298,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (hAce != pokerCards.end() && h2 != pokerCards.end() && h3 != pokerCards.end() && h4 != pokerCards.end() && h5 != pokerCards.end()) {
+    else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
 
         std::cout << straightFlushCard.first << "\n";
         
@@ -303,7 +306,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d2 != pokerCards.end() && c2 != pokerCards.end() && s2 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
 
         std::cout << fourKindCard.first << "\n";
         
@@ -311,7 +314,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d2 != pokerCards.end() && h3 != pokerCards.end() && d3 != pokerCards.end() && c3 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
         
         std::cout << fullHouseCard.first << "\n";
         
@@ -319,7 +322,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && h4 != pokerCards.end() && h5 != pokerCards.end() && h7 != pokerCards.end() && h8 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
         
         std::cout << flushCard.first << "\n";
         
@@ -327,7 +330,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d3 != pokerCards.end() && c4 != pokerCards.end() && s5 != pokerCards.end() && q6 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
         
         std::cout << straightCard.first << "\n";
         
@@ -335,7 +338,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d2 != pokerCards.end() && c2 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
         
         std::cout << threeKindCard.first << "\n";
         
@@ -343,7 +346,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d2 != pokerCards.end() && h3 != pokerCards.end() && d3 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
         
         std::cout << twoPairCard.first << "\n";
         
@@ -351,7 +354,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         std::cout << "You have recieved $" << creditReward << "\n";
         credit += creditReward;
     }
-    else if (h2 != pokerCards.end() && d2 != pokerCards.end()) {
+    else if (h2 != handDeck.end() && d2 != handDeck.end()) {
         
         std::cout << pairCard.first << "\n";
         
