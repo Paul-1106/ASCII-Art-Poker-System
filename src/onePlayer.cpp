@@ -115,17 +115,22 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     auto qAce = std::find(handDeck.begin(), handDeck.end(), aceQuatrefoil);
 
     // Comparing each hand deck to points
-    std::pair<std::string, double> highCard = {"High Card", 0.0};
-    std::pair<std::string, double> pairCard = {"Pair", 1.0};
-    std::pair<std::string, double> twoPairCard = {"Two Pair", 1.5};
-    std::pair<std::string, double> threeKindCard = {"Three of a Kind", 2.5};
-    std::pair<std::string, double> straightCard = {"Straight", 4.5};
-    std::pair<std::string, double> flushCard = {"Flush", 8.0};
-    std::pair<std::string, double> fullHouseCard = {"Full House", 12.5};
-    std::pair<std::string, double> fourKindCard = {"Four of a Kind", 20.0};
-    std::pair<std::string, double> straightFlushCard = {"Straight Flush", 40.5};
-    std::pair<std::string, double> royalFlushCard = {"Royal Flush", 75.5};
-    std::pair<std::string, double> fiveKindCard = {"Five of a Kind", 100.0}; 
+    std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
+    std::pair<std::string, double> pairCard = {"[PAIR]", 1.0};
+    std::pair<std::string, double> twoPairCard = {"[TWO PAIRS]", 1.5};
+    std::pair<std::string, double> threeKindCard = {"[THREE OF A KIND]", 2.5};
+    std::pair<std::string, double> straightCard = {"[STRAIGHT]", 4.5};
+    std::pair<std::string, double> flushCard = {"[FLUSH]", 8.0};
+    std::pair<std::string, double> fullHouseCard = {"[FULL HOUSE]", 12.5};
+    std::pair<std::string, double> fourKindCard = {"[FOUR OF A KIND]", 20.0};
+    std::pair<std::string, double> straightFlushCard = {"[STRAIGHT FLUSH]", 40.5};
+    std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 75.5};
+    std::pair<std::string, double> fiveKindCard = {"[FIVE OF A KIND]", 100.0}; 
+
+    // return this condition if the credit balance is less than 100
+    if (credit < creditRequirement) {
+        std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
+    }
 
     // The reqirement of playing one player mode of poker is to have at least 100 credits in credit balance
     while (credit >= creditRequirement && turn < 2) {
@@ -140,7 +145,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
 
-                std::cout << "You have beted " << creditBet << " credits\n\n";
+                std::cout << "You have bet $" << creditBet << " credits\n\n";
                 credit -= creditBet;
 
                 // Random card selector (1/5)
@@ -263,113 +268,200 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                 else if (swap == 'p') {
 
                     turn += 1;
+
+                    if (h2 != handDeck.end()) {
+
+                        std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
+                        
+                        creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward; // Total amount of rewards will add to the user's balance
+                    }
+                    else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
+
+                        std::cout << royalFlushCard.first << "\n";
+
+                        creditReward = creditBet * royalFlushCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
+
+                        std::cout << straightFlushCard.first << "\n";
+                        
+                        creditReward = creditBet * straightFlushCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
+
+                        std::cout << fourKindCard.first << "\n";
+                        
+                        creditReward = creditBet * fourKindCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
+                        
+                        std::cout << fullHouseCard.first << "\n";
+                        
+                        creditReward = creditBet * fullHouseCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
+                        
+                        std::cout << flushCard.first << "\n";
+                        
+                        creditReward = creditBet * flushCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
+                        
+                        std::cout << straightCard.first << "\n";
+                        
+                        creditReward = creditBet * straightCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
+                        
+                        std::cout << threeKindCard.first << "\n";
+                        
+                        creditReward = creditBet * threeKindCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
+                        
+                        std::cout << twoPairCard.first << "\n";
+                        
+                        creditReward = creditBet * twoPairCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else if (h2 != handDeck.end() && d2 != handDeck.end()) {
+                        
+                        std::cout << pairCard.first << "\n";
+                        
+                        creditReward = creditBet * pairCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    else {
+                        
+                        std::cout << highCard.first << "\n";
+                        
+                        creditReward = creditBet * highCard.second;
+                        std::cout << "You have recieved $" << creditReward << "\n";
+                        credit += creditReward;
+                    }
+                    std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
+                    break;
                 }
                 else {
                     std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
                     std::cin >> swap;
                 }
-                break;
             }
             // If user input less than 100 credits
             else {
                 std::cout << "You need to bet at least 100 credits to play poker\n";
+                std::cin >> creditBet;
             }
         }
-        // return this condition if the credit balance is less than 100 
-        else {
-            std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
+
+        // Determine a poker hand rank based on user's cards
+        if (h2 != handDeck.end()) {
+
+            std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
+            
+            creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward; // Total amount of rewards will add to the user's balance
         }
-    }
+        else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
 
-    // Determine a poker hand rank based on user's cards
-    if (h2 != handDeck.end()) {
+            std::cout << royalFlushCard.first << "\n";
 
-        std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
-        
-        creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward; // Total amount of rewards will add to the user's balance
-    }
-    else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
+            creditReward = creditBet * royalFlushCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
 
-        std::cout << royalFlushCard.first << "\n";
+            std::cout << straightFlushCard.first << "\n";
+            
+            creditReward = creditBet * straightFlushCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
 
-        creditReward = creditBet * royalFlushCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
+            std::cout << fourKindCard.first << "\n";
+            
+            creditReward = creditBet * fourKindCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
+            
+            std::cout << fullHouseCard.first << "\n";
+            
+            creditReward = creditBet * fullHouseCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
+            
+            std::cout << flushCard.first << "\n";
+            
+            creditReward = creditBet * flushCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
+            
+            std::cout << straightCard.first << "\n";
+            
+            creditReward = creditBet * straightCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
+            
+            std::cout << threeKindCard.first << "\n";
+            
+            creditReward = creditBet * threeKindCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
+            
+            std::cout << twoPairCard.first << "\n";
+            
+            creditReward = creditBet * twoPairCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else if (h2 != handDeck.end() && d2 != handDeck.end()) {
+            
+            std::cout << pairCard.first << "\n";
+            
+            creditReward = creditBet * pairCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        else {
+            
+            std::cout << highCard.first << "\n";
+            
+            creditReward = creditBet * highCard.second;
+            std::cout << "You have recieved $" << creditReward << "\n";
+            credit += creditReward;
+        }
+        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
+        break;
     }
-    else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
-
-        std::cout << straightFlushCard.first << "\n";
-        
-        creditReward = creditBet * straightFlushCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
-
-        std::cout << fourKindCard.first << "\n";
-        
-        creditReward = creditBet * fourKindCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
-        
-        std::cout << fullHouseCard.first << "\n";
-        
-        creditReward = creditBet * fullHouseCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
-        
-        std::cout << flushCard.first << "\n";
-        
-        creditReward = creditBet * flushCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
-        
-        std::cout << straightCard.first << "\n";
-        
-        creditReward = creditBet * straightCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
-        
-        std::cout << threeKindCard.first << "\n";
-        
-        creditReward = creditBet * threeKindCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
-        
-        std::cout << twoPairCard.first << "\n";
-        
-        creditReward = creditBet * twoPairCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else if (h2 != handDeck.end() && d2 != handDeck.end()) {
-        
-        std::cout << pairCard.first << "\n";
-        
-        creditReward = creditBet * pairCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-    else {
-        
-        std::cout << highCard.first << "\n";
-        
-        creditReward = creditBet * highCard.second;
-        std::cout << "You have recieved $" << creditReward << "\n";
-        credit += creditReward;
-    }
-
-    std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
 }

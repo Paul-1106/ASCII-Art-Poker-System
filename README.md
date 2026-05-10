@@ -44,4 +44,13 @@ set(CMAKE-CXX-STANDARD 20)
 <br>
 Line 39: The current version of CMake that will build this project<br>
 Line 40: The title of the project<br>
-Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ features)<br>
+Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ features)<br><br>
+
+<h2>Overcome Challenges</h2>
+
+<h4>CMake and G++ compiler</h4>
+- This project was my very first time implementing a CMake and g++ and use it as my full built-in system. Using g++ for the first time was not as difficult, but building a CMake to my project took me a while to build, especially when I created multiple C++ files including the header.<br>
+
+<h4>onePlayer.cpp file</h4>
+- I have ended up creating a whole bunch of lines and that is because of implementing betting/gambling credits.
+- When creating an option of swapping cards at once after displaying cards, it took me a while (days) to debug the code.
