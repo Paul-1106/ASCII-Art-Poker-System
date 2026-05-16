@@ -53,4 +53,8 @@ Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ 
 
 <h4>onePlayer.cpp file</h4>
 - I have ended up creating a whole bunch of lines and that is because of implementing betting/gambling credits.
-- When creating an option of swapping cards at once after displaying cards, it took me a while (days) to debug the code.
+- When creating an option of swapping cards at once after displaying cards, it took me a while (days) to debug the code.<br>
+
+<h4>Lines of Code</h4>
+- CPP files like onePlayer and twoPlayers takes up over thousand line of code for each functionality of poker hand rank, but poker hand like "Five of a Kind" and 
+"Royal Flush" is not as bad. <br>
