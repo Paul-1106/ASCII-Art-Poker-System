@@ -1240,6 +1240,96 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                             c2 != handDeck.end() && q2 != handDeck.end() && d10 != handDeck.end() && s10 != handDeck.end() && q10 != handDeck.end() ||
                             s2 != handDeck.end() && h2 != handDeck.end() && d10 != handDeck.end() && s10 != handDeck.end() && q10 != handDeck.end() ||
                             q2 != handDeck.end() && d2 != handDeck.end() && d10 != handDeck.end() && s10 != handDeck.end() && q10 != handDeck.end() || ////
+                            h2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() || // 
+                            h2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && hJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() || //
+                            h2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            h2 != handDeck.end() && c2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            d2 != handDeck.end() && s2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            c2 != handDeck.end() && q2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            s2 != handDeck.end() && h2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
+                            q2 != handDeck.end() && d2 != handDeck.end() && dJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() || ////
                             h2 != handDeck.end() && d2 != handDeck.end() && h10 != handDeck.end() && d10 != handDeck.end() && cJack != handDeck.end() ||
                             d2 != handDeck.end() && c2 != handDeck.end() && h10 != handDeck.end() && d10 != handDeck.end() && cJack != handDeck.end() ||
                             c2 != handDeck.end() && s2 != handDeck.end() && h10 != handDeck.end() && d10 != handDeck.end() && cJack != handDeck.end() ||
