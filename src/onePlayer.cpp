@@ -4660,95 +4660,95 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                             c4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
                             s4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
                             q4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || ////
-                            h4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() || // 
-                            h4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() || // 
+                            h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() || //
+                            h5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            q5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            h5 != handDeck.end() && c5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            d5 != handDeck.end() && s5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            c5 != handDeck.end() && q5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
+                            s5 != handDeck.end() && h5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end() ||
                             q5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end()    ////////
                         ) {
                         
