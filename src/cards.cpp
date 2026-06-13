@@ -22,7 +22,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*      o  *\n"
            "*  ooooo  *\n"
            "*  o      *\n"
-           "*  ooooo  *\n"
+           "*2 ooooo  *\n"
            "***********\n";
     
     twoD = "***********\n" // Suit: Diamond
@@ -30,7 +30,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*      o  *\n"
            "*  ooooo  *\n"
            "*  o      *\n"
-           "*  ooooo  *\n"
+           "*2 ooooo  *\n"
            "***********\n";
 
     twoC = "***********\n" // Suit: Clover
@@ -38,7 +38,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*      o  *\n"
            "*  ooooo  *\n"
            "*  o      *\n"
-           "*  ooooo  *\n"
+           "*2 ooooo  *\n"
            "***********\n";
 
     twoS = "***********\n" // Suit: Spade
@@ -46,7 +46,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*      o  *\n"
            "*  ooooo  *\n"
            "*  o      *\n"
-           "*  ooooo  *\n"
+           "*2 ooooo  *\n"
            "***********\n";
 
     twoQ = "***********\n" // Suit: Quatrefoil
@@ -54,7 +54,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*      o  *\n"
            "*  ooooo  *\n"
            "*  o      *\n"
-           "*  ooooo  *\n"
+           "*2 ooooo  *\n"
            "***********\n";
 
     threeH = "***********\n" 
@@ -62,7 +62,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*  ooooo  *\n"
              "*      o  *\n"
-             "*  ooooo  *\n"
+             "*3 ooooo  *\n"
              "***********\n";
     
     threeD = "***********\n" 
@@ -70,7 +70,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*  ooooo  *\n"
              "*      o  *\n"
-             "*  ooooo  *\n"
+             "*3 ooooo  *\n"
              "***********\n";
 
     threeC = "***********\n"
@@ -78,7 +78,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*  ooooo  *\n"
              "*      o  *\n"
-             "*  ooooo  *\n"
+             "*3 ooooo  *\n"
             "***********\n";
 
     threeS = "***********\n" 
@@ -86,7 +86,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*  ooooo  *\n"
              "*      o  *\n"
-             "*  ooooo  *\n"
+             "*3 ooooo  *\n"
              "***********\n";
 
     threeQ = "***********\n" 
@@ -94,7 +94,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*  ooooo  *\n"
              "*      o  *\n"
-             "*  ooooo  *\n"
+             "*3 ooooo  *\n"
              "***********\n";
 
     fourH = "***********\n" 
@@ -102,7 +102,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*      o  *\n"
+            "*4     o  *\n"
             "***********\n";
     
     fourD = "***********\n" 
@@ -110,7 +110,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*      o  *\n"
+            "*4     o  *\n"
             "***********\n";
 
     fourC = "***********\n"
@@ -118,7 +118,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*      o  *\n"
+            "*4     o  *\n"
             "***********\n";
 
     fourS = "***********\n" 
@@ -126,7 +126,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*      o  *\n"
+            "*4     o  *\n"
             "***********\n";
 
     fourQ = "***********\n" 
@@ -134,7 +134,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*      o  *\n"
+            "*4     o  *\n"
             "***********\n";
 
     fiveH = "***********\n" 
@@ -142,7 +142,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o      *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*5 ooooo  *\n"
             "***********\n";
     
     fiveD = "***********\n" 
@@ -150,7 +150,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o      *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*5 ooooo  *\n"
             "***********\n";
 
     fiveC = "***********\n"
@@ -158,7 +158,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o      *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*5 ooooo  *\n"
             "***********\n";
 
     fiveS = "***********\n" 
@@ -166,7 +166,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o      *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*5 ooooo  *\n"
             "***********\n";
 
     fiveQ = "***********\n" 
@@ -174,7 +174,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o      *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*5 ooooo  *\n"
             "***********\n";
 
     sixH = "***********\n"
@@ -182,7 +182,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o      *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  ooooo  *\n"
+           "*6 ooooo  *\n"
            "***********\n";
     
     sixD = "***********\n" 
@@ -190,7 +190,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o      *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  ooooo  *\n"
+           "*6 ooooo  *\n"
            "***********\n";
 
     sixC = "***********\n" 
@@ -198,7 +198,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o      *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  ooooo  *\n"
+           "*6 ooooo  *\n"
            "***********\n";
 
     sixS = "***********\n" 
@@ -206,7 +206,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o      *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  ooooo  *\n"
+           "*6 ooooo  *\n"
            "***********\n";
 
     sixQ = "***********\n" 
@@ -214,7 +214,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o      *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  ooooo  *\n"
+           "*6 ooooo  *\n"
            "***********\n";
 
     sevenH = "***********\n" 
@@ -222,7 +222,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*     o   *\n"
              "*     o   *\n"
-             "*     o   *\n"
+             "*7    o   *\n"
              "***********\n";
     
     sevenD = "***********\n" 
@@ -230,7 +230,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*     o   *\n"
              "*     o   *\n"
-             "*     o   *\n"
+             "*7    o   *\n"
              "***********\n";
 
     sevenC = "***********\n"
@@ -238,7 +238,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*     o   *\n"
              "*     o   *\n"
-             "*     o   *\n"
+             "*7    o   *\n"
              "***********\n";
 
     sevenS = "***********\n" 
@@ -246,7 +246,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*     o   *\n"
              "*     o   *\n"
-             "*     o   *\n"
+             "*7    o   *\n"
              "***********\n";
 
     sevenQ = "***********\n" 
@@ -254,7 +254,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*      o  *\n"
              "*     o   *\n"
              "*     o   *\n"
-             "*     o   *\n"
+             "*7    o   *\n"
              "***********\n";
 
     eightH = "***********\n" 
@@ -262,7 +262,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*  o   o  *\n"
              "*  ooooo  *\n"
              "*  o   o  *\n"
-             "*  ooooo  *\n"
+             "*8 ooooo  *\n"
              "***********\n";
     
     eightD = "***********\n" 
@@ -270,7 +270,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*  o   o  *\n"
              "*  ooooo  *\n"
              "*  o   o  *\n"
-             "*  ooooo  *\n"
+             "*8 ooooo  *\n"
              "***********\n";
 
     eightC = "***********\n"
@@ -278,7 +278,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*  o   o  *\n"
              "*  ooooo  *\n"
              "*  o   o  *\n"
-             "*  ooooo  *\n"
+             "*8 ooooo  *\n"
              "***********\n";
 
     eightS = "***********\n" 
@@ -286,7 +286,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*  o   o  *\n"
              "*  ooooo  *\n"
              "*  o   o  *\n"
-             "*  ooooo  *\n"
+             "*8 ooooo  *\n"
              "***********\n";
 
     eightQ = "***********\n" 
@@ -294,7 +294,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "*  o   o  *\n"
              "*  ooooo  *\n"
              "*  o   o  *\n"
-             "*  ooooo  *\n"
+             "*8 ooooo  *\n"
              "***********\n";
 
     nineH = "***********\n" 
@@ -302,7 +302,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*9 ooooo  *\n"
             "***********\n";
     
     nineD = "***********\n" 
@@ -310,7 +310,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*9 ooooo  *\n"
             "***********\n";
 
     nineC = "***********\n"
@@ -318,7 +318,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*9 ooooo  *\n"
             "***********\n";
 
     nineS = "***********\n" 
@@ -326,7 +326,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*9 ooooo  *\n"
             "***********\n";
 
     nineQ = "***********\n" 
@@ -334,7 +334,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o   o  *\n"
             "*  ooooo  *\n"
             "*      o  *\n"
-            "*  ooooo  *\n"
+            "*9 ooooo  *\n"
             "***********\n";
 
     tenH = "***********\n"
@@ -342,7 +342,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*    o    *\n"
            "*    o    *\n"
            "*    o    *\n"
-           "*    o    *\n"
+           "*10  o    *\n"
            "***********\n";
     
     tenD = "***********\n" 
@@ -350,7 +350,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*    o    *\n"
            "*    o    *\n"
            "*    o    *\n"
-           "*    o    *\n"
+           "*10  o    *\n"
            "***********\n";
 
     tenC = "***********\n" 
@@ -358,7 +358,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*    o    *\n"
            "*    o    *\n"
            "*    o    *\n"
-           "*    o    *\n"
+           "*10  o    *\n"
            "***********\n";
 
     tenS = "***********\n" 
@@ -366,7 +366,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*    o    *\n"
            "*    o    *\n"
            "*    o    *\n"
-           "*    o    *\n"
+           "*10  o    *\n"
            "***********\n";
 
     tenQ = "***********\n" 
@@ -374,7 +374,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*    o    *\n"
            "*    o    *\n"
            "*    o    *\n"
-           "*    o    *\n"
+           "*10  o    *\n"
            "***********\n";
 
     jackH = "***********\n" 
@@ -382,7 +382,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*    o    *\n"
             "*    o    *\n"
             "*  o o    *\n"
-            "*  ooo    *\n"
+            "*J ooo    *\n"
             "***********\n";
     
     jackD = "***********\n" 
@@ -390,7 +390,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*    o    *\n"
             "*    o    *\n"
             "*  o o    *\n"
-            "*  ooo    *\n"
+            "*J ooo    *\n"
             "***********\n";
 
     jackC = "***********\n"
@@ -398,7 +398,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*    o    *\n"
             "*    o    *\n"
             "*  o o    *\n"
-            "*  ooo    *\n"
+            "*J ooo    *\n"
             "***********\n";
 
     jackS = "***********\n" 
@@ -406,7 +406,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*    o    *\n"
             "*    o    *\n"
             "*  o o    *\n"
-            "*  ooo    *\n"
+            "*J ooo    *\n"
             "***********\n";
 
     jackQ = "***********\n" 
@@ -414,7 +414,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*    o    *\n"
             "*    o    *\n"
             "*  o o    *\n"
-            "*  ooo    *\n"
+            "*J ooo    *\n"
             "***********\n";
 
     queenH = "***********\n" 
@@ -422,7 +422,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "* o    o  *\n"
              "* oooooo  *\n"
              "*  o      *\n"
-             "*  ooo    *\n"
+             "*QU ooo   *\n"
              "***********\n";
     
     queenD = "***********\n" 
@@ -430,7 +430,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "* o    o  *\n"
              "* oooooo  *\n"
              "*  o      *\n"
-             "*  ooo    *\n"
+             "*QU ooo    *\n"
              "***********\n";
 
     queenC = "***********\n"
@@ -438,7 +438,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "* o    o  *\n"
              "* oooooo  *\n"
              "*  o      *\n"
-             "*  ooo    *\n"
+             "*QU ooo    *\n"
              "***********\n";
 
     queenS = "***********\n" 
@@ -446,7 +446,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "* o    o  *\n"
              "* oooooo  *\n"
              "*  o      *\n"
-             "*  ooo    *\n"
+             "*QU ooo    *\n"
              "***********\n";
 
     queenQ = "***********\n" 
@@ -454,7 +454,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
              "* o    o  *\n"
              "* oooooo  *\n"
              "*  o      *\n"
-             "*  ooo    *\n"
+             "*QU ooo    *\n"
              "***********\n";
 
     kingH = "***********\n" 
@@ -462,7 +462,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o o    *\n"
             "*  oo     *\n"
             "*  o o    *\n"
-            "*  o  oo  *\n"
+            "*K o  oo  *\n"
             "***********\n";
     
     kingD = "***********\n" 
@@ -470,7 +470,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o o    *\n"
             "*  oo     *\n"
             "*  o o    *\n"
-            "*  o  oo  *\n"
+            "*K o  oo  *\n"
             "***********\n";
 
     kingC = "***********\n"
@@ -478,7 +478,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o o    *\n"
             "*  oo     *\n"
             "*  o o    *\n"
-            "*  o  oo  *\n"
+            "*K o  oo  *\n"
             "***********\n";
 
     kingS = "***********\n" 
@@ -486,7 +486,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o o    *\n"
             "*  oo     *\n"
             "*  o o    *\n"
-            "*  o  oo  *\n"
+            "*K o  oo  *\n"
             "***********\n";
 
     kingQ = "***********\n" 
@@ -494,7 +494,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
             "*  o o    *\n"
             "*  oo     *\n"
             "*  o o    *\n"
-            "*  o  oo  *\n"
+            "*K o  oo  *\n"
             "***********\n";
 
     aceH = "***********\n"
@@ -502,7 +502,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o   o  *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  o   o  *\n"
+           "*A o   o  *\n"
            "***********\n";
     
     aceD = "***********\n" 
@@ -510,7 +510,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o   o  *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  o   o  *\n"
+           "*A o   o  *\n"
            "***********\n";
 
     aceC = "***********\n" 
@@ -518,7 +518,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o   o  *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  o   o  *\n"
+           "*A o   o  *\n"
            "***********\n";
 
     aceS = "***********\n" 
@@ -526,7 +526,7 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o   o  *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  o   o  *\n"
+           "*A o   o  *\n"
            "***********\n";
 
     aceQ = "***********\n" 
@@ -534,6 +534,6 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
            "*  o   o  *\n"
            "*  ooooo  *\n"
            "*  o   o  *\n"
-           "*  o   o  *\n"
+           "*A o   o  *\n"
            "***********\n";
 }

@@ -127,6 +127,9 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 75.5};
     std::pair<std::string, double> fiveKindCard = {"[FIVE OF A KIND]", 100.0}; 
 
+    // Rows of numbers inside of the array
+    std::vector<std::variant<std::string, int>> twoCard = {};
+
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
         std::cout << "You do not have enough credits to to play poker. Enter '5' on the menu page to receive free credits.\n";
@@ -4759,7 +4762,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                         credit += creditReward;
                     }
                     // FLUSH
-                    else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
+                    else if () {
                         
                         std::cout << flushCard.first << "\n";
                         
