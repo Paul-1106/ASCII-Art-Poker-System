@@ -118,17 +118,48 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
     std::pair<std::string, double> pairCard = {"[PAIR]", 1.0};
     std::pair<std::string, double> twoPairCard = {"[TWO PAIRS]", 1.5};
-    std::pair<std::string, double> threeKindCard = {"[THREE OF A KIND]", 2.5};
+    std::pair<std::string, double> threeKindCard = {"[THREE OF A KIND]", 3.0};
     std::pair<std::string, double> straightCard = {"[STRAIGHT]", 4.5};
-    std::pair<std::string, double> flushCard = {"[FLUSH]", 8.0};
-    std::pair<std::string, double> fullHouseCard = {"[FULL HOUSE]", 12.5};
+    std::pair<std::string, double> flushCard = {"[FLUSH]", 7.5};
+    std::pair<std::string, double> fullHouseCard = {"[FULL HOUSE]", 12.0};
     std::pair<std::string, double> fourKindCard = {"[FOUR OF A KIND]", 20.0};
-    std::pair<std::string, double> straightFlushCard = {"[STRAIGHT FLUSH]", 40.5};
-    std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 75.5};
+    std::pair<std::string, double> straightFlushCard = {"[STRAIGHT FLUSH]", 35.5};
+    std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 50.0};
     std::pair<std::string, double> fiveKindCard = {"[FIVE OF A KIND]", 100.0}; 
 
-    // Rows of numbers inside of the array
-    std::vector<std::variant<std::string, int>> twoCard = {};
+    // Row of number cards inside of the array
+    std::vector<std::string> aceCards = {aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
+    std::vector<std::string> twoCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil};
+    std::vector<std::string> threeCards = {threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil};
+    std::vector<std::string> fourCards = {fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil};
+    std::vector<std::string> fiveCards = {fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil};
+    std::vector<std::string> sixCards = {sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil};
+    std::vector<std::string> sevenCards = {sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil};
+    std::vector<std::string> eightCards = {eightHeart, eightDiamond, eightClub, eightSpade, eightQuatrefoil};
+    std::vector<std::string> nineCards = {nineHeart, nineDiamond, nineClub, nineSpade, nineQuatrefoil};
+    std::vector<std::string> tenCards = {tenHeart, tenDiamond, tenClub, tenSpade, tenQuatrefoil};
+
+    // Row of face cards inside of the array
+    std::vector<std::string> jackCards = {jackHeart, jackDiamond, jackClub, jackSpade, jackQuatrefoil};
+    std::vector<std::string> queenCards = {queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil};
+    std::vector<std::string> kingCards = {kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil};
+
+    // Row of suit cards inside of the array
+    std::vector<std::string> heartCards = {aceHeart, twoHeart, threeHeart, fourHeart, fiveHeart, sixHeart, sevenHeart, eightHeart, nineHeart,
+        tenHeart, jackHeart, queenHeart, kingHeart};
+    std::vector<std::string> diamondCards = {aceDiamond, twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond,
+        nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond};
+    std::vector<std::string> clubCards = {aceClub, twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eightClub, nineClub, tenClub,
+        jackClub, queenClub, kingClub};
+    std::vector<std::string> spadeCards = {aceSpade, twoSpade, threeSpade, fourSpade, fiveSpade, sixSpade, sevenSpade, eightSpade, nineSpade,
+        tenSpade, jackSpade, queenSpade, kingSpade};
+    std::vector<std::string> quatrefoilCards = {aceQuatrefoil, twoQuatrefoil, threeQuatrefoil, fourQuatrefoil, fiveQuatrefoil, sixQuatrefoil,
+        sevenQuatrefoil, eightQuatrefoil, nineQuatrefoil, tenQuatrefoil, jackQuatrefoil, queenQuatrefoil, kingQuatrefoil};
+
+
+    // Check if sub-array is included in global array
+    bool aceResult = std::includes(pokerCards.begin(), pokerCards.end(), aceCards.begin(), aceCards.end());
+    // CONTINUE //
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -4762,7 +4793,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                         credit += creditReward;
                     }
                     // FLUSH
-                    else if () {
+                    else if (h2 != handDeck.end()) {
                         
                         std::cout << flushCard.first << "\n";
                         
