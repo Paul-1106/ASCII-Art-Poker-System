@@ -1,3 +1,11 @@
+/*
+------------------------------------------
+
+DELUXE POKER SYSTEM GAME by Paul Harriott
+
+------------------------------------------
+*/
+
 #include <iostream>
 #include <vector>
 #include <string>

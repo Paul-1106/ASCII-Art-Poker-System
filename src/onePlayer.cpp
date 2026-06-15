@@ -35,6 +35,11 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                 queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
                 aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil);
 
+/*
+------------------------------
+ALL POKER CARDS (Line 44 - 50)
+------------------------------
+*/ 
     // A random selector will pick an element from a 'pokerHand' vector
     std::vector<std::string> pokerCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade,
             threeQuatrefoil, fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
@@ -157,9 +162,26 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         sevenQuatrefoil, eightQuatrefoil, nineQuatrefoil, tenQuatrefoil, jackQuatrefoil, queenQuatrefoil, kingQuatrefoil};
 
 
-    // Check if sub-array is included in global array
-    bool aceResult = std::includes(pokerCards.begin(), pokerCards.end(), aceCards.begin(), aceCards.end());
-    // CONTINUE //
+    // Check if one of the elements in sub-array is included in global poker cards array
+    auto aceResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), aceCards.begin(), aceCards.end());
+    auto twoResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), twoCards.begin(), twoCards.end());
+    auto threeResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), threeCards.begin(), threeCards.end());
+    auto fourResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), fourCards.begin(), fourCards.end());
+    auto fiveResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), fiveCards.begin(), fiveCards.end());
+    auto sixResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), sixCards.begin(), sixCards.end());
+    auto sevenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), sevenCards.begin(), sevenCards.end());
+    auto eightResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), eightCards.begin(), eightCards.end());
+    auto nineResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), nineCards.begin(), nineCards.end());
+    auto tenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), tenCards.begin(), tenCards.end());
+    auto jackResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), jackCards.begin(), jackCards.end());
+    auto queenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), queenCards.begin(), queenCards.end());
+    auto kingResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), kingCards.begin(), kingCards.end());
+
+    auto heartResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), heartCards.begin(), heartCards.end());
+    auto diamondResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), diamondCards.begin(), diamondCards.end());
+    auto clubResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), clubCards.begin(), clubCards.end());
+    auto spadeResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), spadeCards.begin(), spadeCards.end());
+    auto quatrefoilResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), quatrefoilCards.begin(), quatrefoilCards.end());
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -4604,96 +4626,96 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                             c4 != handDeck.end() && q4 != handDeck.end() && dQueen != handDeck.end() && sQueen != handDeck.end() && qQueen != handDeck.end() ||
                             s4 != handDeck.end() && h4 != handDeck.end() && dQueen != handDeck.end() && sQueen != handDeck.end() && qQueen != handDeck.end() ||
                             q4 != handDeck.end() && d4 != handDeck.end() && dQueen != handDeck.end() && sQueen != handDeck.end() && qQueen != handDeck.end() || ////
-                            h4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() || // 
-                            h4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || //
-                            h4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            h4 != handDeck.end() && c4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            d4 != handDeck.end() && s4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            c4 != handDeck.end() && q4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            s4 != handDeck.end() && h4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                            q4 != handDeck.end() && d4 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || ////
+                            h4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() || // 
+                            h4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && hKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || //
+                            h4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            h4 != handDeck.end() && c5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            d4 != handDeck.end() && s5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            c4 != handDeck.end() && q5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            s4 != handDeck.end() && h5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
+                            q4 != handDeck.end() && d5 != handDeck.end() && dKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() || ////
                             h5 != handDeck.end() && d5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
                             d5 != handDeck.end() && c5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
                             c5 != handDeck.end() && s5 != handDeck.end() && hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() ||
@@ -4829,7 +4851,8 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
                         credit += creditReward;
                     }
                     // PAIR
-                    else if (h2 != handDeck.end() && d2 != handDeck.end()) {
+                    // New example
+                    else if (twoResult != handDeck.end() && twoResult != handDeck.end()) {
                         
                         std::cout << pairCard.first << "\n";
                         
@@ -4862,6 +4885,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
         }
 
         // Determine a poker hand rank based on user's cards
+        // FIVE OF A KIND
         if (h2 != handDeck.end()) {
 
             std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
@@ -4870,6 +4894,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward; // Total amount of rewards will add to the user's balance
         }
+        // ROYAL FLUSH
         else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
 
             std::cout << royalFlushCard.first << "\n";
@@ -4878,6 +4903,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // STRAIGHT FLUSH
         else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
 
             std::cout << straightFlushCard.first << "\n";
@@ -4886,6 +4912,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // FOUR OF A KIND
         else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
 
             std::cout << fourKindCard.first << "\n";
@@ -4894,6 +4921,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // FULL HOUSE
         else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
             
             std::cout << fullHouseCard.first << "\n";
@@ -4902,6 +4930,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // FLUSH
         else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
             
             std::cout << flushCard.first << "\n";
@@ -4910,6 +4939,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // STRAIGHT
         else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
             
             std::cout << straightCard.first << "\n";
@@ -4918,6 +4948,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // THREE OF A KIND
         else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
             
             std::cout << threeKindCard.first << "\n";
@@ -4926,6 +4957,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // TWO PAIRS
         else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
             
             std::cout << twoPairCard.first << "\n";
@@ -4934,6 +4966,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // PAIR
         else if (h2 != handDeck.end() && d2 != handDeck.end()) {
             
             std::cout << pairCard.first << "\n";
@@ -4942,6 +4975,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
+        // HIGH CARD
         else {
             
             std::cout << highCard.first << "\n";
