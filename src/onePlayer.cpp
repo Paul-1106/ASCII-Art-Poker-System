@@ -4842,7 +4842,18 @@ ALL POKER CARDS (Line 44 - 50)
                         credit += creditReward;
                     }
                     // TWO PAIR
-                    else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
+                    else if (twoResult != handDeck.end() && twoResult != handDeck.end() && threeResult != handDeck.end() && threeResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && fourResult != handDeck.end() && fourResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end()) {
                         
                         std::cout << twoPairCard.first << "\n";
                         
@@ -4852,7 +4863,13 @@ ALL POKER CARDS (Line 44 - 50)
                     }
                     // PAIR
                     // New example
-                    else if (twoResult != handDeck.end() && twoResult != handDeck.end()) {
+                    else if (twoResult != handDeck.end() && twoResult != handDeck.end() || threeResult != handDeck.end() && threeResult != handDeck.end() ||
+                            fourResult != handDeck.end() && fourResult != handDeck.end() || fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
+                            sixResult != handDeck.end() && sixResult != handDeck.end() || sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
+                            eightResult != handDeck.end() && eightResult != handDeck.end() || nineResult != handDeck.end() && nineResult != handDeck.end() ||
+                            tenResult != handDeck.end() && tenResult != handDeck.end() || jackResult != handDeck.end() && jackResult != handDeck.end() ||
+                            queenResult != handDeck.end() && queenResult != handDeck.end() || kingResult != handDeck.end() && kingResult != handDeck.end() ||
+                            aceResult != handDeck.end() && aceResult != handDeck.end()) {
                         
                         std::cout << pairCard.first << "\n";
                         
