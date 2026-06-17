@@ -4841,7 +4841,7 @@ ALL POKER CARDS (Line 44 - 50)
                         std::cout << "You have recieved $" << creditReward << "\n";
                         credit += creditReward;
                     }
-                    // TWO PAIR
+                    // TWO PAIRS
                     else if (twoResult != handDeck.end() && twoResult != handDeck.end() && threeResult != handDeck.end() && threeResult != handDeck.end() ||
                             twoResult != handDeck.end() && twoResult != handDeck.end() && fourResult != handDeck.end() && fourResult != handDeck.end() ||
                             twoResult != handDeck.end() && twoResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
@@ -4853,7 +4853,18 @@ ALL POKER CARDS (Line 44 - 50)
                             twoResult != handDeck.end() && twoResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
                             twoResult != handDeck.end() && twoResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
                             twoResult != handDeck.end() && twoResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end()) {
+                            twoResult != handDeck.end() && twoResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && fourResult != handDeck.end() && fourResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
+                            threeResult != handDeck.end() && threeResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end()) {
                         
                         std::cout << twoPairCard.first << "\n";
                         
