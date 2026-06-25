@@ -185,6 +185,23 @@ ALL POKER CARDS (Line 44 - 50)
 
     std::unordered_set<std::string> aceFind(aceCards.begin(), aceCards.end());
     std::unordered_set<std::string> twoFind(twoCards.begin(), twoCards.end());
+    std::unordered_set<std::string> threeFind(threeCards.begin(), threeCards.end());
+    std::unordered_set<std::string> fourFind(fourCards.begin(), fourCards.end());
+    std::unordered_set<std::string> fiveFind(fiveCards.begin(), fiveCards.end());
+    std::unordered_set<std::string> sixFind(sixCards.begin(), sixCards.end());
+    std::unordered_set<std::string> sevenFind(sevenCards.begin(), sevenCards.end());
+    std::unordered_set<std::string> eightFind(eightCards.begin(), eightCards.end());
+    std::unordered_set<std::string> nineFind(nineCards.begin(), nineCards.end());
+    std::unordered_set<std::string> tenFind(tenCards.begin(), tenCards.end());
+    std::unordered_set<std::string> jackFind(jackCards.begin(), jackCards.end());
+    std::unordered_set<std::string> queenFind(queenCards.begin(), queenCards.end());
+    std::unordered_set<std::string> kingFind(kingCards.begin(), kingCards.end());
+
+    std::unordered_set<std::string> heartFind(heartCards.begin(), heartCards.end());
+    std::unordered_set<std::string> diamondFind(diamondCards.begin(), diamondCards.end());
+    std::unordered_set<std::string> clubFind(clubCards.begin(), clubCards.end());
+    std::unordered_set<std::string> spadeFind(spadeCards.begin(), spadeCards.end());
+    std::unordered_set<std::string> quatrefoil(quatrefoilCards.begin(), quatrefoilCards.end());
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -330,8 +347,24 @@ ALL POKER CARDS (Line 44 - 50)
 
                     for (const auto& card : handDeck) {
 
+                        // TWO PAIRS
+                        if (aceFind.contains(card) && aceFind.contains(card) && twoFind.contains(card) && twoFind.contains(card)) {
+                            
+                            std::cout << twoPairCard.first << "\n";
+                            
+                            creditReward = creditBet * twoPairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
                         // PAIR 
-                        if (aceFind.contains(card) != aceFind.contains(card)) {
+                        else if (aceFind.contains(card) && aceFind.contains(card) || twoFind.contains(card) && twoFind.contains(card) ||
+                                threeFind.contains(card) && threeFind.contains(card) || fourFind.contains(card) && fourFind.contains(card) ||
+                                fiveFind.contains(card) && fiveFind.contains(card) || sixFind.contains(card) && sixFind.contains(card) ||
+                                sevenFind.contains(card) && sevenFind.contains(card) || eightFind.contains(card) && eightFind.contains(card) ||
+                                nineFind.contains(card) && nineFind.contains(card) || tenFind.contains(card) && tenFind.contains(card) ||
+                                jackFind.contains(card) && jackFind.contains(card) || queenFind.contains(card) && queenFind.contains(card) ||
+                                kingFind.contains(card) && kingFind.contains(card)) {
 
                             std::cout << pairCard.first << "\n";
                         
@@ -537,90 +570,7 @@ ALL POKER CARDS (Line 44 - 50)
                         std::cout << "You have recieved $" << creditReward << "\n";
                         credit += creditReward;
                     }
-                    // TWO PAIRS
-                    else if (twoResult != handDeck.end() && twoResult != handDeck.end() && threeResult != handDeck.end() && threeResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && fourResult != handDeck.end() && fourResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            twoResult != handDeck.end() && twoResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && fourResult != handDeck.end() && fourResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            threeResult != handDeck.end() && threeResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && fiveResult != handDeck.end() && fiveResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            fourResult != handDeck.end() && fourResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && sixResult != handDeck.end() && sixResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() || 
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            fiveResult != handDeck.end() && fiveResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && sevenResult != handDeck.end() && sevenResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            sixResult != handDeck.end() && sixResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && eightResult != handDeck.end() && eightResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            sevenResult != handDeck.end() && sevenResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && nineResult != handDeck.end() && nineResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            eightResult != handDeck.end() && eightResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            nineResult != handDeck.end() && nineResult != handDeck.end() && tenResult != handDeck.end() && tenResult != handDeck.end() ||
-                            nineResult != handDeck.end() && nineResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            nineResult != handDeck.end() && nineResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            nineResult != handDeck.end() && nineResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            nineResult != handDeck.end() && nineResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            tenResult != handDeck.end() && tenResult != handDeck.end() && jackResult != handDeck.end() && jackResult != handDeck.end() ||
-                            tenResult != handDeck.end() && tenResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            tenResult != handDeck.end() && tenResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            tenResult != handDeck.end() && tenResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            jackResult != handDeck.end() && jackResult != handDeck.end() && queenResult != handDeck.end() && queenResult != handDeck.end() ||
-                            jackResult != handDeck.end() && jackResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            jackResult != handDeck.end() && jackResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            queenResult != handDeck.end() && queenResult != handDeck.end() && kingResult != handDeck.end() && kingResult != handDeck.end() ||
-                            queenResult != handDeck.end() && queenResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end() ||
-                            kingResult != handDeck.end() && kingResult != handDeck.end() && aceResult != handDeck.end() && aceResult != handDeck.end()) {
-                        
-                        std::cout << twoPairCard.first << "\n";
-                        
-                        creditReward = creditBet * twoPairCard.second;
-                        std::cout << "You have recieved $" << creditReward << "\n";
-                        credit += creditReward;
-                    }
+                    
                     // PAIR
                     // New example
                     else if (twoResult != handDeck.end()) {
@@ -725,24 +675,6 @@ ALL POKER CARDS (Line 44 - 50)
             std::cout << threeKindCard.first << "\n";
             
             creditReward = creditBet * threeKindCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // TWO PAIRS
-        else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end()) {
-            
-            std::cout << twoPairCard.first << "\n";
-            
-            creditReward = creditBet * twoPairCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // PAIR
-        else if (h2 != handDeck.end() && d2 != handDeck.end()) {
-            
-            std::cout << pairCard.first << "\n";
-            
-            creditReward = creditBet * pairCard.second;
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
