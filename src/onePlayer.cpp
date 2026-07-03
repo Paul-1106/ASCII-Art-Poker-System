@@ -12,11 +12,14 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     double creditBet;
     double creditReward;
     size_t points = 0;
-    size_t matchFound = 0;
     std::string randomCard, randomCard2, randomCard3, randomCard4, randomCard5;
     char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
     // std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
+
+    // Automactically incrementing one of the variables once poker card matched with cards in hash-set array
+    size_t twoFound, threeFound, fourFound, fiveFound, sixFound, sevenFound, eightFound, nineFound, tenFound, jackFound, queenFound, kingFound,
+           aceFound, heartFound, diamondFound, clubFound, spadeFound, quatrefoilFound = 0;
 
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
@@ -351,9 +354,10 @@ ALL POKER CARDS (Line 44 - 50)
                         // TWO PAIRS
                         if (twoFind.count(card) && threeFind.count(card)) {
 
-                            matchFound++;
+                            twoFound++;
+                            threeFound++;
 
-                            if (matchFound >= 4) {
+                            if (twoFound == 2) {
 
                                 std::cout << twoPairCard.first << "\n";
                                 creditReward = creditBet * twoPairCard.second;
@@ -367,9 +371,9 @@ ALL POKER CARDS (Line 44 - 50)
 
                         else if (twoFind.count(card)) {
 
-                            matchFound++;
+                            twoFound++;
 
-                            if (matchFound >= 2) {
+                            if (twoFound >= 2) {
 
                                 std::cout << pairCard.first << "\n";
                             
