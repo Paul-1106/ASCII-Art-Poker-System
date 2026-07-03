@@ -8,10 +8,11 @@
 void Poker::onePlayer(double& credit, size_t creditRequirement) {
 
     char quit = 'q';
-    int turn = 0;
+    size_t turn = 0;
     double creditBet;
     double creditReward;
     size_t points = 0;
+    size_t matchFound = 0;
     std::string randomCard, randomCard2, randomCard3, randomCard4, randomCard5;
     char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
     // std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
@@ -345,33 +346,39 @@ ALL POKER CARDS (Line 44 - 50)
 
                     turn += 1;
 
-                    for (const auto& card : handDeck) {
+                    for (const std::string& card : handDeck) {
 
                         // TWO PAIRS
-                        if (aceFind.contains(card) && aceFind.contains(card) && twoFind.contains(card) && twoFind.contains(card)) {
-                            
-                            std::cout << twoPairCard.first << "\n";
-                            
-                            creditReward = creditBet * twoPairCard.second;
-                            std::cout << "You have recieved $" << creditReward << "\n";
-                            credit += creditReward;
-                            break;
+                        if (twoFind.count(card) && threeFind.count(card)) {
+
+                            matchFound++;
+
+                            if (matchFound >= 4) {
+
+                                std::cout << twoPairCard.first << "\n";
+                                creditReward = creditBet * twoPairCard.second;
+                                std::cout << "You have recieved $" << creditReward << "\n";
+                                credit += creditReward;
+                                break;
+                            }
                         }
 
                         // PAIR 
-                        else if (aceFind.contains(card) && aceFind.contains(card) || twoFind.contains(card) && twoFind.contains(card) ||
-                                threeFind.contains(card) && threeFind.contains(card) || fourFind.contains(card) && fourFind.contains(card) ||
-                                fiveFind.contains(card) && fiveFind.contains(card) || sixFind.contains(card) && sixFind.contains(card) ||
-                                sevenFind.contains(card) && sevenFind.contains(card) || eightFind.contains(card) && eightFind.contains(card) ||
-                                nineFind.contains(card) && nineFind.contains(card) || tenFind.contains(card) && tenFind.contains(card) ||
-                                jackFind.contains(card) && jackFind.contains(card) || queenFind.contains(card) && queenFind.contains(card) ||
-                                kingFind.contains(card) && kingFind.contains(card)) {
 
-                            std::cout << pairCard.first << "\n";
-                        
-                            creditReward = creditBet * pairCard.second;
-                            std::cout << "You have recieved $" << creditReward << "\n";
-                            credit += creditReward;
+                        else if (twoFind.count(card)) {
+
+                            matchFound++;
+
+                            if (matchFound >= 2) {
+
+                                std::cout << pairCard.first << "\n";
+                            
+                                creditReward = creditBet * pairCard.second;
+                                std::cout << "You have recieved $" << creditReward << "\n";
+                                credit += creditReward;
+                                break;
+                            }
+
                         }
 
                         // HIGH CARD
@@ -382,8 +389,8 @@ ALL POKER CARDS (Line 44 - 50)
                             creditReward = creditBet * highCard.second;
                             std::cout << "You have recieved $" << creditReward << "\n";
                             credit += creditReward;
+                            break;
                         }
-                        break;
                     }
 
                 }
