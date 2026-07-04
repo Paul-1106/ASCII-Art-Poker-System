@@ -260,7 +260,7 @@ ALL POKER CARDS (Line 44 - 50)
 
                 std::cout << randomCard << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n\n";
                 turn += 1;
-                std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n";
+                std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
                 std::cin >> swap;
 
                 if (swap == 's' || swap == 'S') {
@@ -363,6 +363,10 @@ ALL POKER CARDS (Line 44 - 50)
                                 creditReward = creditBet * twoPairCard.second;
                                 std::cout << "You have recieved $" << creditReward << "\n";
                                 credit += creditReward;
+
+                                // testing...
+                                std::cout << "twoFound: " << twoFound << "\n";
+                                std::cout << "threeFound: " << threeFound << "\n";
                                 break;
                             }
                         }
@@ -380,6 +384,9 @@ ALL POKER CARDS (Line 44 - 50)
                                 creditReward = creditBet * pairCard.second;
                                 std::cout << "You have recieved $" << creditReward << "\n";
                                 credit += creditReward;
+
+                                // testing...
+                                std::cout << "twoFound: " << twoFound << "\n";
                                 break;
                             }
 
@@ -702,16 +709,6 @@ ALL POKER CARDS (Line 44 - 50)
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
-        // HIGH CARD
-        else {
-            
-            std::cout << highCard.first << "\n";
-            
-            creditReward = creditBet * highCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
         std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
-        break;
     }
 }
