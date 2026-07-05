@@ -41,7 +41,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
 
 /*
 ------------------------------
-ALL POKER CARDS (Line 44 - 50)
+ALL POKER CARDS (Line 48 - 54)
 ------------------------------
 */ 
     // A random selector will pick an element from a 'pokerHand' vector
@@ -229,32 +229,32 @@ ALL POKER CARDS (Line 44 - 50)
                 credit -= creditBet;
 
                 // Random card selector (1/5)
-                std::random_device random;
-                std::mt19937 mEngine(random());
+                unsigned random = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine(random);
                 std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
                 randomCard = pokerCards[dist(mEngine)];
 
                 //Random card selector (2/5)
-                std::random_device random2;
-                std::mt19937 mEngine2(random2());
+                unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine2(random2);
                 std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
                 randomCard2 = pokerCards[dist2(mEngine2)];
 
                 //Random card selector (3/5)
-                std::random_device random3;
-                std::mt19937 mEngine3(random3());
+                unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine3(random3);
                 std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
                 randomCard3 = pokerCards[dist3(mEngine3)];
 
                 //Random card selector (4/5)
-                std::random_device random4;
-                std::mt19937 mEngine4(random4());
+                unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine4(random4);
                 std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
                 randomCard4 = pokerCards[dist4(mEngine4)];
 
                 // Random card selector (5/5)
-                std::random_device random5;
-                std::mt19937 mEngine5(random5());
+                unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine5(random5);
                 std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
                 randomCard5 = pokerCards[dist5(mEngine5)];
 
@@ -271,10 +271,8 @@ ALL POKER CARDS (Line 44 - 50)
                     turn += 1;
 
                     if (cardChange1 == 'y') {
-                        std::random_device random;
-                        std::mt19937 mEngine(random());
-                        std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                        std::string randomCard = pokerCards[dist(mEngine)];
+                        // Change cards ('mEngine' is a specific card that will shuffle)
+                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine);
                     }
                     else if (cardChange1 != 'n' && cardChange1 != 'y') {
                         std::cout << "Not a valid option! (y/n)\n";
@@ -285,10 +283,7 @@ ALL POKER CARDS (Line 44 - 50)
                         std::cin >> cardChange2;
 
                         if (cardChange2 == 'y') {
-                            std::random_device random2;
-                            std::mt19937 mEngine2(random2());
-                            std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-                            std::string randomCard2 = pokerCards[dist2(mEngine2)];
+                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine2);
                         }
                         else if (cardChange2 != 'n' && cardChange2 != 'y') {
                             std::cout << "Not a valid option! (y/n)\n";
@@ -299,10 +294,7 @@ ALL POKER CARDS (Line 44 - 50)
                             std::cin >> cardChange3;
 
                             if (cardChange3 == 'y') {
-                                std::random_device random3;
-                                std::mt19937 mEngine3(random3());
-                                std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-                                std::string randomCard3 = pokerCards[dist3(mEngine3)];
+                                std::shuffle(handDeck.begin(), handDeck.end(), mEngine3);
                             }
                             else if (cardChange3 != 'n' && cardChange3 != 'y') {
                                 std::cout << "Not a valid option! (y/n)\n";
@@ -313,10 +305,7 @@ ALL POKER CARDS (Line 44 - 50)
                                 std::cin >> cardChange4;
 
                                 if (cardChange4 == 'y') {
-                                    std::random_device random4;
-                                    std::mt19937 mEngine4(random4());
-                                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-                                    std::string randomCard4 = pokerCards[dist4(mEngine4)];                            
+                                    std::shuffle(handDeck.begin(), handDeck.end(), mEngine4);                          
                                 }
                                 else if (cardChange4 != 'n' && cardChange4 != 'y') {
                                     std::cout << "Not a valid option! (y/n)\n";
@@ -327,10 +316,7 @@ ALL POKER CARDS (Line 44 - 50)
                                     std::cin >> cardChange5;
 
                                     if (cardChange5 == 'y') {
-                                        std::random_device random5;
-                                        std::mt19937 mEngine5(random5());
-                                        std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-                                        std::string randomCard5 = pokerCards[dist5(mEngine5)];
+                                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine5);
                                     }
                                     else if (cardChange5 != 'n' && cardChange5 != 'y') {
                                         std::cout << "Not a valid option! (y/n)\n";
@@ -347,7 +333,7 @@ ALL POKER CARDS (Line 44 - 50)
                 }
                 else if (swap == 'p' || swap == 'P') {
 
-                    turn += 1;
+                    turn++;
 
                     for (const std::string& card : handDeck) {
 
@@ -357,7 +343,7 @@ ALL POKER CARDS (Line 44 - 50)
                             twoFound++;
                             threeFound++;
 
-                            if (twoFound == 2) {
+                            if (twoFound == 2 && threeFound == 2) {
 
                                 std::cout << twoPairCard.first << "\n";
                                 creditReward = creditBet * twoPairCard.second;
@@ -367,17 +353,15 @@ ALL POKER CARDS (Line 44 - 50)
                                 // testing...
                                 std::cout << "twoFound: " << twoFound << "\n";
                                 std::cout << "threeFound: " << threeFound << "\n";
-                                break;
                             }
                         }
 
                         // PAIR 
-
                         else if (twoFind.count(card)) {
 
                             twoFound++;
 
-                            if (twoFound >= 2) {
+                            if (twoFound == 2) {
 
                                 std::cout << pairCard.first << "\n";
                             
@@ -387,7 +371,6 @@ ALL POKER CARDS (Line 44 - 50)
 
                                 // testing...
                                 std::cout << "twoFound: " << twoFound << "\n";
-                                break;
                             }
 
                         }
@@ -400,230 +383,15 @@ ALL POKER CARDS (Line 44 - 50)
                             creditReward = creditBet * highCard.second;
                             std::cout << "You have recieved $" << creditReward << "\n";
                             credit += creditReward;
-                            break;
                         }
+                        
+                        
+                        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
+                        break;
                     }
 
                 }
-                //     // FIVE OF A KIND
-                //     if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end() && q2 != handDeck.end() ||
-                //         h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end() && s3 != handDeck.end() && q3 != handDeck.end() ||
-                //         h4 != handDeck.end() && d4 != handDeck.end() && c4 != handDeck.end() && s4 != handDeck.end() && q4 != handDeck.end() ||
-                //         h5 != handDeck.end() && d5 != handDeck.end() && c5 != handDeck.end() && s5 != handDeck.end() && q5 != handDeck.end() ||
-                //         h6 != handDeck.end() && d6 != handDeck.end() && c6 != handDeck.end() && s6 != handDeck.end() && q6 != handDeck.end() ||
-                //         h7 != handDeck.end() && d7 != handDeck.end() && c7 != handDeck.end() && s7 != handDeck.end() && q7 != handDeck.end() ||
-                //         h8 != handDeck.end() && d8 != handDeck.end() && c8 != handDeck.end() && s8 != handDeck.end() && q8 != handDeck.end() ||
-                //         h9 != handDeck.end() && d9 != handDeck.end() && c9 != handDeck.end() && s9 != handDeck.end() && q9 != handDeck.end() ||
-                //         h10 != handDeck.end() && d10 != handDeck.end() && c10 != handDeck.end() && s10 != handDeck.end() && q10 != handDeck.end() ||
-                //         hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() && qJack != handDeck.end() ||
-                //         hQueen != handDeck.end() && dQueen != handDeck.end() && cQueen != handDeck.end() && sQueen != handDeck.end() && qQueen != handDeck.end() ||
-                //         hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() && qKing != handDeck.end() ||
-                //         hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() && qAce != handDeck.end()) {
 
-                //         std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
-                        
-                //         creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward; // Total amount of rewards will add to the user's balance
-                //     }
-                //     // ROYAL FLUSH
-                //     else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end() ||
-                //         d10 != handDeck.end() && dJack != handDeck.end() && dQueen != handDeck.end() && dKing != handDeck.end() && dAce != handDeck.end() ||
-                //         c10 != handDeck.end() && cJack != handDeck.end() && cQueen != handDeck.end() && cKing != handDeck.end() && cAce != handDeck.end() ||
-                //         s10 != handDeck.end() && sJack != handDeck.end() && sQueen != handDeck.end() && sKing != handDeck.end() && sAce != handDeck.end() ||
-                //         q10 != handDeck.end() && qJack != handDeck.end() && qQueen != handDeck.end() && qKing != handDeck.end() && qAce != handDeck.end()) {
-
-                //         std::cout << royalFlushCard.first << "\n";
-
-                //         creditReward = creditBet * royalFlushCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // STRAIGHT FLUSH
-                //     else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() ||
-                //         dAce != handDeck.end() && d2 != handDeck.end() && d3 != handDeck.end() && d4 != handDeck.end() && d5 != handDeck.end() ||
-                //         cAce != handDeck.end() && c2 != handDeck.end() && c3 != handDeck.end() && c4 != handDeck.end() && c5 != handDeck.end() ||
-                //         sAce != handDeck.end() && s2 != handDeck.end() && s3 != handDeck.end() && s4 != handDeck.end() && s5 != handDeck.end() ||
-                //         qAce != handDeck.end() && q2 != handDeck.end() && q3 != handDeck.end() && q4 != handDeck.end() && q5 != handDeck.end() ||
-                //         h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h6 != handDeck.end() ||
-                //         d2 != handDeck.end() && d3 != handDeck.end() && d4 != handDeck.end() && d5 != handDeck.end() && d6 != handDeck.end() ||
-                //         c2 != handDeck.end() && c3 != handDeck.end() && c4 != handDeck.end() && c5 != handDeck.end() && c6 != handDeck.end() ||
-                //         s2 != handDeck.end() && s3 != handDeck.end() && s4 != handDeck.end() && s5 != handDeck.end() && s6 != handDeck.end() ||
-                //         q2 != handDeck.end() && q3 != handDeck.end() && q4 != handDeck.end() && q5 != handDeck.end() && q6 != handDeck.end() ||
-                //         h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h6 != handDeck.end() && h7 != handDeck.end() ||
-                //         d3 != handDeck.end() && d4 != handDeck.end() && d5 != handDeck.end() && d6 != handDeck.end() && d7 != handDeck.end() ||
-                //         c3 != handDeck.end() && c4 != handDeck.end() && c5 != handDeck.end() && c6 != handDeck.end() && c7 != handDeck.end() ||
-                //         s3 != handDeck.end() && s4 != handDeck.end() && s5 != handDeck.end() && s6 != handDeck.end() && s7 != handDeck.end() ||
-                //         q3 != handDeck.end() && q4 != handDeck.end() && q5 != handDeck.end() && q6 != handDeck.end() && q7 != handDeck.end() ||
-                //         h4 != handDeck.end() && h5 != handDeck.end() && h6 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end() ||
-                //         d4 != handDeck.end() && d5 != handDeck.end() && d6 != handDeck.end() && d7 != handDeck.end() && d8 != handDeck.end() ||
-                //         c4 != handDeck.end() && c5 != handDeck.end() && c6 != handDeck.end() && c7 != handDeck.end() && c8 != handDeck.end() ||
-                //         s4 != handDeck.end() && s5 != handDeck.end() && s6 != handDeck.end() && s7 != handDeck.end() && s8 != handDeck.end() ||
-                //         q4 != handDeck.end() && q5 != handDeck.end() && q6 != handDeck.end() && q7 != handDeck.end() && q8 != handDeck.end() ||
-                //         h5 != handDeck.end() && h6 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end() && h9 != handDeck.end() ||
-                //         d5 != handDeck.end() && d6 != handDeck.end() && d7 != handDeck.end() && d8 != handDeck.end() && d9 != handDeck.end() ||
-                //         c5 != handDeck.end() && c6 != handDeck.end() && c7 != handDeck.end() && c8 != handDeck.end() && c9 != handDeck.end() ||
-                //         s5 != handDeck.end() && s6 != handDeck.end() && s7 != handDeck.end() && s8 != handDeck.end() && s9 != handDeck.end() ||
-                //         q5 != handDeck.end() && q6 != handDeck.end() && q7 != handDeck.end() && q8 != handDeck.end() && q9 != handDeck.end() ||
-                //         h6 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end() && h9 != handDeck.end() && h10 != handDeck.end() ||
-                //         d6 != handDeck.end() && d7 != handDeck.end() && d8 != handDeck.end() && d9 != handDeck.end() && d10 != handDeck.end() ||
-                //         c6 != handDeck.end() && c7 != handDeck.end() && c8 != handDeck.end() && c9 != handDeck.end() && c10 != handDeck.end() ||
-                //         s6 != handDeck.end() && s7 != handDeck.end() && s8 != handDeck.end() && s9 != handDeck.end() && s10 != handDeck.end() ||
-                //         q6 != handDeck.end() && q7 != handDeck.end() && q8 != handDeck.end() && q9 != handDeck.end() && q10 != handDeck.end() ||
-                //         h7 != handDeck.end() && h8 != handDeck.end() && h9 != handDeck.end() && h10 != handDeck.end() && hJack != handDeck.end() ||
-                //         d7 != handDeck.end() && d8 != handDeck.end() && d9 != handDeck.end() && d10 != handDeck.end() && dJack != handDeck.end() ||
-                //         c7 != handDeck.end() && c8 != handDeck.end() && c9 != handDeck.end() && c10 != handDeck.end() && cJack != handDeck.end() ||
-                //         s7 != handDeck.end() && s8 != handDeck.end() && s9 != handDeck.end() && s10 != handDeck.end() && sJack != handDeck.end() ||
-                //         q7 != handDeck.end() && q8 != handDeck.end() && q9 != handDeck.end() && q10 != handDeck.end() && qJack != handDeck.end() ||
-                //         h8 != handDeck.end() && h9 != handDeck.end() && h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() ||
-                //         d8 != handDeck.end() && d9 != handDeck.end() && d10 != handDeck.end() && dJack != handDeck.end() && dQueen != handDeck.end() ||
-                //         c8 != handDeck.end() && c9 != handDeck.end() && c10 != handDeck.end() && cJack != handDeck.end() && cQueen != handDeck.end() ||
-                //         s8 != handDeck.end() && s9 != handDeck.end() && s10 != handDeck.end() && sJack != handDeck.end() && sQueen != handDeck.end() ||
-                //         q8 != handDeck.end() && q9 != handDeck.end() && q10 != handDeck.end() && qJack != handDeck.end() && qQueen != handDeck.end() ||
-                //         h9 != handDeck.end() && h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() ||
-                //         d9 != handDeck.end() && d10 != handDeck.end() && dJack != handDeck.end() && dQueen != handDeck.end() && dKing != handDeck.end() ||
-                //         c9 != handDeck.end() && c10 != handDeck.end() && cJack != handDeck.end() && cQueen != handDeck.end() && cKing != handDeck.end() ||
-                //         s9 != handDeck.end() && s10 != handDeck.end() && sJack != handDeck.end() && sQueen != handDeck.end() && sKing != handDeck.end() ||
-                //         q9 != handDeck.end() && q10 != handDeck.end() && qJack != handDeck.end() && qQueen != handDeck.end() && qKing != handDeck.end()) {
-
-                //         std::cout << straightFlushCard.first << "\n";
-                        
-                //         creditReward = creditBet * straightFlushCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // FOUR OF A KIND
-                //     else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end() ||
-                //         h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end() && s3 != handDeck.end() ||
-                //         h4 != handDeck.end() && d4 != handDeck.end() && c4 != handDeck.end() && s4 != handDeck.end() ||
-                //         h5 != handDeck.end() && d5 != handDeck.end() && c5 != handDeck.end() && s5 != handDeck.end() ||
-                //         h6 != handDeck.end() && d6 != handDeck.end() && c6 != handDeck.end() && s6 != handDeck.end() ||
-                //         h7 != handDeck.end() && d7 != handDeck.end() && c7 != handDeck.end() && s7 != handDeck.end() ||
-                //         h8 != handDeck.end() && d8 != handDeck.end() && c8 != handDeck.end() && s8 != handDeck.end() ||
-                //         h9 != handDeck.end() && d9 != handDeck.end() && c9 != handDeck.end() && s9 != handDeck.end() ||
-                //         h10 != handDeck.end() && d10 != handDeck.end() && c10 != handDeck.end() && s10 != handDeck.end() ||
-                //         hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
-                //         hQueen != handDeck.end() && dQueen != handDeck.end() && cQueen != handDeck.end() && sQueen != handDeck.end() ||
-                //         hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                //         hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                //         h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && q2 != handDeck.end() ||
-                //         h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end() && q3 != handDeck.end() ||
-                //         h4 != handDeck.end() && d4 != handDeck.end() && c4 != handDeck.end() && q4 != handDeck.end() ||
-                //         h5 != handDeck.end() && d5 != handDeck.end() && c5 != handDeck.end() && q5 != handDeck.end() ||
-                //         h6 != handDeck.end() && d6 != handDeck.end() && c6 != handDeck.end() && q6 != handDeck.end() ||
-                //         h7 != handDeck.end() && d7 != handDeck.end() && c7 != handDeck.end() && q7 != handDeck.end() ||
-                //         h8 != handDeck.end() && d8 != handDeck.end() && c8 != handDeck.end() && q8 != handDeck.end() ||
-                //         h9 != handDeck.end() && d9 != handDeck.end() && c9 != handDeck.end() && q9 != handDeck.end() ||
-                //         h10 != handDeck.end() && d10 != handDeck.end() && c10 != handDeck.end() && q10 != handDeck.end() ||
-                //         hJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && qJack != handDeck.end() ||
-                //         hQueen != handDeck.end() && dQueen != handDeck.end() && cQueen != handDeck.end() && sQueen != handDeck.end() ||
-                //         hKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && qKing != handDeck.end() ||
-                //         hAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && qAce != handDeck.end() ||
-                //         h2 != handDeck.end() && d2 != handDeck.end() && q2 != handDeck.end() && s2 != handDeck.end() ||
-                //         h3 != handDeck.end() && d3 != handDeck.end() && q3 != handDeck.end() && s3 != handDeck.end() ||
-                //         h4 != handDeck.end() && d4 != handDeck.end() && q4 != handDeck.end() && s4 != handDeck.end() ||
-                //         h5 != handDeck.end() && d5 != handDeck.end() && q5 != handDeck.end() && s5 != handDeck.end() ||
-                //         h6 != handDeck.end() && d6 != handDeck.end() && q6 != handDeck.end() && s6 != handDeck.end() ||
-                //         h7 != handDeck.end() && d7 != handDeck.end() && q7 != handDeck.end() && s7 != handDeck.end() ||
-                //         h8 != handDeck.end() && d8 != handDeck.end() && q8 != handDeck.end() && s8 != handDeck.end() ||
-                //         h9 != handDeck.end() && d9 != handDeck.end() && q9 != handDeck.end() && s9 != handDeck.end() ||
-                //         h10 != handDeck.end() && d10 != handDeck.end() && q10 != handDeck.end() && s10 != handDeck.end() ||
-                //         hJack != handDeck.end() && dJack != handDeck.end() && qJack != handDeck.end() && sJack != handDeck.end() ||
-                //         hQueen != handDeck.end() && dQueen != handDeck.end() && qQueen != handDeck.end() && sQueen != handDeck.end() ||
-                //         hKing != handDeck.end() && dKing != handDeck.end() && qKing != handDeck.end() && sKing != handDeck.end() ||
-                //         hAce != handDeck.end() && dAce != handDeck.end() && qAce != handDeck.end() && sAce != handDeck.end() ||
-                //         h2 != handDeck.end() && q2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end() ||
-                //         h3 != handDeck.end() && q3 != handDeck.end() && c3 != handDeck.end() && s3 != handDeck.end() ||
-                //         h4 != handDeck.end() && q4 != handDeck.end() && c4 != handDeck.end() && s4 != handDeck.end() ||
-                //         h5 != handDeck.end() && q5 != handDeck.end() && c5 != handDeck.end() && s5 != handDeck.end() ||
-                //         h6 != handDeck.end() && q6 != handDeck.end() && c6 != handDeck.end() && s6 != handDeck.end() ||
-                //         h7 != handDeck.end() && q7 != handDeck.end() && c7 != handDeck.end() && s7 != handDeck.end() ||
-                //         h8 != handDeck.end() && q8 != handDeck.end() && c8 != handDeck.end() && s8 != handDeck.end() ||
-                //         h9 != handDeck.end() && q9 != handDeck.end() && c9 != handDeck.end() && s9 != handDeck.end() ||
-                //         h10 != handDeck.end() && q10 != handDeck.end() && c10 != handDeck.end() && s10 != handDeck.end() ||
-                //         hJack != handDeck.end() && qJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
-                //         hQueen != handDeck.end() && qQueen != handDeck.end() && cQueen != handDeck.end() && sQueen != handDeck.end() ||
-                //         hKing != handDeck.end() && qKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                //         hAce != handDeck.end() && qAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end() ||
-                //         q2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end() ||
-                //         q3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end() && s3 != handDeck.end() ||
-                //         q4 != handDeck.end() && d4 != handDeck.end() && c4 != handDeck.end() && s4 != handDeck.end() ||
-                //         q5 != handDeck.end() && d5 != handDeck.end() && c5 != handDeck.end() && s5 != handDeck.end() ||
-                //         q6 != handDeck.end() && d6 != handDeck.end() && c6 != handDeck.end() && s6 != handDeck.end() ||
-                //         q7 != handDeck.end() && d7 != handDeck.end() && c7 != handDeck.end() && s7 != handDeck.end() ||
-                //         q8 != handDeck.end() && d8 != handDeck.end() && c8 != handDeck.end() && s8 != handDeck.end() ||
-                //         q9 != handDeck.end() && d9 != handDeck.end() && c9 != handDeck.end() && s9 != handDeck.end() ||
-                //         q10 != handDeck.end() && d10 != handDeck.end() && c10 != handDeck.end() && s10 != handDeck.end() ||
-                //         qJack != handDeck.end() && dJack != handDeck.end() && cJack != handDeck.end() && sJack != handDeck.end() ||
-                //         qQueen != handDeck.end() && dQueen != handDeck.end() && cQueen != handDeck.end() && sQueen != handDeck.end() ||
-                //         qKing != handDeck.end() && dKing != handDeck.end() && cKing != handDeck.end() && sKing != handDeck.end() ||
-                //         qAce != handDeck.end() && dAce != handDeck.end() && cAce != handDeck.end() && sAce != handDeck.end()) {
-
-                //         std::cout << fourKindCard.first << "\n";
-                        
-                //         creditReward = creditBet * fourKindCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // FULL HOUSE
-                //     else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
-                        
-                //         std::cout << fullHouseCard.first << "\n";
-                        
-                //         creditReward = creditBet * fullHouseCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // FLUSH
-                //     else if (h2 != handDeck.end()) {
-                        
-                //         std::cout << flushCard.first << "\n";
-                        
-                //         creditReward = creditBet * flushCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // STRAIGHT
-                //     else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
-                        
-                //         std::cout << straightCard.first << "\n";
-                        
-                //         creditReward = creditBet * straightCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // THREE OF A KIND
-                //     else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
-                        
-                //         std::cout << threeKindCard.first << "\n";
-                        
-                //         creditReward = creditBet * threeKindCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                    
-                //     // PAIR
-                //     // New example
-                //     else if (twoResult != handDeck.end()) {
-                        
-                //         std::cout << pairCard.first << "\n";
-                        
-                //         creditReward = creditBet * pairCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     // HIGH CARD
-                //     else {
-                        
-                //         std::cout << highCard.first << "\n";
-                        
-                //         creditReward = creditBet * highCard.second;
-                //         std::cout << "You have recieved $" << creditReward << "\n";
-                //         credit += creditReward;
-                //     }
-                //     std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
-                //     break;
-                // }
                 else {
                     std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
                     std::cin >> swap;
@@ -709,6 +477,5 @@ ALL POKER CARDS (Line 44 - 50)
             std::cout << "You have recieved $" << creditReward << "\n";
             credit += creditReward;
         }
-        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
     }
 }
