@@ -12,13 +12,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     double creditBet;
     double creditReward;
     size_t points = 0;
-    std::string randomCard1;
-    std::string randomCard2;
-    std::string randomCard3;
-    std::string randomCard4;
-    std::string randomCard5;
     char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
-    // std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
 
     // Automactically incrementing one of the variables once poker card matched with cards in hash-set array
@@ -45,7 +39,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
 
 /*
 ------------------------------
-ALL POKER CARDS (Line 48 - 54)
+ALL POKER CARDS (Line 46 - 52)
 ------------------------------
 */ 
     // A random selector will pick an element from a 'pokerHand' vector
@@ -58,7 +52,7 @@ ALL POKER CARDS (Line 48 - 54)
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
     // All updated poker cards will be in the 'handDeck' container
-    std::vector<std::string> handDeck = {randomCard1, randomCard2, randomCard3, randomCard4, randomCard5};
+    std::vector<std::string> handDeck(5);
 
     // Poker card code if card code is in user's poker hand
     auto h2 = std::find(handDeck.begin(), handDeck.end(), twoHeart);
@@ -212,177 +206,184 @@ ALL POKER CARDS (Line 48 - 54)
                 std::cout << "You have bet $" << creditBet << " credits\n\n";
                 credit -= creditBet;
 
-                // Random card selector (1/5)
-                unsigned random = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine(random);
-                std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                randomCard1 = pokerCards[dist(mEngine)];
+                for (int i{0}; i < handDeck.size(); ++i) {
 
-                //Random card selector (2/5)
-                unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine2(random2);
-                std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-                randomCard2 = pokerCards[dist2(mEngine2)];
+                    // Random card selector (1/5)
+                    unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine(random1);
+                    std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+                    handDeck[0] = pokerCards[dist(mEngine)];
 
-                //Random card selector (3/5)
-                unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine3(random3);
-                std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-                randomCard3 = pokerCards[dist3(mEngine3)];
+                    //Random card selector (2/5)
+                    unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine2(random2);
+                    std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+                    handDeck[1] = pokerCards[dist2(mEngine2)];
 
-                //Random card selector (4/5)
-                unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine4(random4);
-                std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-                randomCard4 = pokerCards[dist4(mEngine4)];
+                    //Random card selector (3/5)
+                    unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine3(random3);
+                    std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+                    handDeck[2] = pokerCards[dist3(mEngine3)];
 
-                // Random card selector (5/5)
-                unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine5(random5);
-                std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-                randomCard5 = pokerCards[dist5(mEngine5)];
+                    //Random card selector (4/5)
+                    unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine4(random4);
+                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+                    handDeck[3] = pokerCards[dist4(mEngine4)];
 
-                std::cout << randomCard1 << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n\n";
-                turn += 1;
-                std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
-                std::cin >> swap;
+                    // Random card selector (5/5)
+                    unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine5(random5);
+                    std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+                    handDeck[4] = pokerCards[dist5(mEngine5)];
 
-                if (swap == 's' || swap == 'S') {
+                    // Displayed poker hand
+                    std::cout << handDeck[0] << handDeck[1] << handDeck[2] << handDeck[3] << handDeck[4] << "\n\n";
 
-                    std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
-                    std::cout << "Change 'card1'? (y/n)\n";
-                    std::cin >> cardChange1; 
                     turn += 1;
+                    std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
+                    std::cin >> swap;
 
-                    if (cardChange1 == 'y') {
-                        // Change cards ('mEngine' is a specific card that will shuffle)
-                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine);
-                    }
-                    else if (cardChange1 != 'n' && cardChange1 != 'y') {
-                        std::cout << "Not a valid option! (y/n)\n";
-                        std::cin >> cardChange1;
-                    }
-                    else {
-                        std::cout << "Change 'card2'? (y/n)\n";
-                        std::cin >> cardChange2;
+                    if (swap == 's' || swap == 'S') {
 
-                        if (cardChange2 == 'y') {
-                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine2);
+                        std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
+                        std::cout << "Change 'card1'? (y/n)\n";
+                        std::cin >> cardChange1; 
+                        turn += 1;
+
+                        if (cardChange1 == 'y') {
+                            // Change cards ('mEngine' is a specific card that will shuffle)
+                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine);
                         }
-                        else if (cardChange2 != 'n' && cardChange2 != 'y') {
+                        else if (cardChange1 != 'n' && cardChange1 != 'y') {
                             std::cout << "Not a valid option! (y/n)\n";
-                            std::cin >> cardChange2;
+                            std::cin >> cardChange1;
                         }
                         else {
-                            std::cout << "Change 'card3'? (y/n)\n";
-                            std::cin >> cardChange3;
+                            std::cout << "Change 'card2'? (y/n)\n";
+                            std::cin >> cardChange2;
 
-                            if (cardChange3 == 'y') {
-                                std::shuffle(handDeck.begin(), handDeck.end(), mEngine3);
+                            if (cardChange2 == 'y') {
+                                std::shuffle(handDeck.begin(), handDeck.end(), mEngine2);
                             }
-                            else if (cardChange3 != 'n' && cardChange3 != 'y') {
+                            else if (cardChange2 != 'n' && cardChange2 != 'y') {
                                 std::cout << "Not a valid option! (y/n)\n";
-                                std::cin >> cardChange3;
+                                std::cin >> cardChange2;
                             }
                             else {
-                                std::cout << "Change 'card4'? (y/n)\n";
-                                std::cin >> cardChange4;
+                                std::cout << "Change 'card3'? (y/n)\n";
+                                std::cin >> cardChange3;
 
-                                if (cardChange4 == 'y') {
-                                    std::shuffle(handDeck.begin(), handDeck.end(), mEngine4);                          
+                                if (cardChange3 == 'y') {
+                                    std::shuffle(handDeck.begin(), handDeck.end(), mEngine3);
                                 }
-                                else if (cardChange4 != 'n' && cardChange4 != 'y') {
+                                else if (cardChange3 != 'n' && cardChange3 != 'y') {
                                     std::cout << "Not a valid option! (y/n)\n";
-                                    std::cin >> cardChange4;
+                                    std::cin >> cardChange3;
                                 }
                                 else {
-                                    std::cout << "Change 'card5'? (y/n)\n";
-                                    std::cin >> cardChange5;
+                                    std::cout << "Change 'card4'? (y/n)\n";
+                                    std::cin >> cardChange4;
 
-                                    if (cardChange5 == 'y') {
-                                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine5);
+                                    if (cardChange4 == 'y') {
+                                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine4);                          
                                     }
-                                    else if (cardChange5 != 'n' && cardChange5 != 'y') {
+                                    else if (cardChange4 != 'n' && cardChange4 != 'y') {
                                         std::cout << "Not a valid option! (y/n)\n";
-                                        std::cin >> cardChange5;
+                                        std::cin >> cardChange4;
                                     }
                                     else {
-                                        break;
+                                        std::cout << "Change 'card5'? (y/n)\n";
+                                        std::cin >> cardChange5;
+
+                                        if (cardChange5 == 'y') {
+                                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine5);
+                                        }
+                                        else if (cardChange5 != 'n' && cardChange5 != 'y') {
+                                            std::cout << "Not a valid option! (y/n)\n";
+                                            std::cin >> cardChange5;
+                                        }
+                                        else {
+                                            break;
+                                        }
                                     }
                                 }
                             }
                         }
+
                     }
+                    else if (swap == 'p' || swap == 'P') {
 
-                }
-                else if (swap == 'p' || swap == 'P') {
+                        turn++;
 
-                    turn++;
+                        for (const std::string& card : handDeck) {
 
-                    for (const std::string& card : handDeck) {
+                            // TWO PAIRS
+                            if (twoFind.count(card)) {
 
-                        // TWO PAIRS
-                        if (twoFind.count(card)) {
+                                twoFound++;
 
-                            twoFound++;
+                                if (threeFind.count(card)) {
 
-                            if (threeFind.count(card)) {
+                                    threeFound++;
+                                }
 
-                                threeFound++;
+                                if (twoFound == 2 && threeFound == 2) {
+
+                                    std::cout << twoPairCard.first << "\n";
+                                    creditReward = creditBet * twoPairCard.second;
+                                    std::cout << "You have recieved $" << creditReward << "\n";
+                                    credit += creditReward;
+
+                                    // testing...
+                                    std::cout << "twoFound: " << twoFound << "\n";
+                                    std::cout << "threeFound: " << threeFound << "\n";
+                                    break;
+                                }
                             }
 
-                            if (twoFound == 2 && threeFound == 2) {
+                            // PAIR 
+                            else if (twoFind.count(card)) {
 
-                                std::cout << twoPairCard.first << "\n";
-                                creditReward = creditBet * twoPairCard.second;
+                                twoFound++;
+
+                                if (twoFound == 2) {
+
+                                    std::cout << pairCard.first << "\n";
+                                
+                                    creditReward = creditBet * pairCard.second;
+                                    std::cout << "You have recieved $" << creditReward << "\n";
+                                    credit += creditReward;
+
+                                    // testing...
+                                    std::cout << "twoFound: " << twoFound << "\n";
+                                    break;
+                                }
+                            }
+
+                            // HIGH CARD
+                            else {
+
+                                std::cout << highCard.first << "\n";
+
+                                creditReward = creditBet * highCard.second;
                                 std::cout << "You have recieved $" << creditReward << "\n";
                                 credit += creditReward;
-
-                                // testing...
-                                std::cout << "twoFound: " << twoFound << "\n";
-                                std::cout << "threeFound: " << threeFound << "\n";
                                 break;
                             }
-                        }
-
-                        // PAIR 
-                        else if (randomCard1 == ) {
-
-                            std::cout << pairCard.first << "\n";
-                        
-                            creditReward = creditBet * pairCard.second;
-                            std::cout << "You have recieved $" << creditReward << "\n";
-                            credit += creditReward;
-
-                            // testing...
-                            std::cout << "twoFound: " << twoFound << "\n";
+                            
+                            
+                            std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                             break;
                         }
 
-                        // HIGH CARD
-                        else {
-
-                            // testing...
-                            std::cout << randomCard1 << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n";
-
-                            std::cout << highCard.first << "\n";
-
-                            creditReward = creditBet * highCard.second;
-                            std::cout << "You have recieved $" << creditReward << "\n";
-                            credit += creditReward;
-                            break;
-                        }
-                        
-                        
-                        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
-                        break;
                     }
 
-                }
-
-                else {
-                    std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
-                    std::cin >> swap;
+                    else {
+                        std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
+                        std::cin >> swap;
+                    }
                 }
             }
             // If user input less than 100 credits
