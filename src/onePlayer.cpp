@@ -12,7 +12,11 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     double creditBet;
     double creditReward;
     size_t points = 0;
-    std::string randomCard, randomCard2, randomCard3, randomCard4, randomCard5;
+    std::string randomCard1;
+    std::string randomCard2;
+    std::string randomCard3;
+    std::string randomCard4;
+    std::string randomCard5;
     char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
     // std::vector<std::string> pokerHand = {card1, card2, card3, card4, card5};
     char swap = ' ';
@@ -54,7 +58,7 @@ ALL POKER CARDS (Line 48 - 54)
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
     // All updated poker cards will be in the 'handDeck' container
-    std::vector<std::string> handDeck = {randomCard, randomCard2, randomCard3, randomCard4, randomCard5};
+    std::vector<std::string> handDeck = {randomCard1, randomCard2, randomCard3, randomCard4, randomCard5};
 
     // Poker card code if card code is in user's poker hand
     auto h2 = std::find(handDeck.begin(), handDeck.end(), twoHeart);
@@ -167,26 +171,6 @@ ALL POKER CARDS (Line 48 - 54)
 
 
     // Check if one of the elements in sub-array is included in global poker cards array
-    auto aceResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), aceCards.begin(), aceCards.end());
-    auto twoResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), twoCards.begin(), twoCards.end());
-    auto threeResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), threeCards.begin(), threeCards.end());
-    auto fourResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), fourCards.begin(), fourCards.end());
-    auto fiveResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), fiveCards.begin(), fiveCards.end());
-    auto sixResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), sixCards.begin(), sixCards.end());
-    auto sevenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), sevenCards.begin(), sevenCards.end());
-    auto eightResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), eightCards.begin(), eightCards.end());
-    auto nineResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), nineCards.begin(), nineCards.end());
-    auto tenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), tenCards.begin(), tenCards.end());
-    auto jackResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), jackCards.begin(), jackCards.end());
-    auto queenResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), queenCards.begin(), queenCards.end());
-    auto kingResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), kingCards.begin(), kingCards.end());
-
-    auto heartResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), heartCards.begin(), heartCards.end());
-    auto diamondResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), diamondCards.begin(), diamondCards.end());
-    auto clubResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), clubCards.begin(), clubCards.end());
-    auto spadeResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), spadeCards.begin(), spadeCards.end());
-    auto quatrefoilResult = std::find_first_of(pokerCards.begin(), pokerCards.end(), quatrefoilCards.begin(), quatrefoilCards.end());
-
     std::unordered_set<std::string> aceFind(aceCards.begin(), aceCards.end());
     std::unordered_set<std::string> twoFind(twoCards.begin(), twoCards.end());
     std::unordered_set<std::string> threeFind(threeCards.begin(), threeCards.end());
@@ -232,7 +216,7 @@ ALL POKER CARDS (Line 48 - 54)
                 unsigned random = std::chrono::system_clock::now().time_since_epoch().count();
                 std::mt19937 mEngine(random);
                 std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                randomCard = pokerCards[dist(mEngine)];
+                randomCard1 = pokerCards[dist(mEngine)];
 
                 //Random card selector (2/5)
                 unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
@@ -258,7 +242,7 @@ ALL POKER CARDS (Line 48 - 54)
                 std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
                 randomCard5 = pokerCards[dist5(mEngine5)];
 
-                std::cout << randomCard << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n\n";
+                std::cout << randomCard1 << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n\n";
                 turn += 1;
                 std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
                 std::cin >> swap;
@@ -338,10 +322,14 @@ ALL POKER CARDS (Line 48 - 54)
                     for (const std::string& card : handDeck) {
 
                         // TWO PAIRS
-                        if (twoFind.count(card) && threeFind.count(card)) {
+                        if (twoFind.count(card)) {
 
                             twoFound++;
-                            threeFound++;
+
+                            if (threeFind.count(card)) {
+
+                                threeFound++;
+                            }
 
                             if (twoFound == 2 && threeFound == 2) {
 
@@ -353,36 +341,36 @@ ALL POKER CARDS (Line 48 - 54)
                                 // testing...
                                 std::cout << "twoFound: " << twoFound << "\n";
                                 std::cout << "threeFound: " << threeFound << "\n";
+                                break;
                             }
                         }
 
                         // PAIR 
-                        else if (twoFind.count(card)) {
+                        else if (randomCard1 == ) {
 
-                            twoFound++;
+                            std::cout << pairCard.first << "\n";
+                        
+                            creditReward = creditBet * pairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
 
-                            if (twoFound == 2) {
-
-                                std::cout << pairCard.first << "\n";
-                            
-                                creditReward = creditBet * pairCard.second;
-                                std::cout << "You have recieved $" << creditReward << "\n";
-                                credit += creditReward;
-
-                                // testing...
-                                std::cout << "twoFound: " << twoFound << "\n";
-                            }
-
+                            // testing...
+                            std::cout << "twoFound: " << twoFound << "\n";
+                            break;
                         }
 
                         // HIGH CARD
                         else {
+
+                            // testing...
+                            std::cout << randomCard1 << randomCard2 << randomCard3 << randomCard4 << randomCard5 << "\n";
 
                             std::cout << highCard.first << "\n";
 
                             creditReward = creditBet * highCard.second;
                             std::cout << "You have recieved $" << creditReward << "\n";
                             credit += creditReward;
+                            break;
                         }
                         
                         
