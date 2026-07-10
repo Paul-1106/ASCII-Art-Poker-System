@@ -248,60 +248,60 @@ ALL POKER CARDS (Line 46 - 52)
                     if (swap == 's' || swap == 'S') {
 
                         std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
-                        std::cout << "Change 'card1'? (y/n)\n";
+                        std::cout << "Change 'card1'? (Y/N)\n";
                         std::cin >> cardChange1; 
                         turn += 1;
 
-                        if (cardChange1 == 'y') {
+                        if (cardChange1 == 'y' || cardChange1 == 'Y') {
                             // Change cards ('mEngine' is a specific card that will shuffle)
                             std::shuffle(handDeck.begin(), handDeck.end(), mEngine);
                         }
-                        else if (cardChange1 != 'n' && cardChange1 != 'y') {
-                            std::cout << "Not a valid option! (y/n)\n";
+                        else if (cardChange1 != 'n' && cardChange1 != 'y' && cardChange1 != 'N' && cardChange1 != 'Y') {
+                            std::cout << "Not a valid option! (Y/N)\n";
                             std::cin >> cardChange1;
                         }
                         else {
-                            std::cout << "Change 'card2'? (y/n)\n";
+                            std::cout << "Change 'card2'? (Y/N)\n";
                             std::cin >> cardChange2;
 
-                            if (cardChange2 == 'y') {
+                            if (cardChange2 == 'y' || cardChange2 == 'Y') {
                                 std::shuffle(handDeck.begin(), handDeck.end(), mEngine2);
                             }
-                            else if (cardChange2 != 'n' && cardChange2 != 'y') {
-                                std::cout << "Not a valid option! (y/n)\n";
+                            else if (cardChange2 != 'n' && cardChange2 != 'y' && cardChange2 != 'N' && cardChange2 != 'Y') {
+                                std::cout << "Not a valid option! (Y/N)\n";
                                 std::cin >> cardChange2;
                             }
                             else {
-                                std::cout << "Change 'card3'? (y/n)\n";
+                                std::cout << "Change 'card3'? (Y/N)\n";
                                 std::cin >> cardChange3;
 
-                                if (cardChange3 == 'y') {
+                                if (cardChange3 == 'y' && cardChange3 == 'Y') {
                                     std::shuffle(handDeck.begin(), handDeck.end(), mEngine3);
                                 }
-                                else if (cardChange3 != 'n' && cardChange3 != 'y') {
-                                    std::cout << "Not a valid option! (y/n)\n";
+                                else if (cardChange3 != 'n' && cardChange3 != 'y' && cardChange3 != 'N' && cardChange3 != 'Y') {
+                                    std::cout << "Not a valid option! (Y/N)\n";
                                     std::cin >> cardChange3;
                                 }
                                 else {
-                                    std::cout << "Change 'card4'? (y/n)\n";
+                                    std::cout << "Change 'card4'? (Y/N)\n";
                                     std::cin >> cardChange4;
 
-                                    if (cardChange4 == 'y') {
+                                    if (cardChange4 == 'y' || cardChange4 == 'Y') {
                                         std::shuffle(handDeck.begin(), handDeck.end(), mEngine4);                          
                                     }
                                     else if (cardChange4 != 'n' && cardChange4 != 'y') {
-                                        std::cout << "Not a valid option! (y/n)\n";
+                                        std::cout << "Not a valid option! (Y/N)\n";
                                         std::cin >> cardChange4;
                                     }
                                     else {
-                                        std::cout << "Change 'card5'? (y/n)\n";
+                                        std::cout << "Change 'card5'? (Y/N)\n";
                                         std::cin >> cardChange5;
 
-                                        if (cardChange5 == 'y') {
+                                        if (cardChange5 == 'y' || cardChange5 == 'Y') {
                                             std::shuffle(handDeck.begin(), handDeck.end(), mEngine5);
                                         }
-                                        else if (cardChange5 != 'n' && cardChange5 != 'y') {
-                                            std::cout << "Not a valid option! (y/n)\n";
+                                        else if (cardChange5 != 'n' && cardChange5 != 'y' && cardChange5 != 'N' && cardChange5 != 'Y') {
+                                            std::cout << "Not a valid option! (Y/N)\n";
                                             std::cin >> cardChange5;
                                         }
                                         else {
@@ -339,7 +339,6 @@ ALL POKER CARDS (Line 46 - 52)
                                     // testing...
                                     std::cout << "twoFound: " << twoFound << "\n";
                                     std::cout << "threeFound: " << threeFound << "\n";
-                                    break;
                                 }
                             }
 
@@ -358,7 +357,6 @@ ALL POKER CARDS (Line 46 - 52)
 
                                     // testing...
                                     std::cout << "twoFound: " << twoFound << "\n";
-                                    break;
                                 }
                             }
 
@@ -370,7 +368,6 @@ ALL POKER CARDS (Line 46 - 52)
                                 creditReward = creditBet * highCard.second;
                                 std::cout << "You have recieved $" << creditReward << "\n";
                                 credit += creditReward;
-                                break;
                             }
                             
                             
@@ -384,6 +381,8 @@ ALL POKER CARDS (Line 46 - 52)
                         std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
                         std::cin >> swap;
                     }
+
+                    break;
                 }
             }
             // If user input less than 100 credits
