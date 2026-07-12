@@ -239,7 +239,7 @@ ALL POKER CARDS (Line 46 - 52)
                     handDeck[4] = pokerCards[dist5(mEngine5)];
 
                     // Displayed poker hand
-                    std::cout << handDeck[0] << handDeck[1] << handDeck[2] << handDeck[3] << handDeck[4] << "\n\n";
+                    std::cout << handDeck[0] << "\n" << handDeck[1] << "\n" << handDeck[2] << "\n" << handDeck[3] << "\n" << handDeck[4] << "\n\n";
 
                     turn += 1;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";

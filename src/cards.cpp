@@ -17,523 +17,523 @@ void Poker::cards(std::string& twoH, std::string& twoD, std::string& twoC, std::
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
          std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ) {
 
-    twoH = "***********\n" // Suit: Heart
-           "*  ooooo H*\n"
-           "*      o  *\n"
-           "*  ooooo  *\n"
-           "*  o      *\n"
-           "*2 ooooo  *\n"
-           "***********\n";
-    
-    twoD = "***********\n" // Suit: Diamond
-           "*  ooooo D*\n"
-           "*      o  *\n"
-           "*  ooooo  *\n"
-           "*  o      *\n"
-           "*2 ooooo  *\n"
-           "***********\n";
+        twoH = R"(***********
+*  ooooo H*
+*      o  *
+*  ooooo  *
+*  o      *
+*2 ooooo  *
+***********)";
+        
+        twoD = R"(***********
+*  ooooo D*
+*      o  *
+*  ooooo  *
+*  o      *
+*2 ooooo  *
+***********)";
 
-    twoC = "***********\n" // Suit: Clover
-           "*  ooooo C*\n"
-           "*      o  *\n"
-           "*  ooooo  *\n"
-           "*  o      *\n"
-           "*2 ooooo  *\n"
-           "***********\n";
+        twoC = R"(***********
+*  ooooo C*
+*      o  *
+*  ooooo  *
+*  o      *
+*2 ooooo  *
+***********)";
 
-    twoS = "***********\n" // Suit: Spade
-           "*  ooooo S*\n"
-           "*      o  *\n"
-           "*  ooooo  *\n"
-           "*  o      *\n"
-           "*2 ooooo  *\n"
-           "***********\n";
+        twoS = R"(***********
+*  ooooo S*
+*      o  *
+*  ooooo  *
+*  o      *
+*2 ooooo  *
+***********)";
 
-    twoQ = "***********\n" // Suit: Quatrefoil
-           "*  ooooo Q*\n"
-           "*      o  *\n"
-           "*  ooooo  *\n"
-           "*  o      *\n"
-           "*2 ooooo  *\n"
-           "***********\n";
+        twoQ = R"(***********
+*  ooooo Q*
+*      o  *
+*  ooooo  *
+*  o      *
+*2 ooooo  *
+***********)";
 
-    threeH = "***********\n" 
-             "*  ooooo H*\n"
-             "*      o  *\n"
-             "*  ooooo  *\n"
-             "*      o  *\n"
-             "*3 ooooo  *\n"
-             "***********\n";
-    
-    threeD = "***********\n" 
-             "*  ooooo D*\n"
-             "*      o  *\n"
-             "*  ooooo  *\n"
-             "*      o  *\n"
-             "*3 ooooo  *\n"
-             "***********\n";
+        threeH = R"(*********** 
+                        *  ooooo H*
+                        *      o  *
+                        *  ooooo  *
+                        *      o  *
+                        *3 ooooo  *
+                        ***********)";
+        
+        threeD = R"(*********** 
+                        *  ooooo D*
+                        *      o  *
+                        *  ooooo  *
+                        *      o  *
+                        *3 ooooo  *
+                        ***********)";
 
-    threeC = "***********\n"
-             "*  ooooo C*\n"
-             "*      o  *\n"
-             "*  ooooo  *\n"
-             "*      o  *\n"
-             "*3 ooooo  *\n"
-            "***********\n";
+        threeC = R"(***********
+                        *  ooooo C*
+                        *      o  *
+                        *  ooooo  *
+                        *      o  *
+                        *3 ooooo  *
+                        ***********)";
 
-    threeS = "***********\n" 
-             "*  ooooo S*\n"
-             "*      o  *\n"
-             "*  ooooo  *\n"
-             "*      o  *\n"
-             "*3 ooooo  *\n"
-             "***********\n";
+        threeS = R"(*********** 
+                        *  ooooo S*
+                        *      o  *
+                        *  ooooo  *
+                        *      o  *
+                        *3 ooooo  *
+                        ***********)";
 
-    threeQ = "***********\n" 
-             "*  ooooo Q*\n"
-             "*      o  *\n"
-             "*  ooooo  *\n"
-             "*      o  *\n"
-             "*3 ooooo  *\n"
-             "***********\n";
+        threeQ = R"(*********** 
+                        *  ooooo Q*
+                        *      o  *
+                        *  ooooo  *
+                        *      o  *
+                        *3 ooooo  *
+                        ***********)";
 
-    fourH = "***********\n" 
-            "*  o   o H*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*4     o  *\n"
-            "***********\n";
-    
-    fourD = "***********\n" 
-            "*  o   o D*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*4     o  *\n"
-            "***********\n";
+        fourH = R"(*********** 
+                *  o   o H*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *4     o  *
+                ***********)";
+        
+        fourD = R"(*********** 
+                *  o   o D*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *4     o  *
+                ***********)";
 
-    fourC = "***********\n"
-            "*  o   o C*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*4     o  *\n"
-            "***********\n";
+        fourC = R"(***********
+                *  o   o C*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *4     o  *
+                ***********)";
 
-    fourS = "***********\n" 
-            "*  o   o S*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*4     o  *\n"
-            "***********\n";
+        fourS = R"(*********** 
+                *  o   o S*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *4     o  *
+                ***********)";
 
-    fourQ = "***********\n" 
-            "*  o   o Q*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*4     o  *\n"
-            "***********\n";
+        fourQ = R"(*********** 
+                *  o   o Q*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *4     o  *
+                ***********)";
 
-    fiveH = "***********\n" 
-            "*  ooooo H*\n"
-            "*  o      *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*5 ooooo  *\n"
-            "***********\n";
-    
-    fiveD = "***********\n" 
-            "*  ooooo D*\n"
-            "*  o      *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*5 ooooo  *\n"
-            "***********\n";
+        fiveH = R"(*********** 
+                *  ooooo H*
+                *  o      *
+                *  ooooo  *
+                *      o  *
+                *5 ooooo  *
+                ***********)";
+        
+        fiveD = R"(*********** 
+                *  ooooo D*
+                *  o      *
+                *  ooooo  *
+                *      o  *
+                *5 ooooo  *
+                ***********)";
 
-    fiveC = "***********\n"
-            "*  ooooo C*\n"
-            "*  o      *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*5 ooooo  *\n"
-            "***********\n";
+        fiveC = R"(***********
+                *  ooooo C*
+                *  o      *
+                *  ooooo  *
+                *      o  *
+                *5 ooooo  *
+                ***********)";
 
-    fiveS = "***********\n" 
-            "*  ooooo S*\n"
-            "*  o      *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*5 ooooo  *\n"
-            "***********\n";
+        fiveS = R"(*********** 
+                *  ooooo S*
+                *  o      *
+                *  ooooo  *
+                *      o  *
+                *5 ooooo  *
+                ***********)";
 
-    fiveQ = "***********\n" 
-            "*  ooooo Q*\n"
-            "*  o      *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*5 ooooo  *\n"
-            "***********\n";
+        fiveQ = R"(*********** 
+                *  ooooo Q*
+                *  o      *
+                *  ooooo  *
+                *      o  *
+                *5 ooooo  *
+                ***********)";
 
-    sixH = "***********\n"
-           "*  ooooo H*\n"
-           "*  o      *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*6 ooooo  *\n"
-           "***********\n";
-    
-    sixD = "***********\n" 
-           "*  ooooo D*\n"
-           "*  o      *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*6 ooooo  *\n"
-           "***********\n";
+        sixH = R"(***********
+                *  ooooo H*
+                *  o      *
+                *  ooooo  *
+                *  o   o  *
+                *6 ooooo  *
+                ***********)";
+        
+        sixD = R"(*********** 
+                *  ooooo D*
+                *  o      *
+                *  ooooo  *
+                *  o   o  *
+                *6 ooooo  *
+                ***********)";
 
-    sixC = "***********\n" 
-           "*  ooooo C*\n"
-           "*  o      *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*6 ooooo  *\n"
-           "***********\n";
+        sixC = R"(*********** 
+                *  ooooo C*
+                *  o      *
+                *  ooooo  *
+                *  o   o  *
+                *6 ooooo  *
+                ***********)";
 
-    sixS = "***********\n" 
-           "*  ooooo S*\n"
-           "*  o      *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*6 ooooo  *\n"
-           "***********\n";
+        sixS = R"(*********** 
+                *  ooooo S*
+                *  o      *
+                *  ooooo  *
+                *  o   o  *
+                *6 ooooo  *
+                ***********)";
 
-    sixQ = "***********\n" 
-           "*  ooooo Q*\n"
-           "*  o      *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*6 ooooo  *\n"
-           "***********\n";
+        sixQ = R"(*********** 
+                *  ooooo Q*
+                *  o      *
+                *  ooooo  *
+                *  o   o  *
+                *6 ooooo  *
+                ***********)";
 
-    sevenH = "***********\n" 
-             "*  ooooo H*\n"
-             "*      o  *\n"
-             "*     o   *\n"
-             "*     o   *\n"
-             "*7    o   *\n"
-             "***********\n";
-    
-    sevenD = "***********\n" 
-             "*  ooooo D*\n"
-             "*      o  *\n"
-             "*     o   *\n"
-             "*     o   *\n"
-             "*7    o   *\n"
-             "***********\n";
+        sevenH = R"(*********** 
+                        *  ooooo H*
+                        *      o  *
+                        *     o   *
+                        *     o   *
+                        *7    o   *
+                        ***********)";
+        
+        sevenD = R"(*********** 
+                        *  ooooo D*
+                        *      o  *
+                        *     o   *
+                        *     o   *
+                        *7    o   *
+                        ***********)";
 
-    sevenC = "***********\n"
-             "*  ooooo C*\n"
-             "*      o  *\n"
-             "*     o   *\n"
-             "*     o   *\n"
-             "*7    o   *\n"
-             "***********\n";
+        sevenC = R"(***********
+                        *  ooooo C*
+                        *      o  *
+                        *     o   *
+                        *     o   *
+                        *7    o   *
+                        ***********)";
 
-    sevenS = "***********\n" 
-             "*  ooooo S*\n"
-             "*      o  *\n"
-             "*     o   *\n"
-             "*     o   *\n"
-             "*7    o   *\n"
-             "***********\n";
+        sevenS = R"(*********** 
+                        *  ooooo S*
+                        *      o  *
+                        *     o   *
+                        *     o   *
+                        *7    o   *
+                        ***********)";
 
-    sevenQ = "***********\n" 
-             "*  ooooo Q*\n"
-             "*      o  *\n"
-             "*     o   *\n"
-             "*     o   *\n"
-             "*7    o   *\n"
-             "***********\n";
+        sevenQ = R"(*********** 
+                        *  ooooo Q*
+                        *      o  *
+                        *     o   *
+                        *     o   *
+                        *7    o   *
+                        ***********)";
 
-    eightH = "***********\n" 
-             "*  ooooo H*\n"
-             "*  o   o  *\n"
-             "*  ooooo  *\n"
-             "*  o   o  *\n"
-             "*8 ooooo  *\n"
-             "***********\n";
-    
-    eightD = "***********\n" 
-             "*  ooooo D*\n"
-             "*  o   o  *\n"
-             "*  ooooo  *\n"
-             "*  o   o  *\n"
-             "*8 ooooo  *\n"
-             "***********\n";
+        eightH = R"(*********** 
+                        *  ooooo H*
+                        *  o   o  *
+                        *  ooooo  *
+                        *  o   o  *
+                        *8 ooooo  *
+                        ***********)";
+        
+        eightD = R"(*********** 
+                        *  ooooo D*
+                        *  o   o  *
+                        *  ooooo  *
+                        *  o   o  *
+                        *8 ooooo  *
+                        ***********)";
 
-    eightC = "***********\n"
-             "*  ooooo C*\n"
-             "*  o   o  *\n"
-             "*  ooooo  *\n"
-             "*  o   o  *\n"
-             "*8 ooooo  *\n"
-             "***********\n";
+        eightC = R"(***********
+                        *  ooooo C*
+                        *  o   o  *
+                        *  ooooo  *
+                        *  o   o  *
+                        *8 ooooo  *
+                        ***********)";
 
-    eightS = "***********\n" 
-             "*  ooooo S*\n"
-             "*  o   o  *\n"
-             "*  ooooo  *\n"
-             "*  o   o  *\n"
-             "*8 ooooo  *\n"
-             "***********\n";
+        eightS = R"(*********** 
+                        *  ooooo S*
+                        *  o   o  *
+                        *  ooooo  *
+                        *  o   o  *
+                        *8 ooooo  *
+                        ***********)";
 
-    eightQ = "***********\n" 
-             "*  ooooo Q*\n"
-             "*  o   o  *\n"
-             "*  ooooo  *\n"
-             "*  o   o  *\n"
-             "*8 ooooo  *\n"
-             "***********\n";
+        eightQ = R"(*********** 
+                        *  ooooo Q*
+                        *  o   o  *
+                        *  ooooo  *
+                        *  o   o  *
+                        *8 ooooo  *
+                        ***********)";
 
-    nineH = "***********\n" 
-            "*  ooooo H*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*9 ooooo  *\n"
-            "***********\n";
-    
-    nineD = "***********\n" 
-            "*  ooooo D*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*9 ooooo  *\n"
-            "***********\n";
+        nineH = R"(*********** 
+                *  ooooo H*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *9 ooooo  *
+                ***********)";
+        
+        nineD = R"(*********** 
+                *  ooooo D*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *9 ooooo  *
+                ***********)";
 
-    nineC = "***********\n"
-            "*  ooooo C*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*9 ooooo  *\n"
-            "***********\n";
+        nineC = R"(***********
+                *  ooooo C*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *9 ooooo  *
+                ***********)";
 
-    nineS = "***********\n" 
-            "*  ooooo S*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*9 ooooo  *\n"
-            "***********\n";
+        nineS = R"(*********** 
+                *  ooooo S*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *9 ooooo  *
+                ***********)";
 
-    nineQ = "***********\n" 
-            "*  ooooo Q*\n"
-            "*  o   o  *\n"
-            "*  ooooo  *\n"
-            "*      o  *\n"
-            "*9 ooooo  *\n"
-            "***********\n";
+        nineQ = R"(*********** 
+                *  ooooo Q*
+                *  o   o  *
+                *  ooooo  *
+                *      o  *
+                *9 ooooo  *
+                ***********)";
 
-    tenH = "***********\n"
-           "*  ooooo H*\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*10  o    *\n"
-           "***********\n";
-    
-    tenD = "***********\n" 
-           "*  ooooo D*\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*10  o    *\n"
-           "***********\n";
+        tenH = R"(***********
+                *  ooooo H*
+                *    o    *
+                *    o    *
+                *    o    *
+                *10  o    *
+                ***********)";
+        
+        tenD = R"(*********** 
+                *  ooooo D*
+                *    o    *
+                *    o    *
+                *    o    *
+                *10  o    *
+                ***********)";
 
-    tenC = "***********\n" 
-           "*  ooooo C*\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*10  o    *\n"
-           "***********\n";
+        tenC = R"(*********** 
+                *  ooooo C*
+                *    o    *
+                *    o    *
+                *    o    *
+                *10  o    *
+                ***********)";
 
-    tenS = "***********\n" 
-           "*  ooooo S*\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*10  o    *\n"
-           "***********\n";
+        tenS = R"(*********** 
+                *  ooooo S*
+                *    o    *
+                *    o    *
+                *    o    *
+                *10  o    *
+                ***********)";
 
-    tenQ = "***********\n" 
-           "*  ooooo Q*\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*    o    *\n"
-           "*10  o    *\n"
-           "***********\n";
+        tenQ = R"(*********** 
+                *  ooooo Q*
+                *    o    *
+                *    o    *
+                *    o    *
+                *10  o    *
+                ***********)";
 
-    jackH = "***********\n" 
-            "*  ooooo H*\n"
-            "*    o    *\n"
-            "*    o    *\n"
-            "*  o o    *\n"
-            "*J ooo    *\n"
-            "***********\n";
-    
-    jackD = "***********\n" 
-            "*  ooooo D*\n"
-            "*    o    *\n"
-            "*    o    *\n"
-            "*  o o    *\n"
-            "*J ooo    *\n"
-            "***********\n";
+        jackH = R"(*********** 
+                *  ooooo H*
+                *    o    *
+                *    o    *
+                *  o o    *
+                *J ooo    *
+                ***********)";
+        
+        jackD = R"(*********** 
+                *  ooooo D*
+                *    o    *
+                *    o    *
+                *  o o    *
+                *J ooo    *
+                ***********)";
 
-    jackC = "***********\n"
-            "*  ooooo C*\n"
-            "*    o    *\n"
-            "*    o    *\n"
-            "*  o o    *\n"
-            "*J ooo    *\n"
-            "***********\n";
+        jackC = R"(***********
+                *  ooooo C*
+                *    o    *
+                *    o    *
+                *  o o    *
+                *J ooo    *
+                ***********)";
 
-    jackS = "***********\n" 
-            "*  ooooo S*\n"
-            "*    o    *\n"
-            "*    o    *\n"
-            "*  o o    *\n"
-            "*J ooo    *\n"
-            "***********\n";
+        jackS = R"(*********** 
+                *  ooooo S*
+                *    o    *
+                *    o    *
+                *  o o    *
+                *J ooo    *
+                ***********)";
 
-    jackQ = "***********\n" 
-            "*  ooooo Q*\n"
-            "*    o    *\n"
-            "*    o    *\n"
-            "*  o o    *\n"
-            "*J ooo    *\n"
-            "***********\n";
+        jackQ = R"(*********** 
+                *  ooooo Q*
+                *    o    *
+                *    o    *
+                *  o o    *
+                *J ooo    *
+                ***********)";
 
-    queenH = "***********\n" 
-             "* oooooo H*\n"
-             "* o    o  *\n"
-             "* oooooo  *\n"
-             "*  o      *\n"
-             "*QU ooo   *\n"
-             "***********\n";
-    
-    queenD = "***********\n" 
-             "* oooooo D*\n"
-             "* o    o  *\n"
-             "* oooooo  *\n"
-             "*  o      *\n"
-             "*QU ooo   *\n"
-             "***********\n";
+        queenH = R"(*********** 
+                        * oooooo H*
+                        * o    o  *
+                        * oooooo  *
+                        *  o      *
+                        *QU ooo   *
+                        ***********)";
+        
+        queenD = R"(*********** 
+                        * oooooo D*
+                        * o    o  *
+                        * oooooo  *
+                        *  o      *
+                        *QU ooo   *
+                        ***********)";
 
-    queenC = "***********\n"
-             "* oooooo C*\n"
-             "* o    o  *\n"
-             "* oooooo  *\n"
-             "*  o      *\n"
-             "*QU ooo   *\n"
-             "***********\n";
+        queenC = R"(***********
+                        * oooooo C*
+                        * o    o  *
+                        * oooooo  *
+                        *  o      *
+                        *QU ooo   *
+                        ***********)";
 
-    queenS = "***********\n" 
-             "* oooooo S*\n"
-             "* o    o  *\n"
-             "* oooooo  *\n"
-             "*  o      *\n"
-             "*QU ooo   *\n"
-             "***********\n";
+        queenS = R"(*********** 
+                        * oooooo S*
+                        * o    o  *
+                        * oooooo  *
+                        *  o      *
+                        *QU ooo   *
+                        ***********)";
 
-    queenQ = "***********\n" 
-             "* oooooo Q*\n"
-             "* o    o  *\n"
-             "* oooooo  *\n"
-             "*  o      *\n"
-             "*QU ooo   *\n"
-             "***********\n";
+        queenQ = R"(*********** 
+                        * oooooo Q*
+                        * o    o  *
+                        * oooooo  *
+                        *  o      *
+                        *QU ooo   *
+                        ***********)";
 
-    kingH = "***********\n" 
-            "*  o  oo H*\n"
-            "*  o o    *\n"
-            "*  oo     *\n"
-            "*  o o    *\n"
-            "*K o  oo  *\n"
-            "***********\n";
-    
-    kingD = "***********\n" 
-            "*  o  oo D*\n"
-            "*  o o    *\n"
-            "*  oo     *\n"
-            "*  o o    *\n"
-            "*K o  oo  *\n"
-            "***********\n";
+        kingH = R"(*********** 
+                *  o  oo H*
+                *  o o    *
+                *  oo     *
+                *  o o    *
+                *K o  oo  *
+                ***********)";
+        
+        kingD = R"(*********** 
+                *  o  oo D*
+                *  o o    *
+                *  oo     *
+                *  o o    *
+                *K o  oo  *
+                ***********)";
 
-    kingC = "***********\n"
-            "*  o  oo C*\n"
-            "*  o o    *\n"
-            "*  oo     *\n"
-            "*  o o    *\n"
-            "*K o  oo  *\n"
-            "***********\n";
+        kingC = R"(***********
+                *  o  oo C*
+                *  o o    *
+                *  oo     *
+                *  o o    *
+                *K o  oo  *
+                ***********)";
 
-    kingS = "***********\n" 
-            "*  o  oo S*\n"
-            "*  o o    *\n"
-            "*  oo     *\n"
-            "*  o o    *\n"
-            "*K o  oo  *\n"
-            "***********\n";
+        kingS = R"(*********** 
+                *  o  oo S*
+                *  o o    *
+                *  oo     *
+                *  o o    *
+                *K o  oo  *
+                ***********)";
 
-    kingQ = "***********\n" 
-            "*  o  oo Q*\n"
-            "*  o o    *\n"
-            "*  oo     *\n"
-            "*  o o    *\n"
-            "*K o  oo  *\n"
-            "***********\n";
+        kingQ = R"(*********** 
+                *  o  oo Q*
+                *  o o    *
+                *  oo     *
+                *  o o    *
+                *K o  oo  *
+                ***********)";
 
-    aceH = "***********\n"
-           "*  ooooo H*\n"
-           "*  o   o  *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*A o   o  *\n"
-           "***********\n";
-    
-    aceD = "***********\n" 
-           "*  ooooo D*\n"
-           "*  o   o  *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*A o   o  *\n"
-           "***********\n";
+        aceH = R"(***********
+*  ooooo H*
+*  o   o  *
+*  ooooo  *
+*  o   o  *
+*A o   o  *
+***********)";
+        
+        aceD = R"(*********** 
+*  ooooo D*
+*  o   o  *
+*  ooooo  *
+*  o   o  *
+*A o   o  *
+***********)";
 
-    aceC = "***********\n" 
-           "*  ooooo C*\n"
-           "*  o   o  *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*A o   o  *\n"
-           "***********\n";
+        aceC = R"(*********** 
+*  ooooo C*
+*  o   o  *
+*  ooooo  *
+*  o   o  *
+*A o   o  *
+***********)";
 
-    aceS = "***********\n" 
-           "*  ooooo S*\n"
-           "*  o   o  *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*A o   o  *\n"
-           "***********\n";
+        aceS = R"(*********** 
+*  ooooo S*
+*  o   o  *
+*  ooooo  *
+*  o   o  *
+*A o   o  *
+***********)";
 
-    aceQ = "***********\n" 
-           "*  ooooo Q*\n"
-           "*  o   o  *\n"
-           "*  ooooo  *\n"
-           "*  o   o  *\n"
-           "*A o   o  *\n"
-           "***********\n";
+        aceQ = R"(*********** 
+*  ooooo Q*
+*  o   o  *
+*  ooooo  *
+*  o   o  *
+*A o   o  *
+***********)";
 }
