@@ -13,7 +13,6 @@
 #include <chrono>
 #include <sstream>
 
-
 class Poker {
 public:
     void onePlayer(double& credit, size_t creditRequirement);
@@ -33,6 +32,8 @@ public:
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
          std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
     
+    std::vector<std::string> lineSplitting(const std::string s);     
+
 private:
     double credit;
     size_t creditRequirement;

@@ -5,6 +5,19 @@
 
 #include <mylib/poker.h>
 
+std::vector<std::string> Poker::lineSplitting(const std::string s) {
+
+    std::vector<std::string> lines;
+    std::stringstream ss(s);
+    std::string line;
+
+    while (std::getline(ss, line)) {
+        lines.push_back(line);
+    }
+
+    return lines;
+}
+
 void Poker::onePlayer(double& credit, size_t creditRequirement) {
 
     char quit = 'q';
@@ -42,6 +55,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
 ALL POKER CARDS (Line 46 - 52)
 ------------------------------
 */ 
+
     // A random selector will pick an element from a 'pokerHand' vector
     std::vector<std::string> pokerCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade,
             threeQuatrefoil, fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
@@ -179,11 +193,11 @@ ALL POKER CARDS (Line 46 - 52)
     std::unordered_set<std::string> queenFind(queenCards.begin(), queenCards.end());
     std::unordered_set<std::string> kingFind(kingCards.begin(), kingCards.end());
 
-    std::unordered_set<std::string> heartFind(heartCards.begin(), heartCards.end());
-    std::unordered_set<std::string> diamondFind(diamondCards.begin(), diamondCards.end());
-    std::unordered_set<std::string> clubFind(clubCards.begin(), clubCards.end());
-    std::unordered_set<std::string> spadeFind(spadeCards.begin(), spadeCards.end());
-    std::unordered_set<std::string> quatrefoil(quatrefoilCards.begin(), quatrefoilCards.end());
+    // std::unordered_set<std::string> heartFind(heartCards.begin(), heartCards.end());
+    // std::unordered_set<std::string> diamondFind(diamondCards.begin(), diamondCards.end());
+    // std::unordered_set<std::string> clubFind(clubCards.begin(), clubCards.end());
+    // std::unordered_set<std::string> spadeFind(spadeCards.begin(), spadeCards.end());
+    // std::unordered_set<std::string> quatrefoil(quatrefoilCards.begin(), quatrefoilCards.end());
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -238,8 +252,33 @@ ALL POKER CARDS (Line 46 - 52)
                     std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
                     handDeck[4] = pokerCards[dist5(mEngine5)];
 
+                    std::vector<std::vector<std::string>> blockBreak;
+                    size_t max_height = 0;
+
+                    // Split all the block into lines
+                    for (const auto& block : handDeck) {
+
+                        auto lines = lineSplitting(block);
+
+                        if (lines.size() > max_height) {
+                            max_height = lines.size();
+                        }
+                        blockBreak.push_back(lines);
+                    }
+
                     // Displayed poker hand
-                    std::cout << handDeck[0] << "\n" << handDeck[1] << "\n" << handDeck[2] << "\n" << handDeck[3] << "\n" << handDeck[4] << "\n\n";
+                    for (size_t i{0}; i < max_height; ++i) {
+                        for (const auto& lines : blockBreak) {
+
+                            if (i < lines.size()) {
+                                std::cout << lines[0] << lines[1] << lines[2] << lines[3] << lines[4] << " ";
+                            }
+                            else {
+                                std::cout << "      ";
+                            }
+                        }
+                        std::cout << "\n";
+                    }
 
                     turn += 1;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
