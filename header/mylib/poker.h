@@ -30,9 +30,7 @@ public:
          std::string& tenC, std::string& tenS, std::string& tenQ, std::string& jackH, std::string& jackD, std::string& jackC, std::string& jackS,
          std::string& jackQ, std::string& queenH, std::string& queenD, std::string& queenC, std::string& queenS, std::string& queenQ,
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
-         std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
-    
-    std::vector<std::string> lineSplitting(const std::string s);     
+         std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);  
 
 private:
     double credit;

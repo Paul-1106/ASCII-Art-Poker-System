@@ -5,19 +5,6 @@
 
 #include <mylib/poker.h>
 
-std::vector<std::string> Poker::lineSplitting(const std::string s) {
-
-    std::vector<std::string> lines;
-    std::stringstream ss(s);
-    std::string line;
-
-    while (std::getline(ss, line)) {
-        lines.push_back(line);
-    }
-
-    return lines;
-}
-
 void Poker::onePlayer(double& credit, size_t creditRequirement) {
 
     char quit = 'q';
@@ -252,33 +239,36 @@ ALL POKER CARDS (Line 46 - 52)
                     std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
                     handDeck[4] = pokerCards[dist5(mEngine5)];
 
-                    std::vector<std::vector<std::string>> blockBreak;
-                    size_t max_height = 0;
+                    std::vector<std::stringstream> buffers, buffers2;
+                    buffers.reserve(handDeck.size());
 
-                    // Split all the block into lines
-                    for (const auto& block : handDeck) {
-
-                        auto lines = lineSplitting(block);
-
-                        if (lines.size() > max_height) {
-                            max_height = lines.size();
-                        }
-                        blockBreak.push_back(lines);
+                    // Poker hand from 1-5 will move to stringstream vector for line break
+                    for (const auto& a : handDeck) {
+                        buffers.emplace_back(a);
                     }
 
-                    // Displayed poker hand
-                    for (size_t i{0}; i < max_height; ++i) {
-                        for (const auto& lines : blockBreak) {
+                    bool bashLines = true;
+                    bool bashLines2 = true;
 
-                            if (i < lines.size()) {
-                                std::cout << lines[0] << lines[1] << lines[2] << lines[3] << lines[4] << " ";
-                            }
-                            else {
-                                std::cout << "      ";
+                    // Displaying poker hand horizontally instead of vertically
+                    while (bashLines) {
+                        bashLines = false;
+
+                        for (auto& a : buffers) {
+                            std::string line;
+
+                            if (std::getline(a, line)) {
+                                // Print poker hand from 1-5
+                                std::cout << line << " ";
+                                bashLines = true;
                             }
                         }
-                        std::cout << "\n";
+                        // A new line will start over to the top of ACSII art poker card to the right
+                        if (bashLines) {
+                            std::cout << "\n";
+                        }
                     }
+
 
                     turn += 1;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
@@ -408,7 +398,29 @@ ALL POKER CARDS (Line 46 - 52)
                                 std::cout << "You have recieved $" << creditReward << "\n";
                                 credit += creditReward;
                             }
-                            
+
+                            buffers2.reserve(handDeck.size());
+
+                            for (const auto& a : handDeck) {
+                                buffers2.emplace_back(a);
+                            }
+
+                            while (bashLines2) {
+                                bashLines2 = false;
+
+                                for (auto& a : buffers2) {
+                                    std::string line;
+
+                                    if (std::getline(a, line)) {
+                                        std::cout << line << " ";
+                                        bashLines2 = true;
+                                    }
+                                }
+                                
+                                if (bashLines2) {
+                                    std::cout << "\n";
+                                }
+                            }
                             
                             std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                             break;
