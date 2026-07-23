@@ -372,7 +372,15 @@ ALL POKER CARDS (Line 46 - 52)
                             }
 
                             // PAIR 
-                            else if (twoFind.count(card)) {
+                            else if (card.find("2") != std::string::npos && card.find("2") != std::string::npos || card.find("3") != std::string::npos &&
+                                    card.find("3") != std::string::npos || card.find("4") != std::string::npos && card.find("4") != std::string::npos ||
+                                    card.find("5") != std::string::npos && card.find("5") != std::string::npos || card.find("6") != std::string::npos &&
+                                    card.find("6") || card.find("7") != std::string::npos && card.find("7") != std::string::npos || card.find("8") != std::string::npos &&
+                                    card.find("8") != std::string::npos || card.find("9") != std::string::npos && card.find("9") != std::string::npos ||
+                                    card.find("10") != std::string::npos && card.find("10") != std::string::npos || card.find("J") != std::string::npos &&
+                                    card.find("J") != std::string::npos || card.find("Q") != std::string::npos && card.find("Q") != std::string::npos ||
+                                    card.find("K") != std::string::npos && card.find("K") != std::string::npos || card.find("A") != std::string::npos &&
+                                    card.find("A") != std::string::npos) {
 
                                 twoFound++;
 
