@@ -16,8 +16,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     char swap = ' ';
 
     // Automactically incrementing one of the variables once poker card matched with cards in hash-set array
-    size_t twoFound, threeFound, fourFound, fiveFound, sixFound, sevenFound, eightFound, nineFound, tenFound, jackFound, queenFound, kingFound,
-           aceFound, heartFound, diamondFound, clubFound, spadeFound, quatrefoilFound = 0;
+    bool pairFound = false;
 
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
@@ -166,25 +165,34 @@ ALL POKER CARDS (Line 46 - 52)
 
 
     // Check if one of the elements in sub-array is included in global poker cards array
-    std::unordered_set<std::string> aceFind(aceCards.begin(), aceCards.end());
-    std::unordered_set<std::string> twoFind(twoCards.begin(), twoCards.end());
-    std::unordered_set<std::string> threeFind(threeCards.begin(), threeCards.end());
-    std::unordered_set<std::string> fourFind(fourCards.begin(), fourCards.end());
-    std::unordered_set<std::string> fiveFind(fiveCards.begin(), fiveCards.end());
-    std::unordered_set<std::string> sixFind(sixCards.begin(), sixCards.end());
-    std::unordered_set<std::string> sevenFind(sevenCards.begin(), sevenCards.end());
-    std::unordered_set<std::string> eightFind(eightCards.begin(), eightCards.end());
-    std::unordered_set<std::string> nineFind(nineCards.begin(), nineCards.end());
-    std::unordered_set<std::string> tenFind(tenCards.begin(), tenCards.end());
-    std::unordered_set<std::string> jackFind(jackCards.begin(), jackCards.end());
-    std::unordered_set<std::string> queenFind(queenCards.begin(), queenCards.end());
-    std::unordered_set<std::string> kingFind(kingCards.begin(), kingCards.end());
+    std::unordered_map<std::string, size_t> aceFind = {{aceHeart, 0}, {aceDiamond, 0}, {aceClub, 0}, {aceSpade, 0}, {aceQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> twoFind = {{twoHeart, 0}, {twoDiamond, 0}, {twoClub, 0}, {twoSpade, 0}, {twoQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> threeFind = {{threeHeart, 0}, {threeDiamond, 0}, {threeClub, 0}, {threeSpade, 0}, {threeQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> fourFind = {{fourHeart, 0}, {fourDiamond, 0}, {fourClub, 0}, {fourSpade, 0}, {fourQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> fiveFind = {{fiveHeart, 0}, {fiveDiamond, 0}, {fiveClub, 0}, {fiveSpade, 0}, {fiveQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> sixFind = {{sixHeart, 0}, {sixDiamond, 0}, {sixClub, 0}, {sixSpade, 0}, {sixQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> sevenFind = {{sevenHeart, 0}, {sevenDiamond, 0}, {sevenClub, 0}, {sevenSpade, 0}, {sevenQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> eightFind = {{eightHeart, 0}, {eightDiamond, 0}, {eightClub, 0}, {eightSpade, 0}, {eightQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> nineFind = {{nineHeart, 0}, {nineDiamond, 0}, {nineClub, 0}, {nineSpade, 0}, {nineQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> tenFind = {{tenHeart, 0}, {tenDiamond, 0}, {tenClub, 0}, {tenSpade, 0}, {tenQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> jackFind = {{jackHeart, 0}, {jackDiamond, 0}, {jackClub, 0}, {jackSpade, 0}, {jackQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> queenFind = {{queenHeart, 0}, {queenDiamond, 0}, {queenClub, 0}, {queenSpade, 0}, {queenQuatrefoil, 0}};
+    std::unordered_map<std::string, size_t> kingFind = {{kingHeart, 0}, {kingDiamond, 0}, {kingClub, 0}, {kingSpade, 0}, {kingQuatrefoil, 0}};
 
-    // std::unordered_set<std::string> heartFind(heartCards.begin(), heartCards.end());
-    // std::unordered_set<std::string> diamondFind(diamondCards.begin(), diamondCards.end());
-    // std::unordered_set<std::string> clubFind(clubCards.begin(), clubCards.end());
-    // std::unordered_set<std::string> spadeFind(spadeCards.begin(), spadeCards.end());
-    // std::unordered_set<std::string> quatrefoil(quatrefoilCards.begin(), quatrefoilCards.end());
+    std::unordered_map<std::string, size_t> heartFind = {{aceHeart, 0}, {twoHeart, 0}, {threeHeart, 0}, {fourHeart, 0}, {fiveHeart, 0}, {sixHeart, 0},
+                                                        {sevenHeart, 0}, {eightHeart, 0}, {nineHeart, 0}, {tenHeart, 0}, {jackHeart, 0}, {queenHeart, 0},
+                                                        {kingHeart, 0}};
+    std::unordered_map<std::string, size_t> diamondFind = {{aceDiamond, 0}, {twoDiamond, 0}, {threeDiamond, 0}, {fourDiamond, 0}, {fiveDiamond, 0},
+                                                            {sixDiamond, 0}, {sevenDiamond, 0}, {eightDiamond, 0}, {nineDiamond, 0}, {tenDiamond, 0},
+                                                            {jackDiamond, 0}, {queenDiamond, 0}, {kingDiamond, 0}};
+    std::unordered_map<std::string, size_t> clubFind = {{aceClub, 0}, {twoClub, 0}, {threeClub, 0}, {fourClub, 0}, {fiveClub, 0}, {sixClub, 0}, {sevenClub, 0},
+                                                        {eightClub, 0}, {nineClub, 0}, {tenClub, 0}, {jackClub, 0}, {queenClub, 0}, {kingClub, 0}};
+    std::unordered_map<std::string, size_t> spadeFind = {{aceSpade, 0}, {twoSpade, 0}, {threeSpade, 0}, {fourSpade, 0}, {fiveSpade, 0}, {sixSpade, 0},
+                                                        {sevenSpade, 0}, {eightSpade, 0}, {nineSpade, 0}, {tenSpade, 0}, {jackSpade, 0}, {queenSpade, 0},
+                                                        {kingSpade, 0}};
+    std::unordered_map<std::string, size_t> quatrefoil = {{aceQuatrefoil, 0}, {twoQuatrefoil, 0}, {threeQuatrefoil, 0}, {fourQuatrefoil, 0}, {fiveQuatrefoil, 0},
+                                                        {sixQuatrefoil, 0}, {sevenQuatrefoil, 0}, {eightQuatrefoil, 0}, {nineQuatrefoil, 0}, {tenQuatrefoil, 0},
+                                                        {jackQuatrefoil, 0}, {queenQuatrefoil, 0}, {kingQuatrefoil, 0}};
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -348,52 +356,34 @@ ALL POKER CARDS (Line 46 - 52)
 
                         for (const std::string& card : handDeck) {
 
+                        }
+
                             // TWO PAIRS
-                            if (twoFind.count(card)) {
+                            if (nullptr) {
 
-                                twoFound++;
 
-                                if (threeFind.count(card)) {
-
-                                    threeFound++;
-                                }
-
-                                if (twoFound == 2 && threeFound == 2) {
+                                if (nullptr) {
 
                                     std::cout << twoPairCard.first << "\n";
                                     creditReward = creditBet * twoPairCard.second;
                                     std::cout << "You have recieved $" << creditReward << "\n";
                                     credit += creditReward;
 
-                                    // testing...
-                                    std::cout << "twoFound: " << twoFound << "\n";
-                                    std::cout << "threeFound: " << threeFound << "\n";
                                 }
                             }
 
                             // PAIR 
-                            else if (card.find("2") != std::string::npos && card.find("2") != std::string::npos || card.find("3") != std::string::npos &&
-                                    card.find("3") != std::string::npos || card.find("4") != std::string::npos && card.find("4") != std::string::npos ||
-                                    card.find("5") != std::string::npos && card.find("5") != std::string::npos || card.find("6") != std::string::npos &&
-                                    card.find("6") || card.find("7") != std::string::npos && card.find("7") != std::string::npos || card.find("8") != std::string::npos &&
-                                    card.find("8") != std::string::npos || card.find("9") != std::string::npos && card.find("9") != std::string::npos ||
-                                    card.find("10") != std::string::npos && card.find("10") != std::string::npos || card.find("J") != std::string::npos &&
-                                    card.find("J") != std::string::npos || card.find("Q") != std::string::npos && card.find("Q") != std::string::npos ||
-                                    card.find("K") != std::string::npos && card.find("K") != std::string::npos || card.find("A") != std::string::npos &&
-                                    card.find("A") != std::string::npos) {
+                            else if (nullptr) {
 
-                                twoFound++;
+                                pairFound == true;
 
-                                if (twoFound == 2) {
+                                if (pairFound) {
 
                                     std::cout << pairCard.first << "\n";
                                 
                                     creditReward = creditBet * pairCard.second;
                                     std::cout << "You have recieved $" << creditReward << "\n";
                                     credit += creditReward;
-
-                                    // testing...
-                                    std::cout << "twoFound: " << twoFound << "\n";
                                 }
                             }
 
@@ -432,7 +422,7 @@ ALL POKER CARDS (Line 46 - 52)
                             
                             std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                             break;
-                        }
+
 
                     }
 

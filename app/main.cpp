@@ -1,7 +1,7 @@
 /*
 ------------------------------------------
 
-DELUXE POKER SYSTEM GAME by Paul Harriott
+ASCII ART POKER SYSTEM GAME by Paul Harriott
 
 ------------------------------------------
 */
