@@ -190,9 +190,31 @@ ALL POKER CARDS (Line 46 - 52)
     std::unordered_map<std::string, size_t> spadeFind = {{aceSpade, 0}, {twoSpade, 0}, {threeSpade, 0}, {fourSpade, 0}, {fiveSpade, 0}, {sixSpade, 0},
                                                         {sevenSpade, 0}, {eightSpade, 0}, {nineSpade, 0}, {tenSpade, 0}, {jackSpade, 0}, {queenSpade, 0},
                                                         {kingSpade, 0}};
-    std::unordered_map<std::string, size_t> quatrefoil = {{aceQuatrefoil, 0}, {twoQuatrefoil, 0}, {threeQuatrefoil, 0}, {fourQuatrefoil, 0}, {fiveQuatrefoil, 0},
+    std::unordered_map<std::string, size_t> quatrefoilFind = {{aceQuatrefoil, 0}, {twoQuatrefoil, 0}, {threeQuatrefoil, 0}, {fourQuatrefoil, 0}, {fiveQuatrefoil, 0},
                                                         {sixQuatrefoil, 0}, {sevenQuatrefoil, 0}, {eightQuatrefoil, 0}, {nineQuatrefoil, 0}, {tenQuatrefoil, 0},
                                                         {jackQuatrefoil, 0}, {queenQuatrefoil, 0}, {kingQuatrefoil, 0}};
+
+    
+    std::unordered_map<std::string, size_t> cardFind;
+
+    size_t twoSum = 0;
+    size_t threeSum = 0;
+    size_t fourSum = 0;
+    size_t fiveSum = 0;
+    size_t sixSum = 0;
+    size_t sevenSum = 0;
+    size_t eightSum = 0;
+    size_t nineSum = 0;
+    size_t tenSum = 0;
+    size_t jackSum = 0;
+    size_t queenSum = 0;
+    size_t kingSum = 0;
+    size_t aceSum = 0;
+    size_t heartSum = 0;
+    size_t diamondSum = 0;
+    size_t clubSum = 0;
+    size_t spadeSum = 0;
+    size_t quatrefoilSum = 0;
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -260,6 +282,7 @@ ALL POKER CARDS (Line 46 - 52)
 
                     // Displaying poker hand horizontally instead of vertically
                     while (bashLines) {
+
                         bashLines = false;
 
                         for (auto& a : buffers) {
@@ -278,7 +301,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
 
 
-                    turn += 1;
+                    turn++;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
                     std::cin >> swap;
 
@@ -287,7 +310,7 @@ ALL POKER CARDS (Line 46 - 52)
                         std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
                         std::cout << "Change 'card1'? (Y/N)\n";
                         std::cin >> cardChange1; 
-                        turn += 1;
+                        turn++;
 
                         if (cardChange1 == 'y' || cardChange1 == 'Y') {
                             // Change cards ('mEngine' is a specific card that will shuffle)
@@ -356,74 +379,166 @@ ALL POKER CARDS (Line 46 - 52)
 
                         for (const std::string& card : handDeck) {
 
+                            if (twoFind.find("2") != twoFind.end()) {
+                                twoFind[card]++;
+
+                                twoSum += twoFind[card];
+                            }
+
+                            if (threeFind.find("3") != threeFind.end()) {
+                                threeFind[card]++;
+
+                                threeSum += threeFind[card];
+                            }
+
+                            if (fourFind.find("4") != fourFind.end()) {
+                                fourFind[card]++;
+
+                                fourSum += fourFind[card];
+                            }
+
+                            if (fiveFind.find("5") != fiveFind.end()) {
+                                fiveFind[card]++;
+
+                                fiveSum += fiveFind[card];
+                            }
+
+                            if (sixFind.find("6") != sixFind.end()) {
+                                sixFind[card]++;
+
+                                sixSum += sixFind[card];
+                            }
+
+                            if (sevenFind.find("7") != sevenFind.end()) {
+                                sevenFind[card]++;
+
+                                sevenSum += sevenFind[card];
+                            }
+
+                            if (eightFind.find("8") != eightFind.end()) {
+                                eightFind[card]++;
+
+                                eightSum += eightFind[card];
+                            }
+
+                            if (nineFind.find("9") != nineFind.end()) {
+                                nineFind[card]++;
+
+                                nineSum += nineFind[card];
+                            }
+
+                            if (tenFind.find("10") != tenFind.end()) {
+                                tenFind[card]++;
+
+                                tenSum += tenFind[card];
+                            }
+
+                            if (jackFind.find("J") != jackFind.end()) {
+                                jackFind[card]++;
+
+                                jackSum += jackFind[card];
+                            }
+
+                            if (queenFind.find("QU") != queenFind.end()) {
+                                queenFind[card]++;
+
+                                queenSum += queenFind[card];
+                            }
+
+                            if (kingFind.find("K") != kingFind.end()) {
+                                kingFind[card]++;
+
+                                kingSum += kingFind[card];
+                            }
+
+                            if (aceFind.find("A") != aceFind.end()) {
+                                aceFind[card]++;
+
+                                aceSum += aceFind[card];
+                            }
+
+                            if (heartFind.find("H") != heartFind.end()) {
+                                heartFind[card]++;
+
+                                heartSum += heartFind[card];
+                            }
+
+                            if (diamondFind.find("D") != diamondFind.end()) {
+                                diamondFind[card]++;
+
+                                diamondSum += diamondFind[card];
+                            }
+
+                            if (clubFind.find("C") != clubFind.end()) {
+                                clubFind[card]++;
+
+                                clubSum += clubFind[card];
+                            }
+
+                            if (spadeFind.find("S") != spadeFind.end()) {
+                                spadeFind[card]++;
+
+                                spadeSum += spadeFind[card];
+                            }
+
+                            if (quatrefoilFind.find("Q") != quatrefoilFind.end()) {
+                                quatrefoilFind[card]++;
+
+                                quatrefoilSum += quatrefoilFind[card];
+                            }
                         }
 
-                            // TWO PAIRS
-                            if (nullptr) {
+                        // PAIR
+                        if (twoSum == 2 || threeSum == 2 || fourSum == 2 || fiveSum == 2 || sixSum == 2 || sevenSum == 2 || eightSum == 2 ||
+                            nineSum == 2 || tenSum == 2 || jackSum == 2 || queenSum == 2 || kingSum == 2 || aceSum == 2) {
 
+                            std::cout << pairCard.first << "\n";
+                        
+                            creditReward = creditBet * pairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
 
-                                if (nullptr) {
+                        // HIGH CARD
+                        else {
+                            
+                            std::cout << highCard.first << "\n";
 
-                                    std::cout << twoPairCard.first << "\n";
-                                    creditReward = creditBet * twoPairCard.second;
-                                    std::cout << "You have recieved $" << creditReward << "\n";
-                                    credit += creditReward;
+                            creditReward = creditBet * highCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
 
-                                }
-                            }
+                        buffers2.reserve(handDeck.size());
 
-                            // PAIR 
-                            else if (nullptr) {
+                        for (const auto& a : handDeck) {
+                            buffers2.emplace_back(a);
+                        }
 
-                                pairFound == true;
+                        while (bashLines2) {
 
-                                if (pairFound) {
+                            bashLines2 = false;
 
-                                    std::cout << pairCard.first << "\n";
-                                
-                                    creditReward = creditBet * pairCard.second;
-                                    std::cout << "You have recieved $" << creditReward << "\n";
-                                    credit += creditReward;
-                                }
-                            }
+                            for (auto& a : buffers2) {
+                                std::string line;
 
-                            // HIGH CARD
-                            else {
-
-                                std::cout << highCard.first << "\n";
-
-                                creditReward = creditBet * highCard.second;
-                                std::cout << "You have recieved $" << creditReward << "\n";
-                                credit += creditReward;
-                            }
-
-                            buffers2.reserve(handDeck.size());
-
-                            for (const auto& a : handDeck) {
-                                buffers2.emplace_back(a);
-                            }
-
-                            while (bashLines2) {
-                                bashLines2 = false;
-
-                                for (auto& a : buffers2) {
-                                    std::string line;
-
-                                    if (std::getline(a, line)) {
-                                        std::cout << line << " ";
-                                        bashLines2 = true;
-                                    }
-                                }
-                                
-                                if (bashLines2) {
-                                    std::cout << "\n";
+                                if (std::getline(a, line)) {
+                                    std::cout << line << " ";
+                                    
+                                    bashLines2 = true;
                                 }
                             }
                             
-                            std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
-                            break;
+                            if (bashLines2) {
+                                std::cout << "\n";
+                            }
 
-
+                            
+                        }
+                        
+                        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
+                        std::cout << "Press '6' to open the menu.\n";
+                        break;
                     }
 
                     else {
@@ -443,76 +558,76 @@ ALL POKER CARDS (Line 46 - 52)
 
         // Determine a poker hand rank based on user's cards
         // FIVE OF A KIND
-        if (h2 != handDeck.end()) {
+        // if (h2 != handDeck.end()) {
 
-            std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
+        //     std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
             
-            creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward; // Total amount of rewards will add to the user's balance
-        }
-        // ROYAL FLUSH
-        else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
+        //     creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward; // Total amount of rewards will add to the user's balance
+        // }
+        // // ROYAL FLUSH
+        // else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
 
-            std::cout << royalFlushCard.first << "\n";
+        //     std::cout << royalFlushCard.first << "\n";
 
-            creditReward = creditBet * royalFlushCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // STRAIGHT FLUSH
-        else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
+        //     creditReward = creditBet * royalFlushCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // STRAIGHT FLUSH
+        // else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
 
-            std::cout << straightFlushCard.first << "\n";
+        //     std::cout << straightFlushCard.first << "\n";
             
-            creditReward = creditBet * straightFlushCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // FOUR OF A KIND
-        else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
+        //     creditReward = creditBet * straightFlushCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // FOUR OF A KIND
+        // else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
 
-            std::cout << fourKindCard.first << "\n";
+        //     std::cout << fourKindCard.first << "\n";
             
-            creditReward = creditBet * fourKindCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // FULL HOUSE
-        else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
+        //     creditReward = creditBet * fourKindCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // FULL HOUSE
+        // else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
             
-            std::cout << fullHouseCard.first << "\n";
+        //     std::cout << fullHouseCard.first << "\n";
             
-            creditReward = creditBet * fullHouseCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // FLUSH
-        else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
+        //     creditReward = creditBet * fullHouseCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // FLUSH
+        // else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
             
-            std::cout << flushCard.first << "\n";
+        //     std::cout << flushCard.first << "\n";
             
-            creditReward = creditBet * flushCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // STRAIGHT
-        else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
+        //     creditReward = creditBet * flushCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // STRAIGHT
+        // else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
             
-            std::cout << straightCard.first << "\n";
+        //     std::cout << straightCard.first << "\n";
             
-            creditReward = creditBet * straightCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
-        // THREE OF A KIND
-        else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
+        //     creditReward = creditBet * straightCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
+        // // THREE OF A KIND
+        // else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
             
-            std::cout << threeKindCard.first << "\n";
+        //     std::cout << threeKindCard.first << "\n";
             
-            creditReward = creditBet * threeKindCard.second;
-            std::cout << "You have recieved $" << creditReward << "\n";
-            credit += creditReward;
-        }
+        //     creditReward = creditBet * threeKindCard.second;
+        //     std::cout << "You have recieved $" << creditReward << "\n";
+        //     credit += creditReward;
+        // }
     }
 }
