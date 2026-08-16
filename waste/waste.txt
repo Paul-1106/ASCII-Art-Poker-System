@@ -4541,3 +4541,72 @@ q5 != handDeck.end() && d5 != handDeck.end() && dAce != handDeck.end() && sAce !
 //     }
 //     break;
 // 
+
+---------------------------------------------------------------------------------
+
+    // Poker card code if card code is in user's poker hand
+    auto h2 = std::find(handDeck.begin(), handDeck.end(), twoHeart);
+    auto d2 = std::find(handDeck.begin(), handDeck.end(), twoDiamond);
+    auto c2 = std::find(handDeck.begin(), handDeck.end(), twoClub);
+    auto s2 = std::find(handDeck.begin(), handDeck.end(), twoSpade);
+    auto q2 = std::find(handDeck.begin(), handDeck.end(), twoQuatrefoil);
+    auto h3 = std::find(handDeck.begin(), handDeck.end(), threeHeart);
+    auto d3 = std::find(handDeck.begin(), handDeck.end(), threeDiamond);
+    auto c3 = std::find(handDeck.begin(), handDeck.end(), threeClub);
+    auto s3 = std::find(handDeck.begin(), handDeck.end(), threeSpade);
+    auto q3 = std::find(handDeck.begin(), handDeck.end(), threeQuatrefoil);
+    auto h4 = std::find(handDeck.begin(), handDeck.end(), fourHeart);
+    auto d4 = std::find(handDeck.begin(), handDeck.end(), fourDiamond);
+    auto c4 = std::find(handDeck.begin(), handDeck.end(), fourClub);
+    auto s4 = std::find(handDeck.begin(), handDeck.end(), fourSpade);
+    auto q4 = std::find(handDeck.begin(), handDeck.end(), fourQuatrefoil);
+    auto h5 = std::find(handDeck.begin(), handDeck.end(), fiveHeart);
+    auto d5 = std::find(handDeck.begin(), handDeck.end(), fiveDiamond);
+    auto c5 = std::find(handDeck.begin(), handDeck.end(), fiveClub);
+    auto s5 = std::find(handDeck.begin(), handDeck.end(), fiveSpade);
+    auto q5 = std::find(handDeck.begin(), handDeck.end(), fiveQuatrefoil);
+    auto h6 = std::find(handDeck.begin(), handDeck.end(), sixHeart);
+    auto d6 = std::find(handDeck.begin(), handDeck.end(), sixDiamond);
+    auto c6 = std::find(handDeck.begin(), handDeck.end(), sixClub);
+    auto s6 = std::find(handDeck.begin(), handDeck.end(), sixSpade);
+    auto q6 = std::find(handDeck.begin(), handDeck.end(), sixQuatrefoil);
+    auto h7 = std::find(handDeck.begin(), handDeck.end(), sevenHeart);
+    auto d7 = std::find(handDeck.begin(), handDeck.end(), sevenDiamond);
+    auto c7 = std::find(handDeck.begin(), handDeck.end(), sevenClub);
+    auto s7 = std::find(handDeck.begin(), handDeck.end(), sevenSpade);
+    auto q7 = std::find(handDeck.begin(), handDeck.end(), sevenQuatrefoil);
+    auto h8 = std::find(handDeck.begin(), handDeck.end(), eightHeart);
+    auto d8 = std::find(handDeck.begin(), handDeck.end(), eightDiamond);
+    auto c8 = std::find(handDeck.begin(), handDeck.end(), eightClub);
+    auto s8 = std::find(handDeck.begin(), handDeck.end(), eightSpade);
+    auto q8 = std::find(handDeck.begin(), handDeck.end(), eightQuatrefoil);
+    auto h9 = std::find(handDeck.begin(), handDeck.end(), nineHeart);
+    auto d9 = std::find(handDeck.begin(), handDeck.end(), nineDiamond);
+    auto c9 = std::find(handDeck.begin(), handDeck.end(), nineClub);
+    auto s9 = std::find(handDeck.begin(), handDeck.end(), nineSpade);
+    auto q9 = std::find(handDeck.begin(), handDeck.end(), nineQuatrefoil);
+    auto h10 = std::find(handDeck.begin(), handDeck.end(), tenHeart);
+    auto d10 = std::find(handDeck.begin(), handDeck.end(), tenDiamond);
+    auto c10 = std::find(handDeck.begin(), handDeck.end(), tenClub);
+    auto s10 = std::find(handDeck.begin(), handDeck.end(), tenSpade);
+    auto q10 = std::find(handDeck.begin(), handDeck.end(), tenQuatrefoil);
+    auto hJack = std::find(handDeck.begin(), handDeck.end(), jackHeart);
+    auto dJack = std::find(handDeck.begin(), handDeck.end(), jackDiamond);
+    auto cJack = std::find(handDeck.begin(), handDeck.end(), jackClub);
+    auto sJack = std::find(handDeck.begin(), handDeck.end(), jackSpade);
+    auto qJack = std::find(handDeck.begin(), handDeck.end(), jackQuatrefoil);
+    auto hQueen = std::find(handDeck.begin(), handDeck.end(), queenHeart);
+    auto dQueen = std::find(handDeck.begin(), handDeck.end(), queenDiamond);
+    auto cQueen = std::find(handDeck.begin(), handDeck.end(), queenClub);
+    auto sQueen = std::find(handDeck.begin(), handDeck.end(), queenSpade);
+    auto qQueen = std::find(handDeck.begin(), handDeck.end(), queenQuatrefoil);
+    auto hKing = std::find(handDeck.begin(), handDeck.end(), kingHeart);
+    auto dKing = std::find(handDeck.begin(), handDeck.end(), kingDiamond);
+    auto cKing = std::find(handDeck.begin(), handDeck.end(), kingClub);
+    auto sKing = std::find(handDeck.begin(), handDeck.end(), kingSpade);
+    auto qKing = std::find(handDeck.begin(), handDeck.end(), kingQuatrefoil);
+    auto hAce = std::find(handDeck.begin(), handDeck.end(), aceHeart);
+    auto dAce = std::find(handDeck.begin(), handDeck.end(), aceDiamond);
+    auto cAce = std::find(handDeck.begin(), handDeck.end(), aceClub);
+    auto sAce = std::find(handDeck.begin(), handDeck.end(), aceSpade);
+    auto qAce = std::find(handDeck.begin(), handDeck.end(), aceQuatrefoil);

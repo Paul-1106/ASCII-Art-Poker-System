@@ -54,73 +54,6 @@ ALL POKER CARDS (Line 46 - 52)
     // All updated poker cards will be in the 'handDeck' container
     std::vector<std::string> handDeck(5);
 
-    // Poker card code if card code is in user's poker hand
-    auto h2 = std::find(handDeck.begin(), handDeck.end(), twoHeart);
-    auto d2 = std::find(handDeck.begin(), handDeck.end(), twoDiamond);
-    auto c2 = std::find(handDeck.begin(), handDeck.end(), twoClub);
-    auto s2 = std::find(handDeck.begin(), handDeck.end(), twoSpade);
-    auto q2 = std::find(handDeck.begin(), handDeck.end(), twoQuatrefoil);
-    auto h3 = std::find(handDeck.begin(), handDeck.end(), threeHeart);
-    auto d3 = std::find(handDeck.begin(), handDeck.end(), threeDiamond);
-    auto c3 = std::find(handDeck.begin(), handDeck.end(), threeClub);
-    auto s3 = std::find(handDeck.begin(), handDeck.end(), threeSpade);
-    auto q3 = std::find(handDeck.begin(), handDeck.end(), threeQuatrefoil);
-    auto h4 = std::find(handDeck.begin(), handDeck.end(), fourHeart);
-    auto d4 = std::find(handDeck.begin(), handDeck.end(), fourDiamond);
-    auto c4 = std::find(handDeck.begin(), handDeck.end(), fourClub);
-    auto s4 = std::find(handDeck.begin(), handDeck.end(), fourSpade);
-    auto q4 = std::find(handDeck.begin(), handDeck.end(), fourQuatrefoil);
-    auto h5 = std::find(handDeck.begin(), handDeck.end(), fiveHeart);
-    auto d5 = std::find(handDeck.begin(), handDeck.end(), fiveDiamond);
-    auto c5 = std::find(handDeck.begin(), handDeck.end(), fiveClub);
-    auto s5 = std::find(handDeck.begin(), handDeck.end(), fiveSpade);
-    auto q5 = std::find(handDeck.begin(), handDeck.end(), fiveQuatrefoil);
-    auto h6 = std::find(handDeck.begin(), handDeck.end(), sixHeart);
-    auto d6 = std::find(handDeck.begin(), handDeck.end(), sixDiamond);
-    auto c6 = std::find(handDeck.begin(), handDeck.end(), sixClub);
-    auto s6 = std::find(handDeck.begin(), handDeck.end(), sixSpade);
-    auto q6 = std::find(handDeck.begin(), handDeck.end(), sixQuatrefoil);
-    auto h7 = std::find(handDeck.begin(), handDeck.end(), sevenHeart);
-    auto d7 = std::find(handDeck.begin(), handDeck.end(), sevenDiamond);
-    auto c7 = std::find(handDeck.begin(), handDeck.end(), sevenClub);
-    auto s7 = std::find(handDeck.begin(), handDeck.end(), sevenSpade);
-    auto q7 = std::find(handDeck.begin(), handDeck.end(), sevenQuatrefoil);
-    auto h8 = std::find(handDeck.begin(), handDeck.end(), eightHeart);
-    auto d8 = std::find(handDeck.begin(), handDeck.end(), eightDiamond);
-    auto c8 = std::find(handDeck.begin(), handDeck.end(), eightClub);
-    auto s8 = std::find(handDeck.begin(), handDeck.end(), eightSpade);
-    auto q8 = std::find(handDeck.begin(), handDeck.end(), eightQuatrefoil);
-    auto h9 = std::find(handDeck.begin(), handDeck.end(), nineHeart);
-    auto d9 = std::find(handDeck.begin(), handDeck.end(), nineDiamond);
-    auto c9 = std::find(handDeck.begin(), handDeck.end(), nineClub);
-    auto s9 = std::find(handDeck.begin(), handDeck.end(), nineSpade);
-    auto q9 = std::find(handDeck.begin(), handDeck.end(), nineQuatrefoil);
-    auto h10 = std::find(handDeck.begin(), handDeck.end(), tenHeart);
-    auto d10 = std::find(handDeck.begin(), handDeck.end(), tenDiamond);
-    auto c10 = std::find(handDeck.begin(), handDeck.end(), tenClub);
-    auto s10 = std::find(handDeck.begin(), handDeck.end(), tenSpade);
-    auto q10 = std::find(handDeck.begin(), handDeck.end(), tenQuatrefoil);
-    auto hJack = std::find(handDeck.begin(), handDeck.end(), jackHeart);
-    auto dJack = std::find(handDeck.begin(), handDeck.end(), jackDiamond);
-    auto cJack = std::find(handDeck.begin(), handDeck.end(), jackClub);
-    auto sJack = std::find(handDeck.begin(), handDeck.end(), jackSpade);
-    auto qJack = std::find(handDeck.begin(), handDeck.end(), jackQuatrefoil);
-    auto hQueen = std::find(handDeck.begin(), handDeck.end(), queenHeart);
-    auto dQueen = std::find(handDeck.begin(), handDeck.end(), queenDiamond);
-    auto cQueen = std::find(handDeck.begin(), handDeck.end(), queenClub);
-    auto sQueen = std::find(handDeck.begin(), handDeck.end(), queenSpade);
-    auto qQueen = std::find(handDeck.begin(), handDeck.end(), queenQuatrefoil);
-    auto hKing = std::find(handDeck.begin(), handDeck.end(), kingHeart);
-    auto dKing = std::find(handDeck.begin(), handDeck.end(), kingDiamond);
-    auto cKing = std::find(handDeck.begin(), handDeck.end(), kingClub);
-    auto sKing = std::find(handDeck.begin(), handDeck.end(), kingSpade);
-    auto qKing = std::find(handDeck.begin(), handDeck.end(), kingQuatrefoil);
-    auto hAce = std::find(handDeck.begin(), handDeck.end(), aceHeart);
-    auto dAce = std::find(handDeck.begin(), handDeck.end(), aceDiamond);
-    auto cAce = std::find(handDeck.begin(), handDeck.end(), aceClub);
-    auto sAce = std::find(handDeck.begin(), handDeck.end(), aceSpade);
-    auto qAce = std::find(handDeck.begin(), handDeck.end(), aceQuatrefoil);
-
     // Comparing each hand deck to points
     std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
     std::pair<std::string, double> pairCard = {"[PAIR]", 1.0};
@@ -165,34 +98,25 @@ ALL POKER CARDS (Line 46 - 52)
 
 
     // Check if one of the elements in sub-array is included in global poker cards array
-    std::unordered_map<std::string, size_t> aceFind = {{aceHeart, 0}, {aceDiamond, 0}, {aceClub, 0}, {aceSpade, 0}, {aceQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> twoFind = {{twoHeart, 0}, {twoDiamond, 0}, {twoClub, 0}, {twoSpade, 0}, {twoQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> threeFind = {{threeHeart, 0}, {threeDiamond, 0}, {threeClub, 0}, {threeSpade, 0}, {threeQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> fourFind = {{fourHeart, 0}, {fourDiamond, 0}, {fourClub, 0}, {fourSpade, 0}, {fourQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> fiveFind = {{fiveHeart, 0}, {fiveDiamond, 0}, {fiveClub, 0}, {fiveSpade, 0}, {fiveQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> sixFind = {{sixHeart, 0}, {sixDiamond, 0}, {sixClub, 0}, {sixSpade, 0}, {sixQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> sevenFind = {{sevenHeart, 0}, {sevenDiamond, 0}, {sevenClub, 0}, {sevenSpade, 0}, {sevenQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> eightFind = {{eightHeart, 0}, {eightDiamond, 0}, {eightClub, 0}, {eightSpade, 0}, {eightQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> nineFind = {{nineHeart, 0}, {nineDiamond, 0}, {nineClub, 0}, {nineSpade, 0}, {nineQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> tenFind = {{tenHeart, 0}, {tenDiamond, 0}, {tenClub, 0}, {tenSpade, 0}, {tenQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> jackFind = {{jackHeart, 0}, {jackDiamond, 0}, {jackClub, 0}, {jackSpade, 0}, {jackQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> queenFind = {{queenHeart, 0}, {queenDiamond, 0}, {queenClub, 0}, {queenSpade, 0}, {queenQuatrefoil, 0}};
-    std::unordered_map<std::string, size_t> kingFind = {{kingHeart, 0}, {kingDiamond, 0}, {kingClub, 0}, {kingSpade, 0}, {kingQuatrefoil, 0}};
+    std::unordered_map<char, size_t> aceFind;
+    std::unordered_map<char, size_t> twoFind;
+    std::unordered_map<char, size_t> threeFind;
+    std::unordered_map<char, size_t> fourFind;
+    std::unordered_map<char, size_t> fiveFind;
+    std::unordered_map<char, size_t> sixFind;
+    std::unordered_map<char, size_t> sevenFind;
+    std::unordered_map<char, size_t> eightFind;
+    std::unordered_map<char, size_t> nineFind;
+    std::unordered_map<std::string, size_t> tenFind;
+    std::unordered_map<char, size_t> jackFind;
+    std::unordered_map<std::string, size_t> queenFind;
+    std::unordered_map<char, size_t> kingFind;
 
-    std::unordered_map<std::string, size_t> heartFind = {{aceHeart, 0}, {twoHeart, 0}, {threeHeart, 0}, {fourHeart, 0}, {fiveHeart, 0}, {sixHeart, 0},
-                                                        {sevenHeart, 0}, {eightHeart, 0}, {nineHeart, 0}, {tenHeart, 0}, {jackHeart, 0}, {queenHeart, 0},
-                                                        {kingHeart, 0}};
-    std::unordered_map<std::string, size_t> diamondFind = {{aceDiamond, 0}, {twoDiamond, 0}, {threeDiamond, 0}, {fourDiamond, 0}, {fiveDiamond, 0},
-                                                            {sixDiamond, 0}, {sevenDiamond, 0}, {eightDiamond, 0}, {nineDiamond, 0}, {tenDiamond, 0},
-                                                            {jackDiamond, 0}, {queenDiamond, 0}, {kingDiamond, 0}};
-    std::unordered_map<std::string, size_t> clubFind = {{aceClub, 0}, {twoClub, 0}, {threeClub, 0}, {fourClub, 0}, {fiveClub, 0}, {sixClub, 0}, {sevenClub, 0},
-                                                        {eightClub, 0}, {nineClub, 0}, {tenClub, 0}, {jackClub, 0}, {queenClub, 0}, {kingClub, 0}};
-    std::unordered_map<std::string, size_t> spadeFind = {{aceSpade, 0}, {twoSpade, 0}, {threeSpade, 0}, {fourSpade, 0}, {fiveSpade, 0}, {sixSpade, 0},
-                                                        {sevenSpade, 0}, {eightSpade, 0}, {nineSpade, 0}, {tenSpade, 0}, {jackSpade, 0}, {queenSpade, 0},
-                                                        {kingSpade, 0}};
-    std::unordered_map<std::string, size_t> quatrefoilFind = {{aceQuatrefoil, 0}, {twoQuatrefoil, 0}, {threeQuatrefoil, 0}, {fourQuatrefoil, 0}, {fiveQuatrefoil, 0},
-                                                        {sixQuatrefoil, 0}, {sevenQuatrefoil, 0}, {eightQuatrefoil, 0}, {nineQuatrefoil, 0}, {tenQuatrefoil, 0},
-                                                        {jackQuatrefoil, 0}, {queenQuatrefoil, 0}, {kingQuatrefoil, 0}};
+    std::unordered_map<char, size_t> heartFind;
+    std::unordered_map<char, size_t> diamondFind;
+    std::unordered_map<char, size_t> clubFind;
+    std::unordered_map<char, size_t> spadeFind;
+    std::unordered_map<char, size_t> quatrefoilFind;
 
     
     std::unordered_map<std::string, size_t> cardFind;
@@ -377,66 +301,114 @@ ALL POKER CARDS (Line 46 - 52)
 
                         turn++;
 
-                        for (const std::string& card : handDeck) {
+                        handDeck = {handDeck[0], handDeck[1], handDeck[2], handDeck[3], handDeck[4]};
 
-                            if (twoFind.find("2") != twoFind.end()) {
+                        for (const char& card : handDeck[0]) {
+
+                            if (twoFind.find('2') != twoFind.end()) {
                                 twoFind[card]++;
 
                                 twoSum += twoFind[card];
                             }
 
-                            if (threeFind.find("3") != threeFind.end()) {
+                            if (threeFind.find('3') != threeFind.end()) {
                                 threeFind[card]++;
 
                                 threeSum += threeFind[card];
                             }
 
-                            if (fourFind.find("4") != fourFind.end()) {
+                            if (fourFind.find('4') != fourFind.end()) {
                                 fourFind[card]++;
 
                                 fourSum += fourFind[card];
                             }
 
-                            if (fiveFind.find("5") != fiveFind.end()) {
+                            if (fiveFind.find('5') != fiveFind.end()) {
                                 fiveFind[card]++;
 
                                 fiveSum += fiveFind[card];
                             }
 
-                            if (sixFind.find("6") != sixFind.end()) {
+                            if (sixFind.find('6') != sixFind.end()) {
                                 sixFind[card]++;
 
                                 sixSum += sixFind[card];
                             }
 
-                            if (sevenFind.find("7") != sevenFind.end()) {
+                            if (sevenFind.find('7') != sevenFind.end()) {
                                 sevenFind[card]++;
 
                                 sevenSum += sevenFind[card];
                             }
 
-                            if (eightFind.find("8") != eightFind.end()) {
+                            if (eightFind.find('8') != eightFind.end()) {
                                 eightFind[card]++;
 
                                 eightSum += eightFind[card];
                             }
 
-                            if (nineFind.find("9") != nineFind.end()) {
+                            if (nineFind.find('9') != nineFind.end()) {
                                 nineFind[card]++;
 
                                 nineSum += nineFind[card];
                             }
 
+                            if (jackFind.find('J') != jackFind.end()) {
+                                jackFind[card]++;
+
+                                jackSum += jackFind[card];
+                            }
+
+                            if (kingFind.find('K') != kingFind.end()) {
+                                kingFind[card]++;
+
+                                kingSum += kingFind[card];
+                            }
+
+                            if (aceFind.find('A') != aceFind.end()) {
+                                aceFind[card]++;
+
+                                aceSum += aceFind[card];
+                            }
+
+                            if (heartFind.find('H') != heartFind.end()) {
+                                heartFind[card]++;
+
+                                heartSum += heartFind[card];
+                            }
+
+                            if (diamondFind.find('D') != diamondFind.end()) {
+                                diamondFind[card]++;
+
+                                diamondSum += diamondFind[card];
+                            }
+
+                            if (clubFind.find('C') != clubFind.end()) {
+                                clubFind[card]++;
+
+                                clubSum += clubFind[card];
+                            }
+
+                            if (spadeFind.find('S') != spadeFind.end()) {
+                                spadeFind[card]++;
+
+                                spadeSum += spadeFind[card];
+                            }
+
+                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
+                                quatrefoilFind[card]++;
+
+                                quatrefoilSum += quatrefoilFind[card];
+                            }
+
+                        }
+
+                        for (const std::string& card : handDeck) {
+
                             if (tenFind.find("10") != tenFind.end()) {
                                 tenFind[card]++;
 
                                 tenSum += tenFind[card];
-                            }
-
-                            if (jackFind.find("J") != jackFind.end()) {
-                                jackFind[card]++;
-
-                                jackSum += jackFind[card];
                             }
 
                             if (queenFind.find("QU") != queenFind.end()) {
@@ -445,47 +417,6 @@ ALL POKER CARDS (Line 46 - 52)
                                 queenSum += queenFind[card];
                             }
 
-                            if (kingFind.find("K") != kingFind.end()) {
-                                kingFind[card]++;
-
-                                kingSum += kingFind[card];
-                            }
-
-                            if (aceFind.find("A") != aceFind.end()) {
-                                aceFind[card]++;
-
-                                aceSum += aceFind[card];
-                            }
-
-                            if (heartFind.find("H") != heartFind.end()) {
-                                heartFind[card]++;
-
-                                heartSum += heartFind[card];
-                            }
-
-                            if (diamondFind.find("D") != diamondFind.end()) {
-                                diamondFind[card]++;
-
-                                diamondSum += diamondFind[card];
-                            }
-
-                            if (clubFind.find("C") != clubFind.end()) {
-                                clubFind[card]++;
-
-                                clubSum += clubFind[card];
-                            }
-
-                            if (spadeFind.find("S") != spadeFind.end()) {
-                                spadeFind[card]++;
-
-                                spadeSum += spadeFind[card];
-                            }
-
-                            if (quatrefoilFind.find("Q") != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-
-                                quatrefoilSum += quatrefoilFind[card];
-                            }
                         }
 
                         // PAIR
@@ -502,13 +433,26 @@ ALL POKER CARDS (Line 46 - 52)
                         // HIGH CARD
                         else {
                             
+                            // testing...
+                            std::cout << "2 " << twoSum << "\n";
+                            std::cout << "3 " << threeSum << "\n";
+                            std::cout << "4 " << fourSum << "\n";
+                            std::cout << "5 " << fiveSum << "\n";
+                            std::cout << "6 " << sixSum << "\n";
+                            std::cout << "7 " << sevenSum << "\n";
+                            std::cout << "8 " << eightSum << "\n";
+                            std::cout << "9 " << nineSum << "\n";
+                            std::cout << "10 " << tenSum << "\n";
+                            std::cout << "J " << jackSum << "\n";
+                            std::cout << "Q " << queenSum << "\n";
+                            std::cout << "K " << kingSum << "\n";
+                            std::cout << "A " << aceSum << "\n";
                             std::cout << highCard.first << "\n";
 
                             creditReward = creditBet * highCard.second;
                             std::cout << "You have recieved $" << creditReward << "\n";
                             credit += creditReward;
                         }
-
                         buffers2.reserve(handDeck.size());
 
                         for (const auto& a : handDeck) {
