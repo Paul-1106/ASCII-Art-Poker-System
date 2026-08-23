@@ -118,6 +118,26 @@ ALL POKER CARDS (Line 46 - 52)
     std::unordered_map<char, size_t> spadeFind;
     std::unordered_map<char, size_t> quatrefoilFind;
 
+    // Finds a character of each cards in poker hand to add up the frequency 
+    char aceChar = 'A';
+    char twoChar = '2';
+    char threeChar = '3';
+    char fourChar = '4';
+    char fiveChar = '5';
+    char sixChar = '6';
+    char sevenChar = '7';
+    char eightChar = '8';
+    char nineChar = '9';
+    char tenChar = '0';
+    char jackChar = 'J';
+    char queenChar = 'U';
+    char kingChar = 'K';
+    char heartChar = 'H';
+    char diamondChar = 'D';
+    char clubChar = 'C';
+    char spadeChar = 'S';
+    char quatrefoilChar = 'Q'; 
+
     size_t twoSum = 0;
     size_t threeSum = 0;
     size_t fourSum = 0;
@@ -158,69 +178,184 @@ ALL POKER CARDS (Line 46 - 52)
                 std::cout << "You have bet $" << creditBet << " credits\n\n";
                 credit -= creditBet;
 
+                // Random card selector (1/5)
+                unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine(random1);
+                std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+                handDeck[0] = pokerCards[dist(mEngine)];
+
+                //Random card selector (2/5)
+                unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine2(random2);
+                std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+                handDeck[1] = pokerCards[dist2(mEngine2)];
+
+                //Random card selector (3/5)
+                unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine3(random3);
+                std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+                handDeck[2] = pokerCards[dist3(mEngine3)];
+
+                //Random card selector (4/5)
+                unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine4(random4);
+                std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+                handDeck[3] = pokerCards[dist4(mEngine4)];
+
+                // Random card selector (5/5)
+                unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
+                std::mt19937 mEngine5(random5);
+                std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+                handDeck[4] = pokerCards[dist5(mEngine5)];                
+
+                handDeck = {handDeck[0], handDeck[1], handDeck[2], handDeck[3], handDeck[4]};
+                std::vector<std::stringstream> buffers, buffers2;
+                buffers.reserve(handDeck.size());
+
+                // Poker hand from 1-5 will move to stringstream vector for line break
+                for (const auto& a : handDeck) {
+                    buffers.emplace_back(a);
+                }
+
+                bool bashLines = true;
+                bool bashLines2 = true;
+
+                // Displaying poker hand horizontally instead of vertically
+                while (bashLines) {
+
+                    bashLines = false;
+
+                    for (auto& a : buffers) {
+                        std::string line;
+
+                        if (std::getline(a, line)) {
+                            // Print poker hand from 1-5
+                            std::cout << line << " ";
+                            bashLines = true;
+                        }
+                    }
+                    // A new line will start over to the top of ACSII art poker card to the right
+                    if (bashLines) {
+                        std::cout << "\n";
+                    }
+                }
+
+                // Count the frequency for card #1
+                for (char& card : handDeck[0]) {
+
+                    twoFind[card]++;
+                    threeFind[card]++;
+                    fourFind[card]++;
+                    fiveFind[card]++;
+                    sixFind[card]++;
+                    sevenFind[card]++;
+                    eightFind[card]++;
+                    nineFind[card]++;
+                    tenFind[card]++;
+                    jackFind[card]++;
+                    queenFind[card]++;
+                    kingFind[card]++;
+                    aceFind[card]++;
+                    heartFind[card]++;
+                    diamondFind[card]++;
+                    clubFind[card]++;
+                    spadeFind[card]++;
+                    quatrefoilFind[card]++;
+                }
+
+                // Count the frequency for card #2
+                for (char& card : handDeck[1]) {
+
+                    twoFind[card]++;
+                    threeFind[card]++;
+                    fourFind[card]++;
+                    fiveFind[card]++;
+                    sixFind[card]++;
+                    sevenFind[card]++;
+                    eightFind[card]++;
+                    nineFind[card]++;
+                    tenFind[card]++;
+                    jackFind[card]++;
+                    queenFind[card]++;
+                    kingFind[card]++;
+                    aceFind[card]++;
+                    heartFind[card]++;
+                    diamondFind[card]++;
+                    clubFind[card]++;
+                    spadeFind[card]++;
+                    quatrefoilFind[card]++;
+                }
+
+                // Count the frequency for card #3
+                for (char& card : handDeck[2]) {
+
+                    twoFind[card]++;
+                    threeFind[card]++;
+                    fourFind[card]++;
+                    fiveFind[card]++;
+                    sixFind[card]++;
+                    sevenFind[card]++;
+                    eightFind[card]++;
+                    nineFind[card]++;
+                    tenFind[card]++;
+                    jackFind[card]++;
+                    queenFind[card]++;
+                    kingFind[card]++;
+                    aceFind[card]++;
+                    heartFind[card]++;
+                    diamondFind[card]++;
+                    clubFind[card]++;
+                    spadeFind[card]++;
+                    quatrefoilFind[card]++;
+                }
+                        
+                // Count the frequency for card #4
+                for (char& card : handDeck[3]) {
+
+                    twoFind[card]++;
+                    threeFind[card]++;
+                    fourFind[card]++;
+                    fiveFind[card]++;
+                    sixFind[card]++;
+                    sevenFind[card]++;
+                    eightFind[card]++;
+                    nineFind[card]++;
+                    tenFind[card]++;
+                    jackFind[card]++;
+                    queenFind[card]++;
+                    kingFind[card]++;
+                    aceFind[card]++;
+                    heartFind[card]++;
+                    diamondFind[card]++;
+                    clubFind[card]++;
+                    spadeFind[card]++;
+                    quatrefoilFind[card]++;
+                }
+
+                // Count the frequency for card #5
+                for (char& card : handDeck[4]) {
+
+                    twoFind[card]++;
+                    threeFind[card]++;
+                    fourFind[card]++;
+                    fiveFind[card]++;
+                    sixFind[card]++;
+                    sevenFind[card]++;
+                    eightFind[card]++;
+                    nineFind[card]++;
+                    tenFind[card]++;
+                    jackFind[card]++;
+                    queenFind[card]++;
+                    kingFind[card]++;
+                    aceFind[card]++;
+                    heartFind[card]++;
+                    diamondFind[card]++;
+                    clubFind[card]++;
+                    spadeFind[card]++;
+                    quatrefoilFind[card]++;
+                }
+
                 for (int i{0}; i < handDeck.size(); ++i) {
-
-                    // Random card selector (1/5)
-                    unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
-                    std::mt19937 mEngine(random1);
-                    std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                    handDeck[i] = pokerCards[dist(mEngine)];
-
-                    //Random card selector (2/5)
-                    unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
-                    std::mt19937 mEngine2(random2);
-                    std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-                    handDeck[i + 1] = pokerCards[dist2(mEngine2)];
-
-                    //Random card selector (3/5)
-                    unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
-                    std::mt19937 mEngine3(random3);
-                    std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-                    handDeck[i + 2] = pokerCards[dist3(mEngine3)];
-
-                    //Random card selector (4/5)
-                    unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
-                    std::mt19937 mEngine4(random4);
-                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-                    handDeck[i + 3] = pokerCards[dist4(mEngine4)];
-
-                    // Random card selector (5/5)
-                    unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
-                    std::mt19937 mEngine5(random5);
-                    std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-                    handDeck[i + 4] = pokerCards[dist5(mEngine5)];
-
-                    std::vector<std::stringstream> buffers, buffers2;
-                    buffers.reserve(handDeck.size());
-
-                    // Poker hand from 1-5 will move to stringstream vector for line break
-                    for (const auto& a : handDeck) {
-                        buffers.emplace_back(a);
-                    }
-
-                    bool bashLines = true;
-                    bool bashLines2 = true;
-
-                    // Displaying poker hand horizontally instead of vertically
-                    while (bashLines) {
-
-                        bashLines = false;
-
-                        for (auto& a : buffers) {
-                            std::string line;
-
-                            if (std::getline(a, line)) {
-                                // Print poker hand from 1-5
-                                std::cout << line << " ";
-                                bashLines = true;
-                            }
-                        }
-                        // A new line will start over to the top of ACSII art poker card to the right
-                        if (bashLines) {
-                            std::cout << "\n";
-                        }
-                    }
-
 
                     turn++;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
@@ -298,491 +433,6 @@ ALL POKER CARDS (Line 46 - 52)
 
                         turn++;
 
-                        for (const char& card : handDeck[i]) {
-
-                            if (twoFind.find('2') != twoFind.end()) {
-                                twoFind[card]++;
-                            }
-
-                            if (threeFind.find('3') != threeFind.end()) {
-                                threeFind[card]++;
-                            }
-
-                            if (fourFind.find('4') != fourFind.end()) {
-                                fourFind[card]++;
-                            }
-
-                            if (fiveFind.find('5') != fiveFind.end()) {
-                                fiveFind[card]++;
-                            }
-
-                            if (sixFind.find('6') != sixFind.end()) {
-                                sixFind[card]++;
-                            }
-
-                            if (sevenFind.find('7') != sevenFind.end()) {
-                                sevenFind[card]++;
-                            }
-
-                            if (eightFind.find('8') != eightFind.end()) {
-                                eightFind[card]++;
-                            }
-
-                            if (nineFind.find('9') != nineFind.end()) {
-                                nineFind[card]++;
-                            }
-
-                            if (tenFind.find('1') != tenFind.end() && tenFind.find('0') != tenFind.end()) {
-                                tenFind[card]++;
-                            }
-
-                            if (jackFind.find('J') != jackFind.end()) {
-                                jackFind[card]++;
-                            }
-
-                            if (queenFind.find('Q') != queenFind.end() && queenFind.find('U') != queenFind.end()) {
-                                queenFind[card]++;
-                            }
-
-                            if (kingFind.find('K') != kingFind.end()) {
-                                kingFind[card]++;
-                            }
-
-                            if (aceFind.find('A') != aceFind.end()) {
-                                aceFind[card]++;
-                            }
-
-                            if (heartFind.find('H') != heartFind.end()) {
-                                heartFind[card]++;
-                            }
-
-                            if (diamondFind.find('D') != diamondFind.end()) {
-                                diamondFind[card]++;
-                            }
-
-                            if (clubFind.find('C') != clubFind.end()) {
-                                clubFind[card]++;
-                            }
-
-                            if (spadeFind.find('S') != spadeFind.end()) {
-                                spadeFind[card]++;
-                            }
-
-                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-                            }
-                        }
-
-                        for (const char& card : handDeck[i + 1]) {
-
-                            if (twoFind.find('2') != twoFind.end()) {
-                                twoFind[card]++;
-                            }
-
-                            if (threeFind.find('3') != threeFind.end()) {
-                                threeFind[card]++;
-                            }
-
-                            if (fourFind.find('4') != fourFind.end()) {
-                                fourFind[card]++;
-                            }
-
-                            if (fiveFind.find('5') != fiveFind.end()) {
-                                fiveFind[card]++;
-                            }
-
-                            if (sixFind.find('6') != sixFind.end()) {
-                                sixFind[card]++;
-                            }
-
-                            if (sevenFind.find('7') != sevenFind.end()) {
-                                sevenFind[card]++;
-                            }
-
-                            if (eightFind.find('8') != eightFind.end()) {
-                                eightFind[card]++;
-                            }
-
-                            if (nineFind.find('9') != nineFind.end()) {
-                                nineFind[card]++;
-                            }
-
-                            if (tenFind.find('1') != tenFind.end() && tenFind.find('0') != tenFind.end()) {
-                                tenFind[card]++;
-                            }
-
-                            if (jackFind.find('J') != jackFind.end()) {
-                                jackFind[card]++;
-                            }
-
-                            if (queenFind.find('Q') != queenFind.end() && queenFind.find('U') != queenFind.end()) {
-                                queenFind[card]++;
-                            }
-
-                            if (kingFind.find('K') != kingFind.end()) {
-                                kingFind[card]++;
-                            }
-
-                            if (aceFind.find('A') != aceFind.end()) {
-                                aceFind[card]++;
-                            }
-
-                            if (heartFind.find('H') != heartFind.end()) {
-                                heartFind[card]++;
-                            }
-
-                            if (diamondFind.find('D') != diamondFind.end()) {
-                                diamondFind[card]++;
-                            }
-
-                            if (clubFind.find('C') != clubFind.end()) {
-                                clubFind[card]++;
-                            }
-
-                            if (spadeFind.find('S') != spadeFind.end()) {
-                                spadeFind[card]++;
-                            }
-
-                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-                            }
-                        }
-
-                        for (const char& card : handDeck[i + 2]) {
-
-                            if (twoFind.find('2') != twoFind.end()) {
-                                twoFind[card]++;
-                            }
-
-                            if (threeFind.find('3') != threeFind.end()) {
-                                threeFind[card]++;
-                            }
-
-                            if (fourFind.find('4') != fourFind.end()) {
-                                fourFind[card]++;
-                            }
-
-                            if (fiveFind.find('5') != fiveFind.end()) {
-                                fiveFind[card]++;
-                            }
-
-                            if (sixFind.find('6') != sixFind.end()) {
-                                sixFind[card]++;
-                            }
-
-                            if (sevenFind.find('7') != sevenFind.end()) {
-                                sevenFind[card]++;
-                            }
-
-                            if (eightFind.find('8') != eightFind.end()) {
-                                eightFind[card]++;
-                            }
-
-                            if (nineFind.find('9') != nineFind.end()) {
-                                nineFind[card]++;
-                            }
-
-                            if (tenFind.find('1') != tenFind.end() && tenFind.find('0') != tenFind.end()) {
-                                tenFind[card]++;
-                            }
-
-                            if (jackFind.find('J') != jackFind.end()) {
-                                jackFind[card]++;
-                            }
-
-                            if (queenFind.find('Q') != queenFind.end() && queenFind.find('U') != queenFind.end()) {
-                                queenFind[card]++;
-                            }
-
-                            if (kingFind.find('K') != kingFind.end()) {
-                                kingFind[card]++;
-                            }
-
-                            if (aceFind.find('A') != aceFind.end()) {
-                                aceFind[card]++;
-                            }
-
-                            if (heartFind.find('H') != heartFind.end()) {
-                                heartFind[card]++;
-                            }
-
-                            if (diamondFind.find('D') != diamondFind.end()) {
-                                diamondFind[card]++;
-                            }
-
-                            if (clubFind.find('C') != clubFind.end()) {
-                                clubFind[card]++;
-                            }
-
-                            if (spadeFind.find('S') != spadeFind.end()) {
-                                spadeFind[card]++;
-                            }
-
-                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-                            }
-                        }
-                        
-                        for (const char& card : handDeck[i + 3]) {
-
-                            if (twoFind.find('2') != twoFind.end()) {
-                                twoFind[card]++;
-                            }
-
-                            if (threeFind.find('3') != threeFind.end()) {
-                                threeFind[card]++;
-                            }
-
-                            if (fourFind.find('4') != fourFind.end()) {
-                                fourFind[card]++;
-                            }
-
-                            if (fiveFind.find('5') != fiveFind.end()) {
-                                fiveFind[card]++;
-                            }
-
-                            if (sixFind.find('6') != sixFind.end()) {
-                                sixFind[card]++;
-                            }
-
-                            if (sevenFind.find('7') != sevenFind.end()) {
-                                sevenFind[card]++;
-                            }
-
-                            if (eightFind.find('8') != eightFind.end()) {
-                                eightFind[card]++;
-                            }
-
-                            if (nineFind.find('9') != nineFind.end()) {
-                                nineFind[card]++;
-                            }
-
-                            if (tenFind.find('1') != tenFind.end() && tenFind.find('0') != tenFind.end()) {
-                                tenFind[card]++;
-                            }
-
-                            if (jackFind.find('J') != jackFind.end()) {
-                                jackFind[card]++;
-                            }
-
-                            if (queenFind.find('Q') != queenFind.end() && queenFind.find('U') != queenFind.end()) {
-                                queenFind[card]++;
-                            }
-
-                            if (kingFind.find('K') != kingFind.end()) {
-                                kingFind[card]++;
-                            }
-
-                            if (aceFind.find('A') != aceFind.end()) {
-                                aceFind[card]++;
-                            }
-
-                            if (heartFind.find('H') != heartFind.end()) {
-                                heartFind[card]++;
-                            }
-
-                            if (diamondFind.find('D') != diamondFind.end()) {
-                                diamondFind[card]++;
-                            }
-
-                            if (clubFind.find('C') != clubFind.end()) {
-                                clubFind[card]++;
-                            }
-
-                            if (spadeFind.find('S') != spadeFind.end()) {
-                                spadeFind[card]++;
-                            }
-
-                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-                            }
-                        }
-
-                        for (const char& card : handDeck[i + 4]) {
-
-                            if (twoFind.find('2') != twoFind.end()) {
-                                twoFind[card]++;
-                            }
-
-                            if (threeFind.find('3') != threeFind.end()) {
-                                threeFind[card]++;
-                            }
-
-                            if (fourFind.find('4') != fourFind.end()) {
-                                fourFind[card]++;
-                            }
-
-                            if (fiveFind.find('5') != fiveFind.end()) {
-                                fiveFind[card]++;
-                            }
-
-                            if (sixFind.find('6') != sixFind.end()) {
-                                sixFind[card]++;
-                            }
-
-                            if (sevenFind.find('7') != sevenFind.end()) {
-                                sevenFind[card]++;
-                            }
-
-                            if (eightFind.find('8') != eightFind.end()) {
-                                eightFind[card]++;
-                            }
-
-                            if (nineFind.find('9') != nineFind.end()) {
-                                nineFind[card]++;
-                            }
-
-                            if (tenFind.find('1') != tenFind.end() && tenFind.find('0') != tenFind.end()) {
-                                tenFind[card]++;
-                            }
-
-                            if (jackFind.find('J') != jackFind.end()) {
-                                jackFind[card]++;
-                            }
-
-                            if (queenFind.find('Q') != queenFind.end() && queenFind.find('U') != queenFind.end()) {
-                                queenFind[card]++;
-                            }
-
-                            if (kingFind.find('K') != kingFind.end()) {
-                                kingFind[card]++;
-                            }
-
-                            if (aceFind.find('A') != aceFind.end()) {
-                                aceFind[card]++;
-                            }
-
-                            if (heartFind.find('H') != heartFind.end()) {
-                                heartFind[card]++;
-                            }
-
-                            if (diamondFind.find('D') != diamondFind.end()) {
-                                diamondFind[card]++;
-                            }
-
-                            if (clubFind.find('C') != clubFind.end()) {
-                                clubFind[card]++;
-                            }
-
-                            if (spadeFind.find('S') != spadeFind.end()) {
-                                spadeFind[card]++;
-                            }
-
-                            if (quatrefoilFind.find('Q') != quatrefoilFind.end()) {
-                                quatrefoilFind[card]++;
-                            }
-                        }
-
-                        for (const size_t& i : handDeck[i]) {
-
-                            aceSum += aceFind[i]++;
-                            twoSum += twoFind[i];
-                            threeSum += threeFind[i];
-                            fourSum += fourFind[i];
-                            fiveSum += fiveFind[i];
-                            sixSum += sixFind[i];
-                            sevenSum += sevenFind[i];
-                            eightSum += eightFind[i];
-                            nineSum += nineFind[i];
-                            tenSum += tenFind[i];
-                            jackSum += jackFind[i];
-                            queenSum += queenFind[i];
-                            kingSum += kingFind[i];
-                            heartSum += heartFind[i];
-                            diamondSum += diamondFind[i]++;
-                            clubSum += clubFind[i]++;
-                            spadeSum += spadeFind[i]++;
-                            quatrefoilSum += quatrefoilFind[i]++;
-                        }
-
-                        for (const size_t& i : handDeck[i + 1]) {
-
-                            aceSum += aceFind[i];
-                            twoSum += twoFind[i];
-                            threeSum += threeFind[i];
-                            fourSum += fourFind[i];
-                            fiveSum += fiveFind[i];
-                            sixSum += sixFind[i];
-                            sevenSum += sevenFind[i];
-                            eightSum += eightFind[i];
-                            nineSum += nineFind[i];
-                            tenSum += tenFind[i];
-                            jackSum += jackFind[i];
-                            queenSum += queenFind[i];
-                            kingSum += kingFind[i];
-                            heartSum += heartFind[i];
-                            diamondSum += diamondFind[i]++;
-                            clubSum += clubFind[i]++;
-                            spadeSum += spadeFind[i]++;
-                            quatrefoilSum += quatrefoilFind[i]++;
-                        }                        
-
-                        for (const size_t& i : handDeck[i + 2]) {
-
-                            aceSum += aceFind[i];
-                            twoSum += twoFind[i];
-                            threeSum += threeFind[i];
-                            fourSum += fourFind[i];
-                            fiveSum += fiveFind[i];
-                            sixSum += sixFind[i];
-                            sevenSum += sevenFind[i];
-                            eightSum += eightFind[i];
-                            nineSum += nineFind[i];
-                            tenSum += tenFind[i];
-                            jackSum += jackFind[i];
-                            queenSum += queenFind[i];
-                            kingSum += kingFind[i];
-                            heartSum += heartFind[i];
-                            diamondSum += diamondFind[i]++;
-                            clubSum += clubFind[i]++;
-                            spadeSum += spadeFind[i]++;
-                            quatrefoilSum += quatrefoilFind[i]++;
-                        }
-
-                        for (const size_t& i : handDeck[i + 3]) {
-
-                            aceSum += aceFind[i];
-                            twoSum += twoFind[i];
-                            threeSum += threeFind[i];
-                            fourSum += fourFind[i];
-                            fiveSum += fiveFind[i];
-                            sixSum += sixFind[i];
-                            sevenSum += sevenFind[i];
-                            eightSum += eightFind[i];
-                            nineSum += nineFind[i];
-                            tenSum += tenFind[i];
-                            jackSum += jackFind[i];
-                            queenSum += queenFind[i];
-                            kingSum += kingFind[i];
-                            heartSum += heartFind[i];
-                            diamondSum += diamondFind[i]++;
-                            clubSum += clubFind[i]++;
-                            spadeSum += spadeFind[i]++;
-                            quatrefoilSum += quatrefoilFind[i]++;
-                        }
-
-                        for (const size_t& i : handDeck[i + 4]) {
-
-                            aceSum += aceFind[i];
-                            twoSum += twoFind[i];
-                            threeSum += threeFind[i];
-                            fourSum += fourFind[i];
-                            fiveSum += fiveFind[i];
-                            sixSum += sixFind[i];
-                            sevenSum += sevenFind[i];
-                            eightSum += eightFind[i];
-                            nineSum += nineFind[i];
-                            tenSum += tenFind[i];
-                            jackSum += jackFind[i];
-                            queenSum += queenFind[i];
-                            kingSum += kingFind[i];
-                            heartSum += heartFind[i];
-                            diamondSum += diamondFind[i]++;
-                            clubSum += clubFind[i]++;
-                            spadeSum += spadeFind[i]++;
-                            quatrefoilSum += quatrefoilFind[i]++;
-                        }
-
                         // PAIR
                         if (twoSum == 2 || threeSum == 2 || fourSum == 2 || fiveSum == 2 || sixSum == 2 || sevenSum == 2 || eightSum == 2 ||
                             nineSum == 2 || tenSum == 2 || jackSum == 2 || queenSum == 2 || kingSum == 2 || aceSum == 2 || heartSum == 2 ||
@@ -798,21 +448,7 @@ ALL POKER CARDS (Line 46 - 52)
                         // HIGH CARD
                         else {
                             
-                            // testing...
-                            std::cout << handDeck[i] << handDeck[i + 4] << "\n";
-                            std::cout << "2 " << twoSum << "\n";
-                            std::cout << "3 " << threeSum << "\n";
-                            std::cout << "4 " << fourSum << "\n";
-                            std::cout << "5 " << fiveSum << "\n";
-                            std::cout << "6 " << sixSum << "\n";
-                            std::cout << "7 " << sevenSum << "\n";
-                            std::cout << "8 " << eightSum << "\n";
-                            std::cout << "9 " << nineSum << "\n";
-                            std::cout << "10 " << tenSum << "\n";
-                            std::cout << "J " << jackSum << "\n";
-                            std::cout << "Q " << queenSum << "\n";
-                            std::cout << "K " << kingSum << "\n";
-                            std::cout << "A " << aceSum << "\n";
+                            std::cout << "Freq: " << twoFind[twoChar] << "\n"; // testing...
                             std::cout << highCard.first << "\n";
 
                             creditReward = creditBet * highCard.second;
@@ -842,9 +478,7 @@ ALL POKER CARDS (Line 46 - 52)
                             
                             if (bashLines2) {
                                 std::cout << "\n";
-                            }
-
-                            
+                            }   
                         }
                         
                         std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
