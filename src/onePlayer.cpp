@@ -130,32 +130,13 @@ ALL POKER CARDS (Line 46 - 52)
     char nineChar = '9';
     char tenChar = '0';
     char jackChar = 'J';
-    char queenChar = 'U';
+    char queenChar = 'Q';
     char kingChar = 'K';
     char heartChar = 'H';
     char diamondChar = 'D';
     char clubChar = 'C';
     char spadeChar = 'S';
-    char quatrefoilChar = 'Q'; 
-
-    size_t twoSum = 0;
-    size_t threeSum = 0;
-    size_t fourSum = 0;
-    size_t fiveSum = 0;
-    size_t sixSum = 0;
-    size_t sevenSum = 0;
-    size_t eightSum = 0;
-    size_t nineSum = 0;
-    size_t tenSum = 0;
-    size_t jackSum = 0;
-    size_t queenSum = 0;
-    size_t kingSum = 0;
-    size_t aceSum = 0;
-    size_t heartSum = 0;
-    size_t diamondSum = 0;
-    size_t clubSum = 0;
-    size_t spadeSum = 0;
-    size_t quatrefoilSum = 0;
+    char quatrefoilChar = 'U'; 
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -434,10 +415,12 @@ ALL POKER CARDS (Line 46 - 52)
                         turn++;
 
                         // PAIR
-                        if (twoSum == 2 || threeSum == 2 || fourSum == 2 || fiveSum == 2 || sixSum == 2 || sevenSum == 2 || eightSum == 2 ||
-                            nineSum == 2 || tenSum == 2 || jackSum == 2 || queenSum == 2 || kingSum == 2 || aceSum == 2 || heartSum == 2 ||
-                            diamondSum == 2 || clubSum == 2 || spadeSum == 2 || quatrefoilSum == 2) {
+                        if (twoFind[twoChar] == 2 || threeFind[threeChar] == 2 || fourFind[fourChar] == 2 || fiveFind[fiveChar] == 2 || 
+                            sixFind[sixChar] == 2 || sevenFind[sevenChar] == 2 || eightFind[eightChar] == 2 || nineFind[nineChar] == 2 || 
+                            tenFind[tenChar] == 2 || jackFind[jackChar] == 2 || queenFind[queenChar] == 2 || kingFind[kingChar] == 2 || 
+                            aceFind[aceChar] == 2) {
 
+                            std::cout << "Freq: " << twoFind[twoChar] << "\n"; // testing...
                             std::cout << pairCard.first << "\n";
                         
                             creditReward = creditBet * pairCard.second;
@@ -480,6 +463,26 @@ ALL POKER CARDS (Line 46 - 52)
                                 std::cout << "\n";
                             }   
                         }
+
+                        // testing...
+                        std::cout << "A: " << aceFind[aceChar] << "\n";
+                        std::cout << "2: " << twoFind[twoChar] << "\n";
+                        std::cout << "3: " << threeFind[threeChar] << "\n";
+                        std::cout << "4: " << fourFind[fourChar] << "\n";
+                        std::cout << "5: " << fiveFind[fiveChar] << "\n";
+                        std::cout << "6: " << sixFind[sixChar] << "\n";
+                        std::cout << "7: " << sevenFind[sevenChar] << "\n";
+                        std::cout << "8: " << eightFind[eightChar] << "\n";
+                        std::cout << "9: " << nineFind[nineChar] << "\n";
+                        std::cout << "10: " << tenFind[nineChar] << "\n";
+                        std::cout << "J: " << jackFind[jackChar] << "\n";
+                        std::cout << "Q: " << queenFind[queenChar] << "\n";
+                        std::cout << "K: " << kingFind[kingChar] << "\n";
+                        std::cout << "H: " << heartFind[heartChar] << "\n";
+                        std::cout << "D: " << diamondFind[diamondChar] << "\n";
+                        std::cout << "C: " << clubFind[clubChar] << "\n";
+                        std::cout << "S: " << spadeFind[spadeChar] << "\n";
+                        std::cout << "U: " << quatrefoilFind[quatrefoilChar] << "\n";
                         
                         std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                         std::cout << "Press '6' to open the menu.\n";
