@@ -57,11 +57,11 @@ ALL POKER CARDS (Line 46 - 52)
     // Comparing each hand deck to points
     std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
     std::pair<std::string, double> pairCard = {"[PAIR]", 1.0};
-    std::pair<std::string, double> twoPairCard = {"[TWO PAIRS]", 1.5};
-    std::pair<std::string, double> threeKindCard = {"[THREE OF A KIND]", 3.0};
-    std::pair<std::string, double> straightCard = {"[STRAIGHT]", 4.5};
-    std::pair<std::string, double> flushCard = {"[FLUSH]", 7.5};
-    std::pair<std::string, double> fullHouseCard = {"[FULL HOUSE]", 12.0};
+    std::pair<std::string, double> twoPairCard = {"[TWO PAIRS]", 2.5};
+    std::pair<std::string, double> threeKindCard = {"[THREE OF A KIND]", 5.0};
+    std::pair<std::string, double> straightCard = {"[STRAIGHT]", 8.5};
+    std::pair<std::string, double> flushCard = {"[FLUSH]", 10.0};
+    std::pair<std::string, double> fullHouseCard = {"[FULL HOUSE]", 13.5};
     std::pair<std::string, double> fourKindCard = {"[FOUR OF A KIND]", 20.0};
     std::pair<std::string, double> straightFlushCard = {"[STRAIGHT FLUSH]", 35.5};
     std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 50.0};
@@ -137,6 +137,26 @@ ALL POKER CARDS (Line 46 - 52)
     char clubChar = 'C';
     char spadeChar = 'S';
     char quatrefoilChar = 'U'; 
+
+    // All the frequency char variables that are added will be push to integer variable for better code quality
+    size_t aceFreq = 0;
+    size_t twoFreq = 0;
+    size_t threeFreq = 0;
+    size_t fourFreq = 0;
+    size_t fiveFreq = 0;
+    size_t sixFreq = 0;
+    size_t sevenFreq = 0;
+    size_t eightFreq = 0;
+    size_t nineFreq = 0;
+    size_t tenFreq = 0;
+    size_t jackFreq = 0;
+    size_t queenFreq = 0;
+    size_t kingFreq = 0;
+    size_t heartFreq = 0;
+    size_t diamondFreq = 0;
+    size_t clubFreq = 0;
+    size_t spadeFreq = 0;
+    size_t quatrefoilFreq = 0;
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -338,6 +358,25 @@ ALL POKER CARDS (Line 46 - 52)
 
                 for (int i{0}; i < handDeck.size(); ++i) {
 
+                    twoFreq = twoFind[twoChar];
+                    threeFreq = threeFind[threeChar];
+                    fourFreq = fourFind[fourChar];
+                    fiveFreq = fiveFind[fiveChar];
+                    sixFreq =sixFind[sixChar];
+                    sevenFreq = sevenFind[sevenChar];
+                    eightFreq = eightFind[eightChar];
+                    nineFreq = nineFind[nineChar];
+                    tenFreq = tenFind[tenChar];
+                    jackFreq = jackFind[jackChar];
+                    queenFreq = queenFind[queenChar];
+                    kingFreq = kingFind[kingChar];
+                    aceFreq = aceFind[aceChar];
+                    heartFreq = heartFind[heartChar];
+                    diamondFreq = diamondFind[diamondChar];
+                    clubFreq = clubFind[clubChar];
+                    spadeFreq = spadeFind[spadeChar];
+                    quatrefoilFreq = quatrefoilFind[quatrefoilChar];                   
+
                     turn++;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
                     std::cin >> swap;
@@ -414,13 +453,39 @@ ALL POKER CARDS (Line 46 - 52)
 
                         turn++;
 
-                        // PAIR
-                        if (twoFind[twoChar] == 2 || threeFind[threeChar] == 2 || fourFind[fourChar] == 2 || fiveFind[fiveChar] == 2 || 
-                            sixFind[sixChar] == 2 || sevenFind[sevenChar] == 2 || eightFind[eightChar] == 2 || nineFind[nineChar] == 2 || 
-                            tenFind[tenChar] == 2 || jackFind[jackChar] == 2 || queenFind[queenChar] == 2 || kingFind[kingChar] == 2 || 
-                            aceFind[aceChar] == 2) {
+                        // TWO PAIRS
+                        if (twoFreq == 2 && threeFreq == 2 || twoFreq == 2 && fourFreq == 2 || twoFreq == 2 && fiveFreq == 2 || twoFreq == 2 && sixFreq == 2 ||
+                            twoFreq == 2 && sevenFreq == 2 || twoFreq == 2 && eightFreq == 2 || twoFreq == 2 && nineFreq == 2 || twoFreq == 2 && tenFreq == 2 ||
+                            twoFreq == 2 && jackFreq == 2 || twoFreq == 2 && queenFreq == 2 || twoFreq == 2 && kingFreq == 2 || twoFreq == 2 && aceFreq == 2 ||
+                            threeFreq == 2 && fourFreq == 2 || threeFreq == 2 && fiveFreq == 2 || threeFreq == 2 && sixFreq == 2 || threeFreq == 2 && sevenFreq == 2 ||
+                            threeFreq == 2 && eightFreq == 2 || threeFreq == 2 && nineFreq == 2 || threeFreq == 2 && tenFreq == 2 || threeFreq == 2 && jackFreq == 2 || 
+                            threeFreq == 2 && queenFreq == 2 || threeFreq == 2 && kingFreq == 2 || threeFreq == 2 && aceFreq == 2 || fourFreq == 2 && fiveFreq == 2 ||
+                            fourFreq == 2 && sixFreq == 2 || fourFreq == 2 && sevenFreq == 2 || fourFreq == 2 && eightFreq == 2 || fourFreq == 2 && nineFreq == 2 ||
+                            fourFreq == 2 && tenFreq == 2 || fourFreq == 2 && jackFreq == 2 || fourFreq == 2 && queenFreq == 2 || fourFreq == 2 && kingFreq == 2 ||
+                            fourFreq == 2 && aceFreq == 2 || fiveFreq == 2 && sixFreq == 2 || fiveFreq == 2 && sevenFreq == 2 || fiveFreq == 2 && eightFreq == 2 ||
+                            fiveFreq == 2 && nineFreq == 2 || fiveFreq == 2 && tenFreq == 2 || fiveFreq == 2 && jackFreq == 2 || fiveFreq == 2 && queenFreq == 2 ||
+                            fiveFreq == 2 && kingFreq == 2 || fiveFreq == 2 && aceFreq == 2 || sixFreq == 2 && sevenFreq == 2 || sixFreq == 2 && eightFreq == 2 ||
+                            sixFreq == 2 && nineFreq == 2 || sixFreq == 2 && tenFreq == 2 || sixFreq == 2 && jackFreq == 2 || sixFreq == 2 && queenFreq == 2 ||
+                            sixFreq == 2 && kingFreq == 2 || sixFreq == 2 && aceFreq == 2 || sevenFreq == 2 && eightFreq == 2 || sevenFreq == 2 && nineFreq == 2 ||
+                            sevenFreq == 2 && tenFreq == 2 || sevenFreq == 2 && jackFreq == 2 || sevenFreq == 2 && queenFreq == 2 || sevenFreq == 2 && kingFreq == 2 ||
+                            sevenFreq == 2 && aceFreq == 2 || eightFreq == 2 && nineFreq == 2 || eightFreq == 2 && tenFreq == 2 || eightFreq == 2 && jackFreq == 2 ||
+                            eightFreq == 2 && queenFreq == 2 || eightFreq == 2 && kingFreq == 2 || eightFreq == 2 && aceFreq == 2 || nineFreq == 2 && tenFreq == 2 ||
+                            nineFreq == 2 && jackFreq == 2 || nineFreq == 2 && queenFreq == 2 || nineFreq == 2 && kingFreq == 2 || nineFreq == 2 && aceFreq == 2 ||
+                            tenFreq == 2 && jackFreq == 2 || tenFreq == 2 && queenFreq == 2 || tenFreq == 2 && kingFreq == 2 || tenFreq == 2 && aceFreq == 2 ||
+                            jackFreq == 2 && queenFreq == 2 || jackFreq == 2 && kingFreq == 2 || jackFreq == 2 && aceFreq == 2 || queenFreq == 2 && kingFreq == 2 || 
+                            queenFreq == 2 && aceFreq == 2 || kingFreq == 2 && aceFreq == 2) {
 
-                            std::cout << "Freq: " << twoFind[twoChar] << "\n"; // testing...
+                            std::cout << twoPairCard.first << "\n";
+
+                            creditReward = creditBet * twoPairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // PAIR
+                        else if (twoFreq == 2 || threeFreq == 2 || fourFreq == 2 || fiveFreq == 2 || sixFreq == 2 || sevenFreq == 2 || eightFreq == 2 || 
+                                nineFreq == 2 || tenFreq == 2 || jackFreq == 2 || queenFreq == 2 || kingFreq == 2 || aceFreq == 2) {
+
                             std::cout << pairCard.first << "\n";
                         
                             creditReward = creditBet * pairCard.second;
@@ -431,7 +496,6 @@ ALL POKER CARDS (Line 46 - 52)
                         // HIGH CARD
                         else {
                             
-                            std::cout << "Freq: " << twoFind[twoChar] << "\n"; // testing...
                             std::cout << highCard.first << "\n";
 
                             creditReward = creditBet * highCard.second;
@@ -463,26 +527,6 @@ ALL POKER CARDS (Line 46 - 52)
                                 std::cout << "\n";
                             }   
                         }
-
-                        // testing...
-                        std::cout << "A: " << aceFind[aceChar] << "\n";
-                        std::cout << "2: " << twoFind[twoChar] << "\n";
-                        std::cout << "3: " << threeFind[threeChar] << "\n";
-                        std::cout << "4: " << fourFind[fourChar] << "\n";
-                        std::cout << "5: " << fiveFind[fiveChar] << "\n";
-                        std::cout << "6: " << sixFind[sixChar] << "\n";
-                        std::cout << "7: " << sevenFind[sevenChar] << "\n";
-                        std::cout << "8: " << eightFind[eightChar] << "\n";
-                        std::cout << "9: " << nineFind[nineChar] << "\n";
-                        std::cout << "10: " << tenFind[nineChar] << "\n";
-                        std::cout << "J: " << jackFind[jackChar] << "\n";
-                        std::cout << "Q: " << queenFind[queenChar] << "\n";
-                        std::cout << "K: " << kingFind[kingChar] << "\n";
-                        std::cout << "H: " << heartFind[heartChar] << "\n";
-                        std::cout << "D: " << diamondFind[diamondChar] << "\n";
-                        std::cout << "C: " << clubFind[clubChar] << "\n";
-                        std::cout << "S: " << spadeFind[spadeChar] << "\n";
-                        std::cout << "U: " << quatrefoilFind[quatrefoilChar] << "\n";
                         
                         std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                         std::cout << "Press '6' to open the menu.\n";
