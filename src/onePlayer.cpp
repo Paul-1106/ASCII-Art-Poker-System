@@ -453,8 +453,46 @@ ALL POKER CARDS (Line 46 - 52)
 
                         turn++;
 
+                        // FLUSH
+                        if (heartFreq == 5 || diamondFreq == 5 || clubFreq == 5 || spadeFreq == 5 || quatrefoilFreq == 5) {
+
+                            std::cout << flushCard.first << "\n";
+
+                            creditReward = creditBet * flushCard.second;
+                            std::cout << "You have received $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // STRAIGHT
+                        else if (aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 || twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && 
+                            fiveFreq == 1 && sixFreq == 1 || threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 || fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 &&
+                            eightFreq == 1 && nineFreq == 1 || sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 || eightFreq == 1 && nineFreq == 1 && tenFreq == 1 &&
+                            jackFreq == 1 && queenFreq == 1 || nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 || 
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1) {
+
+                            std::cout << straightCard.first << "\n";
+
+                            creditReward = creditBet * straightCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // THREE OF A KIND
+                        else if (twoFreq == 3 || threeFreq == 3 || fourFreq == 3 || fiveFreq == 3 || sixFreq == 3 || sevenFreq == 3 || eightFreq == 3 || 
+                            nineFreq == 3 || tenFreq == 3 || jackFreq == 3 || queenFreq == 3 || kingFreq == 3 || aceFreq == 3) {
+
+                            std::cout << threeKindCard.first << "\n";
+
+                            creditReward = creditBet * threeKindCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
                         // TWO PAIRS
-                        if (twoFreq == 2 && threeFreq == 2 || twoFreq == 2 && fourFreq == 2 || twoFreq == 2 && fiveFreq == 2 || twoFreq == 2 && sixFreq == 2 ||
+                        else if (twoFreq == 2 && threeFreq == 2 || twoFreq == 2 && fourFreq == 2 || twoFreq == 2 && fiveFreq == 2 || twoFreq == 2 && sixFreq == 2 ||
                             twoFreq == 2 && sevenFreq == 2 || twoFreq == 2 && eightFreq == 2 || twoFreq == 2 && nineFreq == 2 || twoFreq == 2 && tenFreq == 2 ||
                             twoFreq == 2 && jackFreq == 2 || twoFreq == 2 && queenFreq == 2 || twoFreq == 2 && kingFreq == 2 || twoFreq == 2 && aceFreq == 2 ||
                             threeFreq == 2 && fourFreq == 2 || threeFreq == 2 && fiveFreq == 2 || threeFreq == 2 && sixFreq == 2 || threeFreq == 2 && sevenFreq == 2 ||
