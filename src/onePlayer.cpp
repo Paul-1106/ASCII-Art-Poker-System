@@ -453,8 +453,150 @@ ALL POKER CARDS (Line 46 - 52)
 
                         turn++;
 
+                        // FIVE OF A KIND
+                        if (aceFreq == 5 || twoFreq == 5 || threeFreq == 5 || fourFreq == 5 || fiveFreq == 5 || sixFreq == 5 || sevenFreq == 5 || eightFreq == 5 ||
+                            nineFreq == 5 || tenFreq == 5 || jackFreq == 5 || queenFreq == 5 || kingFreq == 5) {
+
+                            std::cout << fiveKindCard.first << "\n";
+
+                            creditReward = creditBet * fiveKindCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // ROYAL FLUSH
+                        else if (tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && heartFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && diamondFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && clubFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && spadeFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && quatrefoilFreq == 5) {
+
+                            std::cout << royalFlushCard.first << "\n";
+
+                            creditReward = creditBet * royalFlushCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // STRAIGHT FLUSH
+                        else if (aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && heartFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && diamondFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && clubFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && spadeFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && quatrefoilFreq == 5 ||     
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && heartFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && diamondFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && clubFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && spadeFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && quatrefoilFreq == 5 || 
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && heartFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && diamondFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && clubFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && spadeFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && quatrefoilFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && heartFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && diamondFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && clubFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && spadeFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && quatrefoilFreq == 5 ||     
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && heartFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && diamondFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && clubFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && spadeFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && quatrefoilFreq == 5 || 
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && heartFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && diamondFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && clubFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && spadeFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && quatrefoilFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && heartFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && diamondFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && clubFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && spadeFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && quatrefoilFreq == 5 || 
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && heartFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && diamondFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && clubFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && spadeFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && quatrefoilFreq == 5 || 
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && heartFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && diamondFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && clubFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && spadeFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && quatrefoilFreq == 5) {
+
+                            std::cout << straightFlushCard.first << "\n";
+
+                            creditReward = creditBet * straightFlushCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // FOUR OF A KIND
+                        else if (aceFreq == 4 || twoFreq == 4 || threeFreq == 4 || fourFreq == 4 || fiveFreq == 4 || sixFreq == 4 || sevenFreq == 4 || eightFreq == 4 ||
+                            nineFreq == 4 || tenFreq == 4 || jackFreq == 4 || queenFreq == 4 || kingFreq == 4) {
+
+                            std::cout << fourKindCard.first << "\n";
+
+                            creditReward = creditBet * fourKindCard.second;
+                            std::cout << "You have received $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // FULL HOUSE
+                        else if (twoFreq == 2 && threeFreq == 3 || twoFreq == 2 && fourFreq == 3 || twoFreq == 2 && fiveFreq == 3 || twoFreq == 2 && sixFreq == 3 || // 1
+                            twoFreq == 3 && threeFreq == 2 || twoFreq == 3 && fourFreq == 2 || twoFreq == 3 && fiveFreq == 2 || twoFreq == 3 && sixFreq == 2 || // 2
+                            twoFreq == 2 && sevenFreq == 3 || twoFreq == 2 && eightFreq == 3 || twoFreq == 2 && nineFreq == 3 || twoFreq == 2 && tenFreq == 3 ||
+                            twoFreq == 3 && sevenFreq == 2 || twoFreq == 3 && eightFreq == 2 || twoFreq == 3 && nineFreq == 2 || twoFreq == 3 && tenFreq == 2 ||
+                            twoFreq == 2 && jackFreq == 3 || twoFreq == 2 && queenFreq == 3 || twoFreq == 2 && kingFreq == 3 || twoFreq == 2 && aceFreq == 3 ||
+                            twoFreq == 3 && jackFreq == 2 || twoFreq == 3 && queenFreq == 2 || twoFreq == 3 && kingFreq == 2 || twoFreq == 3 && aceFreq == 2 ||
+                            threeFreq == 2 && fourFreq == 3 || threeFreq == 2 && fiveFreq == 3 || threeFreq == 2 && sixFreq == 3 || threeFreq == 2 && sevenFreq == 3 ||
+                            threeFreq == 3 && fourFreq == 2 || threeFreq == 3 && fiveFreq == 2 || threeFreq == 3 && sixFreq == 2 || threeFreq == 3 && sevenFreq == 2 ||
+                            threeFreq == 2 && eightFreq == 3 || threeFreq == 2 && nineFreq == 3 || threeFreq == 2 && tenFreq == 3 || threeFreq == 2 && jackFreq == 3 ||
+                            threeFreq == 3 && eightFreq == 2 || threeFreq == 3 && nineFreq == 2 || threeFreq == 3 && tenFreq == 2 || threeFreq == 3 && jackFreq == 2 || 
+                            threeFreq == 2 && queenFreq == 3 || threeFreq == 2 && kingFreq == 3 || threeFreq == 2 && aceFreq == 3 || fourFreq == 2 && fiveFreq == 3 ||
+                            threeFreq == 3 && queenFreq == 2 || threeFreq == 3 && kingFreq == 2 || threeFreq == 3 && aceFreq == 2 || fourFreq == 3 && fiveFreq == 2 ||
+                            fourFreq == 2 && sixFreq == 3 || fourFreq == 2 && sevenFreq == 3 || fourFreq == 2 && eightFreq == 3 || fourFreq == 2 && nineFreq == 3 ||
+                            fourFreq == 3 && sixFreq == 2 || fourFreq == 3 && sevenFreq == 2 || fourFreq == 3 && eightFreq == 2 || fourFreq == 3 && nineFreq == 2 ||
+                            fourFreq == 2 && tenFreq == 3 || fourFreq == 2 && jackFreq == 3 || fourFreq == 2 && queenFreq == 3 || fourFreq == 2 && kingFreq == 3 ||
+                            fourFreq == 3 && tenFreq == 2 || fourFreq == 3 && jackFreq == 2 || fourFreq == 3 && queenFreq == 2 || fourFreq == 3 && kingFreq == 2 ||
+                            fourFreq == 2 && aceFreq == 3 || fiveFreq == 2 && sixFreq == 3 || fiveFreq == 2 && sevenFreq == 3 || fiveFreq == 2 && eightFreq == 3 ||
+                            fourFreq == 3 && aceFreq == 2 || fiveFreq == 3 && sixFreq == 2 || fiveFreq == 3 && sevenFreq == 2 || fiveFreq == 3 && eightFreq == 2 ||
+                            fiveFreq == 2 && nineFreq == 3 || fiveFreq == 2 && tenFreq == 3 || fiveFreq == 2 && jackFreq == 3 || fiveFreq == 2 && queenFreq == 3 ||
+                            fiveFreq == 3 && nineFreq == 2 || fiveFreq == 3 && tenFreq == 2 || fiveFreq == 3 && jackFreq == 2 || fiveFreq == 3 && queenFreq == 2 ||
+                            fiveFreq == 2 && kingFreq == 3 || fiveFreq == 2 && aceFreq == 3 || sixFreq == 2 && sevenFreq == 3 || sixFreq == 2 && eightFreq == 3 ||
+                            fiveFreq == 3 && kingFreq == 2 || fiveFreq == 3 && aceFreq == 2 || sixFreq == 3 && sevenFreq == 2 || sixFreq == 3 && eightFreq == 2 ||
+                            sixFreq == 2 && nineFreq == 3 || sixFreq == 2 && tenFreq == 3 || sixFreq == 2 && jackFreq == 3 || sixFreq == 2 && queenFreq == 3 ||
+                            sixFreq == 3 && nineFreq == 2 || sixFreq == 3 && tenFreq == 2 || sixFreq == 3 && jackFreq == 2 || sixFreq == 3 && queenFreq == 2 ||
+                            sixFreq == 2 && kingFreq == 3 || sixFreq == 2 && aceFreq == 3 || sevenFreq == 2 && eightFreq == 3 || sevenFreq == 2 && nineFreq == 3 ||
+                            sixFreq == 3 && kingFreq == 2 || sixFreq == 3 && aceFreq == 2 || sevenFreq == 3 && eightFreq == 2 || sevenFreq == 3 && nineFreq == 2 ||
+                            sevenFreq == 2 && tenFreq == 3 || sevenFreq == 2 && jackFreq == 3 || sevenFreq == 2 && queenFreq == 3 || sevenFreq == 2 && kingFreq == 3 ||
+                            sevenFreq == 3 && tenFreq == 2 || sevenFreq == 3 && jackFreq == 2 || sevenFreq == 3 && queenFreq == 2 || sevenFreq == 3 && kingFreq == 2 ||
+                            sevenFreq == 2 && aceFreq == 3 || eightFreq == 2 && nineFreq == 3 || eightFreq == 2 && tenFreq == 3 || eightFreq == 2 && jackFreq == 3 ||
+                            sevenFreq == 3 && aceFreq == 2 || eightFreq == 3 && nineFreq == 2 || eightFreq == 3 && tenFreq == 2 || eightFreq == 3 && jackFreq == 2 ||
+                            eightFreq == 2 && queenFreq == 3 || eightFreq == 2 && kingFreq == 3 || eightFreq == 2 && aceFreq == 3 || nineFreq == 2 && tenFreq == 3 ||
+                            eightFreq == 3 && queenFreq == 2 || eightFreq == 3 && kingFreq == 2 || eightFreq == 3 && aceFreq == 2 || nineFreq == 3 && tenFreq == 2 ||
+                            nineFreq == 2 && jackFreq == 3 || nineFreq == 2 && queenFreq == 3 || nineFreq == 2 && kingFreq == 3 || nineFreq == 2 && aceFreq == 3 ||
+                            nineFreq == 3 && jackFreq == 2 || nineFreq == 3 && queenFreq == 2 || nineFreq == 3 && kingFreq == 2 || nineFreq == 3 && aceFreq == 2 ||
+                            tenFreq == 2 && jackFreq == 3 || tenFreq == 2 && queenFreq == 3 || tenFreq == 2 && kingFreq == 3 || tenFreq == 2 && aceFreq == 3 ||
+                            tenFreq == 3 && jackFreq == 2 || tenFreq == 3 && queenFreq == 2 || tenFreq == 3 && kingFreq == 2 || tenFreq == 3 && aceFreq == 2 ||
+                            jackFreq == 2 && queenFreq == 3 || jackFreq == 2 && kingFreq == 3 || jackFreq == 2 && aceFreq == 3 || queenFreq == 2 && kingFreq == 3 ||
+                            jackFreq == 3 && queenFreq == 2 || jackFreq == 3 && kingFreq == 2 || jackFreq == 3 && aceFreq == 2 || queenFreq == 3 && kingFreq == 2 || 
+                            queenFreq == 2 && aceFreq == 3 || kingFreq == 2 && aceFreq == 3 || queenFreq == 3 && aceFreq == 2 || kingFreq == 3 && aceFreq == 2) {
+
+                            std::cout << fullHouseCard.first << "\n";
+
+                            creditReward = creditBet * fullHouseCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
                         // FLUSH
-                        if (heartFreq == 5 || diamondFreq == 5 || clubFreq == 5 || spadeFreq == 5 || quatrefoilFreq == 5) {
+                        else if (heartFreq == 5 || diamondFreq == 5 || clubFreq == 5 || spadeFreq == 5 || quatrefoilFreq == 5) {
 
                             std::cout << flushCard.first << "\n";
 
