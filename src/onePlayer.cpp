@@ -12,7 +12,7 @@ void Poker::onePlayer(double& credit, size_t creditRequirement) {
     double creditBet;
     double creditReward;
     size_t points = 0;
-    char cardChange1, cardChange2, cardChange3, cardChange4, cardChange5;
+    char cardChange;
     char swap = ' ';
 
     // Automactically incrementing one of the variables once poker card matched with cards in hash-set array
@@ -66,36 +66,6 @@ ALL POKER CARDS (Line 46 - 52)
     std::pair<std::string, double> straightFlushCard = {"[STRAIGHT FLUSH]", 35.5};
     std::pair<std::string, double> royalFlushCard = {"[ROYAL FLUSH]", 50.0};
     std::pair<std::string, double> fiveKindCard = {"[FIVE OF A KIND]", 100.0}; 
-
-    // // Row of number cards inside of the array
-    // std::vector<std::string> aceCards = {aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
-    // std::vector<std::string> twoCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil};
-    // std::vector<std::string> threeCards = {threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil};
-    // std::vector<std::string> fourCards = {fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil};
-    // std::vector<std::string> fiveCards = {fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil};
-    // std::vector<std::string> sixCards = {sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil};
-    // std::vector<std::string> sevenCards = {sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil};
-    // std::vector<std::string> eightCards = {eightHeart, eightDiamond, eightClub, eightSpade, eightQuatrefoil};
-    // std::vector<std::string> nineCards = {nineHeart, nineDiamond, nineClub, nineSpade, nineQuatrefoil};
-    // std::vector<std::string> tenCards = {tenHeart, tenDiamond, tenClub, tenSpade, tenQuatrefoil};
-
-    // // Row of face cards inside of the array
-    // std::vector<std::string> jackCards = {jackHeart, jackDiamond, jackClub, jackSpade, jackQuatrefoil};
-    // std::vector<std::string> queenCards = {queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil};
-    // std::vector<std::string> kingCards = {kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil};
-
-    // // Row of suit cards inside of the array
-    // std::vector<std::string> heartCards = {aceHeart, twoHeart, threeHeart, fourHeart, fiveHeart, sixHeart, sevenHeart, eightHeart, nineHeart,
-    //     tenHeart, jackHeart, queenHeart, kingHeart};
-    // std::vector<std::string> diamondCards = {aceDiamond, twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond,
-    //     nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond};
-    // std::vector<std::string> clubCards = {aceClub, twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eightClub, nineClub, tenClub,
-    //     jackClub, queenClub, kingClub};
-    // std::vector<std::string> spadeCards = {aceSpade, twoSpade, threeSpade, fourSpade, fiveSpade, sixSpade, sevenSpade, eightSpade, nineSpade,
-    //     tenSpade, jackSpade, queenSpade, kingSpade};
-    // std::vector<std::string> quatrefoilCards = {aceQuatrefoil, twoQuatrefoil, threeQuatrefoil, fourQuatrefoil, fiveQuatrefoil, sixQuatrefoil,
-    //     sevenQuatrefoil, eightQuatrefoil, nineQuatrefoil, tenQuatrefoil, jackQuatrefoil, queenQuatrefoil, kingQuatrefoil};
-
 
     // Check if one of the elements in sub-array is included in global poker cards array
     std::unordered_map<char, size_t> aceFind;
@@ -175,6 +145,8 @@ ALL POKER CARDS (Line 46 - 52)
 
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
+
+                turn++;
 
                 std::cout << "You have bet $" << creditBet << " credits\n\n";
                 credit -= creditBet;
@@ -362,7 +334,7 @@ ALL POKER CARDS (Line 46 - 52)
                     threeFreq = threeFind[threeChar];
                     fourFreq = fourFind[fourChar];
                     fiveFreq = fiveFind[fiveChar];
-                    sixFreq =sixFind[sixChar];
+                    sixFreq = sixFind[sixChar];
                     sevenFreq = sevenFind[sevenChar];
                     eightFreq = eightFind[eightChar];
                     nineFreq = nineFind[nineChar];
@@ -383,75 +355,310 @@ ALL POKER CARDS (Line 46 - 52)
 
                     if (swap == 's' || swap == 'S') {
 
-                        std::cout << "example: (card1, card2, card3, card4, card5) in lowercase\n";
-                        std::cout << "Change 'card1'? (Y/N)\n";
-                        std::cin >> cardChange1; 
-                        turn++;
+                        size_t cardNum = 1;
+                        int newRand1 = dist(mEngine);
+                        int newRand2 = dist2(mEngine2);
+                        int newRand3 = dist3(mEngine3);
+                        int newRand4 = dist4(mEngine4);
+                        int newRand5 = dist5(mEngine5);
+                        handDeck[i] = pokerCards[dist(mEngine)];
+                        handDeck[i + 1] = pokerCards[dist2(mEngine2)];
+                        handDeck[i + 2] = pokerCards[dist3(mEngine3)];
+                        handDeck[i + 3] = pokerCards[dist4(mEngine4)];
+                        handDeck[i + 4] = pokerCards[dist5(mEngine5)];
 
-                        if (cardChange1 == 'y' || cardChange1 == 'Y') {
-                            // Change cards ('mEngine' is a specific card that will shuffle)
-                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine);
-                        }
-                        else if (cardChange1 != 'n' && cardChange1 != 'y' && cardChange1 != 'N' && cardChange1 != 'Y') {
-                            std::cout << "Not a valid option! (Y/N)\n";
-                            std::cin >> cardChange1;
-                        }
-                        else {
-                            std::cout << "Change 'card2'? (Y/N)\n";
-                            std::cin >> cardChange2;
+                        while (cardNum <= 5) {
 
-                            if (cardChange2 == 'y' || cardChange2 == 'Y') {
-                                std::shuffle(handDeck.begin(), handDeck.end(), mEngine2);
+                            std::cout << "[CARD " << cardNum << "]" << "\n";
+                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cin >> cardChange;
+
+                            if (cardChange == 'y' || cardChange == 'Y') {
+                                std::uniform_int_distribution<size_t> newDis(1, 100);
+
+                                handDeck[i];
+                                i++;
+                                cardNum++;
                             }
-                            else if (cardChange2 != 'n' && cardChange2 != 'y' && cardChange2 != 'N' && cardChange2 != 'Y') {
-                                std::cout << "Not a valid option! (Y/N)\n";
-                                std::cin >> cardChange2;
+
+                            else if (cardChange == 'n' || cardChange == 'N') {
+                                i++;
+                                cardNum++;
                             }
+
                             else {
-                                std::cout << "Change 'card3'? (Y/N)\n";
-                                std::cin >> cardChange3;
-
-                                if (cardChange3 == 'y' && cardChange3 == 'Y') {
-                                    std::shuffle(handDeck.begin(), handDeck.end(), mEngine3);
-                                }
-                                else if (cardChange3 != 'n' && cardChange3 != 'y' && cardChange3 != 'N' && cardChange3 != 'Y') {
-                                    std::cout << "Not a valid option! (Y/N)\n";
-                                    std::cin >> cardChange3;
-                                }
-                                else {
-                                    std::cout << "Change 'card4'? (Y/N)\n";
-                                    std::cin >> cardChange4;
-
-                                    if (cardChange4 == 'y' || cardChange4 == 'Y') {
-                                        std::shuffle(handDeck.begin(), handDeck.end(), mEngine4);                          
-                                    }
-                                    else if (cardChange4 != 'n' && cardChange4 != 'y') {
-                                        std::cout << "Not a valid option! (Y/N)\n";
-                                        std::cin >> cardChange4;
-                                    }
-                                    else {
-                                        std::cout << "Change 'card5'? (Y/N)\n";
-                                        std::cin >> cardChange5;
-
-                                        if (cardChange5 == 'y' || cardChange5 == 'Y') {
-                                            std::shuffle(handDeck.begin(), handDeck.end(), mEngine5);
-                                        }
-                                        else if (cardChange5 != 'n' && cardChange5 != 'y' && cardChange5 != 'N' && cardChange5 != 'Y') {
-                                            std::cout << "Not a valid option! (Y/N)\n";
-                                            std::cin >> cardChange5;
-                                        }
-                                        else {
-                                            break;
-                                        }
-                                    }
-                                }
+                                std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
                             }
                         }
+
+                        // Determine a poker hand rank based on user's poker hand
+
+                        // FIVE OF A KIND
+                        if (aceFreq == 5 || twoFreq == 5 || threeFreq == 5 || fourFreq == 5 || fiveFreq == 5 || sixFreq == 5 || sevenFreq == 5 || eightFreq == 5 ||
+                            nineFreq == 5 || tenFreq == 5 || jackFreq == 5 || queenFreq == 5 || kingFreq == 5) {
+
+                            std::cout << fiveKindCard.first << "\n";
+
+                            creditReward = creditBet * fiveKindCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // ROYAL FLUSH
+                        else if (tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && heartFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && diamondFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && clubFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && spadeFreq == 5 ||
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1 && quatrefoilFreq == 5) {
+
+                            std::cout << royalFlushCard.first << "\n";
+
+                            creditReward = creditBet * royalFlushCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // STRAIGHT FLUSH
+                        else if (aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && heartFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && diamondFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && clubFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && spadeFreq == 5 ||
+                            aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && quatrefoilFreq == 5 ||     
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && heartFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && diamondFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && clubFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && spadeFreq == 5 ||
+                            twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && quatrefoilFreq == 5 || 
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && heartFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && diamondFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && clubFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && spadeFreq == 5 ||
+                            threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && quatrefoilFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && heartFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && diamondFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && clubFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && spadeFreq == 5 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && quatrefoilFreq == 5 ||     
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && heartFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && diamondFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && clubFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && spadeFreq == 5 ||
+                            fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && quatrefoilFreq == 5 || 
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && heartFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && diamondFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && clubFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && spadeFreq == 5 ||
+                            sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && quatrefoilFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && heartFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && diamondFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && clubFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && spadeFreq == 5 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && quatrefoilFreq == 5 || 
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && heartFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && diamondFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && clubFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && spadeFreq == 5 ||
+                            eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && quatrefoilFreq == 5 || 
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && heartFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && diamondFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && clubFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && spadeFreq == 5 ||
+                            nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && quatrefoilFreq == 5) {
+
+                            std::cout << straightFlushCard.first << "\n";
+
+                            creditReward = creditBet * straightFlushCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // FOUR OF A KIND
+                        else if (aceFreq == 4 || twoFreq == 4 || threeFreq == 4 || fourFreq == 4 || fiveFreq == 4 || sixFreq == 4 || sevenFreq == 4 || eightFreq == 4 ||
+                            nineFreq == 4 || tenFreq == 4 || jackFreq == 4 || queenFreq == 4 || kingFreq == 4) {
+
+                            std::cout << fourKindCard.first << "\n";
+
+                            creditReward = creditBet * fourKindCard.second;
+                            std::cout << "You have received $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // FULL HOUSE
+                        else if (twoFreq == 2 && threeFreq == 3 || twoFreq == 2 && fourFreq == 3 || twoFreq == 2 && fiveFreq == 3 || twoFreq == 2 && sixFreq == 3 || // 1
+                            twoFreq == 3 && threeFreq == 2 || twoFreq == 3 && fourFreq == 2 || twoFreq == 3 && fiveFreq == 2 || twoFreq == 3 && sixFreq == 2 || // 2
+                            twoFreq == 2 && sevenFreq == 3 || twoFreq == 2 && eightFreq == 3 || twoFreq == 2 && nineFreq == 3 || twoFreq == 2 && tenFreq == 3 ||
+                            twoFreq == 3 && sevenFreq == 2 || twoFreq == 3 && eightFreq == 2 || twoFreq == 3 && nineFreq == 2 || twoFreq == 3 && tenFreq == 2 ||
+                            twoFreq == 2 && jackFreq == 3 || twoFreq == 2 && queenFreq == 3 || twoFreq == 2 && kingFreq == 3 || twoFreq == 2 && aceFreq == 3 ||
+                            twoFreq == 3 && jackFreq == 2 || twoFreq == 3 && queenFreq == 2 || twoFreq == 3 && kingFreq == 2 || twoFreq == 3 && aceFreq == 2 ||
+                            threeFreq == 2 && fourFreq == 3 || threeFreq == 2 && fiveFreq == 3 || threeFreq == 2 && sixFreq == 3 || threeFreq == 2 && sevenFreq == 3 ||
+                            threeFreq == 3 && fourFreq == 2 || threeFreq == 3 && fiveFreq == 2 || threeFreq == 3 && sixFreq == 2 || threeFreq == 3 && sevenFreq == 2 ||
+                            threeFreq == 2 && eightFreq == 3 || threeFreq == 2 && nineFreq == 3 || threeFreq == 2 && tenFreq == 3 || threeFreq == 2 && jackFreq == 3 ||
+                            threeFreq == 3 && eightFreq == 2 || threeFreq == 3 && nineFreq == 2 || threeFreq == 3 && tenFreq == 2 || threeFreq == 3 && jackFreq == 2 || 
+                            threeFreq == 2 && queenFreq == 3 || threeFreq == 2 && kingFreq == 3 || threeFreq == 2 && aceFreq == 3 || fourFreq == 2 && fiveFreq == 3 ||
+                            threeFreq == 3 && queenFreq == 2 || threeFreq == 3 && kingFreq == 2 || threeFreq == 3 && aceFreq == 2 || fourFreq == 3 && fiveFreq == 2 ||
+                            fourFreq == 2 && sixFreq == 3 || fourFreq == 2 && sevenFreq == 3 || fourFreq == 2 && eightFreq == 3 || fourFreq == 2 && nineFreq == 3 ||
+                            fourFreq == 3 && sixFreq == 2 || fourFreq == 3 && sevenFreq == 2 || fourFreq == 3 && eightFreq == 2 || fourFreq == 3 && nineFreq == 2 ||
+                            fourFreq == 2 && tenFreq == 3 || fourFreq == 2 && jackFreq == 3 || fourFreq == 2 && queenFreq == 3 || fourFreq == 2 && kingFreq == 3 ||
+                            fourFreq == 3 && tenFreq == 2 || fourFreq == 3 && jackFreq == 2 || fourFreq == 3 && queenFreq == 2 || fourFreq == 3 && kingFreq == 2 ||
+                            fourFreq == 2 && aceFreq == 3 || fiveFreq == 2 && sixFreq == 3 || fiveFreq == 2 && sevenFreq == 3 || fiveFreq == 2 && eightFreq == 3 ||
+                            fourFreq == 3 && aceFreq == 2 || fiveFreq == 3 && sixFreq == 2 || fiveFreq == 3 && sevenFreq == 2 || fiveFreq == 3 && eightFreq == 2 ||
+                            fiveFreq == 2 && nineFreq == 3 || fiveFreq == 2 && tenFreq == 3 || fiveFreq == 2 && jackFreq == 3 || fiveFreq == 2 && queenFreq == 3 ||
+                            fiveFreq == 3 && nineFreq == 2 || fiveFreq == 3 && tenFreq == 2 || fiveFreq == 3 && jackFreq == 2 || fiveFreq == 3 && queenFreq == 2 ||
+                            fiveFreq == 2 && kingFreq == 3 || fiveFreq == 2 && aceFreq == 3 || sixFreq == 2 && sevenFreq == 3 || sixFreq == 2 && eightFreq == 3 ||
+                            fiveFreq == 3 && kingFreq == 2 || fiveFreq == 3 && aceFreq == 2 || sixFreq == 3 && sevenFreq == 2 || sixFreq == 3 && eightFreq == 2 ||
+                            sixFreq == 2 && nineFreq == 3 || sixFreq == 2 && tenFreq == 3 || sixFreq == 2 && jackFreq == 3 || sixFreq == 2 && queenFreq == 3 ||
+                            sixFreq == 3 && nineFreq == 2 || sixFreq == 3 && tenFreq == 2 || sixFreq == 3 && jackFreq == 2 || sixFreq == 3 && queenFreq == 2 ||
+                            sixFreq == 2 && kingFreq == 3 || sixFreq == 2 && aceFreq == 3 || sevenFreq == 2 && eightFreq == 3 || sevenFreq == 2 && nineFreq == 3 ||
+                            sixFreq == 3 && kingFreq == 2 || sixFreq == 3 && aceFreq == 2 || sevenFreq == 3 && eightFreq == 2 || sevenFreq == 3 && nineFreq == 2 ||
+                            sevenFreq == 2 && tenFreq == 3 || sevenFreq == 2 && jackFreq == 3 || sevenFreq == 2 && queenFreq == 3 || sevenFreq == 2 && kingFreq == 3 ||
+                            sevenFreq == 3 && tenFreq == 2 || sevenFreq == 3 && jackFreq == 2 || sevenFreq == 3 && queenFreq == 2 || sevenFreq == 3 && kingFreq == 2 ||
+                            sevenFreq == 2 && aceFreq == 3 || eightFreq == 2 && nineFreq == 3 || eightFreq == 2 && tenFreq == 3 || eightFreq == 2 && jackFreq == 3 ||
+                            sevenFreq == 3 && aceFreq == 2 || eightFreq == 3 && nineFreq == 2 || eightFreq == 3 && tenFreq == 2 || eightFreq == 3 && jackFreq == 2 ||
+                            eightFreq == 2 && queenFreq == 3 || eightFreq == 2 && kingFreq == 3 || eightFreq == 2 && aceFreq == 3 || nineFreq == 2 && tenFreq == 3 ||
+                            eightFreq == 3 && queenFreq == 2 || eightFreq == 3 && kingFreq == 2 || eightFreq == 3 && aceFreq == 2 || nineFreq == 3 && tenFreq == 2 ||
+                            nineFreq == 2 && jackFreq == 3 || nineFreq == 2 && queenFreq == 3 || nineFreq == 2 && kingFreq == 3 || nineFreq == 2 && aceFreq == 3 ||
+                            nineFreq == 3 && jackFreq == 2 || nineFreq == 3 && queenFreq == 2 || nineFreq == 3 && kingFreq == 2 || nineFreq == 3 && aceFreq == 2 ||
+                            tenFreq == 2 && jackFreq == 3 || tenFreq == 2 && queenFreq == 3 || tenFreq == 2 && kingFreq == 3 || tenFreq == 2 && aceFreq == 3 ||
+                            tenFreq == 3 && jackFreq == 2 || tenFreq == 3 && queenFreq == 2 || tenFreq == 3 && kingFreq == 2 || tenFreq == 3 && aceFreq == 2 ||
+                            jackFreq == 2 && queenFreq == 3 || jackFreq == 2 && kingFreq == 3 || jackFreq == 2 && aceFreq == 3 || queenFreq == 2 && kingFreq == 3 ||
+                            jackFreq == 3 && queenFreq == 2 || jackFreq == 3 && kingFreq == 2 || jackFreq == 3 && aceFreq == 2 || queenFreq == 3 && kingFreq == 2 || 
+                            queenFreq == 2 && aceFreq == 3 || kingFreq == 2 && aceFreq == 3 || queenFreq == 3 && aceFreq == 2 || kingFreq == 3 && aceFreq == 2) {
+
+                            std::cout << fullHouseCard.first << "\n";
+
+                            creditReward = creditBet * fullHouseCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // FLUSH
+                        else if (heartFreq == 5 || diamondFreq == 5 || clubFreq == 5 || spadeFreq == 5 || quatrefoilFreq == 5) {
+
+                            std::cout << flushCard.first << "\n";
+
+                            creditReward = creditBet * flushCard.second;
+                            std::cout << "You have received $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // STRAIGHT
+                        else if (aceFreq == 1 && twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 || twoFreq == 1 && threeFreq == 1 && fourFreq == 1 && 
+                            fiveFreq == 1 && sixFreq == 1 || threeFreq == 1 && fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 ||
+                            fourFreq == 1 && fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 || fiveFreq == 1 && sixFreq == 1 && sevenFreq == 1 &&
+                            eightFreq == 1 && nineFreq == 1 || sixFreq == 1 && sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 ||
+                            sevenFreq == 1 && eightFreq == 1 && nineFreq == 1 && tenFreq == 1 && jackFreq == 1 || eightFreq == 1 && nineFreq == 1 && tenFreq == 1 &&
+                            jackFreq == 1 && queenFreq == 1 || nineFreq == 1 && tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 || 
+                            tenFreq == 1 && jackFreq == 1 && queenFreq == 1 && kingFreq == 1 && aceFreq == 1) {
+
+                            std::cout << straightCard.first << "\n";
+
+                            creditReward = creditBet * straightCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+
+                        }
+
+                        // THREE OF A KIND
+                        else if (twoFreq == 3 || threeFreq == 3 || fourFreq == 3 || fiveFreq == 3 || sixFreq == 3 || sevenFreq == 3 || eightFreq == 3 || 
+                            nineFreq == 3 || tenFreq == 3 || jackFreq == 3 || queenFreq == 3 || kingFreq == 3 || aceFreq == 3) {
+
+                            std::cout << threeKindCard.first << "\n";
+
+                            creditReward = creditBet * threeKindCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // TWO PAIRS
+                        else if (twoFreq == 2 && threeFreq == 2 || twoFreq == 2 && fourFreq == 2 || twoFreq == 2 && fiveFreq == 2 || twoFreq == 2 && sixFreq == 2 ||
+                            twoFreq == 2 && sevenFreq == 2 || twoFreq == 2 && eightFreq == 2 || twoFreq == 2 && nineFreq == 2 || twoFreq == 2 && tenFreq == 2 ||
+                            twoFreq == 2 && jackFreq == 2 || twoFreq == 2 && queenFreq == 2 || twoFreq == 2 && kingFreq == 2 || twoFreq == 2 && aceFreq == 2 ||
+                            threeFreq == 2 && fourFreq == 2 || threeFreq == 2 && fiveFreq == 2 || threeFreq == 2 && sixFreq == 2 || threeFreq == 2 && sevenFreq == 2 ||
+                            threeFreq == 2 && eightFreq == 2 || threeFreq == 2 && nineFreq == 2 || threeFreq == 2 && tenFreq == 2 || threeFreq == 2 && jackFreq == 2 || 
+                            threeFreq == 2 && queenFreq == 2 || threeFreq == 2 && kingFreq == 2 || threeFreq == 2 && aceFreq == 2 || fourFreq == 2 && fiveFreq == 2 ||
+                            fourFreq == 2 && sixFreq == 2 || fourFreq == 2 && sevenFreq == 2 || fourFreq == 2 && eightFreq == 2 || fourFreq == 2 && nineFreq == 2 ||
+                            fourFreq == 2 && tenFreq == 2 || fourFreq == 2 && jackFreq == 2 || fourFreq == 2 && queenFreq == 2 || fourFreq == 2 && kingFreq == 2 ||
+                            fourFreq == 2 && aceFreq == 2 || fiveFreq == 2 && sixFreq == 2 || fiveFreq == 2 && sevenFreq == 2 || fiveFreq == 2 && eightFreq == 2 ||
+                            fiveFreq == 2 && nineFreq == 2 || fiveFreq == 2 && tenFreq == 2 || fiveFreq == 2 && jackFreq == 2 || fiveFreq == 2 && queenFreq == 2 ||
+                            fiveFreq == 2 && kingFreq == 2 || fiveFreq == 2 && aceFreq == 2 || sixFreq == 2 && sevenFreq == 2 || sixFreq == 2 && eightFreq == 2 ||
+                            sixFreq == 2 && nineFreq == 2 || sixFreq == 2 && tenFreq == 2 || sixFreq == 2 && jackFreq == 2 || sixFreq == 2 && queenFreq == 2 ||
+                            sixFreq == 2 && kingFreq == 2 || sixFreq == 2 && aceFreq == 2 || sevenFreq == 2 && eightFreq == 2 || sevenFreq == 2 && nineFreq == 2 ||
+                            sevenFreq == 2 && tenFreq == 2 || sevenFreq == 2 && jackFreq == 2 || sevenFreq == 2 && queenFreq == 2 || sevenFreq == 2 && kingFreq == 2 ||
+                            sevenFreq == 2 && aceFreq == 2 || eightFreq == 2 && nineFreq == 2 || eightFreq == 2 && tenFreq == 2 || eightFreq == 2 && jackFreq == 2 ||
+                            eightFreq == 2 && queenFreq == 2 || eightFreq == 2 && kingFreq == 2 || eightFreq == 2 && aceFreq == 2 || nineFreq == 2 && tenFreq == 2 ||
+                            nineFreq == 2 && jackFreq == 2 || nineFreq == 2 && queenFreq == 2 || nineFreq == 2 && kingFreq == 2 || nineFreq == 2 && aceFreq == 2 ||
+                            tenFreq == 2 && jackFreq == 2 || tenFreq == 2 && queenFreq == 2 || tenFreq == 2 && kingFreq == 2 || tenFreq == 2 && aceFreq == 2 ||
+                            jackFreq == 2 && queenFreq == 2 || jackFreq == 2 && kingFreq == 2 || jackFreq == 2 && aceFreq == 2 || queenFreq == 2 && kingFreq == 2 || 
+                            queenFreq == 2 && aceFreq == 2 || kingFreq == 2 && aceFreq == 2) {
+
+                            std::cout << twoPairCard.first << "\n";
+
+                            creditReward = creditBet * twoPairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // PAIR
+                        else if (twoFreq == 2 || threeFreq == 2 || fourFreq == 2 || fiveFreq == 2 || sixFreq == 2 || sevenFreq == 2 || eightFreq == 2 || 
+                                nineFreq == 2 || tenFreq == 2 || jackFreq == 2 || queenFreq == 2 || kingFreq == 2 || aceFreq == 2) {
+
+                            std::cout << pairCard.first << "\n";
+                        
+                            creditReward = creditBet * pairCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        // HIGH CARD
+                        else {
+                            
+                            std::cout << highCard.first << "\n";
+
+                            creditReward = creditBet * highCard.second;
+                            std::cout << "You have recieved $" << creditReward << "\n";
+                            credit += creditReward;
+                        }
+
+                        bool bashLines3 = true;
+                        std::vector<std::stringstream> buffers3;
+                        buffers3.reserve(handDeck.size());
+
+                        for (const auto& a : handDeck) {
+                            buffers3.emplace_back(a);
+                        }
+
+                        while (bashLines3) {
+
+                            bashLines3 = false;
+
+                            for (auto& a : buffers3) {
+                                std::string line;
+
+                                if (std::getline(a, line)) {
+                                    std::cout << line << " ";
+                                    
+                                    bashLines3 = true;
+                                }
+                            }
+                            
+                            if (bashLines3) {
+                                std::cout << "\n";
+                            }   
+                        }
+                        
+                        std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
+                        std::cout << "Press '6' to open the menu.\n";
+                        turn++;
+                        break;
 
                     }
                     else if (swap == 'p' || swap == 'P') {
 
-                        turn++;
+                        // Determine a poker hand rank based on user's poker hand
 
                         // FIVE OF A KIND
                         if (aceFreq == 5 || twoFreq == 5 || threeFreq == 5 || fourFreq == 5 || fiveFreq == 5 || sixFreq == 5 || sevenFreq == 5 || eightFreq == 5 ||
@@ -710,6 +917,7 @@ ALL POKER CARDS (Line 46 - 52)
                         
                         std::cout << "Check your credit balance by pressing '3' as a menu option.\n";
                         std::cout << "Press '6' to open the menu.\n";
+                        turn++;
                         break;
                     }
 
@@ -727,79 +935,5 @@ ALL POKER CARDS (Line 46 - 52)
                 std::cin >> creditBet;
             }
         }
-
-        // Determine a poker hand rank based on user's cards
-        // FIVE OF A KIND
-        // if (h2 != handDeck.end()) {
-
-        //     std::cout << fiveKindCard.first << "\n"; // 'Pair.first' will write the KEY of the pair function
-            
-        //     creditReward = creditBet * fiveKindCard.second; // 'Pair.second' will write the VALUE of the pair function
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward; // Total amount of rewards will add to the user's balance
-        // }
-        // // ROYAL FLUSH
-        // else if (h10 != handDeck.end() && hJack != handDeck.end() && hQueen != handDeck.end() && hKing != handDeck.end() && hAce != handDeck.end()) {
-
-        //     std::cout << royalFlushCard.first << "\n";
-
-        //     creditReward = creditBet * royalFlushCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // STRAIGHT FLUSH
-        // else if (hAce != handDeck.end() && h2 != handDeck.end() && h3 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end()) {
-
-        //     std::cout << straightFlushCard.first << "\n";
-            
-        //     creditReward = creditBet * straightFlushCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // FOUR OF A KIND
-        // else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end() && s2 != handDeck.end()) {
-
-        //     std::cout << fourKindCard.first << "\n";
-            
-        //     creditReward = creditBet * fourKindCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // FULL HOUSE
-        // else if (h2 != handDeck.end() && d2 != handDeck.end() && h3 != handDeck.end() && d3 != handDeck.end() && c3 != handDeck.end()) {
-            
-        //     std::cout << fullHouseCard.first << "\n";
-            
-        //     creditReward = creditBet * fullHouseCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // FLUSH
-        // else if (h2 != handDeck.end() && h4 != handDeck.end() && h5 != handDeck.end() && h7 != handDeck.end() && h8 != handDeck.end()) {
-            
-        //     std::cout << flushCard.first << "\n";
-            
-        //     creditReward = creditBet * flushCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // STRAIGHT
-        // else if (h2 != handDeck.end() && d3 != handDeck.end() && c4 != handDeck.end() && s5 != handDeck.end() && q6 != handDeck.end()) {
-            
-        //     std::cout << straightCard.first << "\n";
-            
-        //     creditReward = creditBet * straightCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
-        // // THREE OF A KIND
-        // else if (h2 != handDeck.end() && d2 != handDeck.end() && c2 != handDeck.end()) {
-            
-        //     std::cout << threeKindCard.first << "\n";
-            
-        //     creditReward = creditBet * threeKindCard.second;
-        //     std::cout << "You have recieved $" << creditReward << "\n";
-        //     credit += creditReward;
-        // }
     }
 }
