@@ -16,7 +16,7 @@
 
 class Poker {
 public:
-    void onePlayer(double& credit, size_t creditRequirement);
+    void onePlayer(double& credit, std::size_t creditRequirement);
     void twoPlayers();
     void credits(double& credit);
     void instructions();
@@ -35,7 +35,7 @@ public:
 
 private:
     double credit;
-    size_t creditRequirement;
+    std::size_t creditRequirement;
     int points = 0;
 };
 

@@ -5,13 +5,13 @@
 
 #include <mylib/poker.h>
 
-void Poker::onePlayer(double& credit, size_t creditRequirement) {
+void Poker::onePlayer(double& credit, std::size_t creditRequirement) {
 
     char quit = 'q';
-    size_t turn = 0;
+    std::size_t turn = 0;
     double creditBet;
     double creditReward;
-    size_t points = 0;
+    std::size_t points = 0;
     char cardChange;
     char swap = ' ';
 
@@ -109,24 +109,24 @@ ALL POKER CARDS (Line 46 - 52)
     char quatrefoilChar = 'U'; 
 
     // All the frequency char variables that are added will be push to integer variable for better code quality
-    size_t aceFreq = 0;
-    size_t twoFreq = 0;
-    size_t threeFreq = 0;
-    size_t fourFreq = 0;
-    size_t fiveFreq = 0;
-    size_t sixFreq = 0;
-    size_t sevenFreq = 0;
-    size_t eightFreq = 0;
-    size_t nineFreq = 0;
-    size_t tenFreq = 0;
-    size_t jackFreq = 0;
-    size_t queenFreq = 0;
-    size_t kingFreq = 0;
-    size_t heartFreq = 0;
-    size_t diamondFreq = 0;
-    size_t clubFreq = 0;
-    size_t spadeFreq = 0;
-    size_t quatrefoilFreq = 0;
+    std::size_t aceFreq = 0;
+    std::size_t twoFreq = 0;
+    std::size_t threeFreq = 0;
+    std::size_t fourFreq = 0;
+    std::size_t fiveFreq = 0;
+    std::size_t sixFreq = 0;
+    std::size_t sevenFreq = 0;
+    std::size_t eightFreq = 0;
+    std::size_t nineFreq = 0;
+    std::size_t tenFreq = 0;
+    std::size_t jackFreq = 0;
+    std::size_t queenFreq = 0;
+    std::size_t kingFreq = 0;
+    std::size_t heartFreq = 0;
+    std::size_t diamondFreq = 0;
+    std::size_t clubFreq = 0;
+    std::size_t spadeFreq = 0;
+    std::size_t quatrefoilFreq = 0;
 
     // return this condition if the credit balance is less than 100
     if (credit < creditRequirement) {
@@ -146,189 +146,192 @@ ALL POKER CARDS (Line 46 - 52)
             // If user input at least 100 credits
             if (creditBet >= creditRequirement) {
 
-                turn++;
+                for (int i{0}; i < handDeck.size(); ++i) {
 
-                std::cout << "You have bet $" << creditBet << " credits\n\n";
-                credit -= creditBet;
+                    turn++;
 
-                // Random card selector (1/5)
-                unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine(random1);
-                std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                handDeck[0] = pokerCards[dist(mEngine)];
+                    std::cout << "You have bet $" << creditBet << " credits\n\n";
+                    credit -= creditBet;
 
-                //Random card selector (2/5)
-                unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine2(random2);
-                std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-                handDeck[1] = pokerCards[dist2(mEngine2)];
+                    // Random card selector (1/5)
+                    unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine(random1);
+                    std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+                    handDeck[i] = pokerCards[dist(mEngine)];
 
-                //Random card selector (3/5)
-                unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine3(random3);
-                std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-                handDeck[2] = pokerCards[dist3(mEngine3)];
+                    //Random card selector (2/5)
+                    unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine2(random2);
+                    std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+                    handDeck[i + 1] = pokerCards[dist2(mEngine2)];
 
-                //Random card selector (4/5)
-                unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine4(random4);
-                std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-                handDeck[3] = pokerCards[dist4(mEngine4)];
+                    //Random card selector (3/5)
+                    unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine3(random3);
+                    std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+                    handDeck[i + 2] = pokerCards[dist3(mEngine3)];
 
-                // Random card selector (5/5)
-                unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
-                std::mt19937 mEngine5(random5);
-                std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-                handDeck[4] = pokerCards[dist5(mEngine5)];                
+                    //Random card selector (4/5)
+                    unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine4(random4);
+                    std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+                    handDeck[i + 3] = pokerCards[dist4(mEngine4)];
 
-                handDeck = {handDeck[0], handDeck[1], handDeck[2], handDeck[3], handDeck[4]};
-                std::vector<std::stringstream> buffers, buffers2;
-                buffers.reserve(handDeck.size());
+                    // Random card selector (5/5)
+                    unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 mEngine5(random5);
+                    std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+                    handDeck[i + 4] = pokerCards[dist5(mEngine5)];                
 
-                // Poker hand from 1-5 will move to stringstream vector for line break
-                for (const auto& a : handDeck) {
-                    buffers.emplace_back(a);
-                }
+                    handDeck = {handDeck[i], handDeck[i + 1], handDeck[i + 2], handDeck[i + 3], handDeck[i + 4]};
+                    std::vector<std::stringstream> buffers, buffers2, buffers3;
+                    buffers.reserve(handDeck.size());
 
-                bool bashLines = true;
-                bool bashLines2 = true;
+                    // Poker hand from 1-5 will move to stringstream vector for line break
+                    for (const auto& a : handDeck) {
+                        buffers.emplace_back(a);
+                    }
 
-                // Displaying poker hand horizontally instead of vertically
-                while (bashLines) {
+                    bool bashLines = true;
+                    bool bashLines2 = true;
+                    bool bashLines3 = true;
 
-                    bashLines = false;
+                    // Displaying poker hand horizontally instead of vertically
+                    while (bashLines) {
 
-                    for (auto& a : buffers) {
-                        std::string line;
+                        bashLines = false;
 
-                        if (std::getline(a, line)) {
-                            // Print poker hand from 1-5
-                            std::cout << line << " ";
-                            bashLines = true;
+                        for (auto& a : buffers) {
+                            std::string line;
+
+                            if (std::getline(a, line)) {
+                                // Print poker hand from 1-5
+                                std::cout << line << " ";
+                                bashLines = true;
+                            }
+                        }
+                        // A new line will start over to the top of ACSII art poker card to the right
+                        if (bashLines) {
+                            std::cout << "\n";
                         }
                     }
-                    // A new line will start over to the top of ACSII art poker card to the right
-                    if (bashLines) {
-                        std::cout << "\n";
+
+                    // Count the frequency for card #1
+                    for (char& card : handDeck[i]) {
+
+                        twoFind[card]++;
+                        threeFind[card]++;
+                        fourFind[card]++;
+                        fiveFind[card]++;
+                        sixFind[card]++;
+                        sevenFind[card]++;
+                        eightFind[card]++;
+                        nineFind[card]++;
+                        tenFind[card]++;
+                        jackFind[card]++;
+                        queenFind[card]++;
+                        kingFind[card]++;
+                        aceFind[card]++;
+                        heartFind[card]++;
+                        diamondFind[card]++;
+                        clubFind[card]++;
+                        spadeFind[card]++;
+                        quatrefoilFind[card]++;
                     }
-                }
 
-                // Count the frequency for card #1
-                for (char& card : handDeck[0]) {
+                    // Count the frequency for card #2
+                    for (char& card : handDeck[i + 1]) {
 
-                    twoFind[card]++;
-                    threeFind[card]++;
-                    fourFind[card]++;
-                    fiveFind[card]++;
-                    sixFind[card]++;
-                    sevenFind[card]++;
-                    eightFind[card]++;
-                    nineFind[card]++;
-                    tenFind[card]++;
-                    jackFind[card]++;
-                    queenFind[card]++;
-                    kingFind[card]++;
-                    aceFind[card]++;
-                    heartFind[card]++;
-                    diamondFind[card]++;
-                    clubFind[card]++;
-                    spadeFind[card]++;
-                    quatrefoilFind[card]++;
-                }
+                        twoFind[card]++;
+                        threeFind[card]++;
+                        fourFind[card]++;
+                        fiveFind[card]++;
+                        sixFind[card]++;
+                        sevenFind[card]++;
+                        eightFind[card]++;
+                        nineFind[card]++;
+                        tenFind[card]++;
+                        jackFind[card]++;
+                        queenFind[card]++;
+                        kingFind[card]++;
+                        aceFind[card]++;
+                        heartFind[card]++;
+                        diamondFind[card]++;
+                        clubFind[card]++;
+                        spadeFind[card]++;
+                        quatrefoilFind[card]++;
+                    }
 
-                // Count the frequency for card #2
-                for (char& card : handDeck[1]) {
+                    // Count the frequency for card #3
+                    for (char& card : handDeck[i + 2]) {
 
-                    twoFind[card]++;
-                    threeFind[card]++;
-                    fourFind[card]++;
-                    fiveFind[card]++;
-                    sixFind[card]++;
-                    sevenFind[card]++;
-                    eightFind[card]++;
-                    nineFind[card]++;
-                    tenFind[card]++;
-                    jackFind[card]++;
-                    queenFind[card]++;
-                    kingFind[card]++;
-                    aceFind[card]++;
-                    heartFind[card]++;
-                    diamondFind[card]++;
-                    clubFind[card]++;
-                    spadeFind[card]++;
-                    quatrefoilFind[card]++;
-                }
+                        twoFind[card]++;
+                        threeFind[card]++;
+                        fourFind[card]++;
+                        fiveFind[card]++;
+                        sixFind[card]++;
+                        sevenFind[card]++;
+                        eightFind[card]++;
+                        nineFind[card]++;
+                        tenFind[card]++;
+                        jackFind[card]++;
+                        queenFind[card]++;
+                        kingFind[card]++;
+                        aceFind[card]++;
+                        heartFind[card]++;
+                        diamondFind[card]++;
+                        clubFind[card]++;
+                        spadeFind[card]++;
+                        quatrefoilFind[card]++;
+                    }
+                            
+                    // Count the frequency for card #4
+                    for (char& card : handDeck[i + 3]) {
 
-                // Count the frequency for card #3
-                for (char& card : handDeck[2]) {
+                        twoFind[card]++;
+                        threeFind[card]++;
+                        fourFind[card]++;
+                        fiveFind[card]++;
+                        sixFind[card]++;
+                        sevenFind[card]++;
+                        eightFind[card]++;
+                        nineFind[card]++;
+                        tenFind[card]++;
+                        jackFind[card]++;
+                        queenFind[card]++;
+                        kingFind[card]++;
+                        aceFind[card]++;
+                        heartFind[card]++;
+                        diamondFind[card]++;
+                        clubFind[card]++;
+                        spadeFind[card]++;
+                        quatrefoilFind[card]++;
+                    }
 
-                    twoFind[card]++;
-                    threeFind[card]++;
-                    fourFind[card]++;
-                    fiveFind[card]++;
-                    sixFind[card]++;
-                    sevenFind[card]++;
-                    eightFind[card]++;
-                    nineFind[card]++;
-                    tenFind[card]++;
-                    jackFind[card]++;
-                    queenFind[card]++;
-                    kingFind[card]++;
-                    aceFind[card]++;
-                    heartFind[card]++;
-                    diamondFind[card]++;
-                    clubFind[card]++;
-                    spadeFind[card]++;
-                    quatrefoilFind[card]++;
-                }
-                        
-                // Count the frequency for card #4
-                for (char& card : handDeck[3]) {
+                    // Count the frequency for card #5
+                    for (char& card : handDeck[i + 4]) {
 
-                    twoFind[card]++;
-                    threeFind[card]++;
-                    fourFind[card]++;
-                    fiveFind[card]++;
-                    sixFind[card]++;
-                    sevenFind[card]++;
-                    eightFind[card]++;
-                    nineFind[card]++;
-                    tenFind[card]++;
-                    jackFind[card]++;
-                    queenFind[card]++;
-                    kingFind[card]++;
-                    aceFind[card]++;
-                    heartFind[card]++;
-                    diamondFind[card]++;
-                    clubFind[card]++;
-                    spadeFind[card]++;
-                    quatrefoilFind[card]++;
-                }
+                        twoFind[card]++;
+                        threeFind[card]++;
+                        fourFind[card]++;
+                        fiveFind[card]++;
+                        sixFind[card]++;
+                        sevenFind[card]++;
+                        eightFind[card]++;
+                        nineFind[card]++;
+                        tenFind[card]++;
+                        jackFind[card]++;
+                        queenFind[card]++;
+                        kingFind[card]++;
+                        aceFind[card]++;
+                        heartFind[card]++;
+                        diamondFind[card]++;
+                        clubFind[card]++;
+                        spadeFind[card]++;
+                        quatrefoilFind[card]++;
+                    }
 
-                // Count the frequency for card #5
-                for (char& card : handDeck[4]) {
 
-                    twoFind[card]++;
-                    threeFind[card]++;
-                    fourFind[card]++;
-                    fiveFind[card]++;
-                    sixFind[card]++;
-                    sevenFind[card]++;
-                    eightFind[card]++;
-                    nineFind[card]++;
-                    tenFind[card]++;
-                    jackFind[card]++;
-                    queenFind[card]++;
-                    kingFind[card]++;
-                    aceFind[card]++;
-                    heartFind[card]++;
-                    diamondFind[card]++;
-                    clubFind[card]++;
-                    spadeFind[card]++;
-                    quatrefoilFind[card]++;
-                }
-
-                for (int i{0}; i < handDeck.size(); ++i) {
 
                     twoFreq = twoFind[twoChar];
                     threeFreq = threeFind[threeChar];
@@ -349,47 +352,215 @@ ALL POKER CARDS (Line 46 - 52)
                     spadeFreq = spadeFind[spadeChar];
                     quatrefoilFreq = quatrefoilFind[quatrefoilChar];                   
 
-                    turn++;
                     std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
                     std::cin >> swap;
 
                     if (swap == 's' || swap == 'S') {
 
-                        size_t cardNum = 1;
-                        int newRand1 = dist(mEngine);
-                        int newRand2 = dist2(mEngine2);
-                        int newRand3 = dist3(mEngine3);
-                        int newRand4 = dist4(mEngine4);
-                        int newRand5 = dist5(mEngine5);
-                        handDeck[i] = pokerCards[dist(mEngine)];
-                        handDeck[i + 1] = pokerCards[dist2(mEngine2)];
-                        handDeck[i + 2] = pokerCards[dist3(mEngine3)];
-                        handDeck[i + 3] = pokerCards[dist4(mEngine4)];
-                        handDeck[i + 4] = pokerCards[dist5(mEngine5)];
+                        std::size_t cardNum = 1;
+                        std::size_t newRand1 = dist(mEngine);
+                        std::size_t newRand2 = dist2(mEngine2);
+                        std::size_t newRand3 = dist3(mEngine3);
+                        std::size_t newRand4 = dist4(mEngine4);
+                        std::size_t newRand5 = dist5(mEngine5);
+                        // handDeck[i] = pokerCards[dist(mEngine)];
+                        // handDeck[i + 1] = pokerCards[dist2(mEngine2)];
+                        // handDeck[i + 2] = pokerCards[dist3(mEngine3)];
+                        // handDeck[i + 3] = pokerCards[dist4(mEngine4)];
+                        // handDeck[i + 4] = pokerCards[dist5(mEngine5)];
 
-                        while (cardNum <= 5) {
+                        twoFreq = 0;
+                        threeFreq = 0;
+                        fourFreq = 0;
+                        fiveFreq = 0;
+                        sixFreq = 0;
+                        sevenFreq = 0;
+                        eightFreq = 0;
+                        nineFreq = 0;
+                        tenFreq = 0;
+                        jackFreq = 0;
+                        queenFreq = 0;
+                        kingFreq = 0;
+                        aceFreq = 0;
+                        heartFreq = 0;
+                        diamondFreq = 0;
+                        clubFreq = 0;
+                        spadeFreq = 0;
+                        quatrefoilFreq = 0;
+
+                        twoFind[twoChar] = 0;
+                        threeFind[threeChar] = 0;
+                        fourFind[fourChar] = 0;
+                        fiveFind[fiveChar] = 0;
+                        sixFind[sixChar] = 0;
+                        sevenFind[sevenChar] = 0;
+                        eightFind[eightChar] = 0;
+                        nineFind[nineChar] = 0;
+                        tenFind[tenChar] = 0;
+                        jackFind[jackChar] = 0;
+                        queenFind[queenChar] = 0;
+                        kingFind[kingChar] = 0;
+                        aceFind[aceChar] = 0;
+                        heartFind[heartChar] = 0;
+                        diamondFind[diamondChar] = 0;
+                        clubFind[clubChar] = 0;
+                        spadeFind[spadeChar] = 0;
+                        quatrefoilFind[quatrefoilChar] = 0;   
+
+                        while (cardNum <= 5) { 
 
                             std::cout << "[CARD " << cardNum << "]" << "\n";
-                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cout << "Change card " << cardNum << "?\n\n";
                             std::cin >> cardChange;
 
                             if (cardChange == 'y' || cardChange == 'Y') {
-                                std::uniform_int_distribution<size_t> newDis(1, 100);
 
-                                handDeck[i];
+                                std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+                                pokerCards[newRand1] = newRand1;
+                                handDeck[i] = pokerCards[newRand1];
                                 i++;
                                 cardNum++;
                             }
 
-                            else if (cardChange == 'n' || cardChange == 'N') {
+                            if (cardChange == 'n' || cardChange == 'N') {
                                 i++;
                                 cardNum++;
                             }
 
-                            else {
+                            if (cardChange != 'y' && cardChange != 'Y' && cardChange != 'n' && cardChange != 'N') {
                                 std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
                             }
+
                         }
+
+                        for (char& card : handDeck[i]) {
+
+                            twoFind[card]++;
+                            threeFind[card]++;
+                            fourFind[card]++;
+                            fiveFind[card]++;
+                            sixFind[card]++;
+                            sevenFind[card]++;
+                            eightFind[card]++;
+                            nineFind[card]++;
+                            tenFind[card]++;
+                            jackFind[card]++;
+                            queenFind[card]++;
+                            kingFind[card]++;
+                            aceFind[card]++;
+                            heartFind[card]++;
+                            diamondFind[card]++;
+                            clubFind[card]++;
+                            spadeFind[card]++;
+                            quatrefoilFind[card]++;                           
+                        }
+
+                        for (char& card : handDeck[i + 1]) {
+
+                            twoFind[card]++;
+                            threeFind[card]++;
+                            fourFind[card]++;
+                            fiveFind[card]++;
+                            sixFind[card]++;
+                            sevenFind[card]++;
+                            eightFind[card]++;
+                            nineFind[card]++;
+                            tenFind[card]++;
+                            jackFind[card]++;
+                            queenFind[card]++;
+                            kingFind[card]++;
+                            aceFind[card]++;
+                            heartFind[card]++;
+                            diamondFind[card]++;
+                            clubFind[card]++;
+                            spadeFind[card]++;
+                            quatrefoilFind[card]++;                           
+                        }
+
+                        for (char& card : handDeck[i + 2]) {
+
+                            twoFind[card]++;
+                            threeFind[card]++;
+                            fourFind[card]++;
+                            fiveFind[card]++;
+                            sixFind[card]++;
+                            sevenFind[card]++;
+                            eightFind[card]++;
+                            nineFind[card]++;
+                            tenFind[card]++;
+                            jackFind[card]++;
+                            queenFind[card]++;
+                            kingFind[card]++;
+                            aceFind[card]++;
+                            heartFind[card]++;
+                            diamondFind[card]++;
+                            clubFind[card]++;
+                            spadeFind[card]++;
+                            quatrefoilFind[card]++;  
+                        }
+
+                        for (char& card : handDeck[i + 3]) {
+
+                            twoFind[card]++;
+                            threeFind[card]++;
+                            fourFind[card]++;
+                            fiveFind[card]++;
+                            sixFind[card]++;
+                            sevenFind[card]++;
+                            eightFind[card]++;
+                            nineFind[card]++;
+                            tenFind[card]++;
+                            jackFind[card]++;
+                            queenFind[card]++;
+                            kingFind[card]++;
+                            aceFind[card]++;
+                            heartFind[card]++;
+                            diamondFind[card]++;
+                            clubFind[card]++;
+                            spadeFind[card]++;
+                            quatrefoilFind[card]++; 
+                        }
+
+                        for (char& card : handDeck[i + 4]) {
+
+                            twoFind[card]++;
+                            threeFind[card]++;
+                            fourFind[card]++;
+                            fiveFind[card]++;
+                            sixFind[card]++;
+                            sevenFind[card]++;
+                            eightFind[card]++;
+                            nineFind[card]++;
+                            tenFind[card]++;
+                            jackFind[card]++;
+                            queenFind[card]++;
+                            kingFind[card]++;
+                            aceFind[card]++;
+                            heartFind[card]++;
+                            diamondFind[card]++;
+                            clubFind[card]++;
+                            spadeFind[card]++;
+                            quatrefoilFind[card]++; 
+                        }
+
+                        twoFreq = twoFind[twoChar];
+                        threeFreq = threeFind[threeChar];
+                        fourFreq = fourFind[fourChar];
+                        fiveFreq = fiveFind[fiveChar];
+                        sixFreq = sixFind[sixChar];
+                        sevenFreq = sevenFind[sevenChar];
+                        eightFreq = eightFind[eightChar];
+                        nineFreq = nineFind[nineChar];
+                        tenFreq = tenFind[tenChar];
+                        jackFreq = jackFind[jackChar];
+                        queenFreq = queenFind[queenChar];
+                        kingFreq = kingFind[kingChar];
+                        aceFreq = aceFind[aceChar];
+                        heartFreq = heartFind[heartChar];
+                        diamondFreq = diamondFind[diamondChar];
+                        clubFreq = clubFind[clubChar];
+                        spadeFreq = spadeFind[spadeChar];
+                        quatrefoilFreq = quatrefoilFind[quatrefoilChar];
 
                         // Determine a poker hand rank based on user's poker hand
 
@@ -623,8 +794,6 @@ ALL POKER CARDS (Line 46 - 52)
                             credit += creditReward;
                         }
 
-                        bool bashLines3 = true;
-                        std::vector<std::stringstream> buffers3;
                         buffers3.reserve(handDeck.size());
 
                         for (const auto& a : handDeck) {
@@ -654,7 +823,6 @@ ALL POKER CARDS (Line 46 - 52)
                         std::cout << "Press '6' to open the menu.\n";
                         turn++;
                         break;
-
                     }
                     else if (swap == 'p' || swap == 'P') {
 
@@ -926,7 +1094,9 @@ ALL POKER CARDS (Line 46 - 52)
                         std::cin >> swap;
                     }
 
+            
                     break;
+                
                 }
             }
             // If user input less than 100 credits
