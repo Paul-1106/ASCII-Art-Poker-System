@@ -51,8 +51,8 @@ ALL POKER CARDS (Line 46 - 52)
             queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
-    // All updated poker cards will be in the 'handDeck' container
-    std::vector<std::string> handDeck(5);
+    // All updated poker cards will be in the 'handDeck' container (5 cards in one poker hand)
+    std::vector<std::string> handDeck(10);
 
     // Comparing each hand deck to points
     std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
@@ -149,6 +149,7 @@ ALL POKER CARDS (Line 46 - 52)
                 for (int i{0}; i < handDeck.size(); ++i) {
 
                     turn++;
+                    handDeck = {handDeck[i], handDeck[i + 1], handDeck[i + 2], handDeck[i + 3], handDeck[i + 4]};
 
                     std::cout << "You have bet $" << creditBet << " credits\n\n";
                     credit -= creditBet;
@@ -183,7 +184,6 @@ ALL POKER CARDS (Line 46 - 52)
                     std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
                     handDeck[i + 4] = pokerCards[dist5(mEngine5)];                
 
-                    handDeck = {handDeck[i], handDeck[i + 1], handDeck[i + 2], handDeck[i + 3], handDeck[i + 4]};
                     std::vector<std::stringstream> buffers, buffers2, buffers3;
                     buffers.reserve(handDeck.size());
 
