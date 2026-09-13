@@ -52,7 +52,7 @@ ALL POKER CARDS (Line 46 - 52)
             aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
 
     // All updated poker cards will be in the 'handDeck' container (5 cards in one poker hand)
-    std::vector<std::string> handDeck(10);
+    std::vector<std::string> handDeck{5};
 
     // Comparing each hand deck to points
     std::pair<std::string, double> highCard = {"[HIGH CARD]", 0.0};
@@ -149,7 +149,6 @@ ALL POKER CARDS (Line 46 - 52)
                 for (int i{0}; i < handDeck.size(); ++i) {
 
                     turn++;
-                    handDeck = {handDeck[i], handDeck[i + 1], handDeck[i + 2], handDeck[i + 3], handDeck[i + 4]};
 
                     std::cout << "You have bet $" << creditBet << " credits\n\n";
                     credit -= creditBet;
@@ -217,7 +216,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
 
                     // Count the frequency for card #1
-                    for (char& card : handDeck[i]) {
+                    for (char& card : handDeck[0]) {
 
                         twoFind[card]++;
                         threeFind[card]++;
@@ -240,7 +239,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
 
                     // Count the frequency for card #2
-                    for (char& card : handDeck[i + 1]) {
+                    for (char& card : handDeck[1]) {
 
                         twoFind[card]++;
                         threeFind[card]++;
@@ -263,7 +262,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
 
                     // Count the frequency for card #3
-                    for (char& card : handDeck[i + 2]) {
+                    for (char& card : handDeck[2]) {
 
                         twoFind[card]++;
                         threeFind[card]++;
@@ -286,7 +285,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
                             
                     // Count the frequency for card #4
-                    for (char& card : handDeck[i + 3]) {
+                    for (char& card : handDeck[3]) {
 
                         twoFind[card]++;
                         threeFind[card]++;
@@ -309,7 +308,7 @@ ALL POKER CARDS (Line 46 - 52)
                     }
 
                     // Count the frequency for card #5
-                    for (char& card : handDeck[i + 4]) {
+                    for (char& card : handDeck[4]) {
 
                         twoFind[card]++;
                         threeFind[card]++;
@@ -357,18 +356,10 @@ ALL POKER CARDS (Line 46 - 52)
 
                     if (swap == 's' || swap == 'S') {
 
-                        std::size_t cardNum = 1;
-                        std::size_t newRand1 = dist(mEngine);
-                        std::size_t newRand2 = dist2(mEngine2);
-                        std::size_t newRand3 = dist3(mEngine3);
-                        std::size_t newRand4 = dist4(mEngine4);
-                        std::size_t newRand5 = dist5(mEngine5);
-                        // handDeck[i] = pokerCards[dist(mEngine)];
-                        // handDeck[i + 1] = pokerCards[dist2(mEngine2)];
-                        // handDeck[i + 2] = pokerCards[dist3(mEngine3)];
-                        // handDeck[i + 3] = pokerCards[dist4(mEngine4)];
-                        // handDeck[i + 4] = pokerCards[dist5(mEngine5)];
+                        std::size_t cardNum = 1; // increment continously until it passes the last card number
+                        handDeck[i] = handDeck[0];
 
+                        // erase and ignore the poker hand rank that is unmodified when selecting the swap option 
                         twoFreq = 0;
                         threeFreq = 0;
                         fourFreq = 0;
@@ -407,33 +398,142 @@ ALL POKER CARDS (Line 46 - 52)
                         spadeFind[spadeChar] = 0;
                         quatrefoilFind[quatrefoilChar] = 0;   
 
-                        while (cardNum <= 5) { 
+                        // Edit card no.1
+                        while (cardNum < 2) { 
 
                             std::cout << "[CARD " << cardNum << "]" << "\n";
-                            std::cout << "Change card " << cardNum << "?\n\n";
+                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cin >> cardChange;
+
+                            // swap the first card of the poker hand
+                            if (cardChange == 'y' || cardChange == 'Y') {
+
+                                std::random_device mEngine6;
+                                std::mt19937 shuf(mEngine6());
+
+                                std::uniform_int_distribution<std::size_t> dist6(0, pokerCards.size() - 1);
+                                handDeck[i] = pokerCards[dist6(mEngine6)];
+                                cardNum++;
+                            }
+
+                            // ignore the first card of the poker hand
+                            else if (cardChange == 'n' || cardChange == 'N') {
+                                cardNum++;
+                            }
+
+                            // repeat the command until the input option is valid
+                            else {
+                                std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
+                            }
+                        
+                        }
+
+                        // Edit card no.2
+                        while (cardNum < 3) {
+
+                            std::cout << "[CARD " << cardNum << "]" << "\n";
+                            std::cout << "Change card " << cardNum << "?\n";
                             std::cin >> cardChange;
 
                             if (cardChange == 'y' || cardChange == 'Y') {
 
-                                std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-                                pokerCards[newRand1] = newRand1;
-                                handDeck[i] = pokerCards[newRand1];
-                                i++;
+                                std::random_device mEngine7;
+                                std::mt19937 shuf(mEngine7());
+
+                                std::uniform_int_distribution<std::size_t> dist7(0, pokerCards.size() - 1);
+                                handDeck[i + 1] = pokerCards[dist7(mEngine7)];
                                 cardNum++;
                             }
 
-                            if (cardChange == 'n' || cardChange == 'N') {
-                                i++;
+                            else if (cardChange == 'n' || cardChange == 'N') {
                                 cardNum++;
                             }
 
-                            if (cardChange != 'y' && cardChange != 'Y' && cardChange != 'n' && cardChange != 'N') {
+                            else {
                                 std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
+                            }                                
+                        }
+
+                        // Edit card no.3
+                        while (cardNum < 4) {
+
+                            std::cout << "[CARD " << cardNum << "]" << "\n";
+                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cin >> cardChange;                                
+
+                            if (cardChange == 'y' || cardChange == 'Y') {
+
+                                std::random_device mEngine8;
+                                std::mt19937 shuf(mEngine8());
+
+                                std::uniform_int_distribution<std::size_t> dist8(0, pokerCards.size() - 1);
+                                handDeck[i + 2] = pokerCards[dist8(mEngine8)];
+                                cardNum++;
                             }
 
+                            else if (cardChange == 'n' || cardChange == 'N') {
+                                cardNum++;
+                            }
+
+                            else {
+                                std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
+                            }     
                         }
 
-                        for (char& card : handDeck[i]) {
+                        // Edit card no.4
+                        while (cardNum < 5) {
+
+                            std::cout << "[CARD " << cardNum << "]" << "\n";
+                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cin >> cardChange;
+
+                            if (cardChange == 'y' || cardChange == 'Y') {
+
+                                std::random_device mEngine9;
+                                std::mt19937 shuf(mEngine9());
+
+                                std::uniform_int_distribution<std::size_t> dist9(0, pokerCards.size() - 1);
+                                handDeck[i + 3] = pokerCards[dist9(mEngine9)];
+                                cardNum++;
+                            }
+
+                            else if (cardChange == 'n' || cardChange == 'N') {
+                                cardNum++;
+                            }
+
+                            else {
+                                std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
+                            }                                 
+                        }
+
+                        // Edit card no.5
+                        while (cardNum < 6) {
+
+                            std::cout << "[CARD " << cardNum << "]" << "\n";
+                            std::cout << "Change card " << cardNum << "?\n";
+                            std::cin >> cardChange;
+
+                            if (cardChange == 'y' || cardChange == 'Y') {
+
+                                std::random_device mEngine10;
+                                std::mt19937 shuf(mEngine10());
+
+                                std::uniform_int_distribution<std::size_t> dist10(0, pokerCards.size() - 1);
+                                handDeck[i + 4] = pokerCards[dist10(mEngine10)];
+                                cardNum++;
+                            }
+
+                            else if (cardChange == 'n' || cardChange == 'N') {
+                                cardNum++;
+                            }
+
+                            else {
+                                std::cout << "[INVALID OPTION] Select 'Y' or 'N' as an option.\n";
+                            }  
+                        }
+                        
+
+                        for (char& card : handDeck[0]) {
 
                             twoFind[card]++;
                             threeFind[card]++;
@@ -455,7 +555,7 @@ ALL POKER CARDS (Line 46 - 52)
                             quatrefoilFind[card]++;                           
                         }
 
-                        for (char& card : handDeck[i + 1]) {
+                        for (char& card : handDeck[1]) {
 
                             twoFind[card]++;
                             threeFind[card]++;
@@ -477,7 +577,7 @@ ALL POKER CARDS (Line 46 - 52)
                             quatrefoilFind[card]++;                           
                         }
 
-                        for (char& card : handDeck[i + 2]) {
+                        for (char& card : handDeck[2]) {
 
                             twoFind[card]++;
                             threeFind[card]++;
@@ -499,7 +599,7 @@ ALL POKER CARDS (Line 46 - 52)
                             quatrefoilFind[card]++;  
                         }
 
-                        for (char& card : handDeck[i + 3]) {
+                        for (char& card : handDeck[3]) {
 
                             twoFind[card]++;
                             threeFind[card]++;
@@ -521,7 +621,7 @@ ALL POKER CARDS (Line 46 - 52)
                             quatrefoilFind[card]++; 
                         }
 
-                        for (char& card : handDeck[i + 4]) {
+                        for (char& card : handDeck[4]) {
 
                             twoFind[card]++;
                             threeFind[card]++;
@@ -794,6 +894,7 @@ ALL POKER CARDS (Line 46 - 52)
                             credit += creditReward;
                         }
 
+                        handDeck = {handDeck[0], handDeck[1], handDeck[2], handDeck[3], handDeck[4]};
                         buffers3.reserve(handDeck.size());
 
                         for (const auto& a : handDeck) {
@@ -1093,10 +1194,6 @@ ALL POKER CARDS (Line 46 - 52)
                         std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
                         std::cin >> swap;
                     }
-
-            
-                    break;
-                
                 }
             }
             // If user input less than 100 credits

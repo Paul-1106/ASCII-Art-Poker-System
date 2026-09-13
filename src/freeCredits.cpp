@@ -26,7 +26,7 @@ void Poker::freeCredits(double& credit) {
     // Converting from an index number to an element number
     size_t random_element = randomNumber[random_index];
 
-    std::cout << "You have recieved " << random_element << " credits for free!\n";
+    std::cout << "+" << random_element << " credits for free!\n";
 
     // Add one of the element from the vector to credit balance
     credit += random_element;
