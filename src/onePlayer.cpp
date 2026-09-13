@@ -428,7 +428,7 @@ ALL POKER CARDS (Line 46 - 52)
                         
                         }
 
-                        // Edit card no.2
+                        // Edit card no.2 
                         while (cardNum < 3) {
 
                             std::cout << "[CARD " << cardNum << "]" << "\n";
