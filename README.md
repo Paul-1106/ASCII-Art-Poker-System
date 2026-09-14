@@ -61,11 +61,10 @@ Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ 
 
 <h4>Horizontal Poker Hand Display</h4>
 - This step was also very challenging to implement because it requires a nested range-based for loop, using a getline stringstream method which is something that I am very unfamiliar with, and using unfamiliar methods with like "std::reserve" method for example.
-- Before, it used to display the poker hand vertically when creating a command that only requires one line of code, which is easy implement, but displaying the poker hand horizontally is the challenging part, especially when creating ASCII Art cards.<br>
-- Here is what it looks like Before:<br>
-(Place screenshot here)<br>
-- Here is what it looks like After:<br>
-(Place screenshot here)<br>
-
+- Before, it used to display the poker hand vertically when creating a command that only requires one line of code, which is easy implement, but displaying the poker hand horizontally is the challenging part, especially when creating ASCII Art cards.<br><br>
+- Here is what it looks like BEFORE:<br>
+<img alt = "Vertical Poker Hand" src = "images/verticalDisplay.png"> <br>
+- Here is what it looks like AFTER:<br>
+<img alt = "Horizontal Poker Hand" src = "images/horizontalDisplay.png"> <br><br>
 <h4>Debugging and Errors</h4>
 - There are some errors and bugs that are needed to be fix for this project. Even though this project is playable and function well enough but bugs and errors are still need to be fix.<br> 

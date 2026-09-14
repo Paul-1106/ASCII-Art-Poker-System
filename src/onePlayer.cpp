@@ -330,8 +330,7 @@ ALL POKER CARDS (Line 46 - 52)
                         quatrefoilFind[card]++;
                     }
 
-
-
+                    // Stores all the frequencies into each integer variable
                     twoFreq = twoFind[twoChar];
                     threeFreq = threeFind[threeChar];
                     fourFreq = fourFind[fourChar];
