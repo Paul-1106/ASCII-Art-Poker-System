@@ -51,10 +51,21 @@ Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ 
 <h4>CMake and G++ compiler</h4>
 - This project was my very first time implementing a CMake and g++ and use it as my full built-in system. Using g++ for the first time was not as difficult, but building a CMake to my project took me a while to build, especially when I created multiple C++ files including the header.<br>
 
-<h4>onePlayer.cpp file</h4>
-- I have ended up creating a whole bunch of lines and that is because of implementing betting/gambling credits.
-- When creating an option of swapping cards at once after displaying cards, it took me a while (days) to debug the code.<br>
+<h3>onePlayer.cpp file</h3>
 
-<h4>Lines of Code</h4>
-- CPP files like onePlayer and twoPlayers takes up over two-thousand line of code for each functionality of poker hand rank, but poker hand like "Five of a Kind" and 
-"Royal Flush" is not as bad. <br>
+<h4>Implementing Poker Hand Rank</h4>
+- For the poker hand rank, I have to implement one of the data structure strategies to fully function the poker hand rank system which is called Hash Tables. I use an unordered_map strategy with characters as a key and integers as a value. For the key of the hash-map, the poker hand will start to display when the code runs as an input, there will be characters for each ASCII Art cards located on bottom left(rank) and top right(suit) and if the key of the hash-map finds the exact same character, then it will automatically add a frequency as a value of the hash-map.<br>
+
+<h4>The Swap Option</h4>
+- Between the swap option and the stay option, when the stay option is easy to create and it is fairly simple to implement it with almost no effort, the swapping option took me a while to figure out and to implement. When choosing the swapping option, it is not just swapping the entire poker hand, but rather a user can choose which card from their poker hand that they would want to swap from card one to card five.<br>
+
+<h4>Horizontal Poker Hand Display</h4>
+- This step was also very challenging to implement because it requires a nested range-based for loop, using a getline stringstream method which is something that I am very unfamiliar with, and using unfamiliar methods with like "std::reserve" method for example.
+- Before, it used to display the poker hand vertically when creating a command that only requires one line of code, which is easy implement, but displaying the poker hand horizontally is the challenging part, especially when creating ASCII Art cards.<br>
+- Here is what it looks like Before:<br>
+(Place screenshot here)<br>
+- Here is what it looks like After:<br>
+(Place screenshot here)<br>
+
+<h4>Debugging and Errors</h4>
+- There are some errors and bugs that are needed to be fix for this project. Even though this project is playable and function well enough but bugs and errors are still need to be fix.<br> 
