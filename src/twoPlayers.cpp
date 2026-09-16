@@ -146,7 +146,72 @@ void Poker::twoPlayers(std::size_t& points, std::size_t& points2) {
 
 int Poker::player1(std::size_t& points) {
 
-    
+    std::cout << "[PLAYER 1]\n";
+    std::cout << "Player 1's turn!\n";
+
+    for (int i{0}; i < pokerCards.size(); ++i) {
+
+        // Random card selector (1/5)
+        unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mEngine(random1);
+        std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
+        handDeck1[i] = pokerCards[dist(mEngine)];
+
+        //Random card selector (2/5)
+        unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mEngine2(random2);
+        std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
+        handDeck1[i + 1] = pokerCards[dist2(mEngine2)];
+
+        //Random card selector (3/5)
+        unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mEngine3(random3);
+        std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
+        handDeck1[i + 2] = pokerCards[dist3(mEngine3)];
+
+        //Random card selector (4/5)
+        unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mEngine4(random4);
+        std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
+        handDeck1[i + 3] = pokerCards[dist4(mEngine4)];
+
+        // Random card selector (5/5)
+        unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mEngine5(random5);
+        std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
+        handDeck1[i + 4] = pokerCards[dist5(mEngine5)];   
+
+        std::vector<std::stringstream> horizonLine1, horizonLine2, horizonLine3;
+        horizonLine1.reserve(handDeck1.size());
+
+        for (const auto& a : handDeck1) {
+            horizonLine1.emplace_back(a);
+        }
+
+        bool bashLines1 = true;
+        bool bashLines2 = true;
+        bool bashLines3 = true;
+
+        while (bashLines1) {
+
+            bashLines1 = false;
+            
+            for (auto& a : horizonLine1) {
+                std::string line;
+
+                if (std::getline(a, line)) {
+
+                    std::cout << line << " ";
+                    bashLines1 = true;
+                }
+            }
+
+            if (bashLines1) {
+                std::cout << "\n";
+            }
+        }
+
+    }
 
     return points;
 }

@@ -33,8 +33,11 @@ public:
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
          std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
     int player1(std::size_t& points);
-    int player2(std::size_t& points2);  
-
+    int player2(std::size_t& points2);
+    std::vector<std::string> handDeck;  
+    std::vector<std::string> handDeck1;  
+    std::vector<std::string> handDeck2;
+    std::vector<std::string> pokerCards;  
 private:
     double credit;
     std::size_t creditRequirement;
