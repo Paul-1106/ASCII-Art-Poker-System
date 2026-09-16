@@ -17,7 +17,7 @@
 class Poker {
 public:
     void onePlayer(double& credit, std::size_t creditRequirement);
-    void twoPlayers();
+    void twoPlayers(std::size_t& points, std::size_t& points2);
     void credits(double& credit);
     void instructions();
     void freeCredits(double& credit);
@@ -31,12 +31,15 @@ public:
          std::string& tenC, std::string& tenS, std::string& tenQ, std::string& jackH, std::string& jackD, std::string& jackC, std::string& jackS,
          std::string& jackQ, std::string& queenH, std::string& queenD, std::string& queenC, std::string& queenS, std::string& queenQ,
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
-         std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);  
+         std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
+    int player1(std::size_t& points);
+    int player2(std::size_t& points2);  
 
 private:
     double credit;
     std::size_t creditRequirement;
-    int points = 0;
+    std::size_t points;
+    std::size_t points2;
 };
 
 #endif // POKER_H

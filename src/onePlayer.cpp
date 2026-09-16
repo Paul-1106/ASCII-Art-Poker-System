@@ -15,9 +15,6 @@ void Poker::onePlayer(double& credit, std::size_t creditRequirement) {
     char cardChange;
     char swap = ' ';
 
-    // Automactically incrementing one of the variables once poker card matched with cards in hash-set array
-    bool pairFound = false;
-
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
                 fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
@@ -38,7 +35,7 @@ void Poker::onePlayer(double& credit, std::size_t creditRequirement) {
 
 /*
 ------------------------------
-ALL POKER CARDS (Line 46 - 52)
+ALL POKER CARDS (Line 43 - 49)
 ------------------------------
 */ 
 

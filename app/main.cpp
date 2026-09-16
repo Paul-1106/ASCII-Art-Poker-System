@@ -15,8 +15,10 @@ ASCII ART POKER SYSTEM GAME by Paul Harriott
 int main() {
 
     int option;
-    double credit = 100.0;
-    size_t creditRequirement = 100;
+    double credit = 100.00;
+    std::size_t creditRequirement = 100;
+    std::size_t points = 0;
+    std::size_t points2 = 0;
     Poker obj;
 
     // Display the menu when running the project
@@ -43,7 +45,7 @@ int main() {
                 obj.onePlayer(credit, creditRequirement);
                 break;
             case 2: // Two Player mode
-                obj.twoPlayers();
+                obj.twoPlayers(points, points2);
                 break;
             case 3: // Display Credit Balance
                 obj.credits(credit);
