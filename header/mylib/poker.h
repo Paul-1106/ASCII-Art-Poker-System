@@ -14,8 +14,23 @@
 #include <chrono>
 #include <sstream>
 
+class PlayerOnePoker;
+class PlayerTwoPoker;
+
 class Poker {
 public:
+    PlayerOnePoker* pokerOneLink;
+    PlayerTwoPoker* pokerTwoLink;
+    std::vector<std::string> pokerCards;
+
+    void setLink(PlayerOnePoker* playerOne) {
+        pokerOneLink = playerOne;
+    }
+
+    void setLink(PlayerTwoPoker* playerTwo) {
+        pokerTwoLink = playerTwo;
+    }
+
     void onePlayer(double& credit, std::size_t creditRequirement);
     void twoPlayers(std::size_t& points, std::size_t& points2);
     void credits(double& credit);
@@ -32,17 +47,13 @@ public:
          std::string& jackQ, std::string& queenH, std::string& queenD, std::string& queenC, std::string& queenS, std::string& queenQ,
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
          std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
-    int player1(std::size_t& points);
-    int player2(std::size_t& points2);
-    std::vector<std::string> handDeck;  
-    std::vector<std::string> handDeck1;  
-    std::vector<std::string> handDeck2;
-    std::vector<std::string> pokerCards;  
+
 private:
     double credit;
     std::size_t creditRequirement;
     std::size_t points;
     std::size_t points2;
+    std::vector<std::string> handDeck;  
 };
 
 #endif // POKER_H

@@ -4,11 +4,30 @@
 #include <cmath>
 
 #include <mylib/poker.h>
+#include <mylib/pOnePoker.h>
+#include <mylib/pTwoPoker.h>
 
 void Poker::twoPlayers(std::size_t& points, std::size_t& points2) {
 
     std::size_t turn1 = 0;
     std::size_t turn2 = 0;
+
+    while (turn1 < 2) {
+
+        points = 0;
+        pokerOneLink->player1(points);
+    }
+
+    while (turn2 < 2) {
+
+        points2 = 0;
+        pokerTwoLink->player2(points2);
+    }
+}
+
+int PlayerOnePoker::player1(std::size_t& points) {
+
+    char swap;
     
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
@@ -131,25 +150,10 @@ void Poker::twoPlayers(std::size_t& points, std::size_t& points2) {
     std::size_t spadeFreq = 0;
     std::size_t quatrefoilFreq = 0;
 
-    while (turn1 < 2) {
-
-        points = 0;
-        player1(points);
-    }
-
-    while (turn2 < 2) {
-
-        points2 = 0;
-        player2(points2);
-    }
-}
-
-int Poker::player1(std::size_t& points) {
-
     std::cout << "[PLAYER 1]\n";
     std::cout << "Player 1's turn!\n";
 
-    for (int i{0}; i < pokerCards.size(); ++i) {
+    for (int i{0}; i < handDeck1.size(); ++i) {
 
         // Random card selector (1/5)
         unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
@@ -213,10 +217,148 @@ int Poker::player1(std::size_t& points) {
 
     }
 
+        // Count the frequency for card #1
+        for (char& card : handDeck1[0]) {
+
+            twoFind[card]++;
+            threeFind[card]++;
+            fourFind[card]++;
+            fiveFind[card]++;
+            sixFind[card]++;
+            sevenFind[card]++;
+            eightFind[card]++;
+            nineFind[card]++;
+            tenFind[card]++;
+            jackFind[card]++;
+            queenFind[card]++;
+            kingFind[card]++;
+            aceFind[card]++;
+            heartFind[card]++;
+            diamondFind[card]++;
+            clubFind[card]++;
+            spadeFind[card]++;
+            quatrefoilFind[card]++;
+        }
+
+        // Count the frequency for card #2
+        for (char& card : handDeck1[1]) {
+
+            twoFind[card]++;
+            threeFind[card]++;
+            fourFind[card]++;
+            fiveFind[card]++;
+            sixFind[card]++;
+            sevenFind[card]++;
+            eightFind[card]++;
+            nineFind[card]++;
+            tenFind[card]++;
+            jackFind[card]++;
+            queenFind[card]++;
+            kingFind[card]++;
+            aceFind[card]++;
+            heartFind[card]++;
+            diamondFind[card]++;
+            clubFind[card]++;
+            spadeFind[card]++;
+            quatrefoilFind[card]++;
+        }
+
+        // Count the frequency for card #3
+        for (char& card : handDeck1[2]) {
+
+            twoFind[card]++;
+            threeFind[card]++;
+            fourFind[card]++;
+            fiveFind[card]++;
+            sixFind[card]++;
+            sevenFind[card]++;
+            eightFind[card]++;
+            nineFind[card]++;
+            tenFind[card]++;
+            jackFind[card]++;
+            queenFind[card]++;
+            kingFind[card]++;
+            aceFind[card]++;
+            heartFind[card]++;
+            diamondFind[card]++;
+            clubFind[card]++;
+            spadeFind[card]++;
+            quatrefoilFind[card]++;
+        }
+                
+        // Count the frequency for card #4
+        for (char& card : handDeck1[3]) {
+
+            twoFind[card]++;
+            threeFind[card]++;
+            fourFind[card]++;
+            fiveFind[card]++;
+            sixFind[card]++;
+            sevenFind[card]++;
+            eightFind[card]++;
+            nineFind[card]++;
+            tenFind[card]++;
+            jackFind[card]++;
+            queenFind[card]++;
+            kingFind[card]++;
+            aceFind[card]++;
+            heartFind[card]++;
+            diamondFind[card]++;
+            clubFind[card]++;
+            spadeFind[card]++;
+            quatrefoilFind[card]++;
+        }
+
+        // Count the frequency for card #5
+        for (char& card : handDeck1[4]) {
+
+            twoFind[card]++;
+            threeFind[card]++;
+            fourFind[card]++;
+            fiveFind[card]++;
+            sixFind[card]++;
+            sevenFind[card]++;
+            eightFind[card]++;
+            nineFind[card]++;
+            tenFind[card]++;
+            jackFind[card]++;
+            queenFind[card]++;
+            kingFind[card]++;
+            aceFind[card]++;
+            heartFind[card]++;
+            diamondFind[card]++;
+            clubFind[card]++;
+            spadeFind[card]++;
+            quatrefoilFind[card]++;
+        }
+
+        // Stores all the frequencies into each integer variable
+        twoFreq = twoFind[twoChar];
+        threeFreq = threeFind[threeChar];
+        fourFreq = fourFind[fourChar];
+        fiveFreq = fiveFind[fiveChar];
+        sixFreq = sixFind[sixChar];
+        sevenFreq = sevenFind[sevenChar];
+        eightFreq = eightFind[eightChar];
+        nineFreq = nineFind[nineChar];
+        tenFreq = tenFind[tenChar];
+        jackFreq = jackFind[jackChar];
+        queenFreq = queenFind[queenChar];
+        kingFreq = kingFind[kingChar];
+        aceFreq = aceFind[aceChar];
+        heartFreq = heartFind[heartChar];
+        diamondFreq = diamondFind[diamondChar];
+        clubFreq = clubFind[clubChar];
+        spadeFreq = spadeFind[spadeChar];
+        quatrefoilFreq = quatrefoilFind[quatrefoilChar];                   
+
+        std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
+        std::cin >> swap;
+
     return points;
 }
 
-int Poker::player2(std::size_t& points2) {
+int PlayerTwoPoker::player2(std::size_t& points2) {
 
     return points2;
 }

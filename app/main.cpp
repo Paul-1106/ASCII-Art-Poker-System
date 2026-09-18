@@ -11,6 +11,8 @@ ASCII ART POKER SYSTEM GAME by Paul Harriott
 #include <string>
 
 #include <mylib/poker.h>
+#include <mylib/pOnePoker.h>
+#include <mylib/pTwoPoker.h>
 
 int main() {
 
