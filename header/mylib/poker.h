@@ -47,6 +47,7 @@ public:
          std::string& jackQ, std::string& queenH, std::string& queenD, std::string& queenC, std::string& queenS, std::string& queenQ,
          std::string& kingH, std::string& kingD, std::string& kingC, std::string& kingS, std::string& kingQ, std::string aceH, 
          std::string& aceD, std::string& aceC, std::string& aceS, std::string& aceQ);
+    void twoPlayerResults(std::size_t& points, std::size_t& points2);
 
 private:
     double credit;

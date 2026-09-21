@@ -105,7 +105,7 @@ ALL POKER CARDS (Line 43 - 49)
     char spadeChar = 'S';
     char quatrefoilChar = 'U'; 
 
-    // All the frequency char variables that are added will be push to integer variable for better code quality
+    // All frequency char variables that are added will be push to integer variable for better code quality
     std::size_t aceFreq = 0;
     std::size_t twoFreq = 0;
     std::size_t threeFreq = 0;
