@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <chrono>
 #include <sstream>
+#include <functional>
 
 class PlayerOnePoker;
 class PlayerTwoPoker;

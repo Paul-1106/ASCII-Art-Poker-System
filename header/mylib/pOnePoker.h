@@ -34,7 +34,7 @@ public:
     }
 
     // Main player 1 function in onePlayer.cpp file
-    int player1(std::size_t& points);
+    void player1(std::size_t& points);
 
 private:
     std::vector<std::string> handDeck1;

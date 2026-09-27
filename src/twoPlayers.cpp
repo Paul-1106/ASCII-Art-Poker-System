@@ -50,9 +50,11 @@ void Poker::twoPlayers(std::size_t& points, std::size_t& points2) {
         points2 = 0;
         pokerTwoLink->player2(points2);
     }
+
+    twoPlayerResults(points, points2);
 }
 
-int PlayerOnePoker::player1(std::size_t& points) {
+void PlayerOnePoker::player1(std::size_t& points) {
 
     char swap;
     char cardChange;
@@ -192,31 +194,31 @@ int PlayerOnePoker::player1(std::size_t& points) {
             unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine(random1);
             std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-            handDeck1[i] = pokerCards[dist(mEngine)];
+            handDeck1[0] = pokerCards[dist(mEngine)];
 
             //Random card selector (2/5)
             unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine2(random2);
             std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-            handDeck1[i + 1] = pokerCards[dist2(mEngine2)];
+            handDeck1[1] = pokerCards[dist2(mEngine2)];
 
             //Random card selector (3/5)
             unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine3(random3);
             std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-            handDeck1[i + 2] = pokerCards[dist3(mEngine3)];
+            handDeck1[2] = pokerCards[dist3(mEngine3)];
 
             //Random card selector (4/5)
             unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine4(random4);
             std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-            handDeck1[i + 3] = pokerCards[dist4(mEngine4)];
+            handDeck1[3] = pokerCards[dist4(mEngine4)];
 
             // Random card selector (5/5)
             unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine5(random5);
             std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-            handDeck1[i + 4] = pokerCards[dist5(mEngine5)];   
+            handDeck1[4] = pokerCards[dist5(mEngine5)];   
 
             std::vector<std::stringstream> horizonLine1, horizonLine2, horizonLine3;
             horizonLine1.reserve(handDeck1.size());
@@ -1219,11 +1221,9 @@ int PlayerOnePoker::player1(std::size_t& points) {
             }
         }
     }
-    playerTwo->player2(points); 
-    return points;
 };
 
-int PlayerTwoPoker::player2(std::size_t& points2) {
+void PlayerTwoPoker::player2(std::size_t& points2) {
 
     char swap;
     char cardChange;
@@ -1362,31 +1362,31 @@ int PlayerTwoPoker::player2(std::size_t& points2) {
             unsigned random1 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine(random1);
             std::uniform_int_distribution<std::size_t> dist(0, pokerCards.size() - 1);
-            handDeck2[i] = pokerCards[dist(mEngine)];
+            handDeck2[0] = pokerCards[dist(mEngine)];
 
             //Random card selector (2/5)
             unsigned random2 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine2(random2);
             std::uniform_int_distribution<std::size_t> dist2(0, pokerCards.size() - 1);
-            handDeck2[i + 1] = pokerCards[dist2(mEngine2)];
+            handDeck2[1] = pokerCards[dist2(mEngine2)];
 
             //Random card selector (3/5)
             unsigned random3 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine3(random3);
             std::uniform_int_distribution<std::size_t> dist3(0, pokerCards.size() - 1);
-            handDeck2[i + 2] = pokerCards[dist3(mEngine3)];
+            handDeck2[2] = pokerCards[dist3(mEngine3)];
 
             //Random card selector (4/5)
             unsigned random4 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine4(random4);
             std::uniform_int_distribution<std::size_t> dist4(0, pokerCards.size() - 1);
-            handDeck2[i + 3] = pokerCards[dist4(mEngine4)];
+            handDeck2[3] = pokerCards[dist4(mEngine4)];
 
             // Random card selector (5/5)
             unsigned random5 = std::chrono::system_clock::now().time_since_epoch().count();
             std::mt19937 mEngine5(random5);
             std::uniform_int_distribution<std::size_t> dist5(0, pokerCards.size() - 1);
-            handDeck2[i + 4] = pokerCards[dist5(mEngine5)];   
+            handDeck2[4] = pokerCards[dist5(mEngine5)];   
 
             std::vector<std::stringstream> horizonLine1, horizonLine2, horizonLine3;
             horizonLine1.reserve(handDeck2.size());
@@ -2389,8 +2389,6 @@ int PlayerTwoPoker::player2(std::size_t& points2) {
             }
         }
     }
-    pokerResult->twoPlayerResults(points2, points2);
-    return points2;
 }
 
 void Poker::twoPlayerResults(std::size_t& points, std::size_t& points2) {
@@ -2414,5 +2412,7 @@ void Poker::twoPlayerResults(std::size_t& points, std::size_t& points2) {
         std::cout << "Player 2 scores: " << points2 << "\n";
     }
 
+    points = 0;
+    points2 = 0;
 }
 
