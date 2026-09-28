@@ -9,56 +9,15 @@
 
 void Poker::twoPlayers(std::size_t& points, std::size_t& points2) {
 
-    // Adding elements to have access from the 'cards.cpp' file
-    std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
-                fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
-                sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
-                eightHeart, eightDiamond, eightClub, eightSpade, eightQuatrefoil, nineHeart, nineDiamond, nineClub, nineSpade, nineQuatrefoil,
-                tenHeart, tenDiamond, tenClub, tenSpade, tenQuatrefoil, jackHeart, jackDiamond, jackClub, jackSpade, jackQuatrefoil,
-                queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
-                aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil = " ";
+    pokerOneLink->player1(points);
+    pokerTwoLink->player2(points2);
 
-    // To access the variables from string variables above in order
-    cards(twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
-                fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
-                sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
-                eightHeart, eightDiamond, eightClub, eightSpade, eightQuatrefoil, nineHeart, nineDiamond, nineClub, nineSpade, nineQuatrefoil,
-                tenHeart, tenDiamond, tenClub, tenSpade, tenQuatrefoil, jackHeart, jackDiamond, jackClub, jackSpade, jackQuatrefoil,
-                queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
-                aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil);
-
-    // A random selector will pick an element from a 'pokerHand' vector
-    std::vector<std::string> pokerCards = {twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade,
-            threeQuatrefoil, fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
-            sixHeart, sixDiamond, sixClub, sixSpade, sixQuatrefoil, sevenHeart, sevenDiamond, sevenClub, sevenSpade, sevenQuatrefoil,
-            eightHeart, eightDiamond, eightClub, eightSpade, eightQuatrefoil, nineHeart, nineDiamond, nineClub, nineSpade, nineQuatrefoil,
-            tenHeart, tenDiamond, tenClub, tenSpade, tenQuatrefoil, jackHeart, jackDiamond, jackClub, jackSpade, jackQuatrefoil,
-            queenHeart, queenDiamond, queenClub, queenSpade, queenQuatrefoil, kingHeart, kingDiamond, kingClub, kingSpade, kingQuatrefoil,
-            aceHeart, aceDiamond, aceClub, aceSpade, aceQuatrefoil};
-
-    std::size_t turn1 = 0;
-    std::size_t turn2 = 0;
-
-    while (turn1 < 2) {
-
-        points = 0;
-        pokerOneLink->player1(points);
-    }
-
-    while (turn2 < 2) {
-
-        points2 = 0;
-        pokerTwoLink->player2(points2);
-    }
-
-    twoPlayerResults(points, points2);
 }
 
 void PlayerOnePoker::player1(std::size_t& points) {
 
     char swap;
     char cardChange;
-    PlayerTwoPoker* playerTwo;
     
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
@@ -182,7 +141,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
     std::size_t quatrefoilFreq = 0;
 
     std::cout << "[PLAYER 1]\n";
-    std::cout << "Player 1's turn!\n";
+    std::cout << "It is Player 1's turn!\n";
 
     for (int i{0}; i < handDeck1.size(); ++i) {
 
@@ -387,6 +346,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
             std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
             std::cin >> swap;
+            turn++;
 
             if (swap == 's' || swap == 'S') {
 
@@ -1227,8 +1187,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
     char swap;
     char cardChange;
-    Poker* pokerResult;
-    
+
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
                 fourHeart, fourDiamond, fourClub, fourSpade, fourQuatrefoil, fiveHeart, fiveDiamond, fiveClub, fiveSpade, fiveQuatrefoil,
@@ -1349,8 +1308,8 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
     std::size_t spadeFreq = 0;
     std::size_t quatrefoilFreq = 0;
 
-    std::cout << "[PLAYER 1]\n";
-    std::cout << "Player 1's turn!\n";
+    std::cout << "[PLAYER 2]\n";
+    std::cout << "It is Player 2's turn!\n";
 
     for (int i{0}; i < handDeck2.size(); ++i) {
 
@@ -1555,6 +1514,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
             std::cout << "Swap cards or pass? \nS = Swap \nP = Pass\n\n";
             std::cin >> swap;
+            turn++;
 
             if (swap == 's' || swap == 'S') {
 
@@ -2385,34 +2345,17 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                 }
 
                 turn++;
+                std::cout << "\n";
                 break;
+            }
+
+            else {
+                std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
+                std::cin >> swap;
             }
         }
     }
 }
 
-void Poker::twoPlayerResults(std::size_t& points, std::size_t& points2) {
 
-    if (points > points2) {
-
-        std::cout << "[PLAYER 1 WINS]\n\n";
-        std::cout << "Player 1 scores: " << points << "\n";
-        std::cout << "Player 2 scores: " << points2 << "\n";
-    }
-    else if (points < points2) {
-
-        std::cout << "[PLAYER 2 WINS]\n\n";
-        std::cout << "Player 1 scores: " << points << "\n";
-        std::cout << "Player 2 scores: " << points2 << "\n";
-    }
-    else {
-
-        std::cout << "[DRAW]\n\n";
-        std::cout << "Player 1 scores: " << points << "\n";
-        std::cout << "Player 2 scores: " << points2 << "\n";
-    }
-
-    points = 0;
-    points2 = 0;
-}
 

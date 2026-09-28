@@ -22,7 +22,10 @@ int main() {
     std::size_t points = 0;
     std::size_t points2 = 0;
     Poker obj;
+    PlayerOnePoker p1;
+    PlayerTwoPoker p2;
 
+    
     // Display the menu when running the project
     std::cout << "********************************\n";
     std::cout << "*             MENU             *\n";
@@ -48,6 +51,25 @@ int main() {
                 break;
             case 2: // Two Player mode
                 obj.twoPlayers(points, points2);
+
+                p1.player1(points);
+                p2.player2(points2);
+
+                if (points > points2) {
+                    std::cout << "[PLAYER 1 WINS]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
+                else if (points < points2) {
+                    std::cout << "[PLAYER 2 WINS]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
+                else {
+                    std::cout << "[DRAW!]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
                 break;
             case 3: // Display Credit Balance
                 obj.credits(credit);

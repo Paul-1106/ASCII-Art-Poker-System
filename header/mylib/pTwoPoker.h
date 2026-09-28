@@ -38,7 +38,7 @@ public:
 
 private:
     std::vector<std::string> handDeck2;
-    std::size_t& points2;
+    std::size_t points2;
 };
 
 #endif // PTWOPOKER_H
