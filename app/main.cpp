@@ -16,6 +16,7 @@ ASCII ART POKER SYSTEM GAME by Paul Harriott
 
 int main() {
 
+    int infinityNum = std::numeric_limits<int>::max();
     int option;
     double credit = 100.00;
     std::size_t creditRequirement = 100;
@@ -50,26 +51,26 @@ int main() {
                 obj.onePlayer(credit, creditRequirement);
                 break;
             case 2: // Two Player mode
-                obj.twoPlayers(points, points2);
+                // obj.twoPlayers(points, points2);
 
                 p1.player1(points);
-                p2.player2(points2);
+                // p2.player2(points2);
 
-                if (points > points2) {
-                    std::cout << "[PLAYER 1 WINS]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
-                }
-                else if (points < points2) {
-                    std::cout << "[PLAYER 2 WINS]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
-                }
-                else {
-                    std::cout << "[DRAW!]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
-                }
+                // if (points > points2) {
+                //     std::cout << "[PLAYER 1 WINS]\n\n";
+                //     std::cout << "Player 1's score: " << points << "\n";
+                //     std::cout << "Player 2's score: " << points2 << "\n";
+                // }
+                // else if (points < points2) {
+                //     std::cout << "[PLAYER 2 WINS]\n\n";
+                //     std::cout << "Player 1's score: " << points << "\n";
+                //     std::cout << "Player 2's score: " << points2 << "\n";
+                // }
+                // else {
+                //     std::cout << "[DRAW!]\n\n";
+                //     std::cout << "Player 1's score: " << points << "\n";
+                //     std::cout << "Player 2's score: " << points2 << "\n";
+                // }
                 break;
             case 3: // Display Credit Balance
                 obj.credits(credit);
@@ -99,6 +100,8 @@ int main() {
                 break;
             default: // If case number is not listed
                 std::cout << "[ERROR] Incorrect output\n";
+                std::cin.clear();
+                std::cin.ignore(infinityNum, '\n');
                 break;
         }
     }

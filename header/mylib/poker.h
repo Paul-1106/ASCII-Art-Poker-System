@@ -23,6 +23,7 @@ public:
     PlayerOnePoker* pokerOneLink;
     PlayerTwoPoker* pokerTwoLink;
     std::vector<std::string> pokerCards;
+    bool turnPlayer;
 
     void setLink(PlayerOnePoker* playerOne) {
         pokerOneLink = playerOne;
@@ -54,7 +55,7 @@ private:
     std::size_t creditRequirement;
     std::size_t points;
     std::size_t points2;
-    std::vector<std::string> handDeck;  
+    std::vector<std::string> handDeck;
 };
 
 #endif // POKER_H
