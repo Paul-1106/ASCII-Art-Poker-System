@@ -54,23 +54,23 @@ int main() {
                 // obj.twoPlayers(points, points2);
 
                 p1.player1(points);
-                // p2.player2(points2);
+                p2.player2(points2);
 
-                // if (points > points2) {
-                //     std::cout << "[PLAYER 1 WINS]\n\n";
-                //     std::cout << "Player 1's score: " << points << "\n";
-                //     std::cout << "Player 2's score: " << points2 << "\n";
-                // }
-                // else if (points < points2) {
-                //     std::cout << "[PLAYER 2 WINS]\n\n";
-                //     std::cout << "Player 1's score: " << points << "\n";
-                //     std::cout << "Player 2's score: " << points2 << "\n";
-                // }
-                // else {
-                //     std::cout << "[DRAW!]\n\n";
-                //     std::cout << "Player 1's score: " << points << "\n";
-                //     std::cout << "Player 2's score: " << points2 << "\n";
-                // }
+                if (points > points2) {
+                    std::cout << "[PLAYER 1 WINS]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
+                else if (points < points2) {
+                    std::cout << "[PLAYER 2 WINS]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
+                else {
+                    std::cout << "[DRAW!]\n\n";
+                    std::cout << "Player 1's score: " << points << "\n";
+                    std::cout << "Player 2's score: " << points2 << "\n";
+                }
                 break;
             case 3: // Display Credit Balance
                 obj.credits(credit);
