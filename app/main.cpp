@@ -71,6 +71,10 @@ int main() {
                     std::cout << "Player 1's score: " << points << "\n";
                     std::cout << "Player 2's score: " << points2 << "\n";
                 }
+
+                points = 0;
+                points2 = 0;
+                
                 break;
             case 3: // Display Credit Balance
                 obj.credits(credit);

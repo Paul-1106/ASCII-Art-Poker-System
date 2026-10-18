@@ -18,7 +18,6 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
     char swap;
     char cardChange;
-    turnPlayer = false;
     
     // Adding elements to have access from the 'cards.cpp' file
     std::string twoHeart, twoDiamond, twoClub, twoSpade, twoQuatrefoil, threeHeart, threeDiamond, threeClub, threeSpade, threeQuatrefoil,
@@ -78,6 +77,21 @@ void PlayerOnePoker::player1(std::size_t& points) {
     std::pair<std::string, std::size_t> straightFlushCard = {"[STRAIGHT FLUSH]", 1500};
     std::pair<std::string, std::size_t> royalFlushCard = {"[ROYAL FLUSH]", 1800};
     std::pair<std::string, std::size_t> fiveKindCard = {"[FIVE OF A KIND]", 2000}; 
+
+    // Finding the highest card for the score
+    std::pair<std::string, std::size_t> twoCard = {"Two", 1};
+    std::pair<std::string, std::size_t> threeCard = {"Three", 2};
+    std::pair<std::string, std::size_t> fourCard = {"Four", 5};
+    std::pair<std::string, std::size_t> fiveCard = {"Five", 10};
+    std::pair<std::string, std::size_t> sixCard = {"Six", 15};
+    std::pair<std::string, std::size_t> sevenCard = {"Seven", 20};
+    std::pair<std::string, std::size_t> eightCard = {"Eight", 30};
+    std::pair<std::string, std::size_t> nineCard = {"Nine", 40};
+    std::pair<std::string, std::size_t> tenCard = {"Ten", 50};
+    std::pair<std::string, std::size_t> jackCard = {"Jack", 70};
+    std::pair<std::string, std::size_t> queenCard = {"Queen", 80};
+    std::pair<std::string, std::size_t> kingCard = {"King", 90};
+    std::pair<std::string, std::size_t> aceCard = {"Ace", 98};
 
     // Check if one of the elements in sub-array is included in global poker cards array
     std::unordered_map<char, size_t> aceFind;
@@ -666,7 +680,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fiveKindCard.first << "\n";
 
                     points += fiveKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << fiveKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -681,7 +695,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << royalFlushCard.first << "\n";
 
                     points += royalFlushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << royalFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -736,7 +750,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << straightFlushCard.first << "\n";
 
                     points += straightFlushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << straightFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -748,7 +762,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fourKindCard.first << "\n";
 
                     points += fourKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << fourKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -796,7 +810,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fullHouseCard.first << "\n";
 
                     points += fullHouseCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << fullHouseCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -807,7 +821,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << flushCard.first << "\n";
 
                     points += flushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << flushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -823,7 +837,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << straightCard.first << "\n";
 
                     points += straightCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << straightCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -834,7 +848,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << threeKindCard.first << "\n";
 
                     points += threeKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << threeKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -863,7 +877,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << twoPairCard.first << "\n";
 
                     points += twoPairCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << twoPairCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -873,8 +887,8 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     std::cout << pairCard.first << "\n";
                 
-                    points += twoPairCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    points += pairCard.second;
+                    std::cout << "Your score section: " << pairCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -884,7 +898,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << highCard.first << "\n";
 
                     points += highCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << highCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -929,8 +943,104 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fiveKindCard.first << "\n";
 
                     points += fiveKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+                    std::cout << "Your score section: " << fiveKindCard.second << "\n";
+
+                    // Determine a poker hand's highest card
+
+                    // Ace
+                    if (aceFreq == 5) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 5) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 5) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 5) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 5) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 5) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 5) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 5) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 5) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 5) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 5) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 5) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq == 5) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points += twoCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
 
                 }
 
@@ -944,7 +1054,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << royalFlushCard.first << "\n";
 
                     points += royalFlushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << royalFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -999,7 +1109,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << straightFlushCard.first << "\n";
 
                     points += straightFlushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << straightFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
 
                 }
@@ -1011,7 +1121,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fourKindCard.first << "\n";
 
                     points += fourKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << fourKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n"; 
                 }
 
@@ -1059,7 +1169,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << fullHouseCard.first << "\n";
 
                     points += fullHouseCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << fullHouseCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1069,7 +1179,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << flushCard.first << "\n";
 
                     points += flushCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << flushCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1085,7 +1195,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << straightCard.first << "\n";
 
                     points += straightCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << straightCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1096,7 +1206,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << threeKindCard.first << "\n";
 
                     points += threeKindCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << threeKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1125,7 +1235,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << twoPairCard.first << "\n";
 
                     points += twoPairCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << twoPairCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1136,7 +1246,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << pairCard.first << "\n";
                 
                     points += pairCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << pairCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1146,7 +1256,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                     std::cout << highCard.first << "\n";
 
                     points += highCard.second;
-                    std::cout << "Your score section: " << points << "\n";
+                    std::cout << "Your score section: " << highCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -1176,7 +1286,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
                 }
 
                 turn++;
-                turnPlayer = true;
+                std::cout << "\n\n";
                 break;
             }
 
@@ -1839,7 +1949,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fiveKindCard.first << "\n";
 
                     points2 += fiveKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fiveKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -1854,7 +1964,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << royalFlushCard.first << "\n";
 
                     points2 += royalFlushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << royalFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -1909,7 +2019,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << straightFlushCard.first << "\n";
 
                     points2 += straightFlushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << straightFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -1921,7 +2031,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fourKindCard.first << "\n";
 
                     points2 += fourKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fourKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -1969,7 +2079,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fullHouseCard.first << "\n";
 
                     points2 += fullHouseCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fullHouseCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -1980,7 +2090,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << flushCard.first << "\n";
 
                     points2 += flushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << flushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -1996,7 +2106,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << straightCard.first << "\n";
 
                     points2 += straightCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << straightCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -2007,7 +2117,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << threeKindCard.first << "\n";
 
                     points2 += threeKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << threeKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -2036,7 +2146,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << twoPairCard.first << "\n";
 
                     points2 += twoPairCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << twoPairCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -2046,8 +2156,8 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     std::cout << pairCard.first << "\n";
                 
-                    points2 += twoPairCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    points2 += pairCard.second;
+                    std::cout << "Your score section: " << pairCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -2057,7 +2167,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << highCard.first << "\n";
 
                     points2 += highCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << highCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
                 }
 
@@ -2102,7 +2212,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fiveKindCard.first << "\n";
 
                     points2 += fiveKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fiveKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
 
                 }
@@ -2117,7 +2227,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << royalFlushCard.first << "\n";
 
                     points2 += royalFlushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << royalFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___";
 
                 }
@@ -2172,7 +2282,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << straightFlushCard.first << "\n";
 
                     points2 += straightFlushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << straightFlushCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
 
                 }
@@ -2184,7 +2294,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fourKindCard.first << "\n";
 
                     points2 += fourKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fourKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n"; 
                 }
 
@@ -2232,7 +2342,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << fullHouseCard.first << "\n";
 
                     points2 += fullHouseCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << fullHouseCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2242,7 +2352,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << flushCard.first << "\n";
 
                     points2 += flushCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << flushCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2258,7 +2368,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << straightCard.first << "\n";
 
                     points2 += straightCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << straightCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2269,7 +2379,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << threeKindCard.first << "\n";
 
                     points2 += threeKindCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << threeKindCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2298,7 +2408,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << twoPairCard.first << "\n";
 
                     points2 += twoPairCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << twoPairCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2309,7 +2419,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << pairCard.first << "\n";
                 
                     points2 += pairCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << pairCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2319,7 +2429,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                     std::cout << highCard.first << "\n";
 
                     points2 += highCard.second;
-                    std::cout << "Your score section: " << points2 << "\n";
+                    std::cout << "Your score section: " << highCard.second << "\n";
                     std::cout << "Your highest card: " << "___" << "\n";
                 }
 
@@ -2349,7 +2459,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                 }
 
                 turn++;
-                std::cout << "\n";
+                std::cout << "\n\n";
                 break;
             }
 
