@@ -790,7 +790,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += royalFlushCard.second;
                     std::cout << "Your score section: " << royalFlushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+                    std::cout << "Your highest card: " << "Ace";
 
                 }
 
@@ -1162,7 +1162,101 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += flushCard.second;
                     std::cout << "Your score section: " << flushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+        
+                    // Ace
+                    if (aceFreq >= 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq >= 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq >= 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq >= 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq >= 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq >= 1) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq >= 1) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points += twoCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // STRAIGHT
@@ -1178,7 +1272,76 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += straightCard.second;
                     std::cout << "Your score section: " << straightCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    points += highCard.second;
+                    std::cout << "Your score section: " << highCard.second << "\n";
+    
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // THREE OF A KIND
@@ -1311,7 +1474,94 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += twoPairCard.second;
                     std::cout << "Your score section: " << twoPairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // PAIR
@@ -1322,7 +1572,101 @@ void PlayerOnePoker::player1(std::size_t& points) {
                 
                     points += pairCard.second;
                     std::cout << "Your score section: " << pairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq == 2) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points += twoCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // HIGH CARD
@@ -1332,7 +1676,73 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += highCard.second;
                     std::cout << "Your score section: " << highCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+    
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 handDeck1 = {handDeck1[0], handDeck1[1], handDeck1[2], handDeck1[3], handDeck1[4]};
@@ -1488,7 +1898,7 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += royalFlushCard.second;
                     std::cout << "Your score section: " << royalFlushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+                    std::cout << "Your highest card: " << "Ace";
 
                 }
 
@@ -1858,7 +2268,101 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += flushCard.second;
                     std::cout << "Your score section: " << flushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+               
+                    // Ace
+                    if (aceFreq >= 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq >= 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq >= 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq >= 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq >= 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq >= 1) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq >= 1) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points += twoCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }     
                 }
 
                 // STRAIGHT
@@ -1874,7 +2378,76 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += straightCard.second;
                     std::cout << "Your score section: " << straightCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    points += highCard.second;
+                    std::cout << "Your score section: " << highCard.second << "\n";
+    
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // THREE OF A KIND
@@ -2009,7 +2582,94 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += twoPairCard.second;
                     std::cout << "Your score section: " << twoPairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // PAIR
@@ -2020,7 +2680,101 @@ void PlayerOnePoker::player1(std::size_t& points) {
                 
                     points += pairCard.second;
                     std::cout << "Your score section: " << pairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq == 2) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points += twoCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 // HIGH CARD
@@ -2030,7 +2784,73 @@ void PlayerOnePoker::player1(std::size_t& points) {
 
                     points += highCard.second;
                     std::cout << "Your score section: " << highCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+    
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points += sixCard.second;
+                    }
+
+                    else {
+                        points += 0;
+                    }
                 }
 
                 horizonLine2.reserve(handDeck1.size());
@@ -2847,7 +3667,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += royalFlushCard.second;
                     std::cout << "Your score section: " << royalFlushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+                    std::cout << "Your highest card: " << "Ace";
 
                 }
 
@@ -3225,7 +4045,101 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += flushCard.second;
                     std::cout << "Your score section: " << flushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq >= 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq >= 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq >= 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq >= 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq >= 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq >= 1) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq >= 1) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points2 += twoCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // STRAIGHT
@@ -3374,7 +4288,94 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += twoPairCard.second;
                     std::cout << "Your score section: " << twoPairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // PAIR
@@ -3385,7 +4386,101 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                 
                     points2 += pairCard.second;
                     std::cout << "Your score section: " << pairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq == 2) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points2 += twoCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // HIGH CARD
@@ -3395,7 +4490,73 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += highCard.second;
                     std::cout << "Your score section: " << highCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 handDeck2 = {handDeck2[0], handDeck2[1], handDeck2[2], handDeck2[3], handDeck2[4]};
@@ -3549,7 +4710,7 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += royalFlushCard.second;
                     std::cout << "Your score section: " << royalFlushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___";
+                    std::cout << "Your highest card: " << "Ace";
 
                 }
 
@@ -3921,7 +5082,101 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += flushCard.second;
                     std::cout << "Your score section: " << flushCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq >= 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq >= 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq >= 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq >= 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq >= 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq >= 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq >= 1) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq >= 1) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq >= 1) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points2 += twoCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // STRAIGHT
@@ -3937,7 +5192,73 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += straightCard.second;
                     std::cout << "Your score section: " << straightCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // THREE OF A KIND
@@ -4071,7 +5392,94 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += twoPairCard.second;
                     std::cout << "Your score section: " << twoPairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // PAIR
@@ -4082,7 +5490,101 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
                 
                     points2 += pairCard.second;
                     std::cout << "Your score section: " << pairCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+              
+                    // Ace
+                    if (aceFreq == 2) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 2) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 2) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 2) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 2) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 2) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 2) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 2) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 2) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    // Five
+                    else if (fiveFreq == 2) {
+
+                        std::cout << "Your highest card: " << fiveCard.first << "\n";
+                        points2 += fiveCard.second;
+                    }
+
+                    // Four 
+                    else if (fourFreq == 2) {
+
+                        std::cout << "Your highest card: " << fourCard.first << "\n";
+                        points2 += fourCard.second;
+                    }
+
+                    // Three
+                    else if (threeFreq == 2) {
+
+                        std::cout << "Your highest card: " << threeCard.first << "\n";
+                        points2 += threeCard.second;
+                    }
+
+                    // Two
+                    else if (twoFreq == 2) {
+
+                        std::cout << "Your highest card: " << twoCard.first << "\n";
+                        points2 += twoCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 // HIGH CARD
@@ -4092,7 +5594,73 @@ void PlayerTwoPoker::player2(std::size_t& points2) {
 
                     points2 += highCard.second;
                     std::cout << "Your score section: " << highCard.second << "\n";
-                    std::cout << "Your highest card: " << "___" << "\n";
+
+                    // Ace
+                    if (aceFreq == 1) {
+
+                        std::cout << "Your highest card: " << aceCard.first << "\n";
+                        points2 += aceCard.second;
+                    }
+
+                    // King
+                    else if (kingFreq == 1) {
+
+                        std::cout << "Your highest card: " << kingCard.first << "\n";
+                        points2 += kingCard.second;
+                    }
+
+                    // Queen
+                    else if (queenFreq == 1) {
+
+                        std::cout << "Your highest card: " << queenCard.first << "\n";
+                        points2 += queenCard.second;
+                    }
+
+                    // Jack
+                    else if (jackFreq == 1) {
+
+                        std::cout << "Your highest card: " << jackCard.first << "\n";
+                        points2 += jackCard.second;
+                    }
+
+                    // Ten
+                    else if (tenFreq == 1) {
+
+                        std::cout << "Your highest card: " << tenCard.first << "\n";
+                        points2 += tenCard.second;
+                    }
+
+                    // Nine
+                    else if (nineFreq == 1) {
+
+                        std::cout << "Your highest card: " << nineCard.first << "\n";
+                        points2 += nineCard.second;
+                    }
+
+                    // Eight
+                    else if (eightFreq == 1) {
+
+                        std::cout << "Your highest card: " << eightCard.first << "\n";
+                        points2 += eightCard.second;
+                    }
+
+                    // Seven
+                    else if (sevenFreq == 1) {
+
+                        std::cout << "Your highest card: " << sevenCard.first << "\n";
+                        points2 += sevenCard.second;
+                    }
+
+                    // Six
+                    else if (sixFreq == 1) {
+
+                        std::cout << "Your highest card: " << sixCard.first << "\n";
+                        points2 += sixCard.second;
+                    }
+
+                    else {
+                        points2 += 0;
+                    }
                 }
 
                 horizonLine2.reserve(handDeck2.size());

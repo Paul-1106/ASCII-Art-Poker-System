@@ -32,7 +32,7 @@ int main() {
     std::cout << "*             MENU             *\n";
     std::cout << "********************************\n";
     std::cout << "* 1. One Player ($100+)        *\n";
-    std::cout << "* 2. Two Players (Coming Soon) *\n";
+    std::cout << "* 2. Two Players               *\n";
     std::cout << "* 3. Your Credit Balance       *\n";
     std::cout << "* 4. Instruction               *\n";
     std::cout << "* 5. Free Credits              *\n";
@@ -58,18 +58,18 @@ int main() {
 
                 if (points > points2) {
                     std::cout << "[PLAYER 1 WINS]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
+                    std::cout << "Player 1 score: " << points << "\n";
+                    std::cout << "Player 2 score: " << points2 << "\n";
                 }
                 else if (points < points2) {
                     std::cout << "[PLAYER 2 WINS]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
+                    std::cout << "Player 1 score: " << points << "\n";
+                    std::cout << "Player 2 score: " << points2 << "\n";
                 }
                 else {
                     std::cout << "[DRAW!]\n\n";
-                    std::cout << "Player 1's score: " << points << "\n";
-                    std::cout << "Player 2's score: " << points2 << "\n";
+                    std::cout << "Player 1 score: " << points << "\n";
+                    std::cout << "Player 2 score: " << points2 << "\n";
                 }
 
                 points = 0;
