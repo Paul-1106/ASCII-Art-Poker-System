@@ -141,13 +141,15 @@ ALL POKER CARDS (Line 43 - 49)
             std::cin >> creditBet;
 
             // If user input at least 100 credits
-            if (creditBet >= creditRequirement) {
+            if (creditBet >= creditRequirement && credit >= creditBet) {
 
                 for (int i{0}; i < handDeck.size(); ++i) {
 
                     turn++;
 
                     std::cout << "You have bet $" << creditBet << " credits\n\n";
+
+                    // Automactically deduct credits from your credit amount depends on your bet amount
                     credit -= creditBet;
 
                     // Random card selector (1/5)
@@ -1190,12 +1192,20 @@ ALL POKER CARDS (Line 43 - 49)
                         std::cout << "That input is not valid. Please select 's' to swap your deck or 'p' if you are satisfy with your deck.\n";
                         std::cin >> swap;
                     }
+            
                 }
             }
+
+            // Attempting to bet the amount of credits that a user do not have
+            else if (creditBet >= creditRequirement && credit < creditBet) {
+
+                std::cout << "You do not have enough credit to bet that amount\n";
+                std::cout << "Your current credit amount: $" << credit << "\n";
+            }
+
             // If user input less than 100 credits
             else {
                 std::cout << "You need to bet at least 100 credits to play poker\n";
-                std::cin >> creditBet;
             }
         }
     }
