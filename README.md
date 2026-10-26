@@ -67,4 +67,14 @@ Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ 
 - Here is what it looks like AFTER:<br>
 <img alt = "Horizontal Poker Hand" src = "images/horizontalDisplay.png"> <br><br>
 <h4>Debugging and Errors</h4>
-- There are some errors and bugs that are needed to be fix for this project. Even though this project is playable and function well enough but bugs and errors are still need to be fix.<br> 
+- There are some errors and bugs that are needed to be fix for this project. Even though this project is playable and function well enough but bugs and errors are still need to be fix.<br><br>
+
+<h2>How to Play</h2>
+
+<h4>Using CMake</h4>
+- Download CMake<br>
+- Download G++ / GCC
+Type in the following commands below to play poker as an example:<br><br>
+```mkdir build<br>cd build<br>cmake ..<br>cmake --build .<br>cd app<br>./myApp```<br><br>
+<h4>Using Microsoft Visual Studio or CLion</h4>
+- It should already have a built-in compiler that you can able to run the project without using CMake<br><br> 
