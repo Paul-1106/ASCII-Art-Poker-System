@@ -31,6 +31,8 @@ There are a total of 65 deck of cards. Numbers (from Ace to 10), Face (Jack, Que
 
 <h2>CMake Details</h2><img alt="Static Badge" src="https://img.shields.io/badge/CMake-v3.31-red?logo=CMake">
 
+⚠️ It is highly recommended to use CMake v3.31 or later to function this project without a problem ⚠️ <br>
+
 One of the tools that I have been using to work on my project is called CMake and it is an open-source meta-build system that can allow to connect or merge all C++ and header files. Like on Windows OS, Microsoft Visual Studio is perfect for users that are creating C++ projects, but for Linux, CMake is highly recommended so that it can build C/C++ projects.<br><br>
 
 <h4>Here are some examples of implementing CMake to build each files for this project:</h4>
@@ -69,12 +71,55 @@ Line 41: Calling the version of C++ for CMake (C++20 is recommended for new C++ 
 <h4>Debugging and Errors</h4>
 - There are some errors and bugs that are needed to be fix for this project. Even though this project is playable and function well enough but bugs and errors are still need to be fix.<br><br>
 
-<h2>How to Play</h2>
+<h2> 🕹️ How to Play:</h2>
 
 <h4>Using CMake</h4>
 - Download CMake<br>
 - Download G++ / GCC
-Type in the following commands below to play poker as an example:<br><br>
-```mkdir build<br>cd build<br>cmake ..<br>cmake --build .<br>cd app<br>./myApp```<br><br>
+Type in the following commands below to play poker as an example:<br>
+
+```
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+<br>
+Type the following commands to play the game: <br>
+
+```
+cd app
+./myApp
+```
 <h4>Using Microsoft Visual Studio or CLion</h4>
 - It should already have a built-in compiler that you can able to run the project without using CMake<br><br> 
+
+<h3>Installation:</h3>
+<h4>IDE:</h4>
+- You can download either VSCode, Microsoft Visual Studio, or CLion<br>
+
+<h4>Repository Clone:</h4>
+You can copy the following links below to clone the project<br><br>
+
+- HTTP Link:<br>
+
+```
+https://github.com/Paul-1106/ASCII-Art-Poker-System.git
+```
+- SSH Link:<br>
+
+```
+git@github.com:Paul-1106/ASCII-Art-Poker-System.git
+```
+<br><br>
+
+<h2> Two Player mode: </h2>
+<h4> ⚠️ This mode is not based on betting credits ⚠️ </h4>
+The two player mode will be based on the points or score instead of credits.<br>
+When having a specific hand rank, a user will be place in a score section.<br>
+- Here is a screenshot example of a score section as a code snippet:<br>
+[post image here]
+<br>
+
+<h2> 🔎 Conclusion 🔍 </h2>
+A poker game project that it uses ASCII art style cards instead of displaying a simple letter for suits and number for ranks. Also, there are a total of 65 cards in a deck which means that there is an extra suit for this project which is called "Quatrefoil" which makes it five suits in total instead of four. There are two mode when running the project, which is One Player mode and Two Player mode. The One player mode will be based on betting and rewarding the amount of credits, meanwhile the Two Player mode is based on the score section placement and the user's highest card will count when adding the score for two player mode. An order to play a One player mode, it requires to have a least 100 credits as a user's balance. If not, then the user will need to receive free credits as one of the case options and check the current credit amount to make sure it have enough. 
