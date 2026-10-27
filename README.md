@@ -119,7 +119,21 @@ The two player mode will be based on the points or score instead of credits.<br>
 When having a specific hand rank, a user will be place in a score section.<br>
 - Here is a screenshot example of a score section as a code snippet:<br>
 <img alt = "Score Section" src = "images/scoreSection.png">
-<br><br>
+<br>
+<h4>Additional score for highest poker hand card:</h4> 
+Ace = +99 points <br>
+King = +90 points <br>
+Queen = +80 points <br>
+Jack = +70 points <br>
+Ten = +50 points <br>
+Nine = +40 points <br>
+Eight = +30 points <br>
+Seven = +20 points <br>
+Six = +15 points <br>
+Five = +10 points <br>
+Four = +5 points <br>
+Three = +2 points <br>
+Two = +1 points <br><br>
 After when player one and player two are finish, the complier will determines if player one wins, player two wins, or a draw depending on hank rank and highest card.<br>
 Here is an example of the results after finish playing: <br>
 <img alt = "Result" src = "winnerPlayer.png">
