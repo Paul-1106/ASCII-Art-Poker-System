@@ -7,7 +7,7 @@
 For this project, I am currently working on a C++ project called Deluxe-Poker-System(Poker game). When running this project, it will display the menu bar and it will print each number of inputs from the list. All four inputs from the list are single player mode, two player mode, instructions, free credits, and display credits.<br><br>
 
 Menu code snippet example:<br>
-[post image here]<br><br>
+<img alt="Menu Page" src = "images/menuSection.png"> <br><br>
 
 <h3>Poker Hand Ranks:</h3>
 Here are all types of poker hands from best to worst: <br><br>
@@ -118,8 +118,10 @@ git@github.com:Paul-1106/ASCII-Art-Poker-System.git
 The two player mode will be based on the points or score instead of credits.<br>
 When having a specific hand rank, a user will be place in a score section.<br>
 - Here is a screenshot example of a score section as a code snippet:<br>
-[post image here]
-<br>
-
+<img alt = "Score Section" src = "images/scoreSection.png">
+<br><br>
+After when player one and player two are finish, the complier will determines if player one wins, player two wins, or a draw depending on hank rank and highest card.<br>
+Here is an example of the results after finish playing: <br>
+<img alt = "Result" src = "winnerPlayer.png">
 <h2> 🔎 Conclusion 🔍 </h2>
 A poker game project that it uses ASCII art style cards instead of displaying a simple letter for suits and number for ranks. Also, there are a total of 65 cards in a deck which means that there is an extra suit for this project which is called "Quatrefoil" which makes it five suits in total instead of four. There are two mode when running the project, which is One Player mode and Two Player mode. The One player mode will be based on betting and rewarding the amount of credits, meanwhile the Two Player mode is based on the score section placement and the user's highest card will count when adding the score for two player mode. An order to play a One player mode, it requires to have a least 100 credits as a user's balance. If not, then the user will need to receive free credits as one of the case options and check the current credit amount to make sure it have enough. 
