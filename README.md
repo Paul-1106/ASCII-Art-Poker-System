@@ -136,6 +136,6 @@ Three = +2 points <br>
 Two = +1 points <br><br>
 After when player one and player two are finish, the complier will determines if player one wins, player two wins, or a draw depending on hank rank and highest card.<br>
 Here is an example of the results after finish playing: <br>
-<img alt = "Result" src = "winnerPlayer.png">
+<img alt = "Result" src = "images/winnerPlayer.png">
 <h2> 🔎 Conclusion 🔍 </h2>
 A poker game project that it uses ASCII art style cards instead of displaying a simple letter for suits and number for ranks. Also, there are a total of 65 cards in a deck which means that there is an extra suit for this project which is called "Quatrefoil" which makes it five suits in total instead of four. There are two mode when running the project, which is One Player mode and Two Player mode. The One player mode will be based on betting and rewarding the amount of credits, meanwhile the Two Player mode is based on the score section placement and the user's highest card will count when adding the score for two player mode. An order to play a One player mode, it requires to have a least 100 credits as a user's balance. If not, then the user will need to receive free credits as one of the case options and check the current credit amount to make sure it have enough. 
