@@ -1,10 +1,12 @@
-# Deluxe Poker System
+# ASCII Art Poker System
 <img alt="Static Badge" src="https://img.shields.io/badge/Personal_Project-%23DA27F5?style=for-the-badge&logo=github"> <br><br>
 <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B_Programming-blue"> <img alt="Static Badge" src="https://img.shields.io/badge/Development-Backend-%23F5D627"> <img alt="Static Badge" src="https://img.shields.io/badge/plugins-CMake-red?logo=cmake">
 <br><br>
 
 <h2>📜 Details and Instructions:</h2>
-For this project, I am currently working on a C++ project called Deluxe-Poker-System(Poker game). When running this project, it will display the menu bar and it will print each number of inputs from the list. All four inputs from the list are single player mode, two player mode, instructions, free credits, and display credits.<br><br>
+For this project, I have created a C++ project called ASCII Art Poker System(Poker game). When running this project, it will display the menu bar and it will print each number of inputs from the list. All four inputs from the list are single player mode, two player mode, instructions, free credits, and display credits.<br><br>
+
+This project was tested with using CMake, Visual Studio Code, Debian 13(Linux), and Fedora 44(Linux).<br><br>
 
 Menu code snippet example:<br>
 <img alt="Menu Page" src = "images/menuSection.png"> <br><br>
